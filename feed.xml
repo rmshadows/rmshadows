@@ -1,0 +1,877 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Ryan Yim - Update Log</title>
+    <language>zh-CN</language>
+    <generator>Python</generator>
+    <link>https://civiccccc.ltd/</link>
+    <description>醉后不知天在水  满船清梦压星河 (´°̥̥̥̥̥̥̥̥ω°̥̥̥̥̥̥̥̥｀)</description>
+    <author>Ryan Yim</author>
+    <atom:link href="https://civiccccc.ltd/rmshadows/feed.xml" rel="self" type="application/rss+xml"/>
+    <!--补充GMT-->
+    <lastBuildDate>Sat, 15 Feb 2025 05:51:46 GMT</lastBuildDate>
+    <ttl>5</ttl>
+    <!--下面是填充内容-->
+    <item>
+      <title>2025.02.15 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sat, 15 Feb 2025 05:51:46 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 服务器更新，从Debian 10迁移至Debian 12 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2024.10.15 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Tue, 15 Oct 2024 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 1. Jitsi Meet中文交流群（非专业）：246483851<br>2. Jitsi-Meet文档粗略翻译完成<br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2024.02.15 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Thu, 15 Feb 2024 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ Textsend APP重新改版大更新！上线uTools端插件，Android端迁移Kotlin，UI新设计。PC端发射器、接收器重构。 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2023.12.12 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Tue, 12 Dec 2023 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Why-Linux`更新了办公相关（国产系统） <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2023.11.12 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sun, 12 Nov 2023 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 更新了`Fluxbox-Notes` <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2023.11.01 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Wed, 01 Nov 2023 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Why-Linux`更新了DoH、HP Laser NS1020打印机、GRUB菜单部份加密等内容 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2023.10.21 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sat, 21 Oct 2023 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Toolkit`更新了PPT模板等办公资源网站 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2023.07.16 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sun, 16 Jul 2023 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Toolkit`更新了视频下载网站和隐私检测模块 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2023.03.30 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Thu, 30 Mar 2023 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Why-Linux`更新了水星（Mercury UD6）网卡驱动安装 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2023.03.08 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Wed, 08 Mar 2023 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Moment`记录了进口二手车川崎ER6F异地过户流程 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2023.02.10 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Fri, 10 Feb 2023 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[  `Debian-Server`更新了`linx-server`和`tiny-file-manager`的部署指南 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2023.02.05 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sun, 05 Feb 2023 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 1.  建立了文件共享服务器：[中国大陆](https://cn.civiccccc.ltd:2083) | [海外地区](https://media.civiccccc.ltd:2096) | [只读资源](https://media.civiccccc.ltd:2083)（只读账户(密码同)：`guest`）<br>2. 直播文件[下载(只读)](https://cn.civiccccc.ltd:2053)<br><br><br>识别到的链接：<br><a href='https://cn.civiccccc.ltd:2083'>中国大陆</a><br><a href='https://media.civiccccc.ltd:2096'>海外地区</a><br><a href='https://media.civiccccc.ltd:2083'>只读资源</a><br><a href='https://cn.civiccccc.ltd:2053'>下载(只读)</a><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.12.23 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Fri, 23 Dec 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 1. [Libera IRC](https://libera.chat)频道`#wxx`已经与~~Telegram群组~~互通([~~Web~~](https://web.libera.chat/))<br>2. 如需IRC离线消息可使用博主的ZNC服务器(不是很好用)【服务器端口、用户名、密码】分别是：【】<br>3. `Debian-Server`更新了`jitsi-meet`、`matterbridge`和`znc`的搭建、配置教程<br><br><br>识别到的链接：<br><a href='https://libera.chat'>Libera IRC</a><br><a href='https://web.libera.chat/'>~~Web~~</a><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.11.30 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Wed, 30 Nov 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 1. 【沉痛悼念】江泽民逝世，享年96岁。江泽民同志是我国各族人民公认的享有崇高威望的卓越领导人，伟大的马克思主义者，伟大的无产阶级革命家、政治家、军事家、外交家。江泽民同志的逝世，对我国各族人民是不可估量的损失。中华民族的伟大复兴事业，凝结了包括江泽民同志在内的一代又一代共产党人的心血和奋斗。党中央号召，全党全军全国各族人民化悲痛为力量，继承江泽民同志的遗志，以实际行动表达我们的悼念。前进道路上，全国各族人民要在以习近平同志为核心的党中央坚强领导下，高举中国特色社会主义伟大旗帜，坚定信心、同心同德，埋头苦干、奋勇前进，为全面建设社会主义现代化国家、全面推进中华民族伟大复兴而团结奋斗。江泽民同志永垂不朽！<br>2. <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.11.16 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Wed, 16 Nov 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 电台摸鱼群群聊直播(地址见往期RSS)提升画质到720p，建议使用新加坡、俄罗斯节点收听。 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.11.14 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Mon, 14 Nov 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 1. 修复了[Jitsi Meet of CIVICCCCC.LTD](https://jitsi.civiccccc.ltd/)视频通话连接失败的问题<br>2. 欢迎各位加入~~[电台摸鱼群](https://civiccccc.ltd/Like&amp;Share/)一起摸鱼~~，群内禁止黄赌毒禁广告<br><br><br>识别到的链接：<br><a href='https://jitsi.civiccccc.ltd/'>Jitsi Meet of CIVICCCCC.LTD</a><br><a href='https://civiccccc.ltd/Like&amp;Share/'>电台摸鱼群</a><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.11.07 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Mon, 07 Nov 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 修复了主站代码526无法访问的问题 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.10.15 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sat, 15 Oct 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 哔哩哔哩更新了漳州市东山县[照片视频](https://www.bilibili.com/video/BV1dd4y117QW/) <br><br>识别到的链接：<br><a href='https://www.bilibili.com/video/BV1dd4y117QW/'>照片视频</a><br><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.09.26 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Mon, 26 Sep 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 祝学妹新婚快乐~ <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.09.20 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Tue, 20 Sep 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 哔哩哔哩直播网页端卡顿的问题已解决，欢迎收听(地址：[映客直播](https://www.inke.cn/liveroom/index.html?uid=740772375) | [哔哩哔哩](https://live.bilibili.com/22492267)) <br><br>识别到的链接：<br><a href='https://www.inke.cn/liveroom/index.html?uid=740772375'>映客直播</a><br><a href='https://live.bilibili.com/22492267'>哔哩哔哩</a><br><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.09.13 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Tue, 13 Sep 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 1. 哔哩哔哩更新了[春风250NK](https://www.bilibili.com/video/BV1ye4y1C7Vj/)和[新大洲本田CBF125T](https://www.bilibili.com/video/BV1XP4y1f76a/)的视频<br>2. 映客直播平台365天24小时不间断[音乐站](https://www.inke.cn/liveroom/index.html?uid=740772375)搭建基本完成，欢迎各位前来听歌<br><br><br>识别到的链接：<br><a href='https://www.bilibili.com/video/BV1ye4y1C7Vj/'>春风250NK</a><br><a href='https://www.bilibili.com/video/BV1XP4y1f76a/'>新大洲本田CBF125T</a><br><a href='https://www.inke.cn/liveroom/index.html?uid=740772375'>音乐站</a><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.08.22 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Mon, 22 Aug 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 哔哩哔哩电磁力升级Lv.3，新增视频合集，欢迎订阅 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.08.09 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Tue, 09 Aug 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `PEncoder`更新了v2.2版本(修复了DB文件跨平台中文编码错误问题) | [Release Page](https://github.com/rmshadows/PEncoder/releases/tag/v2.2) <br><br>识别到的链接：<br><a href='https://github.com/rmshadows/PEncoder/releases/tag/v2.2'>Release Page</a><br><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.07.13 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Wed, 13 Jul 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Why-Linux`更新了`Virtual Box 6.1.34`在`Debian 11`上虚拟机频繁重启的解决办法 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.07.10 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sun, 10 Jul 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Why-Linux`更新了`新装的Debian 11 Inte i5-10400(UHD630)开机黑屏`解决方法 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.06.21 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Tue, 21 Jun 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 更新了机翻的日本摩友的文章[125cc 的自行车 HONDA CBF125T 对我来说简直就是神车！ 我将介绍两种cospa最强的轻便摩托车！ | 昆布郎](/www/CBF125T.html) <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.06.13 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Mon, 13 Jun 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 1. `Moment`更新了开椰子的方法<br>2. 安卓天气报客户端更新了0.0.4版本<br>3. 更新了哔哩哔哩视频列表<br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.05.25 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Wed, 25 May 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 1. 天气报安卓客户端发布0.0.3版本(添加切换全屏)<br>2. 哔哩哔哩更新了视频[一些快乐的瞬间-2022年5月17日](https://www.bilibili.com/video/BV1aT4y1z7pq/)<br><br><br>识别到的链接：<br><a href='https://www.bilibili.com/video/BV1aT4y1z7pq/'>一些快乐的瞬间-2022年5月17日</a><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.05.08 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sun, 08 May 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 1. 更新了哔哩哔哩视频列表<br>2. 协助打包了[天气报](https://github.com/xjx0106/WeatherPost)安卓客户端<br>3. 主站排版更新<br>4. 部署了音乐电台(列表循环，不出意外的话，应该是24小时+365天无间断直播)，地址：[映客直播](https://www.inke.cn/liveroom/index.html?uid=740772375) | [哔哩哔哩](https://live.bilibili.com/22492267) 欢迎莅临。<br><br><br>识别到的链接：<br><a href='https://github.com/xjx0106/WeatherPost'>天气报</a><br><a href='https://www.inke.cn/liveroom/index.html?uid=740772375'>映客直播</a><br><a href='https://live.bilibili.com/22492267'>哔哩哔哩</a><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.05.01 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sun, 01 May 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Debian-Server`更新了使用`FFmpeg`推流 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.04.17 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sun, 17 Apr 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Install-Audiophile-Linux-v5-with-UEFI-GPT`更新了Audiophile Linux升级系统后无法开机的解决方案 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.03.29 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Tue, 29 Mar 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `RSS`更新了排版，新增链接识别([更新日志RSS](https://civiccccc.ltd/rmshadows/feed.xml)) <br><br>识别到的链接：<br><a href='https://civiccccc.ltd/rmshadows/feed.xml'>更新日志RSS</a><br><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2020.03.28 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sat, 28 Mar 2020 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 1. [Links](https://civiccccc.ltd/links/links.html)页面更新了每日诗词<br>2. 计划`RSS`新增链接识别(TODO)<br>3. 更新了主题，新增随机彩带特效(From [Commit](https://github.com/V-Vincen/hexo-theme-livemylife/commit/e89940eb3ee264f64a2b1867460695107d7ba53b))<br><br><br>识别到的链接：<br><a href='https://civiccccc.ltd/links/links.html'>Links</a><br><a href='https://github.com/V-Vincen/hexo-theme-livemylife/commit/e89940eb3ee264f64a2b1867460695107d7ba53b'>Commit</a><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.03.27 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sun, 27 Mar 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 1. 为了优化网页加载速度，单独分离出`Windows-Notes`、`Linux-Applications`、`Web-Notes`、`Python-Notes`、`Java-Notes`、`Shell-Notes`和`C-Notes`<br>2. 博客主页连通主站<br>3. 更新`RSS`生成器<br>4. 修复了`Why-Linux`失效的链接<br>5. 修改了主题首页封面文字为不可选择<br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.03.25 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Fri, 25 Mar 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 1. 主站`DNS`服务器地址修改为`Cloudflare`所属<br>2. 由于启用了`Cloudflare CDN`，大陆地区访问部分网页可能出现显示异常(`JavaScript`文件无法正常加载)<br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.03.19 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sat, 19 Mar 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 主站更新了友情链接页面，欢迎交换友链(个人博客优先，广告类不接)，[点我访问](https://civiccccc.ltd/links/links.html) <br><br>识别到的链接：<br><a href='https://civiccccc.ltd/links/links.html'>点我访问</a><br><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.03.16 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Wed, 16 Mar 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Why-Linux`更新了Linux下大文件分块的知识 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.03.15 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Tue, 15 Mar 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Why-Linux`更新了部分来源于[Manjaro.org](https://manjaro.org/linux/)的文字 <br><br>识别到的链接：<br><a href='https://manjaro.org/linux/'>Manjaro.org</a><br><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.03.11 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Fri, 11 Mar 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 修正了`Why-Linux`文章中`Debian`网络配置的部分错误 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.03.04 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Fri, 04 Mar 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 1. `Toolkit`更新了淘宝直播回放查看地址、正则表达测试<br>2. `Why-Linux`更新了`sed`使用正则表达式<br>3. `Moment`更新了动态<br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.02.22 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Tue, 22 Feb 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Why-Linux`更新了Python处理`GMT`时间的笔记 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.02.08 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Tue, 08 Feb 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Bilibili-navigation`更新了 [正月初五镇海角小视频](https://www.bilibili.com/video/BV1DP4y1c7hY/)  <br><br>识别到的链接：<br><a href='https://www.bilibili.com/video/BV1DP4y1c7hY/'>正月初五镇海角小视频</a><br><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.01.28 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Fri, 28 Jan 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 1. 修改了RSS订阅源。[默认](https://civiccccc.ltd/rmshadows/feed.xml)订阅源为更新日志(当前内容)<br>2. 如需订阅文章内容，请订阅 [这个](https://civiccccc.ltd/rmshadows/atom.xml) -> https://civiccccc.ltd/rmshadows/atom.xml<br><br><br>识别到的链接：<br><a href='https://civiccccc.ltd/rmshadows/feed.xml'>默认</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml'>这个</a><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.01.26 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Wed, 26 Jan 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 新增了 [RSS](https://civiccccc.ltd/rmshadows/feed.xml) 订阅源 <br><br>识别到的链接：<br><a href='https://civiccccc.ltd/rmshadows/feed.xml'>RSS</a><br><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.01.25 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Tue, 25 Jan 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 更新了 [Like And Share](https://civiccccc.ltd/Like&amp;Share/) 页面 <br><br>识别到的链接：<br><a href='https://civiccccc.ltd/Like&amp;Share/'>Like And Share</a><br><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.01.22 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sat, 22 Jan 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Why-Linux`更新了Windows静默安装指南 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.01.21 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Fri, 21 Jan 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 更新了Instagram[镜像地址](https://imginn.com/just_aaaa_r/) <br><br>识别到的链接：<br><a href='https://imginn.com/just_aaaa_r/'>镜像地址</a><br><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.01.20 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Thu, 20 Jan 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ Youtube[频道](https://www.youtube.com/channel/UClSNRjPYcdq6YDLmLV2JchA) <br><br>识别到的链接：<br><a href='https://www.youtube.com/channel/UClSNRjPYcdq6YDLmLV2JchA'>频道</a><br><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.01.15 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sat, 15 Jan 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 1. 主站和博客更新了雨（[城](https://civiccccc.ltd/rain/rain.html)、[福州](/www/rains/fuzhou/rain.html)、[摩托](/www/rains/cbf125t/rain.html)）<br>2. `Why-Linux`更新了Linux远程桌面开启方法<br><br><br>识别到的链接：<br><a href='https://civiccccc.ltd/rain/rain.html'>城</a><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2022.01.08 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sat, 08 Jan 2022 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 1. 更新了见缝插针小游戏([闯关模式](/www/games/jfcz/jfcz.html) | [无敌模式](/www/games/jfcz/happyMode.html))<br>2. 更新了[时钟](/www/hwqclock/clock.html)<br>3. 主页更新了雨 · [城](https://civiccccc.ltd/rain/rain.html) | ~~[夜](/www/rains/alone/rain.html)~~<br><br><br>识别到的链接：<br><a href='https://civiccccc.ltd/rain/rain.html'>城</a><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.12.19 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sun, 19 Dec 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 一些免费的网页模板预览，[点我跳转](https://rmshadows.gitee.io/html-template/) <br><br>识别到的链接：<br><a href='https://rmshadows.gitee.io/html-template/'>点我跳转</a><br><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.12.16 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Thu, 16 Dec 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 1. [kind of Blue 墙](https://civiccccc.ltd/blue/blue.html) 已上线，留下你的小情绪<br>2. 愿你被这个世界温柔以待，即使生命总以刻薄荒芜相欺:heart:<br><br><br>识别到的链接：<br><a href='https://civiccccc.ltd/blue/blue.html'>kind of Blue 墙</a><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.12.13 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Mon, 13 Dec 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 更新了哔哩哔哩视频 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.12.11 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sat, 11 Dec 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 1. 更新了`Moment`动态<br>2. 更新了`Instagram`照片(此后`Moment`动态更新不再本文中提及)<br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.12.03 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Fri, 03 Dec 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 1. 修复了博客主题在Gitee Page中丢失背景图片的Bug<br>2. `Why-Linux`更新了Linux &amp; Android [手机互联](./../../2020/Why-Linux/#Linux手机互联)<br>3. 国内站点已恢复运行<br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.12.02 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Thu, 02 Dec 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Why-Linux`更新了对于[Windows卡顿](./../../2020/Why-Linux/#Windows卡顿吗)的非专业观点 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.11.29 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Mon, 29 Nov 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 更新了哔哩哔哩视频导航目录 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.11.26 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Fri, 26 Nov 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 随便更新了下`Moment`动态 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.11.22 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Mon, 22 Nov 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 1. 优化了[主站](https://civiccccc.ltd)的排版<br>2. 修复了博客`js`、`img`等路径失效问题<br><br><br>识别到的链接：<br><a href='https://civiccccc.ltd'>主站</a><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.10.27 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Wed, 27 Oct 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Why-Linux`更新了Debian 11(bullseye)GNOME桌面的一键部署脚本，含演示视频 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.09.22 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Wed, 22 Sep 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 帮助汉化了[Dayon!](https://github.com/RetGal/Dayon)项目(截至今日，Pull request已经提交，但暂未通过) <br><br>识别到的链接：<br><a href='https://github.com/RetGal/Dayon'>Dayon!</a><br><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.09.09 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Thu, 09 Sep 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Text-Send-a-Crossplatform-text-transmission-tool`发布了[Text Send](https://www.bilibili.com/video/BV1j3411q7gQ/)新版本 <br><br>识别到的链接：<br><a href='https://www.bilibili.com/video/BV1j3411q7gQ/'>Text Send</a><br><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.08.11 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Wed, 11 Aug 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Bilibili-navigation`更新了2018年[绝地求生全军出击](https://pubgm.qq.com/index.shtml)(已停服)直播回放 <br><br>识别到的链接：<br><a href='https://pubgm.qq.com/index.shtml'>绝地求生全军出击</a><br><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.08.02 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Mon, 02 Aug 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Bilibili-navigation`更新了7月见闻 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.07.17 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sat, 17 Jul 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Bilibili-navigation`更新了交通迷惑行为鉴赏 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.07.10 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sat, 10 Jul 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Bilibili-navigation`更新了[一个人去看海](https://www.bilibili.com/video/BV1D44y1q7Mz/) <br><br>识别到的链接：<br><a href='https://www.bilibili.com/video/BV1D44y1q7Mz/'>一个人去看海</a><br><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.07.01 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Thu, 01 Jul 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Moment`更新了七一建党百年祝贺 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.06.30 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Wed, 30 Jun 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Bilibili-navigation`更新了视频 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.06.23 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Wed, 23 Jun 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Bilibili-navigation`更新了视频 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.06.19 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sat, 19 Jun 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 1. Gitee站点似乎已经恢复<br>2. 更改了博客排版等<br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.06.13 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sun, 13 Jun 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Build-a-blog-with-Hexo-framework`更新了添加鼠标特效 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.06.12 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sat, 12 Jun 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ Gitee站点疑似被误封，小伙伴们请访问 https://civiccccc.ltd <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.06.11 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Fri, 11 Jun 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 1. `Bilibili-navigation`更新了骑行见闻的视频<br>2. `Why Linux`更新了Git仓库体积太大的处理方法<br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.06.06 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sun, 06 Jun 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Bilibili-navigation`更新了佛系遛弯和行车记录的视频 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.05.08 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sat, 08 May 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Toolkit`更新了Java Sound API教程两篇 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.04.23 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Fri, 23 Apr 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Articles`更新了SystemRescue的`安全地删除数据`、`刻录可启动的System Rescue DVD光盘`、`引导损坏的linux系统`等文章 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.04.22 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Thu, 22 Apr 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Articles`更新了[Debian.org](https://www.debian.org)的`给新用户有关不破坏其Debian系统的建议`和System Rescue.org的`使用Backing Store持久化储存你的更改` <br><br>识别到的链接：<br><a href='https://www.debian.org'>Debian.org</a><br><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.04.14 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Wed, 14 Apr 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 部署了[Jitsi](https://jitsi.civiccccc.ltd)在线会议和[Jami](https://jami.net)服务[JAMS](https://civiccccc.ltd:20004) <br><br>识别到的链接：<br><a href='https://jitsi.civiccccc.ltd'>Jitsi</a><br><a href='https://jami.net'>Jami</a><br><a href='https://civiccccc.ltd:20004'>JAMS</a><br><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.04.07 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Wed, 07 Apr 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 1. 部署了ISSO评论系统<br>2. `Debian-Server`更新了ISSO部署方法<br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.04.06 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Tue, 06 Apr 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 1. 海外导航站点正式投入使用，域名：[CIVICCCCC.LTD](https://civiccccc.ltd/)<br>2. 部署了[Hackchat](https://civiccccc.ltd/hc/)匿名聊天应用，使用`https://civiccccc.ltd/hc/?`+`英文房间名创建房间`<br><br><br>识别到的链接：<br><a href='https://civiccccc.ltd/'>CIVICCCCC.LTD</a><br><a href='https://civiccccc.ltd/hc/'>Hackchat</a><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.04.04 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sun, 04 Apr 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Debian-Server`更新了Hackchat部署方法 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.03.31 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Wed, 31 Mar 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 1. `Bilibili-navigation`更新了佛系遛弯系列视频<br>2. `Debian-Server`更新了部署脚本`v0.0.2`<br>3. 开始迁移海外站点，计划注销日本服务器<br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.03.30 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Tue, 30 Mar 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Debian-Server`更新了`DebianServerInit_v0.0.1` <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.03.27 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sat, 27 Mar 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 海外站点初步建设完成，大家可以点击[这里](https://civiccccc.ltd)尝试访问 <br><br>识别到的链接：<br><a href='https://civiccccc.ltd'>这里</a><br><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.03.24 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Wed, 24 Mar 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Toolkit`收录了`Yed`、`Draw.io`等UML、HTML在线IDE工具 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.03.20 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sat, 20 Mar 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 更正了`Debian-Server`中Firefox_SSL配置文件错误格式 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.03.19 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Fri, 19 Mar 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Recent-Updates`新增服务器状态页面 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.03.17 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Wed, 17 Mar 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 1. `Articles`更新了Jitsi部署、Openmeetings部署等文章<br>2. 更改了Post模板<br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.03.15 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Mon, 15 Mar 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 1. 评论系统由`Gitalk`更换为`Livere`，支持QQ、微信等多种登录渠道<br>2. `Build-a-blog-with-Hexo-framework`更新了评论系统相关讨论<br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.03.14 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sun, 14 Mar 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Why-Linux`更新了Debian GNOME一键部署脚本`v3.3.7`，修复了部分bug <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.03.13 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sat, 13 Mar 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Why-Linux`更新了Debian GNOME一键部署脚本`v3.3.6`，更新日志请查看文件注释 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.03.07 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sun, 07 Mar 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Articles`更新了`system-rescue.org`的[将System Rescue安装在系统盘](https://www.system-rescue.org/manual/Installing_SystemRescue_on_the_disk/)、[开始使用](https://www.system-rescue.org/manual/Starting_to_use_the_system/)、[网络配置与应用程序](https://www.system-rescue.org/manual/Network_configuration_and_programs/)的文章翻译 <br><br>识别到的链接：<br><a href='https://www.system-rescue.org/manual/Installing_SystemRescue_on_the_disk/'>将System Rescue安装在系统盘</a><br><a href='https://www.system-rescue.org/manual/Starting_to_use_the_system/'>开始使用</a><br><a href='https://www.system-rescue.org/manual/Network_configuration_and_programs/'>网络配置与应用程序</a><br><br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.03.06 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sat, 06 Mar 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Why-Linux` 更新了`GRUB`个性化配置相关内容，涵盖加密、自定义开机音乐、主题制作、自定义启动菜单等 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.03.05 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Fri, 05 Mar 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Why-Linux`优化了内容编排 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.03.01 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Mon, 01 Mar 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 1. `Why-Linux`新增了`Shell Notes`栏目<br>2. `Career`更新了`china-animal-health-inspection_v2.0`<br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.02.25 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Thu, 25 Feb 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Toolkit`其他工具中添加了`yEd在线流程图编辑器` <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.02.22 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Mon, 22 Feb 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Why-Linux`更新了Docker微信安装脚本和`Debian Build v3.3.4`部署脚本 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.02.14 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sun, 14 Feb 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Why-Linux`更新了Windows 7安装Python后在`Script`下找不到`pip.exe`的解决办法 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.02.13 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sat, 13 Feb 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Bilibili-navigation`更新了`『佛系遛弯』行车记录：东园中学-省道208复线-2021年2月12日` <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.02.08 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Mon, 08 Feb 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Articles`更新了`Booting SystemRescueCd`和`Installing SystemRescue on the disk`(翻译进度2／3)文章的翻译。 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.02.07 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sun, 07 Feb 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Recent-Update`中的MD语法检索移至`Markdown`中。 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.02.06 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sat, 06 Feb 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Why-Linux`添加了中州韵输入法(Rime)自定义词库的方法。 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.02.01 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Mon, 01 Feb 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ 1. `Career`添加了`GeneratePrintImage`项目简介<br>2. `Toolkit`收录了国务院政府信息公开。<br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.01.24 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sun, 24 Jan 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Toolkit`仓库添加了微软更新中心链接。 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.01.23 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Sat, 23 Jan 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Why-Linux`对APT命令解析进行了排序;`Moment`更新了动态。 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.01.21 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Thu, 21 Jan 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Toolkit`添加了浏览器内核在线检测工具。 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <item>
+      <title>2021.01.18 更新日志</title>
+      <link>https://civiccccc.ltd/rmshadows/</link>
+      <pubDate>Mon, 18 Jan 2021 04:00:00 GMT</pubDate>
+      <author>Ryan Yim</author>
+      <guid>https://civiccccc.ltd/rmshadows/</guid>
+      <description><![CDATA[ `Career`添加了Python自动生成产品证Excel表格。 <br><br><br><br>公告：<br>当前RSS是https://civiccccc.ltd/rmshadows/2020/Recent-Updates/的订阅源。如需查看文章RSS，请订阅 > https://civiccccc.ltd/rmshadows/atom.xml <br><br>Links:<br><a href='https://civiccccc.ltd/' target='_blank'>主页</a><br><a href='https://civiccccc.ltd/rmshadows/' target='_blank'>博客</a><br><a href='https://civiccccc.ltd/rmshadows/feed.xml' target='_blank'>更新日志 RSS</a><br><a href='https://civiccccc.ltd/rmshadows/atom.xml' target='_blank'>文章 RSS</a><br><br><img style='' src='https://civiccccc.ltd/favicon.jpg' referrerpolicy='no-referrer'> ]]></description>
+    </item>
+    <!-- <item>
+      <title></title>
+      <link></link>
+      <description></description>
+    </item> -->
+  </channel>
+</rss>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <title>
+        CLOCK - 时钟
+    </title>
+    <link rel="stylesheet" href="jquery.css" media="screen" type="text/css">
+    </script>
+    <script src="jquery-2.js">
+    </script>
+</head>
+
+<body class="vsc-initialized"">
+    <!--div align="center" style="color:red;text-align:center">
+        <h1>
+            GREAT THING TAKES TIME
+        </h1>
+    </div>
+    </br>
+    </br-->
+    <div align="center">
+        <div id="hoverclock"
+            style="width: 300px; height: 300px; position: relative; background-color: transparent; border-radius: 10%; border: 1px solid transparent;display: contents">
+            <div class="hoverclockfill">
+                <div class="hoverclockreference"></div>
+                <div class="hoverclockentity" style="transform: scale(1.013);">
+                    <div class="hoverclocktext"
+                        style="width: 300px; position: absolute; left: -149.917px; top: 14.9917px;"><a
+                            href="http://hovertree.com" target="_blank" id="hoverclocklink"
+                            title="HoverClock" style="color: deeppink; font-size: 16px;">HoverClock</a></div>
+                    <div class="hoverclockcentre">
+                        <div class="hoverclockdynamic">
+                            <div class="hoverclockanchor" style="transform: rotate(6deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(12deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(18deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(24deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockminute-text" style="top: -116.9px; left: 67.5px; color: darkgreen;">05
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(36deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(42deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(48deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(54deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockminute-text" style="top: -67.5px; left: 116.9px; color: darkgreen;">10
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(66deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(72deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(78deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(84deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockminute-text" style="top: 0px; left: 135px; color: darkgreen;">15</div>
+                            <div class="hoverclockanchor" style="transform: rotate(96deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(102deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(108deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(114deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockminute-text" style="top: 67.5px; left: 116.9px; color: darkgreen;">20
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(126deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(132deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(138deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(144deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockminute-text" style="top: 116.9px; left: 67.5px; color: darkgreen;">25
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(156deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(162deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(168deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(174deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockminute-text" style="top: 135px; left: 0px; color: darkgreen;">30</div>
+                            <div class="hoverclockanchor" style="transform: rotate(186deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(192deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(198deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(204deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockminute-text" style="top: 116.9px; left: -67.5px; color: darkgreen;">35
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(216deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(222deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(228deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(234deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockminute-text" style="top: 67.5px; left: -116.9px; color: darkgreen;">40
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(246deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(252deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(258deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(264deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockminute-text" style="top: 0px; left: -135px; color: darkgreen;">45
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(276deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(282deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(288deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(294deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockminute-text" style="top: -67.5px; left: -116.9px; color: darkgreen;">
+                                50</div>
+                            <div class="hoverclockanchor" style="transform: rotate(306deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(312deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(318deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(324deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockminute-text" style="top: -116.9px; left: -67.5px; color: darkgreen;">
+                                55</div>
+                            <div class="hoverclockanchor" style="transform: rotate(336deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(342deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(348deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockanchor" style="transform: rotate(354deg);">
+                                <div class="hoverclockelement hoverclockminute-line"
+                                    style="background-color: darkgreen;"></div>
+                            </div>
+                            <div class="hoverclockminute-text" style="top: -135px; left: 0px; color: darkgreen;">60
+                            </div>
+                            <div class="hoverclockhour-text hour-1"
+                                style="top: -90.9px; left: 52.5px; color: darkgreen;">1</div>
+                            <div class="hoverclockhour-text hour-2"
+                                style="top: -52.5px; left: 90.9px; color: darkgreen;">2</div>
+                            <div class="hoverclockhour-text hour-3" style="top: 0px; left: 105px; color: darkgreen;">3
+                            </div>
+                            <div class="hoverclockhour-text hour-4"
+                                style="top: 52.5px; left: 90.9px; color: darkgreen;">4</div>
+                            <div class="hoverclockhour-text hour-5"
+                                style="top: 90.9px; left: 52.5px; color: darkgreen;">5</div>
+                            <div class="hoverclockhour-text hour-6" style="top: 105px; left: 0px; color: darkgreen;">6
+                            </div>
+                            <div class="hoverclockhour-text hour-7"
+                                style="top: 90.9px; left: -52.5px; color: darkgreen;">7</div>
+                            <div class="hoverclockhour-text hour-8"
+                                style="top: 52.5px; left: -90.9px; color: darkgreen;">8</div>
+                            <div class="hoverclockhour-text hour-9" style="top: 0px; left: -105px; color: darkgreen;">9
+                            </div>
+                            <div class="hoverclockhour-text hour-10"
+                                style="top: -52.5px; left: -90.9px; color: darkgreen;">10</div>
+                            <div class="hoverclockhour-text hour-11"
+                                style="top: -90.9px; left: -52.5px; color: darkgreen;">11</div>
+                            <div class="hoverclockhour-text hour-12" style="top: -105px; left: 0px; color: darkgreen;">
+                                12</div>
+                        </div>
+                        <div class="hoverclockexpand hoverclockexpand hoverclockcircle-1"></div>
+                        <div class="hoverclockanchor hoverclockhour" style="transform: rotate(368.404deg);">
+                            <div class="hoverclockelement hoverclockthin-hand" style="background-color: green;"></div>
+                            <div class="hoverclockelement hoverclockfat-hand" style="background-color: darkgreen;">
+                            </div>
+                        </div>
+                        <div class="hoverclockanchor hoverclockminute" style="transform: rotate(4420.85deg);">
+                            <div class="hoverclockelement hoverclockthin-hand" style="background-color: green;"></div>
+                            <div class="hoverclockelement hoverclockfat-hand hoverclockminute-hand"
+                                style="background-color: darkgreen;"></div>
+                        </div>
+                        <div class="hoverclockanchor hoverclocksecond" style="transform: rotate(265251deg);">
+                            <div class="hoverclockelement hoverclocksecond-hand" style="background-color: orangered;">
+                            </div>
+                        </div>
+                        <div class="hoverclockexpand hoverclockexpand hoverclockcircle-2"></div>
+                        <div class="hoverclockexpand hoverclockexpand hoverclockcircle-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="jquery.js">
+    </script>
+    <script>
+        $("#hoverclock").hoverclock({});
+    </script>
+    <!---->
+</body>
+
+</html>

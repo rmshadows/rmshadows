@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+
+  <!-- Baidu Tongji -->
+  
+
+  <!-- Baidu Push -->
+  
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc" />
+  <meta name="baidu-site-verification" content="PpzM9WxOJU" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="This is CIVICCCCC&#39;s blog..." />
+  <meta name="keyword" content="rmshadows,civiccccc,blog,Blog" />
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg" />
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+  <!-- Bootstrap Core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/beantech.min.css" />
+
+  <!-- Pygments Highlight CSS -->
+  
+<link rel="stylesheet" href="../../css/highlight.css">
+<link rel="stylesheet" href="../../css/widget.css">
+<link rel="stylesheet" href="../../css/rocket.css">
+<link rel="stylesheet" href="../../css/signature.css">
+<link rel="stylesheet" href="../../css/catalog.css">
+<link rel="stylesheet" href="../../css/livemylife.css">
+
+
+  
+  <!-- wave start -->
+  <link rel="stylesheet" href="/css/wave.css" />
+  <!-- wave end -->
+  
+
+  
+  <!-- top start (article top hot config) -->
+  <link rel="stylesheet" href="/css/top.css" />
+  <!-- top end -->
+  
+
+  
+  <!-- ThemeColor start -->
+  <link rel="stylesheet" href="/css/scroll.css" />
+  <!-- ThemeColor end -->
+  
+
+  
+  <!-- viewer start (Picture preview) -->
+  <link rel="stylesheet" href="/css/viewer.min.css" />
+  <!-- viewer end -->
+  
+
+  
+  <!-- Search start -->
+  <link rel="stylesheet" href="/css/search.css" />
+  <!-- Search end -->
+  
+
+  
+  <!-- ThemeColor start -->
+  <link rel="stylesheet" href="/css/themecolor.css" />
+  <!-- ThemeColor end -->
+  
+
+  
+
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+    href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://rmshadows.gitee.io/2022/Python-Notes/">
+  <title>
+    
+    Python Notes - RYAN | be yourself
+    
+  </title>
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="atom.xml" title="Hello ~(○｀ 3′○)~ I'm Ryan Yim" type="application/atom+xml">
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+
+<body ontouchstart="" class="body--home">
+    <!-- ThemeColor -->
+    
+    <!-- ThemeColor -->
+<!-- <div class="toggle" onclick="document.body.classList.toggle('body--dark')">Switch Color</div> -->
+
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons bright-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+
+    
+
+    <!-- Navigation (contains search)-->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Hello ~(○｀ 3′○)~ I&#39;m Ryan Yim</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">Home</a>
+          </li>
+
+          
+
+          
+          
+
+          
+          <li>
+            <a href="/about/">About</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a href="/archive/">Archives</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a href="/categories/">Categories</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a href="/tags/">Tags</a>
+          </li>
+          
+          
+
+          
+          <li><a class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+
+<script>
+  // Drop Bootstarp low-performance Navbar
+  // Use customize navbar with high-quality material design animation
+  // in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+    <!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+    <!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    header.intro-header {
+       /*post*/
+        background-image: url('https://rmshadows.gitee.io//img/header_img/lml_bg.jpg');
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/rmshadows.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#Python3" title="Python3">Python3</a>
+              
+              <a class="tag" href="/tags/#Python Packages" title="Python Packages">Python Packages</a>
+              
+            </div>
+            <h1>Python Notes</h1>
+            <h2 class="subheading">我的Python笔记</h2>
+            <span class="meta">
+              Posted by Ryan Yim on
+              2022-03-27
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">30</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">6.3k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+    <!-- Main Content (Post contains
+    Pager、
+    tip、
+    socialshare、
+    gitalk、gitment、disqus-comment、
+    Catalog、
+    Sidebar、
+    Featured-Tags、
+    Friends Blog、
+    anchorjs、
+    ) -->
+    <!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1 id="Python-Notes"><a href="#Python-Notes" class="headerlink" title="Python Notes"></a>Python Notes</h1><h2 id="Windows-7-pip"><a href="#Windows-7-pip" class="headerlink" title="Windows 7 pip"></a>Windows 7 pip</h2><blockquote>
+<p>Windows 7安装完Python后可能在Script下找不到<code>pip.exe</code></p>
+</blockquote>
+<p>解决：在验证<code>Python.exe</code>可以正常运行的情况下可以执行<code>python -m ensurepip</code></p>
+<h2 id="Python-Package"><a href="#Python-Package" class="headerlink" title="Python Package"></a>Python Package</h2><h3 id="Beautifulsoup4"><a href="#Beautifulsoup4" class="headerlink" title="Beautifulsoup4"></a>Beautifulsoup4</h3><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">来源：https:<span class="comment">//beautifulsoup.readthedocs.io/zh_CN/v4.4.0/#id27</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 安装</span></span><br><span class="line">pip install beautifulsoup4</span><br><span class="line"></span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line"></span><br><span class="line">soup = BeautifulSoup(open(<span class="string">"index.html"</span>))</span><br><span class="line">soup = BeautifulSoup(<span class="string">"&lt;html&gt;data&lt;/html&gt;"</span>)</span><br><span class="line">soup = BeautifulSoup(r.text)</span><br><span class="line"></span><br><span class="line"><span class="meta"># 找到所有div</span></span><br><span class="line">soup.find_all(<span class="string">"div"</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta"># Tab属性</span></span><br><span class="line">tab.attrs</span><br><span class="line"></span><br><span class="line"><span class="meta"># div 类名叫certified-c</span></span><br><span class="line">soup.findAll(<span class="string">"div"</span>,<span class="string">"certified-c"</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta"># 标签属的id属性为lblStartPlaceAB的文字</span></span><br><span class="line">soup.find(attrs=&#123;<span class="string">"id"</span>: <span class="string">"lblStartPlaceAB"</span>&#125;).<span class="keyword">string</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># div类名为div-s的div</span></span><br><span class="line">soup.find(<span class="string">"div"</span>,<span class="string">"div-s"</span>).div</span><br><span class="line"></span><br><span class="line"><span class="meta"># 标签style属性为color:Black的</span></span><br><span class="line">soup.find_all(attrs=&#123;<span class="string">"style"</span>: <span class="string">"color:Black"</span>&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="Mkdocs-amp-amp-Mkdocstrings——-生成Python项目API文档"><a href="#Mkdocs-amp-amp-Mkdocstrings——-生成Python项目API文档" class="headerlink" title="Mkdocs &amp;&amp; Mkdocstrings—— 生成Python项目API文档"></a>Mkdocs &amp;&amp; Mkdocstrings—— 生成Python项目API文档</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Install </span></span><br><span class="line">pip <span class="keyword">install</span> mkdocs</span><br><span class="line">pip <span class="keyword">install</span> mkdocstrings</span><br><span class="line">pip <span class="keyword">install</span> mkdocstrings-python</span><br><span class="line"></span><br><span class="line"><span class="comment"># Test install</span></span><br><span class="line">mkdocs <span class="keyword">help</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Start</span></span><br><span class="line">$ mkdocs <span class="keyword">new</span> my-<span class="keyword">project</span></span><br><span class="line">$ cd my-<span class="keyword">project</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成文档</span></span><br><span class="line">$ mkdocs <span class="keyword">new</span> <span class="string">"PyDocs"</span></span><br><span class="line"><span class="comment"># 修改配置`mkdocs.yml`</span></span><br><span class="line">site_name: Python Docs</span><br><span class="line">plugins:</span><br><span class="line">  - mkdocstrings</span><br><span class="line">  - <span class="keyword">search</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># MD文档：</span></span><br><span class="line">::: 文件夹.脚本名</span><br><span class="line"></span><br><span class="line">最后</span><br><span class="line">$ mkdocs <span class="keyword">build</span></span><br></pre></td></tr></table></figure>
+<h3 id="Pipreqs-——-自动生成requirements-txt"><a href="#Pipreqs-——-自动生成requirements-txt" class="headerlink" title="Pipreqs —— 自动生成requirements.txt"></a>Pipreqs —— 自动生成<code>requirements.txt</code></h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 自动生成Python项目依赖列表</span></span><br><span class="line">pip install pipreqs</span><br><span class="line"></span><br><span class="line">使用：</span><br><span class="line">$ pipreqs /home/project/location</span><br><span class="line">Successfully saved requirements file <span class="keyword">in</span> /home/project/location/requirements.txt</span><br><span class="line"></span><br><span class="line">Usage:</span><br><span class="line">    pipreqs [options] &lt;path&gt;</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">    --use-local           Use ONLY local package <span class="builtin-name">info</span> instead of querying PyPI</span><br><span class="line">    --pypi-server &lt;url&gt;   Use custom PyPi server</span><br><span class="line">    --proxy &lt;url&gt;         Use Proxy, parameter will be passed <span class="keyword">to</span> requests library. You can also just <span class="builtin-name">set</span> the</span><br><span class="line">                          environments parameter <span class="keyword">in</span> your terminal:</span><br><span class="line">                          $ <span class="builtin-name">export</span> <span class="attribute">HTTP_PROXY</span>=<span class="string">"http://10.10.1.10:3128"</span></span><br><span class="line">                          $ <span class="builtin-name">export</span> <span class="attribute">HTTPS_PROXY</span>=<span class="string">"https://10.10.1.10:1080"</span></span><br><span class="line">    --<span class="builtin-name">debug</span>               <span class="builtin-name">Print</span> <span class="builtin-name">debug</span> information</span><br><span class="line">    --ignore &lt;dirs&gt;<span class="built_in">..</span>.    Ignore extra directories</span><br><span class="line">    --encoding &lt;charset&gt;  Use encoding parameter <span class="keyword">for</span> file open</span><br><span class="line">    --savepath &lt;file&gt;     Save the list of requirements <span class="keyword">in</span> the given file</span><br><span class="line">    --<span class="builtin-name">print</span>               Output the list of requirements <span class="keyword">in</span> the standard output</span><br><span class="line">    --force               Overwrite existing requirements.txt</span><br><span class="line">    --diff &lt;file&gt;         Compare modules <span class="keyword">in</span> requirements.txt <span class="keyword">to</span> project imports.</span><br><span class="line">    --clean &lt;file&gt;        Clean up requirements.txt by removing modules that are <span class="keyword">not</span> imported <span class="keyword">in</span> project.</span><br><span class="line">    --no-pin              Omit version of output packages.</span><br></pre></td></tr></table></figure>
+<h3 id="Pyinstaller-——-打包Python项目"><a href="#Pyinstaller-——-打包Python项目" class="headerlink" title="Pyinstaller —— 打包Python项目"></a>Pyinstaller —— 打包Python项目</h3><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打包Python程序</span></span><br><span class="line"><span class="attr">pip3</span> <span class="string">install pyinstaller</span></span><br><span class="line"><span class="comment"># 打包成一个文件</span></span><br><span class="line"><span class="attr">pyinstaller</span> <span class="string">-F xxx.py</span></span><br><span class="line"><span class="comment"># 打包成一个文件夹，-i是图标</span></span><br><span class="line"><span class="attr">pyinstaller</span> <span class="string">xxx.py -i xxx.ico</span></span><br></pre></td></tr></table></figure>
+<h3 id="Requests"><a href="#Requests" class="headerlink" title="Requests"></a>Requests</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span><br><span class="line">pip <span class="keyword">install</span> requests</span><br><span class="line"></span><br><span class="line">来源：https://requests.readthedocs.io/zh_CN/latest/<span class="keyword">user</span>/quickstart.html<span class="comment">#id2</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取网页</span></span><br><span class="line">headers = &#123;<span class="string">'user-agent'</span>: <span class="string">'my-app/0.0.1'</span>&#125;</span><br><span class="line">r = requests.get(<span class="string">'https://api.github.com/events'</span>,headers = headers)</span><br><span class="line"><span class="comment"># 网页源代码</span></span><br><span class="line">r.text</span><br><span class="line"><span class="comment"># 网页编码</span></span><br><span class="line">r.encoding</span><br><span class="line"></span><br><span class="line"><span class="comment"># 二进制相应内容</span></span><br><span class="line">r.content</span><br><span class="line"><span class="comment"># 如果是图片：</span></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> io <span class="keyword">import</span> BytesIO</span><br><span class="line">i = Image.open(BytesIO(r.content))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Json响应数据：</span></span><br><span class="line">r.json()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 原始响应内容</span></span><br><span class="line">r.raw</span><br><span class="line"><span class="comment"># &lt;requests.packages.urllib3.response.HTTPResponse object at 0x101194810&gt;</span></span><br><span class="line">r.raw.read(<span class="number">10</span>)</span><br><span class="line"><span class="comment"># '\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\x03'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存文本流到文件</span></span><br><span class="line"><span class="keyword">with</span> <span class="keyword">open</span>(filename, <span class="string">'wb'</span>) <span class="keyword">as</span> fd:</span><br><span class="line">    <span class="keyword">for</span> <span class="keyword">chunk</span> <span class="keyword">in</span> r.iter_content(chunk_size):</span><br><span class="line">        fd.write(<span class="keyword">chunk</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="Selenium-——-浏览器自动化"><a href="#Selenium-——-浏览器自动化" class="headerlink" title="Selenium —— 浏览器自动化"></a>Selenium —— 浏览器自动化</h3><h4 id="接管已打开的浏览器"><a href="#接管已打开的浏览器" class="headerlink" title="接管已打开的浏览器"></a>接管已打开的浏览器</h4><p>Chromium &amp; Chrome——<a href="https://medium.com/@harith.sankalpa/connect-selenium-driver-to-an-existing-chrome-browser-instance-41435b67affd" target="_blank" rel="noopener">来源</a></p>
+<ul>
+<li>先决条件</li>
+</ul>
+<ol>
+<li>Chrome浏览器-版本63或更高版本</li>
+<li>将Chrome浏览器安装目录添加到Path变量中（如果您使用的是Windows）-尽管这不是必需的，但它是可取的，因为它允许使用终端/命令提示符从任何目录打开chrome浏览器。</li>
+<li>将Chrome浏览器设为默认的网络浏览器（可选）–在我们的情况下，这是一个特殊的先决条件，因为只有在Chrome是默认的网络浏览器并且它是唯一运行的chrome实例时，才能在以远程调试模式打开的Chrome浏览器中打开报告。</li>
+</ol>
+<p>步骤：</p>
+<ol>
+<li>使用以下命令之一，使用终端/命令提示符以远程调试模式打开新的Chrome浏览器实例。</li>
+</ol>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*Ubuntu*/</span></span><br><span class="line">google-chrome <span class="comment">--remote-debugging-port=&lt;remote-port&gt;</span></span><br><span class="line"><span class="comment">/*Windows*/</span></span><br><span class="line">chrome <span class="comment">--remote-debugging-port=&lt;remote-port&gt;</span></span><br><span class="line">/ Mine / </span><br><span class="line">chromium <span class="comment">--remote-debugging-port=9222</span></span><br></pre></td></tr></table></figure>
+<p>在这两个命令中，将<remote-port>替换为当前未用于任何其他应用程序的四位数端口号。<em>—可以将user-data-dir = <dir></em>添加到上述命令的末尾，以使用新的配置文件启动Chrome浏览器。</p>
+<p>2.在您喜欢的IDE中导航到您的测试框架，并设置系统属性（<em>在Java中</em>）<em>webdriver.chrome.driver指向chrome驱动程序。</em></p>
+<p>例如：</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*Ubuntu*/</span></span><br><span class="line"><span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>set<span class="constructor">Property(<span class="string">"webdriver.chrome.driver"</span>, <span class="string">"&lt;path-to-chrome-driver&gt;/chromedriver"</span>)</span>;</span><br><span class="line"><span class="comment">/*Windows*/</span></span><br><span class="line"><span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>set<span class="constructor">Property(<span class="string">"webdriver.chrome.driver"</span>, <span class="string">"&lt;path-to-chrome-driver&gt;/chromedriver.exe"</span>)</span>;</span><br></pre></td></tr></table></figure>
+<p>3.如下初始化Chrome驱动程序。（示例代码以Java编程语言提供）</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ChromeOptions options = <span class="keyword">new</span> <span class="constructor">ChromeOptions()</span>;</span><br><span class="line">options.set<span class="constructor">ExperimentalOption(<span class="string">"debuggerAddress"</span>,<span class="string">"localhost:&lt;remote-port&gt;"</span>)</span>;</span><br><span class="line">ChromeDriver driver = <span class="keyword">new</span> <span class="constructor">ChromeDriver(<span class="params">options</span>)</span>;</span><br></pre></td></tr></table></figure>
+<p>很好。您可以使用刚刚初始化的Chrome驱动程序运行自动化测试。</p>
+<p>在我们的情况下，在打开Chrome浏览器之后并启动Chrome驱动程序之前，我们在Oracle Forms Application中运行了UI测试，并在打开的Chrome浏览器实例中捕获了生成的报告链接。</p>
+<p>测试代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">System.setProperty(<span class="string">"webdriver.chrome.driver"</span>, <span class="string">"D:\\drivers\\chromedriver.exe"</span>);</span><br><span class="line">ChromeOptions options = <span class="keyword">new</span> ChromeOptions();</span><br><span class="line">options.setExperimentalOption(<span class="string">"debuggerAddress"</span>, <span class="string">"127.0.0.1:9222"</span>); <span class="comment">//此处的端口号一定要ChromeDebug模式启动的端口号相同</span></span><br><span class="line"><span class="comment">//否则报错： Exception in thread "main" org.openqa.selenium.WebDriverException: unknown error: cannot connect to chrome at 127.0.0.1:9222</span></span><br><span class="line"><span class="comment">//from chrome not reachable</span></span><br><span class="line"></span><br><span class="line">WebDriver driver = <span class="keyword">new</span> ChromeDriver(options);</span><br><span class="line">System.out.println(driver.getTitle());</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.chrome.options <span class="keyword">import</span> Options</span><br><span class="line"></span><br><span class="line"><span class="comment"># browser = webdriver.Firefox(executable_path='./geckodriver')</span></span><br><span class="line"><span class="comment"># browser = webdriver.Chrome(executable_path='./chromedriver')</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 最大化浏览器</span></span><br><span class="line"><span class="comment"># browser.maximize_window()</span></span><br><span class="line"></span><br><span class="line">chrome_options = Options()</span><br><span class="line">chrome_options.add_experimental_option(<span class="string">"debuggerAddress"</span>, <span class="string">"127.0.0.1:9222"</span>)</span><br><span class="line">chrome_driver = <span class="string">"./chromedriver"</span></span><br><span class="line">driver = webdriver.Chrome(executable_path=chrome_driver, chrome_options=chrome_options)</span><br><span class="line">print(driver.title)</span><br></pre></td></tr></table></figure>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br><span class="line">470</span><br><span class="line">471</span><br><span class="line">472</span><br><span class="line">473</span><br><span class="line">474</span><br><span class="line">475</span><br><span class="line">476</span><br><span class="line">477</span><br><span class="line">478</span><br><span class="line">479</span><br><span class="line">480</span><br><span class="line">481</span><br><span class="line">482</span><br><span class="line">483</span><br><span class="line">484</span><br><span class="line">485</span><br><span class="line">486</span><br><span class="line">487</span><br><span class="line">488</span><br><span class="line">489</span><br><span class="line">490</span><br><span class="line">491</span><br><span class="line">492</span><br><span class="line">493</span><br><span class="line">494</span><br><span class="line">495</span><br><span class="line">496</span><br><span class="line">497</span><br><span class="line">498</span><br><span class="line">499</span><br><span class="line">500</span><br><span class="line">501</span><br><span class="line">502</span><br><span class="line">503</span><br><span class="line">504</span><br><span class="line">505</span><br><span class="line">506</span><br><span class="line">507</span><br><span class="line">508</span><br><span class="line">509</span><br><span class="line">510</span><br><span class="line">511</span><br><span class="line">512</span><br><span class="line">513</span><br><span class="line">514</span><br><span class="line">515</span><br><span class="line">516</span><br><span class="line">517</span><br><span class="line">518</span><br><span class="line">519</span><br><span class="line">520</span><br><span class="line">521</span><br><span class="line">522</span><br><span class="line">523</span><br><span class="line">524</span><br><span class="line">525</span><br><span class="line">526</span><br><span class="line">527</span><br><span class="line">528</span><br><span class="line">529</span><br><span class="line">530</span><br><span class="line">531</span><br><span class="line">532</span><br><span class="line">533</span><br><span class="line">534</span><br><span class="line">535</span><br><span class="line">536</span><br><span class="line">537</span><br><span class="line">538</span><br><span class="line">539</span><br><span class="line">540</span><br><span class="line">541</span><br><span class="line">542</span><br><span class="line">543</span><br><span class="line">544</span><br><span class="line">545</span><br><span class="line">546</span><br><span class="line">547</span><br><span class="line">548</span><br><span class="line">549</span><br><span class="line">550</span><br><span class="line">551</span><br><span class="line">552</span><br><span class="line">553</span><br><span class="line">554</span><br><span class="line">555</span><br><span class="line">556</span><br><span class="line">557</span><br><span class="line">558</span><br><span class="line">559</span><br><span class="line">560</span><br><span class="line">561</span><br><span class="line">562</span><br><span class="line">563</span><br><span class="line">564</span><br><span class="line">565</span><br><span class="line">566</span><br><span class="line">567</span><br><span class="line">568</span><br><span class="line">569</span><br><span class="line">570</span><br><span class="line">571</span><br><span class="line">572</span><br><span class="line">573</span><br><span class="line">574</span><br><span class="line">575</span><br><span class="line">576</span><br><span class="line">577</span><br><span class="line">578</span><br><span class="line">579</span><br><span class="line">580</span><br><span class="line">581</span><br><span class="line">582</span><br><span class="line">583</span><br><span class="line">584</span><br><span class="line">585</span><br><span class="line">586</span><br><span class="line">587</span><br><span class="line">588</span><br><span class="line">589</span><br><span class="line">590</span><br><span class="line">591</span><br><span class="line">592</span><br><span class="line">593</span><br><span class="line">594</span><br><span class="line">595</span><br><span class="line">596</span><br><span class="line">597</span><br><span class="line">598</span><br><span class="line">599</span><br><span class="line">600</span><br><span class="line">601</span><br><span class="line">602</span><br><span class="line">603</span><br><span class="line">604</span><br><span class="line">605</span><br><span class="line">606</span><br><span class="line">607</span><br><span class="line">608</span><br><span class="line">609</span><br><span class="line">610</span><br><span class="line">611</span><br><span class="line">612</span><br><span class="line">613</span><br><span class="line">614</span><br><span class="line">615</span><br><span class="line">616</span><br><span class="line">617</span><br><span class="line">618</span><br><span class="line">619</span><br><span class="line">620</span><br><span class="line">621</span><br><span class="line">622</span><br><span class="line">623</span><br><span class="line">624</span><br><span class="line">625</span><br><span class="line">626</span><br><span class="line">627</span><br><span class="line">628</span><br><span class="line">629</span><br><span class="line">630</span><br><span class="line">631</span><br><span class="line">632</span><br><span class="line">633</span><br><span class="line">634</span><br><span class="line">635</span><br><span class="line">636</span><br><span class="line">637</span><br><span class="line">638</span><br><span class="line">639</span><br><span class="line">640</span><br><span class="line">641</span><br><span class="line">642</span><br><span class="line">643</span><br><span class="line">644</span><br><span class="line">645</span><br><span class="line">646</span><br><span class="line">647</span><br><span class="line">648</span><br><span class="line">649</span><br><span class="line">650</span><br><span class="line">651</span><br><span class="line">652</span><br><span class="line">653</span><br><span class="line">654</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 安装</span></span><br><span class="line">pip install -U selenium</span><br><span class="line"></span><br><span class="line"><span class="meta"># 配置浏览器驱动：</span></span><br><span class="line">Chrome: 	https:<span class="comment">//chromedriver.chromium.org/downloads</span></span><br><span class="line">Edge: 	https:<span class="comment">//developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/</span></span><br><span class="line">Firefox: 	https:<span class="comment">//github.com/mozilla/geckodriver/releases</span></span><br><span class="line">Safari: 	https:<span class="comment">//webkit.org/blog/6900/webdriver-support-in-safari-10/</span></span><br><span class="line"><span class="meta"># 火狐为例：</span></span><br><span class="line">下载geckodriver-v0<span class="number">.28</span><span class="number">.0</span>-linux64.tar.gz后解压，然后：</span><br><span class="line">sudo mv geckodriver /usr/local/bin</span><br><span class="line"><span class="meta"># 或者</span></span><br><span class="line">export PATH=$PATH:/opt/WebDriver/bin &gt;&gt; ~/.profile</span><br><span class="line"></span><br><span class="line"><span class="meta"># e.g. 1</span></span><br><span class="line">from selenium import webdriver</span><br><span class="line"></span><br><span class="line">browser = webdriver.Firefox()</span><br><span class="line">browser.<span class="keyword">get</span>(<span class="string">'https://www.baidu.com'</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta"># e.g.2</span></span><br><span class="line">from selenium import webdriver</span><br><span class="line">from selenium.webdriver.common.by import By</span><br><span class="line">from selenium.webdriver.common.keys import Keys</span><br><span class="line"></span><br><span class="line">browser = webdriver.Firefox()</span><br><span class="line"></span><br><span class="line">browser.<span class="keyword">get</span>(<span class="string">'https://www.baidu.com'</span>)</span><br><span class="line">assert <span class="string">'百度'</span> in browser.title</span><br><span class="line"></span><br><span class="line">elem = browser.find_element(By.NAME, <span class="string">'wd'</span>)  # Find the search box</span><br><span class="line">elem.send_keys(<span class="string">'seleniumhq'</span> + Keys.RETURN)</span><br><span class="line"></span><br><span class="line">browser.quit()</span><br><span class="line"></span><br><span class="line"><span class="meta"># 句段</span></span><br><span class="line"><span class="meta"># 打开网站</span></span><br><span class="line">driver.<span class="keyword">get</span>(<span class="string">"https://selenium.dev"</span>)</span><br><span class="line"><span class="meta"># 获取当前 URL</span></span><br><span class="line">driver.current_url</span><br><span class="line"><span class="meta"># 后退</span></span><br><span class="line">driver.back()</span><br><span class="line"><span class="meta"># 前进</span></span><br><span class="line">driver.forward()</span><br><span class="line"><span class="meta"># 刷新</span></span><br><span class="line">driver.refresh()</span><br><span class="line"><span class="meta"># 获取标题</span></span><br><span class="line">driver.title</span><br><span class="line"><span class="meta"># 每个窗口都有一个唯一的标识符</span></span><br><span class="line">driver.current_window_handle</span><br><span class="line"></span><br><span class="line">----------------------------------------------------------------------------------</span><br><span class="line"><span class="meta"># 切换窗口或标签页</span></span><br><span class="line">from selenium import webdriver</span><br><span class="line">from selenium.webdriver.support.ui import WebDriverWait</span><br><span class="line">from selenium.webdriver.support import expected_conditions as EC</span><br><span class="line"></span><br><span class="line"><span class="meta"># 启动驱动程序</span></span><br><span class="line">with webdriver.Firefox() as driver:</span><br><span class="line">    # 打开网址</span><br><span class="line">    driver.<span class="keyword">get</span>(<span class="string">"https://seleniumhq.github.io"</span>)</span><br><span class="line"></span><br><span class="line">    # 设置等待</span><br><span class="line">    wait = WebDriverWait(driver, <span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">    # 存储原始窗口的 ID</span><br><span class="line">    original_window = driver.current_window_handle</span><br><span class="line"></span><br><span class="line">    # 检查一下，我们还没有打开其他的窗口</span><br><span class="line">    assert len(driver.window_handles) == <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    # 单击在新窗口中打开的链接</span><br><span class="line">    driver.find_element(By.LINK_TEXT, <span class="string">"new window"</span>).click()</span><br><span class="line"></span><br><span class="line">    # 等待新窗口或标签页</span><br><span class="line">    wait.until(EC.number_of_windows_to_be(<span class="number">2</span>))</span><br><span class="line"></span><br><span class="line">    # 循环执行，直到找到一个新的窗口句柄</span><br><span class="line">    <span class="keyword">for</span> window_handle in driver.window_handles:</span><br><span class="line">        <span class="keyword">if</span> window_handle != original_window:</span><br><span class="line">            driver.switch_to.window(window_handle)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">    # 等待新标签页完成加载内容</span><br><span class="line">    wait.until(EC.title_is(<span class="string">"SeleniumHQ Browser Automation"</span>))</span><br><span class="line">----------------------------------------------------------------------------------</span><br><span class="line"><span class="meta"># 创建新窗口(或)新标签页并且切换</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 打开新标签页并切换到新标签页</span></span><br><span class="line">driver.switch_to.new_window(<span class="string">'tab'</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta"># 打开一个新窗口并切换到新窗口</span></span><br><span class="line">driver.switch_to.new_window(<span class="string">'window'</span>)</span><br><span class="line">----------------------------------------------------------------------------------</span><br><span class="line"><span class="meta"># 关闭窗口或标签页</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#关闭标签页或窗口</span></span><br><span class="line">driver.close()</span><br><span class="line"></span><br><span class="line"><span class="meta">#切回到之前的标签页或窗口</span></span><br><span class="line">driver.switch_to.window(original_window)</span><br><span class="line">----------------------------------------------------------------------------------</span><br><span class="line"><span class="meta"># 在会话结束时退出浏览器，当你完成了浏览器会话，你应该调用 quit 退出，而不是 close 关闭</span></span><br><span class="line">driver.quit()</span><br><span class="line"><span class="meta"># Python 的 WebDriver 现在支持 Python 上下文管理器，当使用 with 关键字时，可以在执行结束时自动退出驱动程序。</span></span><br><span class="line">with webdriver.Firefox() as driver:</span><br><span class="line">  # WebDriver 代码…</span><br><span class="line"></span><br><span class="line"><span class="meta"># 在此缩进位置后 WebDriver 会自动退出</span></span><br><span class="line"></span><br><span class="line">----------------------------------------------------------------------------------</span><br><span class="line">----------------------------------------------------------------------------------</span><br><span class="line">Frames and Iframes</span><br><span class="line">框架是一种现在已被弃用的方法，用于从同一域中的多个文档构建站点布局。除非你使用的是 HTML5 之前的 webapp，否则你不太可能与他们合作。内嵌框架允许插入来自完全不同领域的文档，并且仍然经常使用</span><br><span class="line">&lt;div id=<span class="string">"modal"</span>&gt;</span><br><span class="line">  &lt;iframe id=<span class="string">"buttonframe"</span>name=<span class="string">"myframe"</span>src=<span class="string">"https://seleniumhq.github.io"</span>&gt;</span><br><span class="line">   &lt;button&gt;Click here&lt;/button&gt;</span><br><span class="line"> &lt;/iframe&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"><span class="meta"># 这不会工作</span></span><br><span class="line">driver.find_element(By.TAG_NAME, <span class="string">'button'</span>).click()</span><br><span class="line"><span class="meta"># 应该这样：</span></span><br><span class="line"><span class="meta"># 存储网页元素</span></span><br><span class="line">iframe = driver.find_element(By.CSS_SELECTOR, <span class="string">"#modal &gt; iframe"</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta"># 切换到选择的 iframe</span></span><br><span class="line">driver.switch_to.frame(iframe)</span><br><span class="line"></span><br><span class="line"><span class="meta"># 单击按钮</span></span><br><span class="line">driver.find_element(By.TAG_NAME, <span class="string">'button'</span>).click()</span><br><span class="line">----------------------------------------------------------------------------------</span><br><span class="line">使用 name 或 id</span><br><span class="line">如果您的 frame 或 iframe 具有 id 或 name 属性，则可以使用该属性。如果名称或 id 在页面上不是唯一的， 那么将切换到找到的第一个。</span><br><span class="line"><span class="meta"># 通过 id 切换框架</span></span><br><span class="line">driver.switch_to.frame(<span class="string">'buttonframe'</span>)</span><br><span class="line"><span class="meta"># 单击按钮</span></span><br><span class="line">driver.find_element(By.TAG_NAME, <span class="string">'button'</span>).click()</span><br><span class="line"><span class="meta"># 还可以使用frame的索引， 例如可以使用JavaScript中的 window.frames 进行查询.</span></span><br><span class="line"><span class="meta"># 切换到第 2 个框架</span></span><br><span class="line">driver.switch_to.frame(<span class="number">1</span>)</span><br><span class="line"><span class="meta"># 离开框架</span></span><br><span class="line"><span class="meta"># 切回到默认内容</span></span><br><span class="line">driver.switch_to.default_content()</span><br><span class="line">----------------------------------------------------------------------------------</span><br><span class="line">----------------------------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">----------------------------------------------------------------------------------</span><br><span class="line">----------------------------------------------------------------------------------</span><br><span class="line"><span class="meta"># 窗口管理</span></span><br><span class="line">获取浏览器窗口的大小(以像素为单位)</span><br><span class="line"></span><br><span class="line"><span class="meta"># 分别获取每个尺寸</span></span><br><span class="line">width = driver.get_window_size().<span class="keyword">get</span>(<span class="string">"width"</span>)</span><br><span class="line">height = driver.get_window_size().<span class="keyword">get</span>(<span class="string">"height"</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta"># 或者存储尺寸并在以后查询它们</span></span><br><span class="line">size = driver.get_window_size()</span><br><span class="line">width1 = size.<span class="keyword">get</span>(<span class="string">"width"</span>)</span><br><span class="line">height1 = size.<span class="keyword">get</span>(<span class="string">"height"</span>)</span><br><span class="line">----------------------------------------------------------------------------------</span><br><span class="line"><span class="meta"># 设置窗口大小</span></span><br><span class="line">driver.set_window_size(<span class="number">1024</span>, <span class="number">768</span>)</span><br><span class="line"><span class="meta"># 得到窗口的位置</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 分别获取每个尺寸</span></span><br><span class="line">x = driver.get_window_position().<span class="keyword">get</span>(<span class="string">'x'</span>)</span><br><span class="line">y = driver.get_window_position().<span class="keyword">get</span>(<span class="string">'y'</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta"># 或者存储尺寸并在以后查询它们</span></span><br><span class="line">position = driver.get_window_position()</span><br><span class="line">x1 = position.<span class="keyword">get</span>(<span class="string">'x'</span>)</span><br><span class="line">y1 = position.<span class="keyword">get</span>(<span class="string">'y'</span>)</span><br><span class="line">----------------------------------------------------------------------------------</span><br><span class="line"><span class="meta"># 设置窗口位置</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 将窗口移动到主显示器的左上角</span></span><br><span class="line">driver.set_window_position(<span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta"># 最大化窗口</span></span><br><span class="line">driver.maximize_window()</span><br><span class="line"></span><br><span class="line"><span class="meta"># 最小化窗口 </span></span><br><span class="line">driver.minimize_window()</span><br><span class="line"></span><br><span class="line"><span class="meta"># 全屏窗口</span></span><br><span class="line">driver.fullscreen_window()</span><br><span class="line"></span><br><span class="line"><span class="meta"># 屏幕截图</span></span><br><span class="line">from selenium import webdriver</span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line"><span class="meta"># Navigate to url</span></span><br><span class="line">driver.<span class="keyword">get</span>(<span class="string">"http://www.example.com"</span>)</span><br><span class="line"><span class="meta"># Returns and base64 encoded string into image</span></span><br><span class="line">driver.save_screenshot(<span class="string">'./image.png'</span>)</span><br><span class="line">driver.quit()</span><br><span class="line"></span><br><span class="line"><span class="meta"># 元素屏幕截图</span></span><br><span class="line">from selenium import webdriver</span><br><span class="line">from selenium.webdriver.common.by import By</span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line"><span class="meta"># Navigate to url</span></span><br><span class="line">driver.<span class="keyword">get</span>(<span class="string">"http://www.example.com"</span>)</span><br><span class="line">ele = driver.find_element(By.CSS_SELECTOR, <span class="string">'h1'</span>)</span><br><span class="line"><span class="meta"># Returns and base64 encoded string into image</span></span><br><span class="line">ele.screenshot(<span class="string">'./image.png'</span>)</span><br><span class="line">driver.quit()</span><br><span class="line">  </span><br><span class="line"><span class="meta"># Execute Script:截至20210111，Python用不了</span></span><br><span class="line"><span class="meta"># code sample not available please raise a PR </span></span><br><span class="line"></span><br><span class="line">----------------------------------------------------------------------------------</span><br><span class="line">----------------------------------------------------------------------------------</span><br><span class="line"><span class="meta"># 等待</span></span><br><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;meta charset=utf<span class="number">-8</span>&gt;</span><br><span class="line">&lt;title&gt;Race Condition Example&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> initialised = <span class="literal">false</span>;</span><br><span class="line">  window.addEventListener(<span class="string">"load"</span>, function() &#123;</span><br><span class="line">    <span class="keyword">var</span> newElement = document.createElement(<span class="string">"p"</span>);</span><br><span class="line">    newElement.textContent = <span class="string">"Hello from JavaScript!"</span>;</span><br><span class="line">    document.body.appendChild(newElement);</span><br><span class="line">    initialised = <span class="literal">true</span>;</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">driver.navigate(<span class="string">"file:///race_condition.html"</span>)</span><br><span class="line">el = driver.find_element(By.TAG_NAME, <span class="string">"p"</span>)</span><br><span class="line">assert el.text == <span class="string">"Hello from JavaScript!"</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 显示、隐式等待</span></span><br><span class="line">WebDriverWait(driver, timeout=<span class="number">3</span>).until(some_condition)</span><br><span class="line">driver.implicitly_wait(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">## Alerts 警告框</span></span><br><span class="line"><span class="meta"># Click the link to activate the alert</span></span><br><span class="line">driver.find_element(By.LINK_TEXT, <span class="string">"See an example alert"</span>).click()</span><br><span class="line"><span class="meta"># Wait for the alert to be displayed and store it in a variable</span></span><br><span class="line">alert = wait.until(expected_conditions.alert_is_present())</span><br><span class="line"><span class="meta"># Store the alert text in a variable</span></span><br><span class="line">text = alert.text</span><br><span class="line"><span class="meta"># Press the OK button</span></span><br><span class="line">alert.accept()</span><br><span class="line"></span><br><span class="line"><span class="meta">## Confirm 确认框</span></span><br><span class="line"><span class="meta"># Click the link to activate the alert</span></span><br><span class="line">driver.find_element(By.LINK_TEXT, <span class="string">"See a sample confirm"</span>).click()</span><br><span class="line"><span class="meta"># Wait for the alert to be displayed</span></span><br><span class="line">wait.until(expected_conditions.alert_is_present())</span><br><span class="line"><span class="meta"># Store the alert in a variable for reuse</span></span><br><span class="line">alert = driver.switch_to.alert</span><br><span class="line"><span class="meta"># Store the alert text in a variable</span></span><br><span class="line">text = alert.text</span><br><span class="line"><span class="meta"># Press the Cancel button</span></span><br><span class="line">alert.dismiss()</span><br><span class="line">  </span><br><span class="line"><span class="meta">## Prompt 提示框</span></span><br><span class="line"><span class="meta"># Click the link to activate the alert</span></span><br><span class="line">driver.find_element(By.LINK_TEXT, <span class="string">"See a sample prompt"</span>).click()</span><br><span class="line"><span class="meta"># Wait for the alert to be displayed</span></span><br><span class="line">wait.until(expected_conditions.alert_is_present())</span><br><span class="line"><span class="meta"># Store the alert in a variable for reuse</span></span><br><span class="line">alert = Alert(driver)</span><br><span class="line"><span class="meta"># Type your message</span></span><br><span class="line">alert.send_keys(<span class="string">"Selenium"</span>)</span><br><span class="line"><span class="meta"># Press the OK button</span></span><br><span class="line">alert.accept()</span><br><span class="line"></span><br><span class="line"><span class="meta">## Http 代理</span></span><br><span class="line">from selenium import webdriver</span><br><span class="line">PROXY = <span class="string">"&lt;HOST:PORT&gt;"</span></span><br><span class="line">webdriver.DesiredCapabilities.FIREFOX[<span class="string">'proxy'</span>] = &#123;</span><br><span class="line">    <span class="string">"httpProxy"</span>: PROXY,</span><br><span class="line">    <span class="string">"ftpProxy"</span>: PROXY,</span><br><span class="line">    <span class="string">"sslProxy"</span>: PROXY,</span><br><span class="line">    <span class="string">"proxyType"</span>: <span class="string">"MANUAL"</span>,</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">with webdriver.Firefox() as driver:</span><br><span class="line">    # Open URL</span><br><span class="line">    driver.<span class="keyword">get</span>(<span class="string">"https://selenium.dev"</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">## 网络元素</span></span><br><span class="line"></span><br><span class="line">from selenium import webdriver</span><br><span class="line">from selenium.webdriver.common.by import By</span><br><span class="line">driver = webdriver.Firefox()</span><br><span class="line">driver.<span class="keyword">get</span>(<span class="string">"http://www.google.com"</span>)</span><br><span class="line"><span class="meta"># Get search box element from webElement 'q' using Find Element</span></span><br><span class="line">search_box = driver.find_element(By.NAME, <span class="string">"q"</span>)</span><br><span class="line">search_box.send_keys(<span class="string">"webdriver"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Find Elements 与<span class="string">"Find Element"</span>相似, 但返回的是匹配WebElement列表. 要使用列表中的特定WebElement, 您需要遍历元素列表以对选定元素执行操作.</span><br><span class="line">from selenium import webdriver</span><br><span class="line">from selenium.webdriver.common.by import By</span><br><span class="line">driver = webdriver.Firefox()</span><br><span class="line"><span class="meta"># Navigate to Url</span></span><br><span class="line">driver.<span class="keyword">get</span>(<span class="string">"https://www.example.com"</span>)</span><br><span class="line"><span class="meta"># Get all the elements available with tag name 'p'</span></span><br><span class="line">elements = driver.find_elements(By.TAG_NAME, <span class="string">'p'</span>)</span><br><span class="line"><span class="keyword">for</span> e in elements:</span><br><span class="line">    print(e.text)</span><br><span class="line">    </span><br><span class="line">Find Element From Element 此方法用于在父元素的上下文中查找子元素. 为此, 父WebElement与<span class="string">"findElement"</span>链接并访问子元素.</span><br><span class="line">from selenium import webdriver</span><br><span class="line">from selenium.webdriver.common.by import By</span><br><span class="line">driver = webdriver.Firefox()</span><br><span class="line">driver.<span class="keyword">get</span>(<span class="string">"http://www.google.com"</span>)</span><br><span class="line">search_form = driver.find_element(By.TAG_NAME, <span class="string">"form"</span>)</span><br><span class="line">search_box = search_form.find_element(By.NAME, <span class="string">"q"</span>)</span><br><span class="line">search_box.send_keys(<span class="string">"webdriver"</span>)</span><br><span class="line"></span><br><span class="line">Find Elements From Element 此方法用于在父元素的上下文中查找匹配子WebElement的列表. 为此, 父WebElement与<span class="string">"findElements"</span>链接并访问子元素.</span><br><span class="line">from selenium import webdriver</span><br><span class="line">from selenium.webdriver.common.by import By</span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line">driver.<span class="keyword">get</span>(<span class="string">"https://www.example.com"</span>)</span><br><span class="line"><span class="meta"># Get element with tag name 'div'</span></span><br><span class="line">element = driver.find_element(By.TAG_NAME, <span class="string">'div'</span>)</span><br><span class="line"><span class="meta"># Get all the elements available with tag name 'p'</span></span><br><span class="line">elements = element.find_elements(By.TAG_NAME, <span class="string">'p'</span>)</span><br><span class="line"><span class="keyword">for</span> e in elements:</span><br><span class="line">    print(e.text)</span><br><span class="line"></span><br><span class="line">Get Active Element 此方法用于追溯或查找当前页面上下文中具有焦点的DOM元素.</span><br><span class="line">  from selenium import webdriver</span><br><span class="line">  from selenium.webdriver.common.by import By</span><br><span class="line">  driver = webdriver.Chrome()</span><br><span class="line">  driver.<span class="keyword">get</span>(<span class="string">"https://www.google.com"</span>)</span><br><span class="line">  driver.find_element(By.CSS_SELECTOR, <span class="string">'[name="q"]'</span>).send_keys(<span class="string">"webElement"</span>)</span><br><span class="line">  # Get attribute of current active element</span><br><span class="line">  attr = driver.switch_to.active_element.get_attribute(<span class="string">"title"</span>)</span><br><span class="line">  print(attr)</span><br><span class="line"></span><br><span class="line">Is Element Enabled 此方法用于检查网页上连接的元素是否被启用或禁用. 返回一个布尔值, 如果在当前浏览上下文中启用了连接的元素, 则返回True； 否则返回<span class="literal">false</span> .</span><br><span class="line"><span class="meta"># Navigate to url</span></span><br><span class="line">driver.<span class="keyword">get</span>(<span class="string">"http://www.google.com"</span>)</span><br><span class="line"><span class="meta"># Returns true if element is enabled else returns false</span></span><br><span class="line">value = driver.find_element(By.NAME, <span class="string">'btnK'</span>).is_enabled()</span><br><span class="line"></span><br><span class="line">Is Element Selected 此方法确定是否 已选择 引用的元素. 此方法广泛用于复选框, 单选按钮, 输入元素和选项元素.</span><br><span class="line">返回一个布尔值, 如果在当前浏览上下文中 已选择 引用的元素, 则返回 True, 否则返回 False.</span><br><span class="line"><span class="meta"># Navigate to url</span></span><br><span class="line">driver.<span class="keyword">get</span>(<span class="string">"https://the-internet.herokuapp.com/checkboxes"</span>)</span><br><span class="line"><span class="meta"># Returns true if element is checked else returns false</span></span><br><span class="line">value = driver.find_element(By.CSS_SELECTOR, <span class="string">"input[type='checkbox']:first-of-type"</span>).is_selected()</span><br><span class="line"></span><br><span class="line">Get Element TagName 此方法用于获取在当前浏览上下文中 具有焦点的被引用元素的 TagName .</span><br><span class="line"><span class="meta"># Navigate to url</span></span><br><span class="line">driver.<span class="keyword">get</span>(<span class="string">"https://www.example.com"</span>)</span><br><span class="line"><span class="meta"># Returns TagName of the element</span></span><br><span class="line">attr = driver.find_element(By.CSS_SELECTOR, <span class="string">"h1"</span>).tag_name</span><br><span class="line">  </span><br><span class="line">Get Element Rect 用于获取参考元素的尺寸和坐标.</span><br><span class="line"><span class="meta"># Navigate to url</span></span><br><span class="line">driver.<span class="keyword">get</span>(<span class="string">"https://www.example.com"</span>)</span><br><span class="line"><span class="meta"># Returns height, width, x and y coordinates referenced element</span></span><br><span class="line">res = driver.find_element(By.CSS_SELECTOR, <span class="string">"h1"</span>).rect</span><br><span class="line">  </span><br><span class="line">获取元素CSS值 获取当前浏览上下文中元素的特定计算样式属性的值.</span><br><span class="line"><span class="meta"># Navigate to Url</span></span><br><span class="line">driver.<span class="keyword">get</span>(<span class="string">'https://www.example.com'</span>)</span><br><span class="line"><span class="meta"># Retrieves the computed style property 'color' of linktext</span></span><br><span class="line">cssValue = driver.findElement(By.LINK_TEXT, <span class="string">"More information..."</span>).value_of_css_property(<span class="string">'color'</span>)</span><br><span class="line"></span><br><span class="line">获取元素文本 获取特定元素渲染后的文本.</span><br><span class="line"><span class="meta"># Navigate to url</span></span><br><span class="line">driver.<span class="keyword">get</span>(<span class="string">"https://www.example.com"</span>)</span><br><span class="line"><span class="meta"># Retrieves the text of the element</span></span><br><span class="line">text = driver.find_element(By.CSS_SELECTOR, <span class="string">"h1"</span>).text</span><br><span class="line"></span><br><span class="line"><span class="meta">## Keyboard</span></span><br><span class="line"><span class="meta"># sendKeys</span></span><br><span class="line">from selenium import webdriver</span><br><span class="line">from selenium.webdriver.common.by import By</span><br><span class="line">from selenium.webdriver.common.keys import Keys</span><br><span class="line">driver = webdriver.Firefox()</span><br><span class="line"><span class="meta"># Navigate to url</span></span><br><span class="line">driver.<span class="keyword">get</span>(<span class="string">"http://www.google.com"</span>)</span><br><span class="line"><span class="meta"># Enter "webdriver" text and perform "ENTER" keyboard action</span></span><br><span class="line">driver.find_element(By.NAME, <span class="string">"q"</span>).send_keys(<span class="string">"webdriver"</span> + Keys.ENTER)</span><br><span class="line"></span><br><span class="line"><span class="meta"># keyDown</span></span><br><span class="line">from selenium import webdriver</span><br><span class="line">from selenium.webdriver.common.by import By</span><br><span class="line">from selenium.webdriver.common.keys import Keys</span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line"><span class="meta"># Navigate to url</span></span><br><span class="line">driver.<span class="keyword">get</span>(<span class="string">"http://www.google.com"</span>)</span><br><span class="line"><span class="meta"># Enter "webdriver" text and perform "ENTER" keyboard action</span></span><br><span class="line">driver.find_element(By.NAME, <span class="string">"q"</span>).send_keys(<span class="string">"webdriver"</span> + Keys.ENTER)</span><br><span class="line"><span class="meta"># Perform action ctrl + A (modifier CONTROL + Alphabet A) to select the page</span></span><br><span class="line">webdriver.ActionChains(driver).key_down(Keys.CONTROL).send_keys(<span class="string">"a"</span>).perform()</span><br><span class="line"></span><br><span class="line"><span class="meta"># keyUp</span></span><br><span class="line">from selenium import webdriver</span><br><span class="line">from selenium.webdriver.common.by import By</span><br><span class="line">from selenium.webdriver.common.keys import Keys</span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line"><span class="meta"># Navigate to url</span></span><br><span class="line">driver.<span class="keyword">get</span>(<span class="string">"http://www.google.com"</span>)</span><br><span class="line"><span class="meta"># Store google search box WebElement</span></span><br><span class="line">search = driver.find_element(By.NAME, <span class="string">"q"</span>)</span><br><span class="line">action = webdriver.ActionChains(driver)</span><br><span class="line"><span class="meta"># Enters text "qwerty" with keyDown SHIFT key and after keyUp SHIFT key (QWERTYqwerty)</span></span><br><span class="line">action.key_down(Keys.SHIFT).send_keys_to_element(search, <span class="string">"qwerty"</span>).key_up(Keys.SHIFT).send_keys(<span class="string">"qwerty"</span>).perform()</span><br><span class="line"></span><br><span class="line"><span class="meta"># clear</span></span><br><span class="line">from selenium import webdriver</span><br><span class="line">from selenium.webdriver.common.by import By</span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line"><span class="meta"># Navigate to url</span></span><br><span class="line">driver.<span class="keyword">get</span>(<span class="string">"http://www.google.com"</span>)</span><br><span class="line"><span class="meta"># Store 'SearchInput' element</span></span><br><span class="line">SearchInput = driver.find_element(By.NAME, <span class="string">"q"</span>)</span><br><span class="line">SearchInput.send_keys(<span class="string">"selenium"</span>)</span><br><span class="line"><span class="meta"># Clears the entered text</span></span><br><span class="line">SearchInput.clear()</span><br><span class="line"></span><br><span class="line">==================================================================================</span><br><span class="line">在测试中, 您偶尔会需要验证某事物的颜色；问题是网络上的颜色定义不是个常量. 如果有一种简单的方法可以比较颜色的十六进制与RGB呈现, 或者颜色的RGBA与HSLA呈现, 岂不美哉?</span><br><span class="line">from selenium.webdriver.support.color import Color</span><br><span class="line"></span><br><span class="line">您现在可以开始创建颜色对象. 每个颜色对象都需要使用您颜色的字符串定义来创建. 支持的颜色定义如下:</span><br><span class="line">HEX_COLOUR = Color.from_string(<span class="string">'#2F7ED8'</span>)</span><br><span class="line">RGB_COLOUR = Color.from_string(<span class="string">'rgb(255, 255, 255)'</span>)</span><br><span class="line">RGB_COLOUR = Color.from_string(<span class="string">'rgb(40%, 20%, 40%)'</span>)</span><br><span class="line">RGBA_COLOUR = Color.from_string(<span class="string">'rgba(255, 255, 255, 0.5)'</span>)</span><br><span class="line">RGBA_COLOUR = Color.from_string(<span class="string">'rgba(40%, 20%, 40%, 0.5)'</span>)</span><br><span class="line">HSL_COLOUR = Color.from_string(<span class="string">'hsl(100, 0%, 50%)'</span>)</span><br><span class="line">HSLA_COLOUR = Color.from_string(<span class="string">'hsla(100, 0%, 50%, 0.5)'</span>)</span><br><span class="line"></span><br><span class="line">Color类还支持在以下网址中指定的所有基本颜色定义 http:<span class="comment">//www.w3.org/TR/css3-color/#html4.</span></span><br><span class="line"><span class="keyword">private</span> final Color BLACK = Color.fromString(<span class="string">"black"</span>);</span><br><span class="line"><span class="keyword">private</span> final Color CHOCOLATE = Color.fromString(<span class="string">"chocolate"</span>);</span><br><span class="line"><span class="keyword">private</span> final Color HOTPINK = Color.fromString(<span class="string">"hotpink"</span>);</span><br><span class="line"></span><br><span class="line">如果元素上未设置颜色, 则有时浏览器会返回“透明”的颜色值. Color类也支持此功能:</span><br><span class="line">TRANSPARENT = Color.from_string(<span class="string">'transparent'</span>)</span><br><span class="line"></span><br><span class="line">现在, 您可以安全地查询元素以获取其颜色/背景色, 任何响应都将被正确解析并转换为有效的Color对象:</span><br><span class="line">login_button_colour = Color.from_string(driver.find_element(By.ID,<span class="string">'login'</span>).value_of_css_property(<span class="string">'color'</span>))</span><br><span class="line">login_button_background_colour = Color.from_string(driver.find_element(By.ID,<span class="string">'login'</span>).value_of_css_property(<span class="string">'background-color'</span>))</span><br><span class="line">然后, 您可以直接比较颜色对象:</span><br><span class="line">assert login_button_background_colour == HOTPINK</span><br><span class="line"></span><br><span class="line"><span class="meta">## 同选择元素一起工作</span></span><br><span class="line">选择元素可能需要大量样板代码才能自动化. 为了减少这种情况并使您的测试更干净, 在Selenium的support包中有一个 Select 类. 要使用它，您将需要以下导入语句:</span><br><span class="line">from selenium.webdriver.support.select import Select</span><br><span class="line">然后，您能够参考 &lt;select&gt; 元素，基于WebElement创建一个Select对象。</span><br><span class="line">select_element = driver.find_element(By.ID,<span class="string">'selectElementID'</span>)</span><br><span class="line">select_object = Select(select_element)</span><br><span class="line">Select对象现在将为您提供一系列命令，使您可以与 &lt;select&gt; 元素进行交互. 首先，有多种方法可以从 &lt;select&gt; 元素中选择一个选项.</span><br><span class="line">&lt;select&gt;</span><br><span class="line"> &lt;option value=value1&gt;Bread&lt;/option&gt;</span><br><span class="line"> &lt;option value=value2 selected&gt;Milk&lt;/option&gt;</span><br><span class="line"> &lt;option value=value3&gt;Cheese&lt;/option&gt;</span><br><span class="line">&lt;/select&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta"># Select an &lt;option&gt; based upon the &lt;select&gt; element's internal index</span></span><br><span class="line">select_object.select_by_index(<span class="number">1</span>)</span><br><span class="line"><span class="meta"># Select an &lt;option&gt; based upon its value attribute</span></span><br><span class="line">select_object.select_by_value(<span class="string">'value1'</span>)</span><br><span class="line"><span class="meta"># Select an &lt;option&gt; based upon its text</span></span><br><span class="line">select_object.select_by_visible_text(<span class="string">'Bread'</span>)</span><br><span class="line">然后，您可以检视所有被选择的选项:</span><br><span class="line"><span class="meta"># Return a list[WebElement] of options that have been selected</span></span><br><span class="line">all_selected_options = select_object.all_selected_options</span><br><span class="line"><span class="meta"># Return a WebElement referencing the first selection option found by walking down the DOM</span></span><br><span class="line">first_selected_option = select_object.first_selected_option</span><br><span class="line"></span><br><span class="line">或者您可能只对 &lt;select&gt; 元素包含哪些 &lt;option&gt; 元素感兴趣:</span><br><span class="line"><span class="meta"># Return a list[WebElement] of options that the &amp;lt;select&amp;gt; element contains</span></span><br><span class="line">all_available_options = select_object.options</span><br><span class="line">如果要取消选择任何元素，现在有四个选项:</span><br><span class="line"><span class="meta"># Deselect an &lt;option&gt; based upon the &lt;select&gt; element's internal index</span></span><br><span class="line">select_object.deselect_by_index(<span class="number">1</span>)</span><br><span class="line"><span class="meta"># Deselect an &lt;option&gt; based upon its value attribute</span></span><br><span class="line">select_object.deselect_by_value(<span class="string">'value1'</span>)</span><br><span class="line"><span class="meta"># Deselect an &lt;option&gt; based upon its text</span></span><br><span class="line">select_object.deselect_by_visible_text(<span class="string">'Bread'</span>)</span><br><span class="line"><span class="meta"># Deselect all selected &lt;option&gt; elements</span></span><br><span class="line">select_object.deselect_all()</span><br><span class="line">最后，一些 &lt;select&gt; 元素允许您选择多个选项. 您可以通过使用以下命令确定您的 &lt;select&gt; 元素是否允许多选:</span><br><span class="line">does_this_allow_multiple_selections = select_object.is_multiple</span><br><span class="line"></span><br><span class="line"><span class="meta">## 鼠标动作详细信息</span></span><br><span class="line">Mouse表示鼠标事件. 鼠标操作是通过使用底层接口执行的, 其允许我们向Web浏览器提供虚拟化的设备输入操作.</span><br><span class="line"></span><br><span class="line">clickAndHold 它将移动到该元素，然后在给定元素的中间单击(不释放).</span><br><span class="line">from selenium import webdriver</span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line"><span class="meta"># Navigate to url</span></span><br><span class="line">driver.<span class="keyword">get</span>(<span class="string">"http://www.google.com"</span>)</span><br><span class="line"><span class="meta"># Store 'google search' button web element</span></span><br><span class="line">searchBtn = driver.find_element(By.LINK_TEXT, <span class="string">"Sign in"</span>)</span><br><span class="line"><span class="meta"># Perform click-and-hold action on the element</span></span><br><span class="line">webdriver.ActionChains(driver).click_and_hold(searchBtn).perform()</span><br><span class="line"></span><br><span class="line">contextClick</span><br><span class="line">from selenium import webdriver</span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line"><span class="meta"># Navigate to url</span></span><br><span class="line">driver.<span class="keyword">get</span>(<span class="string">"http://www.google.com"</span>)</span><br><span class="line"><span class="meta"># Store 'google search' button web element</span></span><br><span class="line">searchBtn = driver.find_element(By.LINK_TEXT, <span class="string">"Sign in"</span>)</span><br><span class="line"><span class="meta"># Perform context-click action on the element</span></span><br><span class="line">webdriver.ActionChains(driver).context_click(searchBtn).perform()</span><br><span class="line"></span><br><span class="line">doubleClick</span><br><span class="line">from selenium import webdriver</span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line"><span class="meta"># Navigate to url</span></span><br><span class="line">driver.<span class="keyword">get</span>(<span class="string">"http://www.google.com"</span>)</span><br><span class="line"><span class="meta"># Store 'google search' button web element</span></span><br><span class="line">searchBtn = driver.find_element(By.LINK_TEXT, <span class="string">"Sign in"</span>)</span><br><span class="line"><span class="meta"># Perform double-click action on the element</span></span><br><span class="line">webdriver.ActionChains(driver).double_click(searchBtn).perform()</span><br><span class="line"></span><br><span class="line">moveToElement</span><br><span class="line">from selenium import webdriver</span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line"><span class="meta"># Navigate to url</span></span><br><span class="line">driver.<span class="keyword">get</span>(<span class="string">"http://www.google.com"</span>)</span><br><span class="line"><span class="meta"># Store 'google search' button web element</span></span><br><span class="line">gmailLink = driver.find_element(By.LINK_TEXT, <span class="string">"Gmail"</span>)</span><br><span class="line"><span class="meta"># Performs mouse move action onto the element</span></span><br><span class="line">webdriver.ActionChains(driver).move_to_element(gmailLink).perform()</span><br><span class="line"></span><br><span class="line">moveByOffset: </span><br><span class="line">from selenium import webdriver</span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line"><span class="meta"># Navigate to url</span></span><br><span class="line">driver.<span class="keyword">get</span>(<span class="string">"http://www.google.com"</span>)</span><br><span class="line"><span class="meta"># Store 'google search' button web element</span></span><br><span class="line">gmailLink = driver.find_element(By.LINK_TEXT, <span class="string">"Gmail"</span>)</span><br><span class="line"><span class="meta">#Set x and y offset positions of element</span></span><br><span class="line">xOffset = <span class="number">100</span></span><br><span class="line">yOffset = <span class="number">100</span></span><br><span class="line"><span class="meta"># Performs mouse move action onto the element</span></span><br><span class="line">webdriver.ActionChains(driver).move_by_offset(xOffset,yOffset).perform()</span><br><span class="line"></span><br><span class="line">dragAndDrop</span><br><span class="line">from selenium import webdriver</span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line"><span class="meta"># Navigate to url</span></span><br><span class="line">driver.<span class="keyword">get</span>(<span class="string">"https://crossbrowsertesting.github.io/drag-and-drop"</span>)</span><br><span class="line"><span class="meta"># Store 'box A' as source element</span></span><br><span class="line">sourceEle = driver.find_element(By.ID, <span class="string">"draggable"</span>)</span><br><span class="line"><span class="meta"># Store 'box B' as source element</span></span><br><span class="line">targetEle  = driver.find_element(By.ID, <span class="string">"droppable"</span>)</span><br><span class="line"><span class="meta"># Performs drag and drop action of sourceEle onto the targetEle</span></span><br><span class="line">webdriver.ActionChains(driver).drag_and_drop(sourceEle,targetEle).perform()</span><br><span class="line"></span><br><span class="line">dragAndDropBy</span><br><span class="line">from selenium import webdriver</span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line"><span class="meta"># Navigate to url</span></span><br><span class="line">driver.<span class="keyword">get</span>(<span class="string">"https://crossbrowsertesting.github.io/drag-and-drop"</span>)</span><br><span class="line"><span class="meta"># Store 'box A' as source element</span></span><br><span class="line">sourceEle = driver.find_element(By.ID, <span class="string">"draggable"</span>)</span><br><span class="line"><span class="meta"># Store 'box B' as source element</span></span><br><span class="line">targetEle  = driver.find_element(By.ID, <span class="string">"droppable"</span>)</span><br><span class="line">targetEleXOffset = targetEle.location.<span class="keyword">get</span>(<span class="string">"x"</span>)</span><br><span class="line">targetEleYOffset = targetEle.location.<span class="keyword">get</span>(<span class="string">"y"</span>)</span><br><span class="line"><span class="meta"># Performs dragAndDropBy onto the target element offset position</span></span><br><span class="line">webdriver.ActionChains(driver).drag_and_drop_by_offset(sourceEle, targetEleXOffset, targetEleYOffset).perform()</span><br><span class="line"></span><br><span class="line">release</span><br><span class="line">from selenium import webdriver</span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line"><span class="meta"># Navigate to url</span></span><br><span class="line">driver.<span class="keyword">get</span>(<span class="string">"https://crossbrowsertesting.github.io/drag-and-drop"</span>)</span><br><span class="line"><span class="meta"># Store 'box A' as source element</span></span><br><span class="line">sourceEle = driver.find_element(By.ID, <span class="string">"draggable"</span>)</span><br><span class="line"><span class="meta"># Store 'box B' as source element</span></span><br><span class="line">targetEle  = driver.find_element(By.ID, <span class="string">"droppable"</span>)</span><br><span class="line"><span class="meta"># Performs dragAndDropBy onto the target element offset position</span></span><br><span class="line">webdriver.ActionChains(driver).click_and_hold(sourceEle).move_to_element(targetEle).perform()</span><br><span class="line"><span class="meta">#Performs release event</span></span><br><span class="line">webdriver.ActionChains(driver).release().perform()</span><br><span class="line"></span><br><span class="line"><span class="meta">## 同cookies一起工作</span></span><br><span class="line">添加 Cookie</span><br><span class="line">这个方法常常用于将cookie添加到当前访问的上下文中. 添加Cookie仅接受一组已定义的可序列化JSON对象. 这里 是一个链接, 用于描述可接受的JSON键值的列表</span><br><span class="line">首先, 您需要位于有效Cookie的域上. 如果您在开始与网站进行交互之前尝试预设cookie, 并且您的首页很大或需要一段时间才能加载完毕, 则可以选择在网站上找到一个较小的页面 (通常<span class="number">404</span>页很小, 例如 http:<span class="comment">//example.com/some404page)</span></span><br><span class="line"></span><br><span class="line">from selenium import webdriver</span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line">driver.<span class="keyword">get</span>(<span class="string">"http://www.example.com"</span>)</span><br><span class="line"><span class="meta"># Adds the cookie into current browser context</span></span><br><span class="line">driver.add_cookie(&#123;<span class="string">"name"</span>: <span class="string">"key"</span>, <span class="string">"value"</span>: <span class="string">"value"</span>&#125;)</span><br><span class="line"></span><br><span class="line">获取命名的 Cookie</span><br><span class="line">from selenium import webdriver</span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line"><span class="meta"># Navigate to url</span></span><br><span class="line">driver.<span class="keyword">get</span>(<span class="string">"http://www.example.com"</span>)</span><br><span class="line"><span class="meta"># Adds the cookie into current browser context</span></span><br><span class="line">driver.add_cookie(&#123;<span class="string">"name"</span>: <span class="string">"foo"</span>, <span class="string">"value"</span>: <span class="string">"bar"</span>&#125;)</span><br><span class="line"><span class="meta"># Get cookie details with named cookie 'foo'</span></span><br><span class="line">print(driver.get_cookie(<span class="string">"foo"</span>))</span><br><span class="line"></span><br><span class="line">获取全部 Cookies</span><br><span class="line">from selenium import webdriver</span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line"><span class="meta"># Navigate to url</span></span><br><span class="line">driver.<span class="keyword">get</span>(<span class="string">"http://www.example.com"</span>)</span><br><span class="line">driver.add_cookie(&#123;<span class="string">"name"</span>: <span class="string">"test1"</span>, <span class="string">"value"</span>: <span class="string">"cookie1"</span>&#125;)</span><br><span class="line">driver.add_cookie(&#123;<span class="string">"name"</span>: <span class="string">"test2"</span>, <span class="string">"value"</span>: <span class="string">"cookie2"</span>&#125;)</span><br><span class="line"><span class="meta"># Get all available cookies</span></span><br><span class="line">print(driver.get_cookies())</span><br><span class="line"></span><br><span class="line">删除 Cookie</span><br><span class="line">from selenium import webdriver</span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line"><span class="meta"># Navigate to url</span></span><br><span class="line">driver.<span class="keyword">get</span>(<span class="string">"http://www.example.com"</span>)</span><br><span class="line">driver.add_cookie(&#123;<span class="string">"name"</span>: <span class="string">"test1"</span>, <span class="string">"value"</span>: <span class="string">"cookie1"</span>&#125;)</span><br><span class="line">driver.add_cookie(&#123;<span class="string">"name"</span>: <span class="string">"test2"</span>, <span class="string">"value"</span>: <span class="string">"cookie2"</span>&#125;)</span><br><span class="line"><span class="meta"># Delete a cookie with name 'test1'</span></span><br><span class="line">driver.delete_cookie(<span class="string">"test1"</span>)</span><br><span class="line"></span><br><span class="line">删除所有 Cookies </span><br><span class="line">from selenium import webdriver</span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line"><span class="meta"># Navigate to url</span></span><br><span class="line">driver.<span class="keyword">get</span>(<span class="string">"http://www.example.com"</span>)</span><br><span class="line">driver.add_cookie(&#123;<span class="string">"name"</span>: <span class="string">"test1"</span>, <span class="string">"value"</span>: <span class="string">"cookie1"</span>&#125;)</span><br><span class="line">driver.add_cookie(&#123;<span class="string">"name"</span>: <span class="string">"test2"</span>, <span class="string">"value"</span>: <span class="string">"cookie2"</span>&#125;)</span><br><span class="line"><span class="meta">#  Deletes all cookies</span></span><br><span class="line">driver.delete_all_cookies()</span><br><span class="line"></span><br><span class="line">Same-Site Cookie属性 </span><br><span class="line">此属性允许用户引导浏览器控制cookie, 是否与第三方站点发起的请求一起发送. 引入其是为了防止CSRF（跨站请求伪造）攻击.</span><br><span class="line">Same-Site cookie属性接受以下两种参数作为指令</span><br><span class="line">Strict:</span><br><span class="line">当sameSite属性设置为 Strict, cookie不会与来自第三方网站的请求一起发送</span><br><span class="line">Lax:</span><br><span class="line">当您将cookie sameSite属性设置为 Lax, cookie将与第三方网站发起的GET请求一起发送.</span><br><span class="line">注意: 到目前为止, 此功能已在Chrome(<span class="number">80</span>+版本), Firefox(<span class="number">79</span>+版本)中提供, 并适用于Selenium <span class="number">4</span>以及更高版本.</span><br><span class="line">from selenium import webdriver</span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line">driver.<span class="keyword">get</span>(<span class="string">"http://www.example.com"</span>)</span><br><span class="line"><span class="meta"># Adds the cookie into current browser context with sameSite 'Strict' (or) 'Lax'</span></span><br><span class="line">driver.add_cookie(&#123;<span class="string">"name"</span>: <span class="string">"foo"</span>, <span class="string">"value"</span>: <span class="string">"value"</span>, <span class="string">'sameSite'</span>: <span class="string">'Strict'</span>&#125;)</span><br><span class="line">driver.add_cookie(&#123;<span class="string">"name"</span>: <span class="string">"foo1"</span>, <span class="string">"value"</span>: <span class="string">"value"</span>, <span class="string">'sameSite'</span>: <span class="string">'Lax'</span>&#125;)</span><br><span class="line">cookie1 = driver.get_cookie(<span class="string">'foo'</span>)</span><br><span class="line">cookie2 = driver.get_cookie(<span class="string">'foo1'</span>)</span><br><span class="line">print(cookie1)</span><br><span class="line">print(cookie2)</span><br><span class="line">==================================================================================</span><br></pre></td></tr></table></figure>
+<h3 id="XlsxWriter"><a href="#XlsxWriter" class="headerlink" title="XlsxWriter"></a>XlsxWriter</h3><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">来源：https://xlsxwriter.readthedocs.io/<span class="keyword">index</span>.html</span><br><span class="line"># 安装</span><br><span class="line">pip install XlsxWriter</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> xlsxwriter</span><br><span class="line"></span><br><span class="line"># <span class="keyword">Create</span> a workbook <span class="keyword">and</span> <span class="keyword">add</span> a worksheet.</span><br><span class="line">workbook = xlsxwriter.Workbook(<span class="string">'Expenses01.xlsx'</span>)</span><br><span class="line">worksheet = workbook.add_worksheet()</span><br><span class="line"></span><br><span class="line"># <span class="keyword">Start</span> <span class="keyword">from</span> the first cell. <span class="keyword">Rows</span> <span class="keyword">and</span> <span class="keyword">columns</span> are zero indexed.</span><br><span class="line"><span class="keyword">row</span> = <span class="number">0</span></span><br><span class="line">col = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"># Iterate <span class="keyword">over</span> the data <span class="keyword">and</span> <span class="keyword">write</span> it <span class="keyword">out</span> <span class="keyword">row</span> <span class="keyword">by</span> <span class="keyword">row</span>.</span><br><span class="line"><span class="keyword">for</span> item, <span class="keyword">cost</span> <span class="keyword">in</span> (expenses):</span><br><span class="line">    worksheet.<span class="keyword">write</span>(<span class="keyword">row</span>, col,     item)</span><br><span class="line">    worksheet.<span class="keyword">write</span>(<span class="keyword">row</span>, col + <span class="number">1</span>, <span class="keyword">cost</span>)</span><br><span class="line">    <span class="keyword">row</span> += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"># <span class="keyword">Write</span> a total <span class="keyword">using</span> a formula.</span><br><span class="line">worksheet.<span class="keyword">write</span>(<span class="keyword">row</span>, <span class="number">0</span>, <span class="string">'Total'</span>)</span><br><span class="line">worksheet.<span class="keyword">write</span>(<span class="keyword">row</span>, <span class="number">1</span>, <span class="string">'=SUM(B1:B4)'</span>)</span><br><span class="line"></span><br><span class="line"># 添加格式</span><br><span class="line">cell_format2 = workbook.add_format(props)  # <span class="keyword">Set</span> properties at creation.</span><br><span class="line"># 分别添加格式</span><br><span class="line">cell_format = workbook.add_format()</span><br><span class="line">cell_format.set_bold()</span><br><span class="line">cell_format.set_font_color(<span class="string">'red'</span>)</span><br><span class="line"></span><br><span class="line"># <span class="keyword">Add</span> a bold <span class="keyword">format</span> <span class="keyword">to</span> use <span class="keyword">to</span> highlight cells.</span><br><span class="line">bold = workbook.add_format(&#123;<span class="string">'bold'</span>: <span class="number">1</span>&#125;)</span><br><span class="line"></span><br><span class="line"># <span class="keyword">Add</span> a number <span class="keyword">format</span> <span class="keyword">for</span> cells <span class="keyword">with</span> <span class="type">money</span>.</span><br><span class="line">money_format = workbook.add_format(&#123;<span class="string">'num_format'</span>: <span class="string">'$#,##0'</span>&#125;)</span><br><span class="line"></span><br><span class="line"># <span class="keyword">Add</span> an Excel <span class="type">date</span> <span class="keyword">format</span>.</span><br><span class="line">date_format = workbook.add_format(&#123;<span class="string">'num_format'</span>: <span class="string">'mmmm d yyyy'</span>&#125;)</span><br><span class="line"></span><br><span class="line"># Adjust the <span class="keyword">column</span> width.</span><br><span class="line">worksheet.set_column(<span class="number">1</span>, <span class="number">1</span>, <span class="number">15</span>)</span><br><span class="line"></span><br><span class="line"># <span class="keyword">Write</span> <span class="keyword">some</span> data headers.</span><br><span class="line">worksheet.<span class="keyword">write</span>(<span class="string">'A1'</span>, <span class="string">'Item'</span>, bold)</span><br><span class="line">worksheet.<span class="keyword">write</span>(<span class="string">'B1'</span>, <span class="string">'Date'</span>, bold)</span><br><span class="line">worksheet.<span class="keyword">write</span>(<span class="string">'C1'</span>, <span class="string">'Cost'</span>, bold)</span><br><span class="line"></span><br><span class="line"># 写入数字</span><br><span class="line">worksheet.write_number(<span class="string">'M2'</span>,<span class="number">12</span>)</span><br><span class="line"></span><br><span class="line"># 其他方法：</span><br><span class="line">write_string()</span><br><span class="line">write_number()</span><br><span class="line">write_blank()</span><br><span class="line">write_formula()</span><br><span class="line">write_datetime()</span><br><span class="line">write_boolean()</span><br><span class="line">write_url()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">workbook.<span class="keyword">close</span>()</span><br></pre></td></tr></table></figure>
+<h3 id="You-get-——-视频下载"><a href="#You-get-——-视频下载" class="headerlink" title="You-get —— 视频下载"></a>You-get —— 视频下载</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载Bilibili等网站的视频</span></span><br><span class="line">pip3 install you-get</span><br><span class="line">you-<span class="builtin-name">get</span> 【视频url】</span><br></pre></td></tr></table></figure>
+<h2 id="编程类问题"><a href="#编程类问题" class="headerlink" title="编程类问题"></a>编程类问题</h2><h3 id="Python类中定义的列表不唯一"><a href="#Python类中定义的列表不唯一" class="headerlink" title="Python类中定义的列表不唯一"></a>Python类中定义的列表不唯一</h3><p>解决<a href="https://stackoverflow.com/questions/9751554/list-as-a-member-of-a-python-class-why-is-its-contents-being-shared-across-all" target="_blank" rel="noopener">来源</a></p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span>:</span></span><br><span class="line">	id = []</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建多个实例后，发现更改的id列表是同一个</span></span><br><span class="line">解决：添加初始化方法，id改为实例参数</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></span><br><span class="line">		<span class="keyword">self</span>.id = []</span><br></pre></td></tr></table></figure>
+<h3 id="Python时间处理-GTM、UTC"><a href="#Python时间处理-GTM、UTC" class="headerlink" title="Python时间处理(GTM、UTC)"></a>Python时间处理(GTM、UTC)</h3><figure class="highlight cos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">参考：</span><br><span class="line">https:<span class="comment">//www.cnblogs.com/yuanfang0903/p/11357100.html</span></span><br><span class="line">https:<span class="comment">//blog.csdn.net/qq_35462323/article/details/83994563</span></span><br><span class="line">https:<span class="comment">//www.cnblogs.com/strivepy/p/10436213.html</span></span><br><span class="line"></span><br><span class="line">字符串时间转datetime：</span><br><span class="line">t_str = <span class="string">"2022-02-18T18:00:00.000+0000"</span></span><br><span class="line">t_format = '<span class="built_in">%Y</span>-<span class="built_in">%m</span>-<span class="built_in">%dT</span><span class="built_in">%H</span>:<span class="built_in">%M</span>:<span class="built_in">%S</span>.<span class="built_in">%f</span><span class="built_in">%z</span>'</span><br><span class="line">dt = datetime.datetime.strptime(t_str, t_format)</span><br><span class="line"># 转北京时间(加八小时)</span><br><span class="line">bjt = dt + datetime.timedelta(hours=<span class="number">8</span>)</span><br><span class="line"># 转时间戳(不要加八小时)</span><br><span class="line">ts = dt.timestamp()</span><br><span class="line"># 今天日期(不是时间)</span><br><span class="line">date = datetime.date.today()</span><br><span class="line"># 转为字符串</span><br><span class="line">dt_str = dt.strftime('<span class="built_in">%Y</span>-<span class="built_in">%m</span>-<span class="built_in">%d</span> <span class="built_in">%H</span>:<span class="built_in">%M</span>:<span class="built_in">%S</span>')</span><br><span class="line"></span><br><span class="line"># 获取GMT</span><br><span class="line">GMT_FORMAT = '<span class="built_in">%a</span>, <span class="built_in">%d</span> <span class="built_in">%b</span> <span class="built_in">%Y</span> <span class="built_in">%H</span>:<span class="built_in">%M</span>:<span class="built_in">%S</span> GMT'</span><br><span class="line">#输出: Sun, <span class="number">27</span> Mar <span class="number">2022</span> <span class="number">04</span>:<span class="number">44</span>:<span class="number">44</span> GMT</span><br><span class="line">gmt = datetime.datetime.utcnow().strftime(GMT_FORMAT)</span><br><span class="line"></span><br><span class="line">GMT_FORMAT的格式索引:</span><br><span class="line"><span class="built_in">%a</span> 本地的星期缩写</span><br><span class="line"><span class="built_in">%A</span> 本地的星期全称</span><br><span class="line"><span class="built_in">%b</span> 本地的月份缩写</span><br><span class="line"><span class="built_in">%B</span> 本地的月份全称</span><br><span class="line"><span class="built_in">%c</span> 本地的合适的日期和时间表示形式</span><br><span class="line"><span class="built_in">%d</span> 月份中的第几天，类型为decimal number（<span class="number">10</span>进制数字），范围[<span class="number">01</span>,<span class="number">31</span>]</span><br><span class="line"><span class="built_in">%f</span> 微秒，类型为decimal number，范围[<span class="number">0</span>,<span class="number">999999</span>]，Python <span class="number">2.6</span>新增</span><br><span class="line"><span class="built_in">%H</span> 小时（<span class="number">24</span>进制），类型为decimal number，范围[<span class="number">00</span>,<span class="number">23</span>]</span><br><span class="line"><span class="built_in">%I</span> 小时（<span class="number">12</span>进制），类型为decimal number，范围[<span class="number">01</span>,<span class="number">12</span>]</span><br><span class="line"><span class="built_in">%j</span> 一年中的第几天，类型为decimal number，范围[<span class="number">001</span>,<span class="number">366</span>]</span><br><span class="line"><span class="built_in">%m</span> 月份，类型为decimal number，范围[<span class="number">01</span>,<span class="number">12</span>]</span><br><span class="line"><span class="built_in">%M</span> 分钟，类型为decimal number，范围[<span class="number">00</span>,<span class="number">59</span>]</span><br><span class="line"><span class="built_in">%p</span> 本地的上午或下午的表示（AM或PM），只当设置为<span class="built_in">%I</span>（<span class="number">12</span>进制）时才有效</span><br><span class="line"><span class="built_in">%S</span> 秒钟，类型为decimal number，范围[<span class="number">00</span>,<span class="number">61</span>]（<span class="number">60</span>和<span class="number">61</span>是为了处理闰秒）</span><br><span class="line"><span class="built_in">%U</span> 一年中的第几周（以星期日为一周的开始），类型为decimal number，范围[<span class="number">00</span>,<span class="number">53</span>]。在度过新年时，直到一周的全部<span class="number">7</span>天都在该年中时，才计算为第<span class="number">0</span>周。只当指定了年份才有效。</span><br><span class="line"><span class="built_in">%w</span> 星期，类型为decimal number，范围[<span class="number">0</span>,<span class="number">6</span>]，<span class="number">0</span>为星期日</span><br><span class="line"><span class="built_in">%W</span> 一年中的第几周（以星期一为一周的开始），类型为decimal number，范围[<span class="number">00</span>,<span class="number">53</span>]。在度过新年时，直到一周的全部<span class="number">7</span>天都在该年中时，才计算为第<span class="number">0</span>周。只当指定了年份才有效。</span><br><span class="line"><span class="built_in">%x</span> 本地的合适的日期表示形式</span><br><span class="line"><span class="built_in">%X</span> 本地的合适的时间表示形式</span><br><span class="line"><span class="built_in">%y</span> 去掉世纪的年份数，类型为decimal number，范围[<span class="number">00</span>,<span class="number">99</span>]</span><br><span class="line"><span class="built_in">%Y</span> 带有世纪的年份数，类型为decimal number</span><br><span class="line"><span class="built_in">%Z</span> 时区名字（不存在时区时为空）</span><br><span class="line">%% 代表转义的<span class="string">"%"</span>字符</span><br></pre></td></tr></table></figure>
+<h3 id="读取文件的第二个for循环不执行"><a href="#读取文件的第二个for循环不执行" class="headerlink" title="读取文件的第二个for循环不执行"></a>读取文件的第二个for循环不执行</h3><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(FilePath, <span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line">		<span class="comment"># 首先是核算单张检疫证的总数是否超额</span></span><br><span class="line">		cal_num = <span class="number">0</span></span><br><span class="line">		cert_num = <span class="number">0</span></span><br><span class="line">		<span class="keyword">for</span> <span class="built_in">line</span> <span class="keyword">in</span> f:</span><br><span class="line">			print(<span class="built_in">line</span>)</span><br><span class="line">		<span class="comment"># 这个for循环不会执行</span></span><br><span class="line">		<span class="keyword">for</span> <span class="built_in">line</span> <span class="keyword">in</span> f:</span><br><span class="line">			print(<span class="built_in">line</span>)</span><br><span class="line">原因：已经读取到文末，需要返回开头</span><br><span class="line">解决：</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(FilePath, <span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line">		<span class="comment"># 首先是核算单张检疫证的总数是否超额</span></span><br><span class="line">		cal_num = <span class="number">0</span></span><br><span class="line">		cert_num = <span class="number">0</span></span><br><span class="line">		<span class="keyword">for</span> <span class="built_in">line</span> <span class="keyword">in</span> f:</span><br><span class="line">			print(<span class="built_in">line</span>)</span><br><span class="line">		<span class="comment"># 返回开头</span></span><br><span class="line">		f.<span class="built_in">seek</span>(<span class="number">0</span>)</span><br><span class="line">		<span class="keyword">for</span> <span class="built_in">line</span> <span class="keyword">in</span> f:</span><br><span class="line">			print(<span class="built_in">line</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="Python-json-decoder-JSONDecodeError-Unexpected-UTF-8-BOM-decode-using-utf-8-sig"><a href="#Python-json-decoder-JSONDecodeError-Unexpected-UTF-8-BOM-decode-using-utf-8-sig" class="headerlink" title="Python: json.decoder.JSONDecodeError: Unexpected UTF-8 BOM (decode using utf-8-sig)"></a>Python: <code>json.decoder.JSONDecodeError: Unexpected UTF-8 BOM (decode using utf-8-sig)</code></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="comment"># 去掉UTF-8 BOM即可</span></span><br><span class="line"><span class="keyword">if</span> json_string.startswith(<span class="string">u'\ufeff'</span>):</span><br><span class="line">    json_string = json_string.encode(<span class="string">'utf8'</span>)[<span class="number">3</span>:].decode(<span class="string">'utf8'</span>)</span><br><span class="line">json_obj = json.loads(json_string)</span><br></pre></td></tr></table></figure>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/2022/Shell-Notes/" data-toggle="tooltip" data-placement="top" title="Shell Notes">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/2022/Linux-Applications/" data-toggle="tooltip" data-placement="top" title="Linux Applications">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <div class="tip">
+          <p>
+            If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+          </p>
+        </div>
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=Python Notes&body=Hi,I found this website and thought you might like it https://rmshadows.gitee.io/2022/Python-Notes/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!--修改--artalk-->
+<!-- 0.artalk安装代码 -->
+
+<!-- CSS -->
+<link href="https://civiccccc.ltd/artalk/dist/Artalk.css" rel="stylesheet" />
+<link href="https://civiccccc.ltd/artalk/dist/Artalk.css" rel="stylesheet" />
+<!-- JS -->
+<script src="https://civiccccc.ltd/artalk/dist/Artalk.js"></script>
+<!-- Artalk -->
+<div id="Comments"></div>
+<script>
+  Artalk.init({
+    el: '#Comments', // 绑定元素的 Selector
+    pageKey: 'https://rmshadows.gitee.io/2022/Python-Notes/', // 固定链接
+    pageTitle: '关于引入 Artalk 的这档子事', // 页面标题 (留空自动获取)
+    server: 'https://civiccccc.ltd/artalk', // 后端地址
+    site: 'CIVICCCCC 的博客', // 你的站点名
+  })
+</script>
+<!-- artalk安装代码已完成 -->
+
+
+
+<!-- 1. gitalk comment -->
+
+
+
+<!-- 2. gitment comment -->
+
+
+
+<!-- 3. disqus comment -->
+
+
+<!--修改--Livere-->
+
+
+<!--修改--ISSO-->
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <!--div id="toc" class="toc-article" -->
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          
+            <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Python-Notes"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Python Notes</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Windows-7-pip"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">Windows 7 pip</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Python-Package"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">Python Package</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Beautifulsoup4"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">Beautifulsoup4</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Mkdocs-amp-amp-Mkdocstrings——-生成Python项目API文档"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">Mkdocs &amp;&amp; Mkdocstrings—— 生成Python项目API文档</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Pipreqs-——-自动生成requirements-txt"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">Pipreqs —— 自动生成requirements.txt</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Pyinstaller-——-打包Python项目"><span class="toc-nav-number">1.2.4.</span> <span class="toc-nav-text">Pyinstaller —— 打包Python项目</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Requests"><span class="toc-nav-number">1.2.5.</span> <span class="toc-nav-text">Requests</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Selenium-——-浏览器自动化"><span class="toc-nav-number">1.2.6.</span> <span class="toc-nav-text">Selenium —— 浏览器自动化</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#接管已打开的浏览器"><span class="toc-nav-number">1.2.6.1.</span> <span class="toc-nav-text">接管已打开的浏览器</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#XlsxWriter"><span class="toc-nav-number">1.2.7.</span> <span class="toc-nav-text">XlsxWriter</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#You-get-——-视频下载"><span class="toc-nav-number">1.2.8.</span> <span class="toc-nav-text">You-get —— 视频下载</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#编程类问题"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">编程类问题</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Python类中定义的列表不唯一"><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">Python类中定义的列表不唯一</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Python时间处理-GTM、UTC"><span class="toc-nav-number">1.3.2.</span> <span class="toc-nav-text">Python时间处理(GTM、UTC)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#读取文件的第二个for循环不执行"><span class="toc-nav-number">1.3.3.</span> <span class="toc-nav-text">读取文件的第二个for循环不执行</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Python-json-decoder-JSONDecodeError-Unexpected-UTF-8-BOM-decode-using-utf-8-sig"><span class="toc-nav-number">1.3.4.</span> <span class="toc-nav-text">Python: json.decoder.JSONDecodeError: Unexpected UTF-8 BOM (decode using utf-8-sig)</span></a></li></ol></li></ol></li></ol>
+          
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#Python3" title="Python3">Python3</a>
+            
+            <a class="tag" href="/tags/#Python Packages" title="Python Packages">Python Packages</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://civiccccc.ltd" target="_blank">主站</a>
+          </li>
+          
+          <li>
+            <a href="https://github.com/xjx0106" target="_blank">国庆电播小弟</a>
+          </li>
+          
+          <li>
+            <a href="https://github.com/itcast-ying" target="_blank">itcast-ying</a>
+          </li>
+          
+          <li>
+            <a href="https://github.com/cjj19970505" target="_blank">Xeon-J</a>
+          </li>
+          
+          <li>
+            <a href="https://github.com/XeonKHJ" target="_blank">Xeon-H</a>
+          </li>
+          
+          <li>
+            <a href="https://gitee.com/rmshadows" target="_blank">Gitee - Ryan Yim</a>
+          </li>
+          
+          <li>
+            <a href="https://rmshadows.gitee.io/404" target="_blank">404 No Found Page</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+    <!-- Footer (contains ThemeColor、viewer) -->
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+            <li>
+              <a href="/feed.xml">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/rmshadows">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+            <li>
+              <a target="_blank" href="https://www.instagram.com/just_aaaa_r">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+            <li>
+              <a target="_blank" href="https://www.zhihu.com/people/rmshadows">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa  fa-stack-1x fa-inverse">知</i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Ryan Yim
+          2025
+          <br>
+          Theme by
+          <a href="http://beantech.org" target="_blank" rel="noopener">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a href="https://v-vincen.life/" target="_blank" rel="noopener">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+<!-- jQuery -->
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="/js/jquery.js"></script> -->
+<!-- <script type="text/javascript" src="//cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
+<!-- Bootstrap Core JavaScript -->
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<!--2022-03-28 添加了随机丝带特效-->
+
+  <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+
+<script type="text/javascript" src="/js/hux-blog.min.js"></script>
+
+<!-- catalog -->
+<script type="text/javascript" async="true" src="/js/catalog.js?v=1.0.0"></script>
+
+<!-- totop(rocket) -->
+<script type="text/javascript" async="true" src="/js/totop.js?v=1.0.0"></script>
+
+<!-- Busuanzi JavaScript -->
+
+  <!-- <script type="text/javascript" async="true" src="/js/busuanzi.pure.mini.js"></script> -->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+  <!-- Scroll start -->
+  <script type="text/javascript" src="/js/scroll.js"></script>
+  <!-- Scroll end -->
+
+
+
+  <!-- ThemeColor start -->
+  <script type="text/javascript" src="/js/themecolor.js"></script>
+  <!-- ThemeColor end -->
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  <script type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+  <script type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){ hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if($('#tag_cloud').length !== 0){ async("https://rmshadows.gitee.io/js/jquery.tagcloud.js",function(){ $.fn.tagcloud.defaults = { //size: {start: 1, end: 1, unit: 'em'}, color: {start:
+'#bbbbee', end: '#0085a1'}, }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+    
+    <!---自定义的代码 所有页面-->
+    
+        <script type="text/javascript" src="/js/on_mouse_clicked/emotions.js"></script>
+    
+
+    <!-- Search -->
+    
+    <div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/ziploader.js"></script>
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+    
+
+    <!-- Image to hack wechat -->
+    <!-- <img src="https://rmshadows.gitee.io/img/icon_wechat.png" width="0" height="0" /> -->
+    <!-- Migrate from head to bottom, no longer block render and still work -->
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+
+</html>

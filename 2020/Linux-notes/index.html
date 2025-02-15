@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+
+  <!-- Baidu Tongji -->
+  
+
+  <!-- Baidu Push -->
+  
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc" />
+  <meta name="baidu-site-verification" content="PpzM9WxOJU" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="This is CIVICCCCC&#39;s blog..." />
+  <meta name="keyword" content="rmshadows,civiccccc,blog,Blog" />
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg" />
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+  <!-- Bootstrap Core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/beantech.min.css" />
+
+  <!-- Pygments Highlight CSS -->
+  
+<link rel="stylesheet" href="../../css/highlight.css">
+<link rel="stylesheet" href="../../css/widget.css">
+<link rel="stylesheet" href="../../css/rocket.css">
+<link rel="stylesheet" href="../../css/signature.css">
+<link rel="stylesheet" href="../../css/catalog.css">
+<link rel="stylesheet" href="../../css/livemylife.css">
+
+
+  
+  <!-- wave start -->
+  <link rel="stylesheet" href="/css/wave.css" />
+  <!-- wave end -->
+  
+
+  
+  <!-- top start (article top hot config) -->
+  <link rel="stylesheet" href="/css/top.css" />
+  <!-- top end -->
+  
+
+  
+  <!-- ThemeColor start -->
+  <link rel="stylesheet" href="/css/scroll.css" />
+  <!-- ThemeColor end -->
+  
+
+  
+  <!-- viewer start (Picture preview) -->
+  <link rel="stylesheet" href="/css/viewer.min.css" />
+  <!-- viewer end -->
+  
+
+  
+  <!-- Search start -->
+  <link rel="stylesheet" href="/css/search.css" />
+  <!-- Search end -->
+  
+
+  
+  <!-- ThemeColor start -->
+  <link rel="stylesheet" href="/css/themecolor.css" />
+  <!-- ThemeColor end -->
+  
+
+  
+
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+    href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://rmshadows.gitee.io/2020/Linux-notes/">
+  <title>
+    
+    Linux-notes - RYAN | be yourself
+    
+  </title>
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="atom.xml" title="Hello ~(○｀ 3′○)~ I'm Ryan Yim" type="application/atom+xml">
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+
+<body ontouchstart="" class="body--home">
+    <!-- ThemeColor -->
+    
+    <!-- ThemeColor -->
+<!-- <div class="toggle" onclick="document.body.classList.toggle('body--dark')">Switch Color</div> -->
+
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons bright-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+
+    
+
+    <!-- Navigation (contains search)-->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Hello ~(○｀ 3′○)~ I&#39;m Ryan Yim</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">Home</a>
+          </li>
+
+          
+
+          
+          
+
+          
+          <li>
+            <a href="/about/">About</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a href="/archive/">Archives</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a href="/categories/">Categories</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a href="/tags/">Tags</a>
+          </li>
+          
+          
+
+          
+          <li><a class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+
+<script>
+  // Drop Bootstarp low-performance Navbar
+  // Use customize navbar with high-quality material design animation
+  // in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+    <!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+    <!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    header.intro-header {
+       /*post*/
+        background-image: url('https://rmshadows.gitee.io//img/header_img/designated/archlinux.jpeg');
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/rmshadows.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#Daily" title="Daily">Daily</a>
+              
+              <a class="tag" href="/tags/#Linux Command Guiding" title="Linux Command Guiding">Linux Command Guiding</a>
+              
+            </div>
+            <h1>Linux-notes</h1>
+            <h2 class="subheading">关于Linux的命令指南、学习笔记。</h2>
+            <span class="meta">
+              Posted by Ryan Yim on
+              2020-09-29
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">27</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">6.6k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+    <!-- Main Content (Post contains
+    Pager、
+    tip、
+    socialshare、
+    gitalk、gitment、disqus-comment、
+    Catalog、
+    Sidebar、
+    Featured-Tags、
+    Friends Blog、
+    anchorjs、
+    ) -->
+    <!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <p><img src="dont-sigkill.jpeg" alt="dont-sigkill"></p>
+<h2 id="Linux-Terminal"><a href="#Linux-Terminal" class="headerlink" title="Linux Terminal"></a>Linux Terminal</h2><h3 id="cat——查看文本文档"><a href="#cat——查看文本文档" class="headerlink" title="cat——查看文本文档"></a>cat——查看文本文档</h3><blockquote>
+<p>用于查看文本文档，concatenate。</p>
+</blockquote>
+<p><strong>参数说明：</strong></p>
+<p><strong>-n 或 —number</strong>：由 1 开始对所有输出的<strong>行数</strong>编号。</p>
+<p><strong>-b 或 —number-nonblank</strong>：和 -n 相似，只不过对于<strong>空白行不编号</strong>。</p>
+<p><strong>-s 或 —squeeze-blank</strong>：当遇到有连续<strong>两行以上的空白行，就代换为一行</strong>的空白行。</p>
+<p><strong>-v 或 —show-nonprinting</strong>：使用 ^ 和 M- 符号，除了 LFD 和 TAB 之外。</p>
+<p><strong>-E 或 —show-ends</strong> : 在每行<strong>结束处显示 $</strong>。</p>
+<p><strong>-T 或 —show-tabs</strong>: <strong>将 TAB 字符显示为 ^I</strong>。</p>
+<p><strong>-A, —show-all</strong>：等价于 -vET。</p>
+<p><strong>-e：</strong>等价于”-vE”选项；</p>
+<p><strong>-t：</strong>等价于”-vT”选项；</p>
+<h3 id="chattr——更改文件属性"><a href="#chattr——更改文件属性" class="headerlink" title="chattr——更改文件属性"></a>chattr——更改文件属性</h3><blockquote>
+<p>Linux chattr命令用于改变文件属性。</p>
+</blockquote>
+<p><strong>参数：</strong></p>
+<p>​        -R  递归处理，将指定目录下的所有文件及子目录一并处理。</p>
+<p>　　-v&lt;版本编号&gt;  设置文件或目录版本。</p>
+<p>　　-V  显示指令执行过程。</p>
+<p>　　+&lt;属性&gt;  开启文件或目录的该项属性。</p>
+<p>　　-&lt;属性&gt;  关闭文件或目录的该项属性。</p>
+<p>　　=&lt;属性&gt;  指定文件或目录的该项属性。</p>
+<p><strong>八种文件属性：</strong></p>
+<p><strong>a</strong>：让文件或目录仅供附加用途。</p>
+<p><strong>b</strong>：不更新文件或目录的最后存取时间。</p>
+<p><strong>c</strong>：将文件或目录<strong>压缩后存放</strong>。</p>
+<p><strong>d</strong>：将文件或目录排除在倾倒操作之外。</p>
+<p><strong>i</strong>：<strong>不得任意更动文件或目录</strong>。</p>
+<p><strong>s</strong>：<strong>保密性删除文件或目录</strong>。</p>
+<p><strong>S</strong>：<strong>即时更新文件或目录</strong>。</p>
+<p><strong>u</strong>：<strong>预防意外删除</strong>。</p>
+<p>示例：</p>
+<p><code>chattr +i /etc/resolv.conf</code>  用chattr命令防止系统中某个关键文件被修改</p>
+<p><code>chattr +a /var/log/messages</code>  让某个文件只能往里面追加数据，但不能删除，适用于各种日志文件</p>
+<h3 id="chgrp——更改文件所属组"><a href="#chgrp——更改文件所属组" class="headerlink" title="chgrp——更改文件所属组"></a>chgrp——更改文件所属组</h3><blockquote>
+<p>变更文件或目录的所属群组——chgrp 允许普通用户改变文件所属的组，只要该用户是该组的一员。</p>
+</blockquote>
+<p><strong>参数：</strong></p>
+<p><strong>-c</strong>或—changes  效果类似”-v”参数，但仅回报更改的部分。</p>
+<p><strong>-f</strong>或—quiet或—silent 　不显示错误信息。</p>
+<p><strong>-h</strong>或—no-dereference 　只对符号连接的文件作修改，而不更动其他任何相关文件。</p>
+<p><strong>-R</strong>或—recursive 　递归处理，将指定目录下的所有文件及子目录一并处理。</p>
+<p><strong>-v</strong>或—verbose 　显示指令执行过程。</p>
+<p><strong>—help</strong> 　在线帮助。</p>
+<p><strong>—reference=&lt;参考文件或目录&gt;</strong> 　把指定文件或目录的所属群组全部设成和参考文件或目录的所属群组相同。</p>
+<p><strong>—version</strong> 　显示版本信息。</p>
+<p>示例：</p>
+<p><code>chgrp -v bin log2012.log</code></p>
+<h3 id="chmod——更改文件读、写、执行权限"><a href="#chmod——更改文件读、写、执行权限" class="headerlink" title="chmod——更改文件读、写、执行权限"></a>chmod——更改文件读、写、执行权限</h3><blockquote>
+<p>用于更改文件rwx（读、写、执行）权限。『R：4　W：2　Ｘ：1』</p>
+</blockquote>
+<p><strong>参数：</strong></p>
+<ul>
+<li>u 表示该文件的拥有者，g 表示与该文件的拥有者属于同一个群体(group)者，o 表示其他以外的人，a 表示这三者皆是。</li>
+<li>+ 表示增加权限、- 表示取消权限、= 表示唯一设定权限。</li>
+<li>r 表示可读取，w 表示可写入，x 表示可执行，X 表示只有当该文件是个子目录或者该文件已经被设定过为可执行。</li>
+</ul>
+<p><strong>其他参数</strong>说明：</p>
+<ul>
+<li>-c : 若该文件权限确实已经更改，才显示其更改动作</li>
+<li>-f : 若该文件权限无法被更改也不要显示错误讯息</li>
+<li>-v : 显示权限变更的详细资料</li>
+<li>-R : 对目前目录下的所有文件与子目录进行相同的权限变更(即以递归的方式逐个变更)</li>
+<li>—help : 显示辅助说明</li>
+<li>—version : 显示版本</li>
+</ul>
+<hr>
+<p>其他说明:</p>
+<p>u、g、o、a——a=ugo</p>
+<p>X：特殊执行权限——只有当文件为目录文件，或者其他类型的用户有可执行权限时，才将文件权限设置可执行</p>
+<p>s：setuid/gid——当文件被执行时，根据who参数指定的用户类型设置文件的setuid或者setgid权限</p>
+<p>t：粘贴位——设置粘贴位，只有超级用户可以设置该位，只有文件所有者u可以使用该位</p>
+<p><strong>八进制权限语法：</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>权限</th>
+<th>rwx</th>
+<th>二进制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7</td>
+<td>读 + 写 + 执行</td>
+<td>rwx</td>
+<td>111</td>
+</tr>
+<tr>
+<td>6</td>
+<td>读 + 写</td>
+<td>rw-</td>
+<td>110</td>
+</tr>
+<tr>
+<td>5</td>
+<td>读 + 执行</td>
+<td>r-x</td>
+<td>101</td>
+</tr>
+<tr>
+<td>4</td>
+<td>只读</td>
+<td>r—</td>
+<td>100</td>
+</tr>
+<tr>
+<td>3</td>
+<td>写 + 执行</td>
+<td>-wx</td>
+<td>011</td>
+</tr>
+<tr>
+<td>2</td>
+<td>只写</td>
+<td>-w-</td>
+<td>010</td>
+</tr>
+<tr>
+<td>1</td>
+<td>只执行</td>
+<td>—x</td>
+<td>001</td>
+</tr>
+<tr>
+<td>0</td>
+<td>无</td>
+<td>—-</td>
+<td>000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>示例：</p>
+<p>对file的所有者设置读写权限，清空该用户组和其他用户对file的所有权限（空格代表无权限）：</p>
+<p><code>chmod u=rw,go=  *file*</code></p>
+<p> 可使此程序具有 root 的权限：</p>
+<p><code>chmod 4755 filename</code></p>
+<p>相当于<code>u=rwx (4+2+1),go=rx (4+1 &amp; 4+1)</code>。<code>0</code> 没有特殊模式：</p>
+<p><code>chmod 0755 *file*</code></p>
+<p>4设置了设置用户ID位，剩下的相当于 u=rwx (4+2+1),go=rx (4+1 &amp; 4+1)：</p>
+<p><code>chmod 4755 *file*</code></p>
+<p>删除可执行权限对path/以及其所有的目录（不包括文件）的所有用户，使用’-type f’匹配文件：</p>
+<p><code>find path/ -type d -exec chmod a-x {} \;</code></p>
+<p>允许所有用户浏览或通过目录path/：</p>
+<p><code>find path/ -type d -exec chmod a+x {} \;</code></p>
+<h3 id="cksum——查看sum"><a href="#cksum——查看sum" class="headerlink" title="cksum——查看sum"></a>cksum——查看sum</h3><blockquote>
+<p>Linux cksum命令用于检查文件的CRC是否正确。CRC是一种排错检查方式，该校验法的标准由CCITT所指定，至少可检测到99.998%的已知错误。</p>
+</blockquote>
+<p><strong>参数：</strong></p>
+<ul>
+<li><strong>—help</strong>：在线帮助。</li>
+<li><strong>—version</strong>：显示版本信息。</li>
+<li><strong>文件…</strong>:需要进行检查的文件路径</li>
+</ul>
+<h3 id="cmp——比较文件差异（只显差异）"><a href="#cmp——比较文件差异（只显差异）" class="headerlink" title="cmp——比较文件差异（只显差异）"></a>cmp——比较文件差异（只显差异）</h3><blockquote>
+<p>用于比较两个文件是否有差异。当相互比较的两个文件完全一样时，则该指令不会显示任何信息。若发现有所差异，预设会标示出第一个不同之处的字符和列数编号。若不指定任何文件名称或是所给予的文件名为”-“，则cmp指令会从标准输入设备读取数据。</p>
+</blockquote>
+<p><code>cmp [-clsv][-i &lt;字符数目&gt;][--help][第一个文件][第二个文件]</code></p>
+<p><strong>参数：</strong></p>
+<ul>
+<li>-c或—print-chars 　除了标明差异处的十进制字码之外，一并显示该字符所对应字符。</li>
+<li>-i&lt;字符数目&gt;或—ignore-initial=&lt;字符数目&gt; 　指定一个数目。</li>
+<li>-l或—verbose 　标示出所有不一样的地方。</li>
+<li>-s或—quiet或—silent 　不显示错误信息。</li>
+<li>-v或—version 　显示版本信息。</li>
+<li>—help 　在线帮助。</li>
+</ul>
+<h3 id="diff——比较文件差异（逐行）"><a href="#diff——比较文件差异（逐行）" class="headerlink" title="diff——比较文件差异（逐行）"></a>diff——比较文件差异（逐行）</h3><blockquote>
+<p>用于比较文件的差异。diff以<strong>逐行</strong>的方式，比较文本文件的异同处。如果指定要比较目录，则diff会比较目录中相同文件名的文件，但不会比较其中子目录。</p>
+</blockquote>
+<p>语法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diff [-abBcdefHilnNpPqrstTuvwy][-&lt;行数&gt;][-C &lt;行数&gt;][-D &lt;巨集名称&gt;][-I &lt;字符或字符串&gt;][-S &lt;文件&gt;][-W &lt;宽度&gt;][-x &lt;文件或目录&gt;][-X &lt;文件&gt;][--<span class="built_in">help</span>][--left-column][--suppress-common-line][文件或目录1][文件或目录2]</span><br></pre></td></tr></table></figure>
+<p><strong>参数：</strong></p>
+<p>-&lt;行数&gt; 　指定要显示多少行的文本。此参数必须与-c或-u参数一并使用。</p>
+<p>-a或—text 　<strong>diff预设只会逐行比较文本文件。</strong></p>
+<p>-b或—ignore-space-change 　<strong>不检查空格字符的不同。</strong></p>
+<ul>
+<li>-B或—ignore-blank-lines 　<strong>不检查空白行。</strong></li>
+<li>-c 　显示全部内文，并标出不同之处。</li>
+<li>-C&lt;行数&gt;或—context&lt;行数&gt; 　与执行”-c-&lt;行数&gt;”指令相同。</li>
+<li>-d或—minimal 　使用不同的演算法，以较小的单位来做比较。</li>
+<li>-D&lt;巨集名称&gt;或ifdef&lt;巨集名称&gt; 　此参数的输出格式可用于前置处理器巨集。</li>
+<li>-e或—ed 　此参数的输出格式可用于ed的script文件。</li>
+<li>-f或-forward-ed 　输出的格式类似ed的script文件，但按照原来文件的顺序来显示不同处。</li>
+<li>-H或—speed-large-files 　比较大文件时，可加快速度。</li>
+<li>-l&lt;字符或字符串&gt;或—ignore-matching-lines&lt;字符或字符串&gt; 　若两个文件在某几行有所不同，而这几行同时都包含了选项中指定的字符或字符串，则不显示这两个文件的差异。</li>
+<li>-i或—ignore-case 　不检查大小写的不同。</li>
+<li>-l或—paginate 　将结果交由pr程序来分页。</li>
+<li>-n或—rcs 　将比较结果以RCS的格式来显示。</li>
+<li>-N或—new-file 　在比较目录时，若文件A仅出现在某个目录中，预设会显示：</li>
+<li>Only in目录：文件A若使用-N参数，则diff会将文件A与一个空白的文件比较。</li>
+<li>-p 　若比较的文件为C语言的程序码文件时，显示差异所在的函数名称。</li>
+<li>-P或—unidirectional-new-file 　与-N类似，但只有当第二个目录包含了一个第一个目录所没有的文件时，才会将这个文件与空白的文件做比较。</li>
+<li>-q或—brief 　仅显示有无差异，不显示详细的信息。</li>
+<li>-r或—recursive 　比较子目录中的文件。</li>
+<li>-s或—report-identical-files 　若没有发现任何差异，仍然显示信息。</li>
+<li>-S&lt;文件&gt;或—starting-file&lt;文件&gt; 　在比较目录时，从指定的文件开始比较。</li>
+<li>-t或—expand-tabs 　在输出时，将tab字符展开。</li>
+<li>-T或—initial-tab 　在每行前面加上tab字符以便对齐。</li>
+<li>-u,-U&lt;列数&gt;或—unified=&lt;列数&gt; 　以合并的方式来显示文件内容的不同。</li>
+<li>-v或—version 　显示版本信息。</li>
+<li>-w或—ignore-all-space 　忽略全部的空格字符。</li>
+<li>-W&lt;宽度&gt;或—width&lt;宽度&gt; 　在使用-y参数时，指定栏宽。</li>
+<li>-x&lt;文件名或目录&gt;或—exclude&lt;文件名或目录&gt; 　不比较选项中所指定的文件或目录。</li>
+<li>-X&lt;文件&gt;或—exclude-from&lt;文件&gt; 　您可以将文件或目录类型存成文本文件，然后在=&lt;文件&gt;中指定此文本文件。</li>
+<li>-y或—side-by-side 　以并列的方式显示文件的异同之处。</li>
+<li>—help 　显示帮助。</li>
+<li>—left-column 　在使用-y参数时，若两个文件某一行内容相同，则仅在左侧的栏位显示该行内容。</li>
+<li>—suppress-common-lines 　在使用-y参数时，仅显示不同之处。</li>
+</ul>
+<blockquote>
+<p>实例1：比较两个文件</p>
+</blockquote>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">[root@localhost</span> <span class="string">test3]#</span> <span class="string">diff</span> <span class="string">log2014.log</span> <span class="string">log2013.log</span> </span><br><span class="line"><span class="string">3c3</span></span><br><span class="line"><span class="string">&lt;</span> <span class="number">2014</span><span class="number">-03</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="string">&gt;</span> <span class="number">2013</span><span class="number">-03</span></span><br><span class="line"><span class="string">8c8</span></span><br><span class="line"><span class="string">&lt;</span> <span class="number">2013</span><span class="number">-07</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="string">&gt;</span> <span class="number">2013</span><span class="number">-08</span></span><br><span class="line"><span class="number">11</span><span class="string">,12d10</span></span><br><span class="line"><span class="string">&lt;</span> <span class="number">2013</span><span class="number">-11</span></span><br><span class="line"><span class="string">&lt;</span> <span class="number">2013</span><span class="number">-12</span></span><br></pre></td></tr></table></figure>
+<p>上面的”3c3”和”8c8”表示log2014.log和log20143log文件在3行和第8行内容有所不同；”11,12d10”表示第一个文件比第二个文件多了第11和12行。</p>
+<blockquote>
+<p>实例2：并排格式输出</p>
+</blockquote>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">[<span class="symbol">root@</span>localhost test3]# diff log2014.log log2013.log  -y -W <span class="number">50</span></span><br><span class="line"><span class="number">2013</span><span class="number">-01</span>                 <span class="number">2013</span><span class="number">-01</span></span><br><span class="line"><span class="number">2013</span><span class="number">-02</span>                 <span class="number">2013</span><span class="number">-02</span></span><br><span class="line"><span class="number">2014</span><span class="number">-03</span>               | <span class="number">2013</span><span class="number">-03</span></span><br><span class="line"><span class="number">2013</span><span class="number">-04</span>                 <span class="number">2013</span><span class="number">-04</span></span><br><span class="line"><span class="number">2013</span><span class="number">-05</span>                 <span class="number">2013</span><span class="number">-05</span></span><br><span class="line"><span class="number">2013</span><span class="number">-06</span>                 <span class="number">2013</span><span class="number">-06</span></span><br><span class="line"><span class="number">2013</span><span class="number">-07</span>                 <span class="number">2013</span><span class="number">-07</span></span><br><span class="line"><span class="number">2013</span><span class="number">-07</span>               | <span class="number">2013</span><span class="number">-08</span></span><br><span class="line"><span class="number">2013</span><span class="number">-09</span>                 <span class="number">2013</span><span class="number">-09</span></span><br><span class="line"><span class="number">2013</span><span class="number">-10</span>                 <span class="number">2013</span><span class="number">-10</span></span><br><span class="line"><span class="number">2013</span><span class="number">-11</span>               &lt;</span><br><span class="line"><span class="number">2013</span><span class="number">-12</span>               &lt;</span><br><span class="line">[<span class="symbol">root@</span>localhost test3]# diff log2013.log log2014.log  -y -W <span class="number">50</span></span><br><span class="line"><span class="number">2013</span><span class="number">-01</span>                 <span class="number">2013</span><span class="number">-01</span></span><br><span class="line"><span class="number">2013</span><span class="number">-02</span>                 <span class="number">2013</span><span class="number">-02</span></span><br><span class="line"><span class="number">2013</span><span class="number">-03</span>               | <span class="number">2014</span><span class="number">-03</span></span><br><span class="line"><span class="number">2013</span><span class="number">-04</span>                 <span class="number">2013</span><span class="number">-04</span></span><br><span class="line"><span class="number">2013</span><span class="number">-05</span>                 <span class="number">2013</span><span class="number">-05</span></span><br><span class="line"><span class="number">2013</span><span class="number">-06</span>                 <span class="number">2013</span><span class="number">-06</span></span><br><span class="line"><span class="number">2013</span><span class="number">-07</span>                 <span class="number">2013</span><span class="number">-07</span></span><br><span class="line"><span class="number">2013</span><span class="number">-08</span>               | <span class="number">2013</span><span class="number">-07</span></span><br><span class="line"><span class="number">2013</span><span class="number">-09</span>                 <span class="number">2013</span><span class="number">-09</span></span><br><span class="line"><span class="number">2013</span><span class="number">-10</span>                 <span class="number">2013</span><span class="number">-10</span></span><br><span class="line">                      &gt; <span class="number">2013</span><span class="number">-11</span></span><br><span class="line">                      &gt; <span class="number">2013</span><span class="number">-12</span></span><br></pre></td></tr></table></figure>
+<p><strong>说明：</strong></p>
+<ul>
+<li>“|”表示前后2个文件内容有不同</li>
+<li>“&lt;”表示后面文件比前面文件少了1行内容</li>
+<li>“&gt;”表示后面文件比前面文件多了1行内容</li>
+</ul>
+<h3 id="usb-modeswitch——控制“多状态”USB设备的模式"><a href="#usb-modeswitch——控制“多状态”USB设备的模式" class="headerlink" title="usb-modeswitch——控制“多状态”USB设备的模式"></a>usb-modeswitch——控制“多状态”USB设备的模式</h3><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">控制“多状态”USB设备的模式。一些新的USB设备有他们的专有Windows驱动板，其中大多数是WWAN和WLAN加密狗。当第一次插入时，它们就像一个闪存，并从那里开始安装Windows驱动程序。如果驱动程序已经安装，它会使存储设备消失，并显示一个新设备(主要是与调制解调器端口组合)。在Linux上，大多数情况下驱动程序作为内核模块可用，如“usbserial”或“option”。但是，设备最初默认绑定到“usb存储”。然后usb_modeswitch可以向设备发送提供的批量消息(很可能是一个大容量存储命令)，此消息必须通过分析Windows驱动程序的动作来确定。在某些情况下，USB控制命令用于切换。这些情况由自定义函数处理，不需要提供批量消息。通常，程序是通过一组针对许多已知设备的配置来分发的，这允许在插入时对设备进行完全自动的处理，这可以通过将usb_modeswitch与udev守护进程启动的包装器脚本usb_modeswitch_dispatcher结合起来实现。注意，usb_modeswitch本身没有特定的Linux依赖项。</span><br><span class="line">————————————————</span><br><span class="line">版权声明：本文为CSDN博主「佛戏人生」的原创文章，遵循<span class="keyword">CC</span> 4.0 <span class="keyword">BY</span>-<span class="keyword">SA</span>版权协议，转载请附上原文出处链接及本声明。</span><br><span class="line">原文链接：https:<span class="comment">//blog.csdn.net/qq_20677327/article/details/107950948</span></span><br></pre></td></tr></table></figure>
+<p>选项    含义<br>-h —help    显示选项摘要<br>-e —version    打印版本信息并退出<br>-v —default-vendor NUM    要查找的Vendor ID(强制)，通常以十六进制数字的形式给出(例如:0x12d1)。每个USB设备由一个编号被指定给供应商由USB协会和一个编号为各自的模型(Product ID)被供应商选择<br>-p —default-product NUM    要查找的Product ID(必须)<br>-V —target-vendor NUM    目标Vendor ID。当给定时，将搜索和检测最初为信息目的。如果成功检查(选项-s)是活动的，建议提供目标id(Vendor/Product)或目标类<br>-j —find-mbim    返回配置编号与MBIM接口和退出<br>-P —target-product NUM    目标Produnct ID<br>-b —bus-num NUM    总线编号<br>-g —device-num NUM    如果bus和设备号码被提供，在一个特定的USB端口上的一个特定设备的处理是有保证的，相比之下只使用USB ID。这是重要的，如果在一个系统上有多个类似的设备<br>-C —target-class NUM    根据USB规范的目标设备类。有些设备在切换成功后仍保留原来的Vendor/Product ID。为了防止它们再次被处理，可以检查device类。对于未切换的设备，它总是8(存储类)，对于切换的调制解调器，它通常是0xff(特定于供应商)。在复合模式中，观察第一个接口的类<br>-m —message-endpoint NUM    用于数据传输的特定端点。只作测试用途;通常端点由设备属性决定<br>-M —message-content STRING    作为交换命令发送的批量消息。以十六进制字符串的形式提供<br>-2, -3 —message-content2, —message-content3 STRING    作为交换命令发送的其他批量消息。以十六进制字符串的形式提供。当与大容量存储命令一起使用时，强烈建议set -need-response符合规范并避免可能出现的错误<br>-w —release-delay NUM    在发出所有批量消息之后，在释放接口之前等待NUM毫秒。对于旧系统上的某些调制解调器(特别是在弹出消息后)是必需的<br>-n —need-response    读取对大容量存储命令传输的响应(命令状态包装器)。如果没有读取响应，一些设备在切换时有困难;大多数设备会立即消失。当发送带有-2和-3的多个大容量存储命令时，可能需要设置此选项以避免传输错误<br>-r —response-endpoint NUM    如果选项-n是活动的，尝试从那里读取对存储命令的响应。只作测试用途;通常端点由设备属性决定<br>-K —std-eject    应用标准的SCSI序列“允许介质删除”和“弹出”。意味着- n。一个“消息”可以添加-M，它将在弹出序列之后传输<br>-d —detach-only    只需分离当前驱动程序。对于一些早期设备成功切换来说，这已经足够了。否则，这个特性可以用作特殊情况下的“手术刀”，比如将驱动程序从单独的接口中分离出来<br>-H —huawei-mode    发送华为老式设备使用的特殊控制信息<br>-J —huawei-new-mode    发送一个特定的批量消息，所有新的华为设备都使用<br>-S —sierra-mode    发送一个由Sierra设备使用的特殊控制消息<br>-G —gct-mode    发送GCT芯片组使用的特殊控制消息<br>-T —kobil-mode    发送Kobil设备使用的特殊控制信息<br>-N —sequans-mode    发送一个特殊的控制信息使用Sequans芯片组<br>-A —mobileaction-mode    发送一个由移动操作设备使用的特殊控制消息<br>-B —qisda-mode    发送一个特殊的控制消息使用Qisda设备<br>-E —quanta-mode    发送量子设备使用的特殊控制信息<br>-F —pantech-mode NUM    发送由Pantech设备使用的特殊控制信息。值NUM将作为“wValue”在控制消息中使用<br>-Z —blackberry-mode    发送一些较新的黑莓设备使用的特殊控制信息<br>-O —sony-mode    采用索尼爱立信设备使用的特殊序列。意味着选择——check-success<br>-L —cisco-mode    发送一系列由思科设备使用的批量消息<br>-R —reset-usb    发送USB复位命令到设备。可与任何切换方式组合或单独使用。它总是作为所有设备交互的最后一步来完成。很少有设备需要它来完成切换;除此之外，它在测试期间也很有用<br>-c —config-file FILENAME    使用特定的配置文件。如果在命令行参数中提供了任何ID或切换选项，则忽略该选项。在这种情况下，必须在命令行上提供所有强制参数<br>-f —long-config STRING    在配置文件语法中以命令行多行字符串的形式提供设备详细信息<br>-t —stdinput    在配置文件语法中从标准输入读取设备细节，例如从命令管道重定向(多行文本)<br>-Q —quiet    不要显示进度或错误消息<br>-W —verbose    在运行之前打印所有设置并显示libusb调试消息<br>-D —sysmode    稍微改变程序的行为。发出一条包含有效目标设备ID的成功消息，并发出系统slog通知。主要用于与包装器脚本集成<br>-s —check-success NUM    切换后，继续检查结果，直到最大。NUM秒。如果提供了目标id或目标类，则它们的出现表明一定成功。否则，原设备的断开被视为可能的证据<br>-I —no-inquire    不要从设备获取SCSI属性(默认为on)。为了正确识别不同的设备，存储部分的属性提供了有价值的信息。对于已知和受支持的设备来说，这是不需要的<br>-i —interface NUM    选择初始USB接口(默认为0)。仅用于测试目的<br>-u —configuration NUM    选择USB配置(应用于任何其他可能的切换操作之后)<br>-a —altsetting NUM    选择备用USB接口设置(切换后应用)。主要用于测试</p>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><h3 id="Git常用命令"><a href="#Git常用命令" class="headerlink" title="Git常用命令"></a>Git常用命令</h3><p>Git新建分支推送远程</p>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 新建分支</span></span><br><span class="line">git branch name</span><br><span class="line"><span class="meta"># 切换分支</span></span><br><span class="line">git <span class="keyword">switch</span> name</span><br><span class="line"><span class="meta"># 上面两天可以写成一句：</span></span><br><span class="line">git checkout -b name</span><br><span class="line"><span class="meta"># 推送远程</span></span><br><span class="line">git push --<span class="keyword">set</span>-upstream origin name</span><br></pre></td></tr></table></figure>
+<h4 id="Git删除远程分支"><a href="#Git删除远程分支" class="headerlink" title="Git删除远程分支"></a>Git删除远程分支</h4><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 删除本地分支</span></span><br><span class="line">git branch -d dev</span><br><span class="line"><span class="meta"># 删除远程分支</span></span><br><span class="line">git <span class="keyword">push</span> origin --<span class="keyword">delete</span> dev</span><br></pre></td></tr></table></figure>
+<h4 id="删除本地仓库中远程仓库已经不存在的分支"><a href="#删除本地仓库中远程仓库已经不存在的分支" class="headerlink" title="删除本地仓库中远程仓库已经不存在的分支"></a>删除本地仓库中远程仓库已经不存在的分支</h4><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用如下命令，查看远程分支、本地分支以及它们的对应关系 </span></span><br><span class="line">git remote <span class="keyword">show </span><span class="keyword">origin</span></span><br><span class="line"><span class="keyword"># </span>使用如下命令删除远程仓库已经不存在的分支 </span><br><span class="line">git remote prune <span class="keyword">origin</span></span><br><span class="line"><span class="keyword"># </span>删除远程分支</span><br><span class="line">git push <span class="keyword">origin </span>-d remotebranch</span><br></pre></td></tr></table></figure>
+<h3 id="GCM——Git-Credential-Manager"><a href="#GCM——Git-Credential-Manager" class="headerlink" title="GCM——Git Credential Manager"></a>GCM——Git Credential Manager</h3><blockquote>
+<p><a href="https://github.com/git-ecosystem/git-credential-manager" target="_blank" rel="noopener">https://github.com/git-ecosystem/git-credential-manager</a></p>
+</blockquote>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">到https:<span class="regexp">//gi</span>thub.com<span class="regexp">/git-ecosystem/gi</span>t-credential-manager<span class="regexp">/releases/</span>latest下载最新的deb安装即可</span><br></pre></td></tr></table></figure>
+<h3 id="Installing-Git"><a href="#Installing-Git" class="headerlink" title="Installing Git"></a>Installing Git</h3><p><code>sudo apt install git-all</code></p>
+<p>In order to be able to add the documentation in various formats (doc, html, info), these additional dependencies are required:支持多种文本格式。</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo apt-get install asciidoc xmlto docbook2x</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo apt-get install install-info</span></span><br></pre></td></tr></table></figure>
+<h3 id="Configure-Git"><a href="#Configure-Git" class="headerlink" title="Configure Git"></a>Configure Git</h3><p>让Git显示配置文件</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git config --list --show-origin</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>用户信息</p>
+</blockquote>
+<p>安装完 Git 之后，要做的第一件事就是<strong>设置你的用户名和邮件地址</strong>。 这一点很重要，因为每一个 Git 提交都会使用这些信息，它们会写入到你的每一次提交中，不可更改：</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git config --global user.name <span class="string">"John Doe"</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global user.email johndoe@example.com</span></span><br></pre></td></tr></table></figure>
+<p>再次强调，如果使用了 <code>--global</code> 选项，那么该命令只需要运行一次，因为之后无论你在该系统上做任何事情， Git 都会使用那些信息。 当你想针对特定项目使用不同的用户名称与邮件地址时，可以在那个项目目录下运行没有 <code>--global</code> 选项的命令来配置。</p>
+<h4 id="检查配置信息"><a href="#检查配置信息" class="headerlink" title="检查配置信息"></a>检查配置信息</h4><p>如果想要检查你的配置，可以使用 <code>git config --list</code> 命令来列出所有 Git 当时能找到的配置。</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git config --list</span></span><br><span class="line">user.name=John Doe</span><br><span class="line">user.email=johndoe@example.com</span><br><span class="line">color.status=auto</span><br><span class="line">color.branch=auto</span><br><span class="line">color.interactive=auto</span><br><span class="line">color.diff=auto</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>由于 Git 会从多个文件中读取同一配置变量的不同值，因此你可能会在其中看到意料之外的值而不知道为什么。 此时，你可以查询 Git 中该变量的 <strong>原始</strong> 值，它会告诉你<strong>哪一个配置文件最后设置了该值</strong>：</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git config --show-origin rerere.autoUpdate</span></span><br><span class="line">file:/home/johndoe/.gitconfig	false</span><br></pre></td></tr></table></figure>
+<h3 id="Get-Start"><a href="#Get-Start" class="headerlink" title="Get Start"></a>Get Start</h3><ul>
+<li><p>初始化一个仓库  <code>git init</code> ,会生成一个.git文件夹。参见 <a href="https://git-scm.com/book/zh/v2/ch00/ch10-git-internals" target="_blank" rel="noopener">Git 内部原理</a> 来了解更多关于到底 <code>.git</code> 文件夹中包含了哪些文件的信息。</p>
+</li>
+<li><p>从远程仓库克隆  <code>git clone https://remote_repository_address</code>。如果你想在克隆远程仓库的时候，自定义本地仓库的名字，你可以通过额外的参数指定新的目录名：</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> https://github.com/libgit2/libgit2 mylibgit</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过 <code>git add</code> 命令来指定所需的文件来进行追踪。</p>
+</li>
+<li><p>执行 <code>git commit</code> 进行提交：<code>git commit -m &#39;initial project version&#39;</code>。</p>
+</li>
+<li><p><code>git rm --cached 【文件】</code>：删除对某个文件的跟踪。</p>
+</li>
+</ul>
+<h2 id="VNC-Server"><a href="#VNC-Server" class="headerlink" title="VNC Server"></a>VNC Server</h2><h3 id="1-让VNC显示当前桌面（远程桌面）"><a href="#1-让VNC显示当前桌面（远程桌面）" class="headerlink" title="1.让VNC显示当前桌面（远程桌面）"></a>1.让VNC显示当前桌面（远程桌面）</h3><h4 id="使用x0vncserver（tigervnc）"><a href="#使用x0vncserver（tigervnc）" class="headerlink" title="使用x0vncserver（tigervnc）"></a>使用<code>x0vncserver</code>（<code>tigervnc</code>）</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置显示当前桌面：https://superuser.com/questions/696840/is-there-a-way-to-get-tightvnc-to-host-the-native-display-0</span></span><br><span class="line">sudo apt <span class="keyword">install</span> tigervnc-scraping-<span class="keyword">server</span></span><br><span class="line">mkdir -p ~/.vnc</span><br><span class="line">$ vncpasswd</span><br><span class="line"><span class="keyword">Password</span>:</span><br><span class="line"><span class="keyword">Verify</span>:</span><br><span class="line">Would you <span class="keyword">like</span> <span class="keyword">to</span> enter a <span class="keyword">view</span>-<span class="keyword">only</span> <span class="keyword">password</span> (y/n)? n</span><br><span class="line">$ x0vncserver -passwordfile ~/.vnc/passwd -display :<span class="number">0</span></span><br><span class="line"><span class="keyword">or</span></span><br><span class="line"><span class="comment"># 允许外部</span></span><br><span class="line">$ x0vncserver -localhost <span class="keyword">no</span> -passwordfile ~/.vnc/passwd -display :<span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p><code>x0vncserver -localhost no -passwordfile ~/.vnc/passwd -display :0</code></p>
+<h4 id="使用x11vnc"><a href="#使用x11vnc" class="headerlink" title="使用x11vnc"></a>使用<code>x11vnc</code></h4><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置显示当前桌面：https://raspberrypi.stackexchange.com/questions/9590/tightvncserver-show-the-same-screen-on-hdmi-and-vncclient</span></span><br><span class="line">sudo apt-<span class="builtin-name">get</span> install x11vnc</span><br><span class="line">x11vnc -display :0 -usepw -listen IP_of_pi -allow allowed_ip_address</span><br><span class="line"></span><br><span class="line">-display :<span class="built_in"> screen </span>number <span class="keyword">to</span> get</span><br><span class="line">-usepw   : use password security</span><br><span class="line">-listen  :<span class="built_in"> IP address </span>of<span class="built_in"> server </span>(Pi IP)</span><br><span class="line">-allow   : allowed<span class="built_in"> client </span>IPs (client IP, <span class="keyword">in</span> your case Mac<span class="built_in"> IP </span>address)</span><br></pre></td></tr></table></figure>
+<p><code>x11vnc -display :0 -usepw</code></p>
+<h4 id="问题：解决x11vnc-display-0-usepw连接后闪退的问题"><a href="#问题：解决x11vnc-display-0-usepw连接后闪退的问题" class="headerlink" title="问题：解决x11vnc -display :0 -usepw连接后闪退的问题"></a>问题：解决x11vnc -display :0 -usepw连接后闪退的问题</h4><blockquote>
+<p><a href="https://blog.csdn.net/sdujava2011/article/details/47281475" target="_blank" rel="noopener">https://blog.csdn.net/sdujava2011/article/details/47281475</a></p>
+</blockquote>
+<p>（解决：修改颜色）VNC Viewer来连接一台N久没登陆的服务器看看，输入密码连上后直接闪退，可能是ColourLevel的问题。依次点Option—&gt;Advanced—&gt;Expert找到ColourLevel，默认值是pal8，修改为rgb222或full。</p>
+<h3 id="2-让VNC显示另外的桌面"><a href="#2-让VNC显示另外的桌面" class="headerlink" title="2.让VNC显示另外的桌面"></a>2.让VNC显示另外的桌面</h3><h4 id="Tightvncserver"><a href="#Tightvncserver" class="headerlink" title="Tightvncserver"></a>Tightvncserver</h4><p>安装<code>sudo apt install tightvncserver</code></p>
+<p><a href="https://www.tightvnc.com/vncserver.1.php" target="_blank" rel="noopener">TightVNC文档</a></p>
+<p>常用VNC的<code>~/.vnc/xstartup</code></p>
+<p>简单的：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">xrdb <span class="variable">$HOME</span>/.Xresources</span><br><span class="line">xsetroot -solid grey</span><br><span class="line"><span class="comment"># -geometry 表示桌面分辨率，默认为1024x768 但是在TightVNC好像不行</span></span><br><span class="line">geometry 1024x768</span><br><span class="line">gnome-terminal&amp;</span><br><span class="line">startxfce4&amp;</span><br></pre></td></tr></table></figure>
+<p>比如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="built_in">export</span> XKL_XMODMAP_DISABLE=1</span><br><span class="line"><span class="built_in">export</span> XDG_CURRENT_DESKTOP=<span class="string">"GNOME-Flashback:GNOME"</span></span><br><span class="line"><span class="built_in">export</span> XDG_MENU_PREFIX=<span class="string">"gnome-flashback-"</span></span><br><span class="line">gnome-session --session=gnome-flashback-metacity --<span class="built_in">disable</span>-acceleration-check</span><br><span class="line"><span class="built_in">unset</span> SESSION_MANAGER</span><br><span class="line"><span class="built_in">unset</span> DBUS_SESSION_BUS_ADDRESS</span><br><span class="line">xrdb <span class="variable">$HOME</span>/.Xresources</span><br><span class="line">xsetroot -solid grey</span><br><span class="line"><span class="comment"># autocutsel -fork</span></span><br><span class="line"><span class="comment"># -geometry 表示桌面分辨率，默认为1024x768</span></span><br><span class="line"><span class="comment"># geometry 1920x1080</span></span><br><span class="line"><span class="comment"># geometry 1024x768</span></span><br><span class="line"><span class="comment"># firefox-esr&amp;</span></span><br><span class="line"><span class="comment"># startfluxbox&amp;</span></span><br><span class="line"><span class="comment"># xfce4-terminal&amp;</span></span><br><span class="line">gnome-terminal&amp;</span><br><span class="line"><span class="comment"># startxfce4&amp;</span></span><br></pre></td></tr></table></figure>
+<p>或者：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">xrdb <span class="variable">$HOME</span>/.Xresources</span><br><span class="line">x-terminal-emulator -geometry 80x24+10+10 -ls -title <span class="string">"<span class="variable">$VNCDESKTOP</span> Desktop"</span> &amp;</span><br><span class="line">x-window-manager &amp;</span><br><span class="line"><span class="comment"># Fix to make GNOME work</span></span><br><span class="line"><span class="built_in">export</span> XKL_XMODMAP_DISABLE=1</span><br><span class="line">/etc/X11/Xsession</span><br></pre></td></tr></table></figure>
+<h4 id="TightVNC设置在5902端口且设置分辨率"><a href="#TightVNC设置在5902端口且设置分辨率" class="headerlink" title="TightVNC设置在5902端口且设置分辨率"></a>TightVNC设置在5902端口且设置分辨率</h4><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tightvncserver :<span class="number">2</span> -geometry <span class="number">1024</span>x576</span><br><span class="line">tightvncserver :<span class="number">2</span> -geometry <span class="number">1024</span>x768</span><br></pre></td></tr></table></figure>
+<p>结束VNC:<code>tightvncserver -kill :2</code></p>
+<h4 id="问题：解决Tightvncserver连接后gnome-terminal不在当前VNC会话，而是在-0显示屏"><a href="#问题：解决Tightvncserver连接后gnome-terminal不在当前VNC会话，而是在-0显示屏" class="headerlink" title="问题：解决Tightvncserver连接后gnome-terminal不在当前VNC会话，而是在:0显示屏"></a>问题：解决Tightvncserver连接后<code>gnome-terminal</code>不在当前VNC会话，而是在<code>:0</code>显示屏</h4><blockquote>
+<p><a href="https://askubuntu.com/questions/694795/how-to-start-vnc-session-with-gnome-desktop" target="_blank" rel="noopener">https://askubuntu.com/questions/694795/how-to-start-vnc-session-with-gnome-desktop</a></p>
+</blockquote>
+<p>安装<code>sudo apt-get install gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal</code></p>
+<h4 id="问题：sh-1-home-admin-vnc-xstartup-Permission-denied"><a href="#问题：sh-1-home-admin-vnc-xstartup-Permission-denied" class="headerlink" title="问题：sh: 1: /home/admin/.vnc/xstartup: Permission denied"></a>问题：sh: 1: /home/admin/.vnc/xstartup: Permission denied</h4><p><code>chmod +x xstartup</code></p>
+<h4 id="问题：解决Tightvncserver启动失败（安装了tigervnc-standalone-server导致tightvnc启动失败）"><a href="#问题：解决Tightvncserver启动失败（安装了tigervnc-standalone-server导致tightvnc启动失败）" class="headerlink" title="问题：解决Tightvncserver启动失败（安装了tigervnc-standalone-server导致tightvnc启动失败）"></a>问题：解决Tightvncserver启动失败（安装了tigervnc-standalone-server导致tightvnc启动失败）</h4><p>报错日志：</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">28</span>/<span class="number">04</span>/<span class="number">24</span> <span class="number">15</span>:<span class="number">31</span>:<span class="number">00</span> Xvnc version TightVNC<span class="number">-1.3</span><span class="number">.10</span></span><br><span class="line"><span class="number">28</span>/<span class="number">04</span>/<span class="number">24</span> <span class="number">15</span>:<span class="number">31</span>:<span class="number">00</span> Copyright (C) <span class="number">2000</span><span class="number">-2009</span> TightVNC Group</span><br><span class="line"><span class="number">28</span>/<span class="number">04</span>/<span class="number">24</span> <span class="number">15</span>:<span class="number">31</span>:<span class="number">00</span> Copyright (C) <span class="number">1999</span> AT&amp;T Laboratories Cambridge</span><br><span class="line"><span class="number">28</span>/<span class="number">04</span>/<span class="number">24</span> <span class="number">15</span>:<span class="number">31</span>:<span class="number">00</span> All Rights Reserved.</span><br><span class="line"><span class="number">28</span>/<span class="number">04</span>/<span class="number">24</span> <span class="number">15</span>:<span class="number">31</span>:<span class="number">00</span> See http:<span class="comment">//www.tightvnc.com/ for information on TightVNC</span></span><br><span class="line"><span class="number">28</span>/<span class="number">04</span>/<span class="number">24</span> <span class="number">15</span>:<span class="number">31</span>:<span class="number">00</span> Desktop name <span class="string">'X'</span> (kylin-pc:<span class="number">1</span>)</span><br><span class="line"><span class="number">28</span>/<span class="number">04</span>/<span class="number">24</span> <span class="number">15</span>:<span class="number">31</span>:<span class="number">00</span> Protocol versions supported: <span class="number">3.3</span>, <span class="number">3.7</span>, <span class="number">3.8</span>, <span class="number">3.7</span>t, <span class="number">3.8</span>t</span><br><span class="line"><span class="number">28</span>/<span class="number">04</span>/<span class="number">24</span> <span class="number">15</span>:<span class="number">31</span>:<span class="number">00</span> Listening <span class="keyword">for</span> VNC connections on TCP port <span class="number">5901</span></span><br><span class="line">Font directory <span class="string">'/usr/share/fonts/X11/Type1/'</span> <span class="keyword">not</span> found - ignoring</span><br><span class="line">/etc/X11/Xvnc-session: <span class="number">6</span>: vncconfig: <span class="keyword">not</span> found</span><br><span class="line">Segmentation fault (core dumped)</span><br><span class="line">Killing Xtightvnc process ID <span class="number">290754</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="https://askubuntu.com/questions/1238956/uninstalled-tigervnc-from-ubuntu-20-04-now-cannot-start-tightvnc" target="_blank" rel="noopener">https://askubuntu.com/questions/1238956/uninstalled-tigervnc-from-ubuntu-20-04-now-cannot-start-tightvnc</a></p>
+</blockquote>
+<p>解决：<code>sudo apt purge tigervnc-standalone-server</code></p>
+<h2 id="从ifconfig到ip"><a href="#从ifconfig到ip" class="headerlink" title="从ifconfig到ip"></a>从<code>ifconfig</code>到<code>ip</code></h2><h3 id="1-显示网络接口信息"><a href="#1-显示网络接口信息" class="headerlink" title="1. 显示网络接口信息"></a>1. 显示网络接口信息</h3><p><strong>ifconfig:</strong></p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bash</span></span><br><span class="line"><span class="keyword">ifconfig</span></span><br></pre></td></tr></table></figure>
+<p><strong>ip:</strong></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bash</span><br><span class="line">ip addr show</span><br></pre></td></tr></table></figure>
+<h3 id="2-启用-禁用网络接口"><a href="#2-启用-禁用网络接口" class="headerlink" title="2. 启用/禁用网络接口"></a>2. 启用/禁用网络接口</h3><p><strong>ifconfig:</strong></p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bash</span></span><br><span class="line"><span class="keyword">ifconfig </span>eth0 up    <span class="comment"># 启用</span></span><br><span class="line">ifconfig eth0 down  <span class="comment"># 禁用</span></span><br></pre></td></tr></table></figure>
+<p><strong>ip:</strong></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bash</span><br><span class="line">ip link <span class="builtin-name">set</span> eth0 up    # 启用</span><br><span class="line">ip link <span class="builtin-name">set</span> eth0 down  # 禁用</span><br></pre></td></tr></table></figure>
+<h3 id="3-配置IP地址"><a href="#3-配置IP地址" class="headerlink" title="3. 配置IP地址"></a>3. 配置IP地址</h3><p><strong>ifconfig:</strong></p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bash</span><br><span class="line">ifconfig eth0 <span class="number">192.168</span><span class="number">.1</span><span class="number">.2</span> netmask <span class="number">255.255</span><span class="number">.255</span><span class="number">.0</span></span><br></pre></td></tr></table></figure>
+<p><strong>ip:</strong></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bash</span><br><span class="line">ip addr <span class="builtin-name">add</span> 192.168.1.2/24 dev eth0</span><br></pre></td></tr></table></figure>
+<h3 id="4-显示路由表"><a href="#4-显示路由表" class="headerlink" title="4. 显示路由表"></a>4. 显示路由表</h3><p><strong>ifconfig:</strong></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bash</span><br><span class="line">route -n</span><br></pre></td></tr></table></figure>
+<p><strong>ip:</strong></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bash</span><br><span class="line">ip<span class="built_in"> route </span>show</span><br></pre></td></tr></table></figure>
+<h3 id="5-设置默认网关"><a href="#5-设置默认网关" class="headerlink" title="5. 设置默认网关"></a>5. 设置默认网关</h3><p><strong>ifconfig:</strong></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bash</span><br><span class="line">route <span class="builtin-name">add</span><span class="built_in"> default </span>gw 192.168.1.1</span><br></pre></td></tr></table></figure>
+<p><strong>ip:</strong></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bash</span><br><span class="line">ip<span class="built_in"> route </span><span class="builtin-name">add</span><span class="built_in"> default </span>via 192.168.1.1</span><br></pre></td></tr></table></figure>
+<h3 id="6-配置防火墙规则"><a href="#6-配置防火墙规则" class="headerlink" title="6. 配置防火墙规则"></a>6. 配置防火墙规则</h3><p><strong>iptables:</strong></p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bash</span></span><br><span class="line"><span class="keyword"># </span>允许从 eth0 接口接收流量</span><br><span class="line">iptables -A INPUT -i eth0 -<span class="keyword">j </span>ACCEPT</span><br><span class="line"></span><br><span class="line"><span class="comment"># 允许从 eth0 接口发送流量</span></span><br><span class="line">iptables -A OUTPUT -o eth0 -<span class="keyword">j </span>ACCEPT</span><br></pre></td></tr></table></figure>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
+<li>请根据你的实际网络配置和需求调整上述命令。</li>
+<li>如果你使用 <code>ufw</code> 作为防火墙管理工具，可以使用 <code>ufw</code> 命令进行配置。</li>
+<li>在进行更改之前，请确保备份重要的配置文件，以防发生意外。</li>
+</ul>
+<h2 id="各种编译错误"><a href="#各种编译错误" class="headerlink" title="各种编译错误"></a>各种编译错误</h2><ol>
+<li><code>sudo apt-get install libcairo2-dev libjpeg-dev libgif-dev</code></li>
+</ol>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">--   Package <span class="string">'cairo-xcb'</span>, required by <span class="string">'virtual:world'</span>, not found</span><br><span class="line">CMake Error at <span class="regexp">/usr/</span>share<span class="regexp">/cmake-3.16/</span>Modules/FindPkgConfig.<span class="string">cmake:</span><span class="number">463</span> (message):</span><br><span class="line">  A required <span class="keyword">package</span> was not found</span><br><span class="line">Call Stack (most recent call first):</span><br><span class="line">  <span class="regexp">/usr/</span>share<span class="regexp">/cmake-3.16/</span>Modules/FindPkgConfig.<span class="string">cmake:</span><span class="number">643</span> (_pkg_check_modules_internal)</span><br><span class="line">  CMakeLists.<span class="string">txt:</span><span class="number">112</span> (pkg_check_modules)</span><br></pre></td></tr></table></figure>
+<p>2.安装cmake-extra：<code>sudo apt install extra-cmake-modules</code></p>
+<p>3.<code>sudo apt install appstream</code></p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>bin<span class="regexp">/msgfmt: cannot locate ITS rules for /</span>home<span class="regexp">/admin/</span>project<span class="regexp">/fcitx5-master/</span>data/org.fcitx.Fcitx5.metainfo.xml.<span class="keyword">in</span></span><br><span class="line">make[<span class="number">2</span>]: *** [data<span class="regexp">/CMakeFiles/</span>org.fcitx.Fcitx5.metainfo.xml.<span class="keyword">in</span>-fmt.dir<span class="regexp">/build.make:73：data/</span>org.fcitx.Fcitx5.metainfo.xml] 错误 <span class="number">1</span></span><br><span class="line">make[<span class="number">1</span>]: *** [CMakeFiles<span class="regexp">/Makefile2:3270：data/</span>CMakeFiles<span class="regexp">/org.fcitx.Fcitx5.metainfo.xml.in-fmt.dir/</span>all] 错误 <span class="number">2</span></span><br><span class="line"><span class="string">make:</span> *** [<span class="string">Makefile:</span><span class="number">141</span>：all] 错误 <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>4.<code>sudo apt install libgirepository1.0-dev</code></p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--   Package <span class="string">'gobject-introspection-1.0'</span>, required <span class="keyword">by</span> <span class="string">'virtual:world'</span>,<span class="built_in"> not</span> found</span><br></pre></td></tr></table></figure>
+<p>5.<code>sudo apt install qtbase5-dev</code></p>
+<blockquote>
+<p><a href="https://deali-axy.github.io/Linux/%E8%AE%BE%E7%BD%AELinux%E9%BB%98%E8%AE%A4%E7%9A%84%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%99%A8/" target="_blank" rel="noopener">https://deali-axy.github.io/Linux/%E8%AE%BE%E7%BD%AELinux%E9%BB%98%E8%AE%A4%E7%9A%84%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%99%A8/</a></p>
+</blockquote>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">CMake Error <span class="keyword">at</span> qt5/CMakeLists.txt:<span class="number">5</span> (find_package):</span><br><span class="line">  Could <span class="keyword">not</span> find <span class="keyword">a</span> package configuration <span class="built_in">file</span> provided <span class="keyword">by</span> <span class="string">"Qt5"</span> (requested</span><br><span class="line">  <span class="built_in">version</span> <span class="number">5.7</span><span class="number">.0</span>) <span class="keyword">with</span> <span class="keyword">any</span> <span class="keyword">of</span> <span class="keyword">the</span> following names:</span><br><span class="line"></span><br><span class="line">    Qt5Config.cmake</span><br><span class="line">    qt5-config.cmake</span><br><span class="line"></span><br><span class="line">  Add <span class="keyword">the</span> installation prefix <span class="keyword">of</span> <span class="string">"Qt5"</span> <span class="built_in">to</span> CMAKE_PREFIX_PATH <span class="keyword">or</span> <span class="built_in">set</span> <span class="string">"Qt5_DIR"</span></span><br><span class="line">  <span class="built_in">to</span> <span class="keyword">a</span> <span class="built_in">directory</span> containing <span class="literal">one</span> <span class="keyword">of</span> <span class="keyword">the</span> above <span class="built_in">files</span>.  If <span class="string">"Qt5"</span> provides <span class="keyword">a</span></span><br><span class="line">  separate development package <span class="keyword">or</span> SDK, be sure <span class="keyword">it</span> has been installed.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- Configuring incomplete, errors occurred!</span></span><br><span class="line">See also <span class="string">"/home/admin/project/fcitx5-qt-master/CMakeFiles/CMakeOutput.log"</span></span><br></pre></td></tr></table></figure>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/2020/Career/" data-toggle="tooltip" data-placement="top" title="Career">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/2020/Why-Linux/" data-toggle="tooltip" data-placement="top" title="Why Linux">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <div class="tip">
+          <p>
+            If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+          </p>
+        </div>
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=Linux-notes&body=Hi,I found this website and thought you might like it https://rmshadows.gitee.io/2020/Linux-notes/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!--修改--artalk-->
+<!-- 0.artalk安装代码 -->
+
+<!-- CSS -->
+<link href="https://civiccccc.ltd/artalk/dist/Artalk.css" rel="stylesheet" />
+<link href="https://civiccccc.ltd/artalk/dist/Artalk.css" rel="stylesheet" />
+<!-- JS -->
+<script src="https://civiccccc.ltd/artalk/dist/Artalk.js"></script>
+<!-- Artalk -->
+<div id="Comments"></div>
+<script>
+  Artalk.init({
+    el: '#Comments', // 绑定元素的 Selector
+    pageKey: 'https://rmshadows.gitee.io/2020/Linux-notes/', // 固定链接
+    pageTitle: '关于引入 Artalk 的这档子事', // 页面标题 (留空自动获取)
+    server: 'https://civiccccc.ltd/artalk', // 后端地址
+    site: 'CIVICCCCC 的博客', // 你的站点名
+  })
+</script>
+<!-- artalk安装代码已完成 -->
+
+
+
+<!-- 1. gitalk comment -->
+
+
+
+<!-- 2. gitment comment -->
+
+
+
+<!-- 3. disqus comment -->
+
+
+<!--修改--Livere-->
+
+
+<!--修改--ISSO-->
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <!--div id="toc" class="toc-article" -->
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          
+            <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Linux-Terminal"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Linux Terminal</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#cat——查看文本文档"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">cat——查看文本文档</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#chattr——更改文件属性"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">chattr——更改文件属性</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#chgrp——更改文件所属组"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">chgrp——更改文件所属组</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#chmod——更改文件读、写、执行权限"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">chmod——更改文件读、写、执行权限</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#cksum——查看sum"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">cksum——查看sum</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#cmp——比较文件差异（只显差异）"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">cmp——比较文件差异（只显差异）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#diff——比较文件差异（逐行）"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">diff——比较文件差异（逐行）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#usb-modeswitch——控制“多状态”USB设备的模式"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">usb-modeswitch——控制“多状态”USB设备的模式</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Git"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Git</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Git常用命令"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">Git常用命令</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Git删除远程分支"><span class="toc-nav-number">2.1.1.</span> <span class="toc-nav-text">Git删除远程分支</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#删除本地仓库中远程仓库已经不存在的分支"><span class="toc-nav-number">2.1.2.</span> <span class="toc-nav-text">删除本地仓库中远程仓库已经不存在的分支</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#GCM——Git-Credential-Manager"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">GCM——Git Credential Manager</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#安装"><span class="toc-nav-number">2.2.1.</span> <span class="toc-nav-text">安装</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Installing-Git"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">Installing Git</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Configure-Git"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">Configure Git</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#检查配置信息"><span class="toc-nav-number">2.4.1.</span> <span class="toc-nav-text">检查配置信息</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Get-Start"><span class="toc-nav-number">2.5.</span> <span class="toc-nav-text">Get Start</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#VNC-Server"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">VNC Server</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-让VNC显示当前桌面（远程桌面）"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">1.让VNC显示当前桌面（远程桌面）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#使用x0vncserver（tigervnc）"><span class="toc-nav-number">3.1.1.</span> <span class="toc-nav-text">使用x0vncserver（tigervnc）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#使用x11vnc"><span class="toc-nav-number">3.1.2.</span> <span class="toc-nav-text">使用x11vnc</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#问题：解决x11vnc-display-0-usepw连接后闪退的问题"><span class="toc-nav-number">3.1.3.</span> <span class="toc-nav-text">问题：解决x11vnc -display :0 -usepw连接后闪退的问题</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-让VNC显示另外的桌面"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">2.让VNC显示另外的桌面</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Tightvncserver"><span class="toc-nav-number">3.2.1.</span> <span class="toc-nav-text">Tightvncserver</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#TightVNC设置在5902端口且设置分辨率"><span class="toc-nav-number">3.2.2.</span> <span class="toc-nav-text">TightVNC设置在5902端口且设置分辨率</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#问题：解决Tightvncserver连接后gnome-terminal不在当前VNC会话，而是在-0显示屏"><span class="toc-nav-number">3.2.3.</span> <span class="toc-nav-text">问题：解决Tightvncserver连接后gnome-terminal不在当前VNC会话，而是在:0显示屏</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#问题：sh-1-home-admin-vnc-xstartup-Permission-denied"><span class="toc-nav-number">3.2.4.</span> <span class="toc-nav-text">问题：sh: 1: &#x2F;home&#x2F;admin&#x2F;.vnc&#x2F;xstartup: Permission denied</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#问题：解决Tightvncserver启动失败（安装了tigervnc-standalone-server导致tightvnc启动失败）"><span class="toc-nav-number">3.2.5.</span> <span class="toc-nav-text">问题：解决Tightvncserver启动失败（安装了tigervnc-standalone-server导致tightvnc启动失败）</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#从ifconfig到ip"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">从ifconfig到ip</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-显示网络接口信息"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">1. 显示网络接口信息</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-启用-禁用网络接口"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">2. 启用&#x2F;禁用网络接口</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-配置IP地址"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">3. 配置IP地址</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-显示路由表"><span class="toc-nav-number">4.4.</span> <span class="toc-nav-text">4. 显示路由表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#5-设置默认网关"><span class="toc-nav-number">4.5.</span> <span class="toc-nav-text">5. 设置默认网关</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#6-配置防火墙规则"><span class="toc-nav-number">4.6.</span> <span class="toc-nav-text">6. 配置防火墙规则</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#注意事项"><span class="toc-nav-number">4.7.</span> <span class="toc-nav-text">注意事项</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#各种编译错误"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">各种编译错误</span></a></li></ol>
+          
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#Daily" title="Daily">Daily</a>
+            
+            <a class="tag" href="/tags/#Linux Command Guiding" title="Linux Command Guiding">Linux Command Guiding</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://civiccccc.ltd" target="_blank">主站</a>
+          </li>
+          
+          <li>
+            <a href="https://github.com/xjx0106" target="_blank">国庆电播小弟</a>
+          </li>
+          
+          <li>
+            <a href="https://github.com/itcast-ying" target="_blank">itcast-ying</a>
+          </li>
+          
+          <li>
+            <a href="https://github.com/cjj19970505" target="_blank">Xeon-J</a>
+          </li>
+          
+          <li>
+            <a href="https://github.com/XeonKHJ" target="_blank">Xeon-H</a>
+          </li>
+          
+          <li>
+            <a href="https://gitee.com/rmshadows" target="_blank">Gitee - Ryan Yim</a>
+          </li>
+          
+          <li>
+            <a href="https://rmshadows.gitee.io/404" target="_blank">404 No Found Page</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+    <!-- Footer (contains ThemeColor、viewer) -->
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+            <li>
+              <a href="/feed.xml">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/rmshadows">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+            <li>
+              <a target="_blank" href="https://www.instagram.com/just_aaaa_r">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+            <li>
+              <a target="_blank" href="https://www.zhihu.com/people/rmshadows">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa  fa-stack-1x fa-inverse">知</i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Ryan Yim
+          2025
+          <br>
+          Theme by
+          <a href="http://beantech.org" target="_blank" rel="noopener">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a href="https://v-vincen.life/" target="_blank" rel="noopener">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+<!-- jQuery -->
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="/js/jquery.js"></script> -->
+<!-- <script type="text/javascript" src="//cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
+<!-- Bootstrap Core JavaScript -->
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<!--2022-03-28 添加了随机丝带特效-->
+
+  <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+
+<script type="text/javascript" src="/js/hux-blog.min.js"></script>
+
+<!-- catalog -->
+<script type="text/javascript" async="true" src="/js/catalog.js?v=1.0.0"></script>
+
+<!-- totop(rocket) -->
+<script type="text/javascript" async="true" src="/js/totop.js?v=1.0.0"></script>
+
+<!-- Busuanzi JavaScript -->
+
+  <!-- <script type="text/javascript" async="true" src="/js/busuanzi.pure.mini.js"></script> -->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+  <!-- Scroll start -->
+  <script type="text/javascript" src="/js/scroll.js"></script>
+  <!-- Scroll end -->
+
+
+
+  <!-- ThemeColor start -->
+  <script type="text/javascript" src="/js/themecolor.js"></script>
+  <!-- ThemeColor end -->
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  <script type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+  <script type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){ hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if($('#tag_cloud').length !== 0){ async("https://rmshadows.gitee.io/js/jquery.tagcloud.js",function(){ $.fn.tagcloud.defaults = { //size: {start: 1, end: 1, unit: 'em'}, color: {start:
+'#bbbbee', end: '#0085a1'}, }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+    
+    <!---自定义的代码 所有页面-->
+    
+        <script type="text/javascript" src="/js/on_mouse_clicked/emotions.js"></script>
+    
+
+    <!-- Search -->
+    
+    <div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/ziploader.js"></script>
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+    
+
+    <!-- Image to hack wechat -->
+    <!-- <img src="https://rmshadows.gitee.io/img/icon_wechat.png" width="0" height="0" /> -->
+    <!-- Migrate from head to bottom, no longer block render and still work -->
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+
+</html>

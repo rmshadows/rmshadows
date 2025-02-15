@@ -1,0 +1,594 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+
+</style><title>星座概况速查表</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='十二星座日期速查'><span>十二星座日期速查</span></h1><blockquote><p><span>参考: </span><a href='https://baike.baidu.com/item/%E5%8D%81%E4%BA%8C%E6%98%9F%E5%BA%A7/71359?fromModule=lemma_search-box'><span>百度百科</span></a><span>、</span><a href='http://www.ibazi.cn/article/48666'><span>紫微黄历</span></a><span>、</span><a href='https://www.zhihu.com/question/288484498/answer/1774576994'><span>知乎</span></a></p><p><span>注：以下日期为阳历日期，内容</span><strong><span>仅供娱乐</span></strong><span>，不作为科学指导！！</span></p></blockquote><p><span>  ♈白羊座 出生日期： 3月21日  -  4月20日</span></p><p><span>  ♉金牛座 出生日期： 4月21日  -  5月21日</span></p><p><span>  ♊双子座 出生日期： 5月22日  -  6月21日</span></p><p><span>  ♋巨蟹座 出生日期： 6月22日  -  7月22日</span></p><p><span>  ♌狮子座 出生日期： 7月23日  -  8月23日</span></p><p><span>  ♍处女座 出生日期： 8月24日  -  9月23日</span></p><p><span>  ♎天枰座 出生日期：  9月24日 - 10月23日</span></p><p><span>  ♏天蝎座 出生日期：10月24日 - 11月22日</span></p><p><span>  ♐射手座 出生日期：11月23日 - 12月21日</span></p><p><span>  ♑摩羯座 出生日期：12月22日 -  1月20日</span></p><p><span>  ♒水瓶座 出生日期： 1月21日  -  2月18日</span></p><p><span>  ♓双鱼座 出生日期： 2月19日  -  3月20日</span></p><h1 id='星座概述'><span>星座概述</span></h1><p><span>十二星座即黄道十二星座（the 12 signs of the zodiac），是黄道十二宫的衍生概念。黄道十二宫是占星学描述太阳在天球上经过黄道的12个均分的区域。经国际天文学联合会在1928年规范星座边界后，黄道星座共有13个。黄道十二星座与黄道星座不一致。蛇夫座是黄道星座之一，不是黄道十二星座之一。</span></p><p><span>在西方占星学上，一个人出生时，各星体落入黄道上的位置，说明了一个人的先天性格及天赋。黄道十二星座象征心理层面，反映出一个人行为的表现的方式。</span></p><p><span>历史上，古代为了要方便在航海时辨别方位与观测天象，于是将散布在天上的星星运用想像力把它们连结起来，一些星座是在古时候就已命名了，其命名的方式有依照古文明的神话与形状的附会。其余的是近代才命名，经常用航海的仪器来命名。在古代因地域的不同，所以&quot;连连看&quot;的方式也就不一样。而21世纪世界已统一星座图为将天空划分88个区域，即八十八星座。</span></p><h1 id='黄道十二星座象征一览表'><span>黄道十二星座象征一览表</span></h1><figure><table><thead><tr><th><span>星座</span></th><th><span>阶段</span></th><th><span>人体部位</span></th><th><span>性格特征</span></th><th><span>古希腊、古罗马的守护神</span></th><th><span>守护天使</span></th></tr></thead><tbody><tr><td><span>白羊</span></td><td><span>婴儿</span></td><td><span>头部</span></td><td><span>热情、冲动、自信</span></td><td><a href='https://baike.baidu.com/item/阿瑞斯/691?fromModule=lemma_inlink'><span>阿瑞斯</span></a><span>、</span><a href='https://baike.baidu.com/item/玛尔斯/80232?fromModule=lemma_inlink'><span>玛尔斯</span></a><span>战争、暴力、春天之神</span></td><td><span>呼唤爱与智慧·马基达尔</span></td></tr><tr><td><span>金牛</span></td><td><span>幼儿</span></td><td><span>颈、喉咙</span></td><td><span>固执、耐心、慢郎中</span></td><td><a href='https://baike.baidu.com/item/阿佛洛狄忒/3345?fromModule=lemma_inlink'><span>阿佛洛狄忒</span></a><span>、</span><a href='https://baike.baidu.com/item/维纳斯/5491?fromModule=lemma_inlink'><span>维纳斯</span></a><span>爱情、美丽、果园女神</span></td><td><span>戒律与处罚·阿斯莫德</span></td></tr><tr><td><span>双子</span></td><td><span>儿童</span></td><td><span>手臂、手掌、肩、肺</span></td><td><span>多变、好奇心、花心</span></td><td><a href='https://baike.baidu.com/item/赫尔墨斯/2477152?fromModule=lemma_inlink'><span>赫尔墨斯</span></a><span>、</span><a href='https://baike.baidu.com/item/墨丘利/79635?fromModule=lemma_inlink'><span>墨丘利</span></a><span>商业、旅游、畜牧之神</span></td><td><span>潜力天使·安比尔</span></td></tr><tr><td><span>巨蟹</span></td><td><span>少年</span></td><td><span>胸、胃、子宫、消化系统</span></td><td><span>温柔体贴、善良、同情心</span></td><td><a href='https://baike.baidu.com/item/阿尔忒弥斯/662237?fromModule=lemma_inlink'><span>阿尔忒弥斯</span></a><span>、</span><a href='https://baike.baidu.com/item/狄安娜/3136350?fromModule=lemma_inlink'><span>狄安娜</span></a><span>狩猎、月亮、橡树女神</span></td><td><span>审视与判定·穆里尔</span></td></tr><tr><td><span>狮子</span></td><td><span>青年</span></td><td><span>脊椎、心脏</span></td><td><span>慷慨、大方、自负自大</span></td><td><a href='https://baike.baidu.com/item/阿波罗/22709?fromModule=lemma_inlink'><span>阿波罗</span></a><span>光明、预言、音乐之神</span></td><td><span>太阳守护使·凡基尔</span></td></tr><tr><td><span>处女</span></td><td><span>青年</span></td><td><span>小肠、腹部</span></td><td><span>完美主义、挑剔、认真</span></td><td><a href='https://baike.baidu.com/item/赫尔墨斯/2477152?fromModule=lemma_inlink'><span>赫尔墨斯</span></a><span>、</span><a href='https://baike.baidu.com/item/墨丘利/79635?fromModule=lemma_inlink'><span>墨丘利</span></a><span>商业、旅游、畜牧之神</span></td><td><span>纯真无邪的守护使·哈玛利尔</span></td></tr><tr><td><span>天秤</span></td><td><span>成年</span></td><td><span>腰部、肾脏</span></td><td><span>优雅、公正、追求和平</span></td><td><a href='https://baike.baidu.com/item/阿佛洛狄忒/3345?fromModule=lemma_inlink'><span>阿佛洛狄忒</span></a><span>、</span><a href='https://baike.baidu.com/item/维纳斯/5491?fromModule=lemma_inlink'><span>维纳斯</span></a><span>爱情、美丽、果园女神</span></td><td><span>支配地狱之火·</span><a href='https://baike.baidu.com/item/乌列?fromModule=lemma_inlink'><span>乌列</span></a></td></tr><tr><td><span>天蝎</span></td><td><span>中年</span></td><td><span>生殖器官、泌尿系统</span></td><td><span>爱恨分明、冷酷、神秘</span></td><td><a href='https://baike.baidu.com/item/哈迪斯/36717?fromModule=lemma_inlink'><span>哈迪斯</span></a><span>、</span><a href='https://baike.baidu.com/item/普鲁托/3400148?fromModule=lemma_inlink'><span>普鲁托</span></a><span>冥界、瘟疫、死亡之神</span></td><td><span>收获与分配·巴比尔</span></td></tr><tr><td><span>射手</span></td><td><span>老年</span></td><td><span>大腿、臀部</span></td><td><span>乐观、热爱自由、粗心</span></td><td><a href='https://baike.baidu.com/item/宙斯/82054?fromModule=lemma_inlink'><span>宙斯</span></a><span>、</span><a href='https://baike.baidu.com/item/朱庇特/49047?fromModule=lemma_inlink'><span>朱庇特</span></a><span>宇宙、天空、雷霆之神</span></td><td><span>解脱与自由·阿德那基尔</span></td></tr><tr><td><span>摩羯</span></td><td><span>死亡</span></td><td><span>头发、皮肤、骨头</span></td><td><span>古板、稳重、严肃</span></td><td><a href='https://baike.baidu.com/item/潘恩/22820?fromModule=lemma_inlink'><span>潘恩</span></a><span>牧神</span></td><td><span>高尚与领悟·汉尼尔</span></td></tr><tr><td><span>水瓶</span></td><td><span>重生</span></td><td><span>小腿、血液循环</span></td><td><span>智慧、独特、叛逆</span></td><td><a href='https://baike.baidu.com/item/乌拉诺斯/3398955?fromModule=lemma_inlink'><span>乌拉诺斯</span></a><span>、</span><a href='https://baike.baidu.com/item/雅典娜/26005?fromModule=lemma_inlink'><span>雅典娜</span></a><span>、</span><a href='https://baike.baidu.com/item/密涅瓦/2840584?fromModule=lemma_inlink'><span>密涅瓦</span></a><span>智慧、战争、纺织女神</span></td><td><span>大天使长·</span><a href='https://baike.baidu.com/item/加百列/1723231?fromModule=lemma_inlink'><span>加百列</span></a></td></tr><tr><td><span>双鱼</span></td><td><span>灵魂</span></td><td><span>脚掌、脚踝</span></td><td><span>幻想、奉献精神、多情</span></td><td><a href='https://baike.baidu.com/item/波塞冬/21434?fromModule=lemma_inlink'><span>波塞冬</span></a><span>、</span><a href='https://baike.baidu.com/item/尼普顿/75313?fromModule=lemma_inlink'><span>尼普顿</span></a><span>海洋、地震、风暴之神</span></td><td><span>幸运天使·巴其尔</span></td></tr></tbody></table></figure><h1 id='占星学黄道十二宫分类表'><span>占星学黄道十二宫分类表</span></h1><figure><table><thead><tr><th><span>符号/中文/拉丁文开始/截止日期</span></th><th><a href='https://baike.baidu.com/item/火象星座/10341924?fromModule=lemma_inlink'><span>火象星座</span></a><span>(行动、热情、精力)</span></th><th><a href='https://baike.baidu.com/item/土象星座/5744788?fromModule=lemma_inlink'><span>土象星座</span></a><span>(功效、实际、稳健)</span></th><th><a href='https://baike.baidu.com/item/风象星座/6488445?fromModule=lemma_inlink'><span>风象星座</span></a><span>(智力、灵感、接受力)</span></th><th><a href='https://baike.baidu.com/item/水象星座/433752?fromModule=lemma_inlink'><span>水象星座</span></a><span>(情感、同情心、判断力)</span></th></tr></thead><tbody><tr><td><span>基本宫（领导者型）</span></td><td><span>♈/白羊/Aries</span></td><td><span>♑/摩羯/Capricorn</span></td><td><span>♎/天秤/Libra</span></td><td><span>♋/巨蟹/Cancer</span></td></tr><tr><td><span>固定宫（组织者型）</span></td><td><span>♌/狮子/Leo</span></td><td><span>♉/金牛/Taurus</span></td><td><span>♒/水瓶/Aquarius</span></td><td><span>♏/天蝎/Scorpio</span></td></tr><tr><td><span>变动宫（传授者型）</span></td><td><span>♐/射手/Sagittarius</span></td><td><span>♍/处女/Virgo</span></td><td><span>♊/双子/Gemini</span></td><td><span>♓/双鱼/Pisces</span></td></tr></tbody></table></figure><h1 id='黄道十二星座占星学属性一览表'><span>黄道十二星座占星学属性一览表</span></h1><figure><table><thead><tr><th><span>名称</span></th><th><span>符号</span></th><th><span>象征</span></th><th><span>能量</span></th><th><a href='https://baike.baidu.com/item/七曜/1374887?fromModule=lemma_inlink'><span>七曜</span></a></th><th><span>植物</span></th><th><span>特质</span></th></tr></thead><tbody><tr><td><span>白羊</span></td><td><span>♈</span></td><td><span>开始</span></td><td><span>控制</span></td><td><a href='https://baike.baidu.com/item/火星/5627?fromModule=lemma_inlink'><span>火星</span></a></td><td><a href='https://baike.baidu.com/item/樱花/70387?fromModule=lemma_inlink'><span>樱花</span></a><a href='https://baike.baidu.com/item/雏菊/16619?fromModule=lemma_inlink'><span>雏菊</span></a></td><td><span>冲动、慷慨、爱冒险、天不怕地不怕、为达到目的会排除万难；活力四射、自我、冲动白羊座——处于代表新生的黄道第一宫，就如同它所处的位置一样，白羊座的人充满了新生儿的活力，释放出一种生机勃勃的气息。</span></td></tr><tr><td><span>金牛</span></td><td><span>♉</span></td><td><span>力量</span></td><td><span>丰富</span></td><td><a href='https://baike.baidu.com/item/金星/19410?fromModule=lemma_inlink'><span>金星</span></a></td><td><a href='https://baike.baidu.com/item/牵牛花/995?fromModule=lemma_inlink'><span>牵牛花</span></a><a href='https://baike.baidu.com/item/康乃馨/34029?fromModule=lemma_inlink'><span>康乃馨</span></a></td><td><span>保守、不喜欢变动、安稳、缺乏安全感、不多发言、重视尊严、爱打扮自己；稳重、低调、固执金牛座——黄道第二个星座，公牛就是其代表动物。金牛座的人给人感觉稳重、务实，追求稳定与和谐，值得信赖。</span></td></tr><tr><td><span>双子</span></td><td><span>♊</span></td><td><span>智慧</span></td><td><span>掌握</span></td><td><a href='https://baike.baidu.com/item/水星/135917?fromModule=lemma_inlink'><span>水星</span></a></td><td><a href='https://baike.baidu.com/item/羊齿蕨/4872419?fromModule=lemma_inlink'><span>羊齿蕨</span></a><a href='https://baike.baidu.com/item/仙人掌/4967?fromModule=lemma_inlink'><span>仙人掌</span></a><a href='https://baike.baidu.com/item/紫玫瑰/71035?fromModule=lemma_inlink'><span>紫玫瑰</span></a></td><td><span>他们善良、勇敢、正直、慷慨、简单率真、行动力十足，且富有冒险精神，在他们的身上，你能看见一颗热烈跳动着的纯洁的赤子之心，这是其他星座无法比拟的最原始的质朴和纯真。 喜爱变化、心不在焉、聪明但难以持久、理性但不安分；双重性格、机敏、善变双子座——黄道宫上的第三个星座，是第一个风相星座。受水星守护，思维敏捷，有良好的沟通能力，反应迅速，适应力强。</span></td></tr><tr><td><span>巨蟹</span></td><td><span>♋</span></td><td><span>坚强</span></td><td><span>热情</span></td><td><a href='https://baike.baidu.com/item/月亮/5557?fromModule=lemma_inlink'><span>月亮</span></a></td><td><a href='https://baike.baidu.com/item/昙花/9779247?fromModule=lemma_inlink'><span>昙花</span></a><a href='https://baike.baidu.com/item/百合/7886?fromModule=lemma_inlink'><span>百合</span></a><a href='https://baike.baidu.com/item/夜来香/16210?fromModule=lemma_inlink'><span>夜来香</span></a></td><td><span>就如同公牛一般，勤勤恳恳，踏踏实实做好份内事，安静却充满力量，稳健地追求自我价值的实现。有时他们也显得固执己见，对钱财看得很重。这多是因为他们害怕变动，喜欢安定，害怕没有安全感的缘故。 情绪化、记忆力强、体贴、亲切、坚持到底、重视朋友和家庭、喜欢收集储存、不舍不弃、品味高；心思细密、友善、居家巨蟹座——黄道宫上的第四个星座，主宰星为月亮。心思细密，感受力强，保护意识强烈，家庭观念浓厚，有强烈的责任心及牺牲奉献精神。他们擅长持家，喜欢安定祥和的家庭氛围，对长辈孝顺，对兄弟姐妹、朋友非常友善，努力创造和谐与美满。</span></td></tr><tr><td><span>狮子</span></td><td><span>♌</span></td><td><span>权力</span></td><td><span>清醒</span></td><td><a href='https://baike.baidu.com/item/太阳/24010?fromModule=lemma_inlink'><span>太阳</span></a></td><td><a href='https://baike.baidu.com/item/向日葵/6106?fromModule=lemma_inlink'><span>向日葵</span></a><a href='https://baike.baidu.com/item/金盏花/40306?fromModule=lemma_inlink'><span>金盏花</span></a></td><td><span>双子座的人追求并享受生动、多姿多彩、富于变化的生活环境，平淡、一成不变的环境难以引起他们的兴趣。因为他们有很强的交际能力，所以身边不缺朋友，风趣机智的表现也常受周围人的欢迎。 阳光、热情、自信、大方、喜欢指挥、组织能力强、自大、固执、反应夸张；阳光、霸气、表现欲狮子座——黄道宫上的第五个星座，主宰星为太阳。阳光灿烂，充满活力，感觉有使不完的能量;表现欲强烈，举手投足之间充满了闪耀的魅力，很容易成为众人瞩目的焦点。</span></td></tr><tr><td><span>处女</span></td><td><span>♍</span></td><td><span>美丽</span></td><td><span>分析</span></td><td><span>水星</span></td><td><a href='https://baike.baidu.com/item/紫薇/17982?fromModule=lemma_inlink'><span>紫薇</span></a><a href='https://baike.baidu.com/item/葱兰/426244?fromModule=lemma_inlink'><span>葱兰</span></a><a href='https://baike.baidu.com/item/文心兰/770152?fromModule=lemma_inlink'><span>文心兰</span></a></td><td><span>当然，他们的自我保护的意识也非常强烈，一点点的风吹草动都有可能心潮起伏，当有人侵犯了他们内心的那块净土时，他们也会伸出钳子示威。 挑剔、神经紧张、吹毛求疵、谦虚、踏实勤力而不肤浅、喜欢忙碌、有时缺乏自信；严谨、理性、真诚处女座——黄道宫上的第六个星座，主宰星为水星。思路清晰，冷静理性，待人真诚，但保持一定的距离。受到主宰星水星的影响，他们独立，思维敏捷，乐于为人服务，易受人欢迎。</span></td></tr><tr><td><span>天秤</span></td><td><span>♎</span></td><td><span>平衡</span></td><td><span>衡量</span></td><td><span>金星</span></td><td><a href='https://baike.baidu.com/item/非洲菊/530646?fromModule=lemma_inlink'><span>非洲菊</span></a><a href='https://baike.baidu.com/item/猫尾花/9243129?fromModule=lemma_inlink'><span>猫尾花</span></a><a href='https://baike.baidu.com/item/海芋/1101879?fromModule=lemma_inlink'><span>海芋</span></a></td><td><span>他们身上散发出来的热力很容易感染周围的人，让大家跟着一起舞动生活。他们对权力地位的追求非常执着，以捍卫其领导地位，欲望也是他们不断向前的动力源泉。 优雅、亲切、善良、慷慨、朋友缘好、喜欢倾听、沟通力强、犹豫不决、冷静多谋、处事公正、依赖心强；优雅、亲和、真实天秤座——黄道宫上的第七个星座，主宰星为金星。他们极具风度，浑身充满了优雅的贵人气息，喜欢与人群接触，不喜欢单打独斗，对于具有美感的事物特别感兴趣。</span></td></tr><tr><td><span>天蝎</span></td><td><span>♏</span></td><td><span>神秘</span></td><td><span>思考</span></td><td><span>火星</span></td><td><a href='https://baike.baidu.com/item/剑兰/2075464?fromModule=lemma_inlink'><span>剑兰</span></a><a href='https://baike.baidu.com/item/文竹/362319?fromModule=lemma_inlink'><span>文竹</span></a></td><td><span>生活态度严谨，要求一丝不苟，有自己的道德底线，不会乱来;喜欢安静舒适的环境，最怕无序、杂乱无章;他们也希望获得周围人的肯定，听到认同的声音他们会更有斗志。 神秘、精力旺盛、热情、善妒、占有欲强、性感、记仇；冷静理性、坚韧、神秘天蝎座——黄道宫上的第八个星座，主宰星为火星和冥王星。能量强大，精力旺盛，有强烈责任感、韧性强、黑白分明、意志力强、支配欲强烈，对于生命的奥秘有独特的见解。</span></td></tr><tr><td><span>射手</span></td><td><span>♐</span></td><td><span>坦率</span></td><td><span>直觉</span></td><td><a href='https://baike.baidu.com/item/木星/222105?fromModule=lemma_inlink'><span>木星</span></a></td><td><a href='https://baike.baidu.com/item/蝴蝶兰/17262?fromModule=lemma_inlink'><span>蝴蝶兰</span></a><a href='https://baike.baidu.com/item/天堂鸟/21219?fromModule=lemma_inlink'><span>天堂鸟</span></a></td><td><span>出色的交际能力让他们很容易与人打成一片;他们很注意自己的外在形象，希望在他人面前表现出完美的一面，但也易让人感觉虚荣、做作。 乐观、诚实、热情、喜欢挑战、浮躁、鲁莽、有时意志力薄弱、热爱旅行、喜欢博弈；积极乐观、坦率、不拘小节射手座——黄道宫上的第九个星座，主宰星为木星。他们有着轻松愉快、活泼开朗的人生观。做人非常坦荡，待人真诚热情，积极乐观的一面很吸引人，非常受人欢迎。</span></td></tr><tr><td><span>摩羯</span></td><td><span>♑</span></td><td><span>坚韧</span></td><td><span>放松</span></td><td><a href='https://baike.baidu.com/item/土星/136354?fromModule=lemma_inlink'><span>土星</span></a></td><td><a href='https://baike.baidu.com/item/梅花/17439?fromModule=lemma_inlink'><span>梅花</span></a><a href='https://baike.baidu.com/item/山茶花/5174?fromModule=lemma_inlink'><span>山茶花</span></a></td><td><span>他们的城府颇深，待人处事非常冷静理性，不苟言笑，有着强烈的第六感，以及神秘的吸引力。虽然有着敏锐的观察力，但往往仍靠感觉来决定一切。 耐心、脚踏实地、固执、孤独、重视面子、深藏不露；和蔼、心胸宽广、有担当摩羯座——黄道宫上的第十个星座，主宰星为土星，有着成熟认真的人生观。他们就像将领，能担当大任，追求高难度的理想，喜欢控制全局，善于独立实现自己心中的理想。</span></td></tr><tr><td><span>水瓶</span></td><td><span>♒</span></td><td><span>叛逆</span></td><td><span>坚持</span></td><td><span>土星</span></td><td><a href='https://baike.baidu.com/item/风信子/22530?fromModule=lemma_inlink'><span>风信子</span></a><a href='https://baike.baidu.com/item/水仙/6410?fromModule=lemma_inlink'><span>水仙</span></a></td><td><span>他们属于乐观、坦率、聪慧的类型，特立独行，颇富直觉与鼓舞他人的力量，思想开明、适应力强，不拘小节，生性幽默，很懂得享受生活。 革新、令人捉摸不定、人道主义、对人友善、注重隐私；前卫、有主见、古灵精怪水瓶座——黄道宫上的第十一个星座，主宰星为天王星，思想前卫，有开拓精神。他们是反习俗、不愿随声附和的人，说话和做事全凭自己的兴趣，很有自己的主张，追求独一无二的生活方式。</span></td></tr><tr><td><span>双鱼</span></td><td><span>♓</span></td><td><span>复杂</span></td><td><span>信心</span></td><td><span>木星</span></td><td><a href='https://baike.baidu.com/item/金鱼花/8501143?fromModule=lemma_inlink'><span>金鱼花</span></a><a href='https://baike.baidu.com/item/爱丽丝/9732198?fromModule=lemma_inlink'><span>爱丽丝</span></a></td><td><span>喜欢从容不迫、深思熟虑，待人亲切和蔼、心胸宽广、有抱负，以踏实的方式追求成功，信奉有付出就会有回报的信条。 健忘、多愁善感、爱幻想、自欺欺人、奉献精神、助人为乐、舍己为人、缺乏信心；感性浪漫、多才多艺、体贴双鱼座——黄道宫上最后一个星座，主宰星为海王星，注重心灵，非常感性。双鱼座体贴、思想脱俗、多才多艺，在他们身上有一种令人难以抵御的奇异魅力。</span></td></tr></tbody></table></figure><p>&nbsp;</p><p>&nbsp;</p></div></div>
+</body>
+</html>

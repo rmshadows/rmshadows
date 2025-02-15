@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--用于跳转的页面-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>加载页面中...</title>
+	</head>
+	<!--<script>
+		var t = 1;//延时 秒
+		var s = '.';
+		timeID=setInterval("countDown()",1000);
+		function countDown(){
+		time.innerHTML= t +"秒后跳转"+s;
+		t--;
+		s+='.';
+		if (t==0) {
+			location.href="./electron/index.html";
+			clearInterval(timeID);
+		}
+	}
+	</script-->
+	<script>
+		location.href="./electron/index.html"; //跳转地址-加载加密猫
+	</script>
+	<body>
+		<div><font ID="time" face="impact" color="#272822" size="7">正在加载加密猫……</font>
+		</div>
+	</body>
+</html>

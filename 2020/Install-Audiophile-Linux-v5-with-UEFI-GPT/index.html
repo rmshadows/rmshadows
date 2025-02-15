@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+
+  <!-- Baidu Tongji -->
+  
+
+  <!-- Baidu Push -->
+  
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc" />
+  <meta name="baidu-site-verification" content="PpzM9WxOJU" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="This is CIVICCCCC&#39;s blog..." />
+  <meta name="keyword" content="rmshadows,civiccccc,blog,Blog" />
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg" />
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+  <!-- Bootstrap Core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/beantech.min.css" />
+
+  <!-- Pygments Highlight CSS -->
+  
+<link rel="stylesheet" href="../../css/highlight.css">
+<link rel="stylesheet" href="../../css/widget.css">
+<link rel="stylesheet" href="../../css/rocket.css">
+<link rel="stylesheet" href="../../css/signature.css">
+<link rel="stylesheet" href="../../css/catalog.css">
+<link rel="stylesheet" href="../../css/livemylife.css">
+
+
+  
+  <!-- wave start -->
+  <link rel="stylesheet" href="/css/wave.css" />
+  <!-- wave end -->
+  
+
+  
+  <!-- top start (article top hot config) -->
+  <link rel="stylesheet" href="/css/top.css" />
+  <!-- top end -->
+  
+
+  
+  <!-- ThemeColor start -->
+  <link rel="stylesheet" href="/css/scroll.css" />
+  <!-- ThemeColor end -->
+  
+
+  
+  <!-- viewer start (Picture preview) -->
+  <link rel="stylesheet" href="/css/viewer.min.css" />
+  <!-- viewer end -->
+  
+
+  
+  <!-- Search start -->
+  <link rel="stylesheet" href="/css/search.css" />
+  <!-- Search end -->
+  
+
+  
+  <!-- ThemeColor start -->
+  <link rel="stylesheet" href="/css/themecolor.css" />
+  <!-- ThemeColor end -->
+  
+
+  
+
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+    href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://rmshadows.gitee.io/2020/Install-Audiophile-Linux-v5-with-UEFI-GPT/">
+  <title>
+    
+    Install Audiophile Linux v5 with UEFI+GPT - RYAN | be yourself
+    
+  </title>
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="atom.xml" title="Hello ~(○｀ 3′○)~ I'm Ryan Yim" type="application/atom+xml">
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+
+<body ontouchstart="" class="body--home">
+    <!-- ThemeColor -->
+    
+    <!-- ThemeColor -->
+<!-- <div class="toggle" onclick="document.body.classList.toggle('body--dark')">Switch Color</div> -->
+
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons bright-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+
+    
+
+    <!-- Navigation (contains search)-->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Hello ~(○｀ 3′○)~ I&#39;m Ryan Yim</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">Home</a>
+          </li>
+
+          
+
+          
+          
+
+          
+          <li>
+            <a href="/about/">About</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a href="/archive/">Archives</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a href="/categories/">Categories</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a href="/tags/">Tags</a>
+          </li>
+          
+          
+
+          
+          <li><a class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+
+<script>
+  // Drop Bootstarp low-performance Navbar
+  // Use customize navbar with high-quality material design animation
+  // in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+    <!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+    <!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    header.intro-header {
+       /*post*/
+        background-image: url('https://rmshadows.gitee.io//img/header_img/lml_bg.jpg');
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/rmshadows.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#Audiophile Linux" title="Audiophile Linux">Audiophile Linux</a>
+              
+              <a class="tag" href="/tags/#AP Linux Installation" title="AP Linux Installation">AP Linux Installation</a>
+              
+              <a class="tag" href="/tags/#UEFI+GPT Arch Linux" title="UEFI+GPT Arch Linux">UEFI+GPT Arch Linux</a>
+              
+            </div>
+            <h1>Install Audiophile Linux v5 with UEFI+GPT</h1>
+            <h2 class="subheading">Audiophile Linux的简易安装(UEFI+GPT)，AP Linux是基于Arch Linux的一款专注于高品质音频的Linux发行版，默认桌面Fluxbox，一切为了追求高品音质！</h2>
+            <span class="meta">
+              Posted by Ryan Yim on
+              2020-11-07
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">30</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">5.6k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+    <!-- Main Content (Post contains
+    Pager、
+    tip、
+    socialshare、
+    gitalk、gitment、disqus-comment、
+    Catalog、
+    Sidebar、
+    Featured-Tags、
+    Friends Blog、
+    anchorjs、
+    ) -->
+    <!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h2 id="安装Audiophile-Linux-Get-Start"><a href="#安装Audiophile-Linux-Get-Start" class="headerlink" title="安装Audiophile Linux - Get Start"></a>安装Audiophile Linux - Get Start</h2><p><img src="fluxbox.png" alt="fluxbox"></p>
+<p>看看我用它听音乐的日常！</p>
+<p><iframe src="//player.bilibili.com/player.html?aid=712841278&bvid=BV1uD4y1X7WA&cid=255184535&page=1" frameborder="no" scrolling="no" width="95%" height="600" border="0" framespacing="0" allowfullscreen="true"></iframe></p>
+
+<h3 id="制作启动盘-Grab-APL"><a href="#制作启动盘-Grab-APL" class="headerlink" title="制作启动盘 - Grab APL"></a>制作启动盘 - Grab APL</h3><p>到<a href="https://www.ap-linux.com" target="_blank" rel="noopener">官网</a>下载镜像，制作启动盘。Grab your copy of new AP-Linux <a href="https://www.ap-linux.com/download/" target="_blank" rel="noopener">here</a>.</p>
+<ul>
+<li>要求-Requirements:<ul>
+<li>一个4G的U盘，用来刻录启动盘 - USB thumb drive to burn the iso file</li>
+<li>一个至少25G的磁盘 - Blank disk or free partition on the disk. Use at least 25GB minimum.</li>
+<li>有互联网 - Internet access</li>
+</ul>
+</li>
+</ul>
+<p>首先，将ISO文件刻录在U盘上。Windows可以用UltraISO，Linux可以用<code>dd</code> 命令：<code>dd bs=4M if=[ISO文件路径] of=[U盘设备名] status=progress &amp;&amp; sync</code> 。注意：U盘内的所有文件都会被清除！<strong>谨慎操作！</strong></p>
+<p>Put/burn the iso on the thumb drive, power up your PC and select to  boot from USB. Standard Arch Linux boot will appear. Just press enter  and wait for system to boot. If you don’t know how to burn/put iso file  on the USB thumb drive, there’s a lot of documentation on the internet.  It all depends which operating system or software you use. But if you  using Linux, it’s easy. In terminal just do this:</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dd <span class="attribute">bs</span>=4M <span class="keyword">if</span>=[/path/<span class="keyword">to</span>/apl-v4.iso] of=[/dev/sdX] <span class="attribute">status</span>=progress &amp;&amp; sync</span><br></pre></td></tr></table></figure>
+<p>where /dev/sdX is your thumb drive. Make sure you put correct /dev/sdX or you will loose all the data on that disk.</p>
+<p>After boot finishes, use this commands:</p>
+<p>如果你有4K的显示屏，启动后字体会很小，你应该运行<code>setfont ter-232b</code></p>
+<p>If you have 4K Monitor, the fonts will be very small. Execute this command if you have 4K Monitor:</p>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># setfont ter-232b</span></span><br></pre></td></tr></table></figure>
+<p>上面讲的是在Linux下制作启动U盘，Windows中使用UltraISO[软碟通]也行。如果你习惯Windows系统，你最好在Disk Genius下把磁盘转为GPT，或者在Linux下的GNOME磁盘中左上角可以找到，或者……<code>mklabel gpt</code></p>
+<p>再或者：</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">parted /dev/sdb</span><br><span class="line">(parted)mktable</span><br><span class="line"><span class="built_in">New</span> disk label <span class="keyword">type</span>? gpt</span><br><span class="line"><span class="built_in">Warning</span>: The existing disk label <span class="keyword">on</span> /dev/vdb will be destroyed <span class="keyword">and</span> <span class="keyword">all</span> data <span class="keyword">on</span></span><br><span class="line">this disk will be lost. <span class="keyword">Do</span> you want <span class="keyword">to</span> <span class="keyword">continue</span>?</span><br><span class="line">Yes/<span class="keyword">No</span>?Yes</span><br></pre></td></tr></table></figure>
+<p>Change your disk to GPT by typing <code>parted 【Your device】</code></p>
+<p><img src="GNOME-Disk.png" alt="GNOME_DISK"></p>
+<p><strong>==下面我将在最后一个分区(134G)安装AP Linux==</strong></p>
+<h3 id="在UEFI下启动安装盘并进行磁盘分区-BOOT-WITH-UEFI-amp-Create-partitions"><a href="#在UEFI下启动安装盘并进行磁盘分区-BOOT-WITH-UEFI-amp-Create-partitions" class="headerlink" title="在UEFI下启动安装盘并进行磁盘分区 - BOOT WITH UEFI &amp; Create partitions"></a>在UEFI下启动安装盘并进行磁盘分区 - BOOT WITH UEFI &amp; Create partitions</h3><p>重启电脑(记得使用UEFI，不是Legacy)，选择制作的启动盘。Boot with UEFI.</p>
+<p><img src="UEFI_BOOT.png" alt="UEFI_BOOT"> </p>
+<p>Now we’re logged in as root.</p>
+<p><img src="Login.png" alt="Login"> </p>
+<blockquote>
+<p>注:磁盘分区可以事先进行，不一定要等到这里，你可以在Windows下进行磁盘分区。</p>
+</blockquote>
+<p>用<code>fdisk -l</code>查看当前磁盘，并用fdisk命令创建一个ESP分区（EFI分区，这里假设是/dev/sda1）和Linux分区(Ext4分区，这里假设/dev/sda2)还有Swap分区(/dev/sda3)，新手简易用cfdisk。下面你可以看到fdisk命令和blkid命令的执行结果。</p>
+<p>To make a UEFI APL ,we need to divide the disk into three partitions——EFI ,EXT4 and Linux swap . <code>cfdisk</code> has a friendly interface.</p>
+<p><img src="fdisk.png" alt="fdisk"> </p>
+<p>再来看看<code>cfdisk</code>命令：</p>
+<p><img src="cfdisk.png" alt="cfdisk"> </p>
+<p>是不是有好很多了呢？老手用fdisk应该没啥问题，这里一笔带过：</p>
+<hr>
+<p>Creating a partition with fdisk begins with typing “n” and then “p”.  Saving with “w”. With cfdisk is different. Create new partition for  AP-Linux and select “Write” to save new partition table. Quit to get  back to the terminal.</p>
+<p><img src="fdisk-dev.png" alt="fdisk-dev"> </p>
+<hr>
+<p>这里针对小白说下cfdisk：</p>
+<p>首先，New一块ESP分区：</p>
+<p><img src="partition.png" alt="partition"> </p>
+<p>大小300M应该够了叭。。。</p>
+<p><img src="300m.png" alt="300m"> </p>
+<p>新建好后选择type，再选择EFI System</p>
+<p><img src="type_esp.png" alt="type_esp"> </p>
+<p><img src="efisys.png" alt="efisys"> </p>
+<p>同理，按照相同的方法新建Linux filesystem和Linux Swap分区。</p>
+<p><img src="mkswap.png" alt="mkswap"> </p>
+<p><img src="write.png" alt="write"> </p>
+<p>最后确认无误后点击write写入「==警告：一定要看清楚，数据无价！==」。</p>
+<p><img src="write2.png" alt="write2"> </p>
+<h3 id="准备就绪，开始安装-Install-APL"><a href="#准备就绪，开始安装-Install-APL" class="headerlink" title="准备就绪，开始安装 - Install APL"></a>准备就绪，开始安装 - Install APL</h3><p>创建好三个分区后 - Now we have 3 partitions:</p>
+<ul>
+<li>/dev/sda1:EFI分区 | 300M EFI Filesystem</li>
+<li>/dev/sda2:文件系统 | 100G EXT4 Filesystem</li>
+<li>/dev/sda3:交换空间 | 8G Linux Swap</li>
+</ul>
+<p>-&gt; 你可以不按照我这个来，这里仅作参考&lt;还有sda1，sda2要根据你们实际的来，不是照抄，望周知！&gt;</p>
+<p>以下内容与ArchLinux安装不同，Arch Linux安装请参见 <a href="https://zhuanlan.zhihu.com/p/141712466" target="_blank" rel="noopener">这里</a></p>
+<ol>
+<li><p>格式化分区：</p>
+<ul>
+<li>格式化sda1为vfat文件系统，用来存放efi文件，这样UEFI就可以从这里找到efi文件启动咱们的AP Linux：<code>mkfs.vfat -F32 /dev/sda1</code> Format your EFI filesystem with fat32(vfat).</li>
+<li>格式化sda2为ext4，除非你另有需求，要使用其他文件系统。这里格式化为EXT4：<code>mkfs.ext4 /dev/sda2</code>，然后顺便挂载分区到/mnt文件夹：<code>mount /dev/sda2 /mnt</code>  - Create a EXT4 partition then mount it on <code>/mnt</code> folder .</li>
+<li>创建swap分区并启用：<code>mkswap /dev/sda3 &amp;&amp; swapon /dev/sda3</code>  Create a swap partition for our APL .</li>
+</ul>
+<p><img src="swapon.png" alt="swapon"> </p>
+</li>
+<li><p>查看分区<code>lsblk</code>  ，然后执行<code>time cp -ax / /mnt</code>  Copy data to /dev/sda2.</p>
+<p><img src="lsblk.png" alt="lsblk"> </p>
+</li>
+<li><p>执行<code>arch-chroot /mnt /bin/bash</code>  切换到新系统，然后进入apl-files文件：<code>cd /etc/apl-files</code> </p>
+<p><img src="chroot.png" alt="chroot"> </p>
+<p>执行runme脚本：<code>./runme.sh</code>  中途会停下来让你输入用户名和密码，自己输入就是。</p>
+<p><img src="runsh.png" alt="runsh"> </p>
+<p>执行完会有提示说下一步你应该干嘛，但你要知道，这是针对Legacy Boot的指导，UEFI Boot该怎么做请继续往下看。Change root ,run install script in <code>/etc/apl-files</code>.</p>
+<p><img src="legacy.png" alt="legacy"> </p>
+</li>
+</ol>
+<h3 id="安装启动引导-Grub-install-x86-64-efi"><a href="#安装启动引导-Grub-install-x86-64-efi" class="headerlink" title="安装启动引导 - Grub-install x86_64-efi"></a>安装启动引导 - Grub-install x86_64-efi</h3><blockquote>
+<p>Install grub for our ap-linux !</p>
+</blockquote>
+<ol>
+<li><p>首先，进入/boot新建efi文件夹<code>mkdir efi</code></p>
+</li>
+<li><p>挂载sda1: <code>mount /dev/sda1 /boot/efi/</code></p>
+</li>
+<li><p>这里咱们使用的是UEFI，所以要执行 ： <code>grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=arch_grub --recheck --debug</code></p>
+<blockquote>
+<p>如果是Legacy启动，则是执行：<code>grub-install --target=i386-pc /dev/sda</code></p>
+</blockquote>
+</li>
+<li><p>安装成功后执行：<code>grub-mkconfig -o /boot/grub/grub.cfg</code>  生成配置。</p>
+</li>
+</ol>
+<p><img src="grub-install.png" alt="grub-install"></p>
+<h3 id="收尾工作-Last-step"><a href="#收尾工作-Last-step" class="headerlink" title="收尾工作 - Last step"></a>收尾工作 - Last step</h3><p>差不多已经装完了，现在进行收尾 - The installation is nearly completed,Let’s finish it.</p>
+<ul>
+<li><p>修改root用户密码：<code>passwd root</code></p>
+</li>
+<li><p>调整时区：<code>ln -s /usr/share/zoneinfo/Hongkong /etc/localtime</code>  我这里用的是香港。</p>
+</li>
+<li><p>修改硬件时间 ：<code>hwclock --systohc --utc</code></p>
+<p><img src="timezone.png" alt="time"></p>
+</li>
+<li><p>回到/etc/apl-files文件夹下执行你觉得有必要的脚本 - Enable wireless &amp; autologin</p>
+<ul>
+<li><code>./autologin.sh</code></li>
+<li><code>./enable-wless.sh</code></li>
+</ul>
+</li>
+<li><p><code>exit</code>  退出新系统，然后更新新系统的fstab - Finally , exit new system and generate a fstab file.</p>
+<p><code>genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</code></p>
+</li>
+</ul>
+<p>然后你可以重启电脑了 - Reboot。</p>
+<h2 id="开机优化-Power-on-our-APL-amp-Make-it-easy-to-use"><a href="#开机优化-Power-on-our-APL-amp-Make-it-easy-to-use" class="headerlink" title="开机优化 - Power-on our APL &amp; Make it easy to use"></a>开机优化 - Power-on our APL &amp; Make it easy to use</h2><h3 id="初始化pacman-Init-pacman"><a href="#初始化pacman-Init-pacman" class="headerlink" title="初始化pacman - Init pacman"></a>初始化pacman - Init pacman</h3><ul>
+<li><p>首先检查网络<code>ping www.baidu.com</code></p>
+</li>
+<li><p>管理员权限 - Be root：<code>su</code></p>
+</li>
+<li><p>初始化pacman - Initialize pacman：</p>
+<ul>
+<li><code>pacman-key --init</code></li>
+<li><code>pacman-key --populate archlinux</code></li>
+<li><code>pacman -Sy</code></li>
+</ul>
+</li>
+<li><p>设置<a href="https://www.archlinux.org/mirrors/status/" target="_blank" rel="noopener">pacman源</a> - Set pacman mirror to TUNA：<code>cd /etc/pacman.d</code></p>
+<ul>
+<li><code>cp mirrorlist mirrorlist.bak</code></li>
+<li>将mirrorlist中第一行添加：<code>Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch</code></li>
+<li><code>pacman -Sy</code></li>
+</ul>
+</li>
+<li><p>中文仓库见 <a href="https://www.archlinuxcn.org/archlinux-cn-repo-and-mirror/" target="_blank" rel="noopener">这里</a> |  设置中文cn仓库 Arch Linux CN repo:</p>
+<blockquote>
+<p> ArchlinuxCN 镜像使用帮助</p>
+</blockquote>
+<p>Arch Linux 中文社区仓库 是由 Arch Linux 中文社区驱动的非官方用户仓库。包含中文用户常用软件、工具、字体/美化包等。</p>
+<p>完整的包信息列表（包名称/架构/维护者/状态）请 <a href="https://github.com/archlinuxcn/repo" target="_blank" rel="noopener">点击这里</a> 查看。</p>
+<ul>
+<li>官方仓库地址：<a href="https://repo.archlinuxcn.org" target="_blank" rel="noopener">https://repo.archlinuxcn.org</a></li>
+<li>镜像地址: <a href="https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/</a></li>
+</ul>
+<p>使用方法：在 <code>/etc/pacman.conf</code> 文件末尾添加以下两行：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[archlinuxcn]</span></span><br><span class="line"><span class="attr">Server</span> = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/<span class="variable">$arch</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>​      之后安装 <code>archlinuxcn-keyring</code> 包导入 GPG key。</p>
+<ul>
+<li><p><code>pacman -S base-devel</code></p>
+</li>
+<li><p><code>git clone https://aur.archlinux.org/yay.git &amp;&amp; cd yay &amp;&amp; makepkg -si</code></p>
+</li>
+<li><p><code>pacman -S libffi glibc</code></p>
+</li>
+<li><p>问题：错误：无法提交处理 (无效或已损坏的软件包)</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>首先更新一下密钥，如果没有安装archlinux-keyring 和 archlinuxcn-keyring,请及时安装</span><br><span class="line">pacman -Sy archlinuxcn-keyring</span><br><span class="line">pacman -Sy archlinux-keyring</span><br><span class="line">sudo pacman-<span class="type">key</span> --refresh-keys</span><br><span class="line"><span class="number">2.</span>重新加载相应的签名密钥</span><br><span class="line">sudo pacman-<span class="type">key</span> --init</span><br><span class="line">sudo pacman-<span class="type">key</span> --populate</span><br><span class="line"><span class="number">3.</span>清除pacman 的缓冲文件-不行再接下去</span><br><span class="line">sudo pacman -Scc</span><br><span class="line"><span class="number">4.</span>更新或者安装系统即可</span><br><span class="line">sudo pacman -Syu</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="设置语言-Set-up-language："><a href="#设置语言-Set-up-language：" class="headerlink" title="设置语言 - Set up language："></a>设置语言 - Set up language：</h3>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano /etc/locale.gen</span><br></pre></td></tr></table></figure>
+<p>  找到en_US.UTF-8 UTF-8，zh_CN.UTF-8 UTF-8和zh_TW.UTF-8 UTF-8，把前面的注释#去掉</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># nano /etc/locale.conf</span></span><br><span class="line">将LANG=en_US.UTF-8改成：</span><br><span class="line">LANG=zh_CN.UTF-8</span><br><span class="line">然后</span><br><span class="line"><span class="comment"># locale-gen</span></span><br><span class="line"><span class="comment"># pacman -S wqy-zenhei</span></span><br></pre></td></tr></table></figure>
+<h3 id="关于硬盘-HDD-amp-SSD"><a href="#关于硬盘-HDD-amp-SSD" class="headerlink" title="关于硬盘 - HDD &amp; SSD"></a>关于硬盘 - HDD &amp; SSD</h3>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Now we need to <span class="keyword">do</span> few more tweaks. If you have installed AP-Linux on SSD disk, edit /etc/fstab file with</span><br><span class="line"><span class="comment"># nano /etc/fstab</span></span><br><span class="line">and add ‘noatime,discard’ option. Your “/dev/sdX1” line should look like this</span><br><span class="line">Example config:</span><br><span class="line">	/dev/sda1 / ext4 rw,noatime,discard,data=ordered 0 1</span><br><span class="line">If you didn’t install AP-Linux on SSD, remove the ‘discard’ part.</span><br><span class="line">	/dev/sda1 / ext4 rw,noatime,data=ordered 0 1</span><br><span class="line">What we just told our system is not to write some unnecessary file access information. This will speed up a little our machine <span class="built_in">which</span> can be good <span class="keyword">for</span> sound processing.</span><br></pre></td></tr></table></figure>
+<h3 id="官方关于音乐设置-About-Audio-Cards："><a href="#官方关于音乐设置-About-Audio-Cards：" class="headerlink" title="官方关于音乐设置 - About Audio Cards："></a>官方关于音乐设置 - About Audio Cards：</h3>  <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Music play setup</span><br><span class="line">1. Select “List cards” <span class="keyword">from</span> the menu</span><br><span class="line">2. Put your card <span class="keyword">in</span> /etc/mpd.conf. Select “<span class="builtin-name">Edit</span> mpd.conf”</span><br><span class="line">3. Change this line:</span><br><span class="line">device “hw:0,0”</span><br><span class="line"><span class="keyword">to</span>:</span><br><span class="line">device “hw:1,0”</span><br><span class="line"><span class="keyword">if</span> needed.</span><br><span class="line"></span><br><span class="line">It’s better <span class="keyword">to</span> put the name of your card <span class="keyword">in</span> mpd.conf like this:</span><br><span class="line">device “hw:PCH”</span><br><span class="line">Because cards <span class="keyword">in</span> Linux often switch numbers.</span><br><span class="line">Restart mpd when you made changes <span class="keyword">to</span> mpd.conf</span><br><span class="line">Copy your music files <span class="keyword">in</span> Music directory <span class="keyword">and</span> launch “Play music” <span class="keyword">from</span> the menu.</span><br><span class="line"></span><br><span class="line"><span class="keyword">For</span><span class="built_in"> wireless </span><span class="keyword">or</span><span class="built_in"> manual IP </span>setup, open terminal, become root <span class="keyword">and</span> go <span class="keyword">to</span> /etc/apl-files directory. There you will <span class="builtin-name">find</span> “enable-wless.sh” script. Execute this<span class="built_in"> script </span>with ./enable-wless.sh <span class="keyword">and</span> reboot. After reboot you will <span class="builtin-name">find</span> one small icon on the right <span class="keyword">in</span> the<span class="built_in"> system </span>tray that you can “right click” <span class="keyword">and</span> <span class="builtin-name">edit</span> your<span class="built_in"> network </span>settings.</span><br></pre></td></tr></table></figure>
+<h3 id="关于桌面Conky"><a href="#关于桌面Conky" class="headerlink" title="关于桌面Conky"></a>关于桌面Conky</h3><ul>
+<li><p><strong>使用wget下载conky-manager(我没用这个)</strong>：<code>wget --no-check-certificate https://github.com/teejee2008/conky-manager/releases/download/v2.4/conky-manager-v2.4-amd64.run</code></p>
+<p><code>chmod +x ./conky-manager-v2.4-amd64.run</code></p>
+<p><code>sudo ./conky-manager-v2.4-amd64.run</code></p>
+<p>终端：<code>conky-manager</code></p>
+<ul>
+<li>/usr/share/doc/conky-XXXX-pre/里面有个convert.lua文件，转化旧版本配置用的。There is a lua script in folder <code>/usr/share/doc/conky-XXXX-pre/</code>,it will convert old conkyrc file to a new one that compatible with new version.<strong>You should also convert file in <code>~/.fluxbox/scripts/conky</code> to make items work in fluxbox menu.</strong></li>
+</ul>
+<p>conky-manager勾选yx_conky文件并进入该程序设置界面打开开机自启动</p>
+<blockquote>
+<p>Conky配置文件 - New version of conkrc</p>
+</blockquote>
+<p>大小：10</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line">conky.<span class="built_in">config</span> = &#123;</span><br><span class="line">  	mpd_host = <span class="string">'localhost'</span>,</span><br><span class="line">  	mpd_port = <span class="number">6600</span>,</span><br><span class="line">  	mpd_password = <span class="string">'1234'</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- maintain spacing between certain elements</span></span><br><span class="line">  	use_spacer = <span class="string">'none'</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- set to yes if you want tormo to be forked in the background</span></span><br><span class="line">  	background = <span class="literal">false</span>,</span><br><span class="line">  </span><br><span class="line">  	use_xft = <span class="literal">true</span>,</span><br><span class="line">  	font = <span class="string">'xos4 Terminus:size=10'</span>,</span><br><span class="line">  <span class="comment">--xftfont DejaVu Sans Mono:size=10</span></span><br><span class="line">  	xftalpha = <span class="number">0.8</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- Update interval in seconds</span></span><br><span class="line">  	update_interval = <span class="number">3.0</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- Create own window instead of using desktop (required in nautilus)</span></span><br><span class="line">  	draw_shades = <span class="literal">true</span>,</span><br><span class="line">  	default_shade_color = <span class="string">'gray'</span>,</span><br><span class="line">  </span><br><span class="line">  	own_window = <span class="literal">false</span>,<span class="comment">-- create a separate XWindow over the one from Xfdesktop</span></span><br><span class="line">  	own_window_type = <span class="string">'desktop'</span>,<span class="comment">-- the window cannot be moved or resized</span></span><br><span class="line">  	own_window_hints = <span class="string">'undecorated,below,sticky,skip_taskbar,skip_pager'</span>,<span class="comment">-- make it behave like it belongs to the desktop</span></span><br><span class="line">  	own_window_argb_visual = <span class="literal">true</span>,<span class="comment">-- true transparency, a compositor has to be active</span></span><br><span class="line">  	own_window_argb_value = <span class="number">100</span>,<span class="comment">-- make the background semi-transparent</span></span><br><span class="line">  	double_buffer = <span class="literal">true</span>,<span class="comment">-- avoid flickering</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- Draw outlines?</span></span><br><span class="line">  	draw_outline = <span class="literal">false</span>,<span class="comment">-- amplifies text</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- Draw borders around text</span></span><br><span class="line">  	draw_borders = <span class="literal">false</span>,</span><br><span class="line">  <span class="comment">--default_color red</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- Stippled borders?</span></span><br><span class="line">  	stippled_borders = <span class="number">0</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- border margins</span></span><br><span class="line">  <span class="comment">--window_border_inner_margin 3</span></span><br><span class="line">  <span class="comment">--border_margin 9</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- border width</span></span><br><span class="line">  	border_width = <span class="number">1</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- Use double buffering (reduces flicker, may not work for everyone)</span></span><br><span class="line">  	double_buffer = <span class="literal">true</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- Minimum size of text area</span></span><br><span class="line">  <span class="comment">--minimum_size 280 5</span></span><br><span class="line">  <span class="comment">--maximum_width 280 </span></span><br><span class="line">  	maximum_width = <span class="number">1350</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- Default colors and also border colors, grey90 == #e5e5e5</span></span><br><span class="line">  	default_color = <span class="string">'grey90'</span>,</span><br><span class="line">  	default_shade_color = <span class="string">'black'</span>,</span><br><span class="line">  	default_outline_color = <span class="string">'DarkGrey'</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- Text alignment, other possible values are commented</span></span><br><span class="line">  <span class="comment">--alignment top_left</span></span><br><span class="line">  <span class="comment">--alignment top_right</span></span><br><span class="line">  	alignment = <span class="string">'top_right'</span>,</span><br><span class="line">  <span class="comment">--alignment bottom_left</span></span><br><span class="line">  <span class="comment">--alignment bottom_right</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- Gap between borders of screen and text</span></span><br><span class="line">  	gap_x = <span class="number">1</span>,</span><br><span class="line">  	gap_y = <span class="number">5</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- Subtract file system buffers from used memory?</span></span><br><span class="line">  	no_buffers = <span class="literal">true</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- set to yes if you want all text to be in uppercase</span></span><br><span class="line">  	uppercase = <span class="literal">false</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- stuff after 'TEXT' will be formatted on screen</span></span><br><span class="line">  </span><br><span class="line">  &#125;;</span><br><span class="line">  </span><br><span class="line">  conky.text = <span class="string">[[</span></span><br><span class="line"><span class="string">  $&#123;color #ffcb48&#125;Load: $color$loadavg$color$&#123;color #ffcb48&#125; UP:$color$uptime</span></span><br><span class="line"><span class="string">  $&#123;offset 110&#125;$&#123;color slate grey&#125;$&#123;time %a, &#125;$&#123;color &#125;$&#123;time %e %B %G&#125;</span></span><br><span class="line"><span class="string">  $&#123;offset 110&#125;$&#123;color slate grey&#125;$&#123;time %Z,       &#125;$&#123;color &#125;$&#123;time %H:%M&#125;</span></span><br><span class="line"><span class="string">  $&#123;color 1793d0&#125;CPU USAGE AND TEMPERATURE: $&#123;color white&#125;$&#123;execi 5 sensors | grep 'Core 0' | awk '&#123;print $3&#125;'&#125; C</span></span><br><span class="line"><span class="string">  $&#123;color #1e90ff&#125;$cpubar</span></span><br><span class="line"><span class="string">  #$&#123;cpugraph 25, 350 000000 6495ED&#125;</span></span><br><span class="line"><span class="string">  $&#123;color #ffcb48&#125;NAME             PID   CPU%  MEM%</span></span><br><span class="line"><span class="string">  $&#123;color #e5e5e5&#125;$&#123;top name 1&#125;$&#123;top pid 1&#125;$&#123;top cpu 1&#125;$&#123;top mem 1&#125;</span></span><br><span class="line"><span class="string">  $&#123;color #c4c4c4&#125;$&#123;top name 2&#125;$&#123;top pid 2&#125;$&#123;top cpu 2&#125;$&#123;top mem 2&#125;</span></span><br><span class="line"><span class="string">  $&#123;color #a3a3a3&#125;$&#123;top name 3&#125;$&#123;top pid 3&#125;$&#123;top cpu 3&#125;$&#123;top mem 3&#125;</span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">  $&#123;color 1793d0&#125;MEMORY USAGE$color</span></span><br><span class="line"><span class="string">  $&#123;color #ffcb48&#125;RAM$&#123;color #707070&#125;:$color  $memperc%    $&#123;color #1e90ff&#125;$&#123;membar 6&#125;$&#123;color&#125;</span></span><br><span class="line"><span class="string">  #$&#123;color #ffcb48&#125;SWAP$&#123;color #707070&#125;:$color $swapperc%    $&#123;color #1e90ff&#125;$&#123;swapbar 6&#125;$color</span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">  $&#123;color 1793d0&#125;DISK USAGE:</span></span><br><span class="line"><span class="string">  $&#123;color #1e90ff&#125;/root    $&#123;color #1e90ff&#125;$&#123;fs_bar /&#125;</span></span><br><span class="line"><span class="string">  $&#123;color #1e90ff&#125;/storage $&#123;color #1e90ff&#125;$&#123;fs_bar /storage&#125;</span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">  $&#123;color 1793d0&#125;NETWORK </span></span><br><span class="line"><span class="string">  $&#123;color #ffcb48&#125;IP ADDRESS: $&#123;color #e5e5e5&#125; $&#123;alignr&#125;$&#123;addr eth0&#125; </span></span><br><span class="line"><span class="string">  $&#123;color 1793d0&#125;$&#123;if_mpd_playing&#125;</span></span><br><span class="line"><span class="string">  $&#123;color FF6744&#125;*MPD*   $mpd_status</span></span><br><span class="line"><span class="string">  $&#123;color 1793d0&#125;Artist: $&#123;color #e5e5e5&#125;$&#123;mpd_artist 25&#125;</span></span><br><span class="line"><span class="string">  $&#123;color 1793d0&#125;Album:  $&#123;color #c4c4c4&#125;$&#123;mpd_album 25&#125;</span></span><br><span class="line"><span class="string">  $&#123;color 1793d0&#125;Title:  $&#123;color #a3a3a3&#125;$&#123;mpd_title 25&#125;</span></span><br><span class="line"><span class="string">  $&#123;color 1793d0&#125;Length: $&#123;color #e5e5e5&#125;$&#123;mpd_length 15&#125;</span></span><br><span class="line"><span class="string">  #$&#123;color 1793d0&#125;Channels: $&#123;color #e5e5e5&#125;$&#123;mpd_channels&#125;</span></span><br><span class="line"><span class="string">  #$&#123;color 1793d0&#125;Samplerate: $&#123;color #e5e5e5&#125;$&#123;mpd_bits&#125;/$&#123;mpd_samplerate&#125; Hz</span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">  $&#123;color 1793d0&#125;Format:$&#123;color #e5e5e5&#125;$&#123;execi 3 /etc/apl-files/conky/format.sh | cut -d ":" -f 2&#125;</span></span><br><span class="line"><span class="string">  $&#123;color 1793d0&#125;Rate:$&#123;color #e5e5e5&#125;  $&#123;execi 3 /etc/apl-files/conky/rate.sh | cut -d ":" -f 2&#125;</span></span><br><span class="line"><span class="string">  $&#123;color 1793d0&#125;Period size:$&#123;color #e5e5e5&#125;$&#123;execi 3 /etc/apl-files/conky/period.sh | cut -d ":" -f 2&#125;</span></span><br><span class="line"><span class="string">  $&#123;color 1793d0&#125;Buffer size:$&#123;color #e5e5e5&#125;$&#123;execi 3 /etc/apl-files/conky/buffer.sh | cut -d ":" -f 2&#125;</span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">  $&#123;color #1e90ff&#125;$&#123;mpd_bar&#125;</span></span><br><span class="line"><span class="string">        $&#123;color 1793d0&#125;Random: $&#123;color #a3a3a3&#125;$&#123;mpd_random&#125; $&#123;color 1793d0&#125;Repeat: $&#123;color #a3a3a3&#125;$&#123;mpd_repeat&#125;</span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">  $endif]]</span>;</span><br></pre></td></tr></table></figure>
+<p>大小：20</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br></pre></td><td class="code"><pre><span class="line">conky.<span class="built_in">config</span> = &#123;</span><br><span class="line">  	mpd_host = <span class="string">'localhost'</span>,</span><br><span class="line">  	mpd_port = <span class="number">6600</span>,</span><br><span class="line">  	mpd_password = <span class="string">'1234'</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- maintain spacing between certain elements</span></span><br><span class="line">  	use_spacer = <span class="string">'none'</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- set to yes if you want tormo to be forked in the background</span></span><br><span class="line">  	background = <span class="literal">false</span>,</span><br><span class="line">  </span><br><span class="line">  	use_xft = <span class="literal">true</span>,</span><br><span class="line">  	font = <span class="string">'DejaVu Sans Mono:size=20'</span>,</span><br><span class="line">  	xftalpha = <span class="number">0.8</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- Update interval in seconds</span></span><br><span class="line">  	update_interval = <span class="number">3.0</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- Create own window instead of using desktop (required in nautilus)</span></span><br><span class="line">  	draw_shades = <span class="literal">true</span>,</span><br><span class="line">  	default_shade_color = <span class="string">'gray'</span>,</span><br><span class="line">  </span><br><span class="line">  	own_window = <span class="literal">false</span>,<span class="comment">-- create a separate XWindow over the one from Xfdesktop</span></span><br><span class="line">  	own_window_type = <span class="string">'desktop'</span>,<span class="comment">-- the window cannot be moved or resized</span></span><br><span class="line">  	own_window_hints = <span class="string">'undecorated,below,sticky,skip_taskbar,skip_pager'</span>,<span class="comment">-- make it behave like it belongs to the desktop</span></span><br><span class="line">  	own_window_argb_visual = <span class="literal">true</span>,<span class="comment">-- true transparency, a compositor has to be active</span></span><br><span class="line">  	own_window_argb_value = <span class="number">100</span>,<span class="comment">-- make the background semi-transparent</span></span><br><span class="line">  	double_buffer = <span class="literal">true</span>,<span class="comment">-- avoid flickering</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- Draw outlines?</span></span><br><span class="line">  	draw_outline = <span class="literal">false</span>,<span class="comment">-- amplifies text</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- Draw borders around text</span></span><br><span class="line">  	draw_borders = <span class="literal">false</span>,</span><br><span class="line">  <span class="comment">--default_color red</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- Stippled borders?</span></span><br><span class="line">  	stippled_borders = <span class="number">0</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- border margins</span></span><br><span class="line">  <span class="comment">--window_border_inner_margin 3</span></span><br><span class="line">  <span class="comment">--border_margin 9</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- border width</span></span><br><span class="line">  	border_width = <span class="number">1</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- Use double buffering (reduces flicker, may not work for everyone)</span></span><br><span class="line">  	double_buffer = <span class="literal">true</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- Minimum size of text area</span></span><br><span class="line">  <span class="comment">--minimum_size 280 5</span></span><br><span class="line">  <span class="comment">--maximum_width 280 </span></span><br><span class="line">  	maximum_width = <span class="number">1350</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- Default colors and also border colors, grey90 == #e5e5e5</span></span><br><span class="line">  	default_color = <span class="string">'grey90'</span>,</span><br><span class="line">  	default_shade_color = <span class="string">'black'</span>,</span><br><span class="line">  	default_outline_color = <span class="string">'DarkGrey'</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- Text alignment, other possible values are commented</span></span><br><span class="line">  <span class="comment">--alignment top_left</span></span><br><span class="line">  <span class="comment">--alignment top_right</span></span><br><span class="line">  	alignment = <span class="string">'top_right'</span>,</span><br><span class="line">  <span class="comment">--alignment bottom_left</span></span><br><span class="line">  <span class="comment">--alignment bottom_right</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- Gap between borders of screen and text</span></span><br><span class="line">  	gap_x = <span class="number">1</span>,</span><br><span class="line">  	gap_y = <span class="number">5</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- Subtract file system buffers from used memory?</span></span><br><span class="line">  	no_buffers = <span class="literal">true</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- set to yes if you want all text to be in uppercase</span></span><br><span class="line">  	uppercase = <span class="literal">false</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">-- stuff after 'TEXT' will be formatted on screen</span></span><br><span class="line">  </span><br><span class="line">  &#125;;</span><br><span class="line">  </span><br><span class="line">  conky.text = <span class="string">[[</span></span><br><span class="line"><span class="string">  $&#123;color #ffcb48&#125;Load: $color$loadavg$color$&#123;color #ffcb48&#125; UP:$color$uptime</span></span><br><span class="line"><span class="string">  $&#123;offset 110&#125;$&#123;color slate grey&#125;$&#123;time %a, &#125;$&#123;color &#125;$&#123;time %e %B %G&#125;</span></span><br><span class="line"><span class="string">  $&#123;offset 110&#125;$&#123;color slate grey&#125;$&#123;time %Z,       &#125;$&#123;color &#125;$&#123;time %H:%M&#125;</span></span><br><span class="line"><span class="string">  $&#123;color 1793d0&#125;CPU USAGE AND TEMPERATURE: $&#123;color white&#125;$&#123;execi 5 sensors | grep 'Core 0' | awk '&#123;print $3&#125;'&#125; C</span></span><br><span class="line"><span class="string">  $&#123;color #1e90ff&#125;$cpubar</span></span><br><span class="line"><span class="string">  #$&#123;cpugraph 25, 350 000000 6495ED&#125;</span></span><br><span class="line"><span class="string">  $&#123;color #ffcb48&#125;NAME             PID   CPU%  MEM%</span></span><br><span class="line"><span class="string">  $&#123;color #e5e5e5&#125;$&#123;top name 1&#125;$&#123;top pid 1&#125;$&#123;top cpu 1&#125;$&#123;top mem 1&#125;</span></span><br><span class="line"><span class="string">  $&#123;color #c4c4c4&#125;$&#123;top name 2&#125;$&#123;top pid 2&#125;$&#123;top cpu 2&#125;$&#123;top mem 2&#125;</span></span><br><span class="line"><span class="string">  $&#123;color #a3a3a3&#125;$&#123;top name 3&#125;$&#123;top pid 3&#125;$&#123;top cpu 3&#125;$&#123;top mem 3&#125;</span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">  $&#123;color 1793d0&#125;MEMORY USAGE$color</span></span><br><span class="line"><span class="string">  $&#123;color #ffcb48&#125;RAM$&#123;color #707070&#125;:$color  $memperc%    $&#123;color #1e90ff&#125;$&#123;membar 6&#125;$&#123;color&#125;</span></span><br><span class="line"><span class="string">  #$&#123;color #ffcb48&#125;SWAP$&#123;color #707070&#125;:$color $swapperc%    $&#123;color #1e90ff&#125;$&#123;swapbar 6&#125;$color</span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">  $&#123;color 1793d0&#125;DISK USAGE:</span></span><br><span class="line"><span class="string">  $&#123;color #1e90ff&#125;/root    $&#123;color #1e90ff&#125;$&#123;fs_bar /&#125;</span></span><br><span class="line"><span class="string">  $&#123;color #1e90ff&#125;/storage $&#123;color #1e90ff&#125;$&#123;fs_bar /storage&#125;</span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">  $&#123;color 1793d0&#125;NETWORK </span></span><br><span class="line"><span class="string">  $&#123;color #ffcb48&#125;IP ADDRESS: $&#123;color #e5e5e5&#125; $&#123;alignr&#125;$&#123;addr eth0&#125; </span></span><br><span class="line"><span class="string">  $&#123;color 1793d0&#125;$&#123;if_mpd_playing&#125;</span></span><br><span class="line"><span class="string">  $&#123;color FF6744&#125;*MPD*   $mpd_status</span></span><br><span class="line"><span class="string">  $&#123;color 1793d0&#125;Artist: $&#123;color #e5e5e5&#125;$&#123;mpd_artist 25&#125;</span></span><br><span class="line"><span class="string">  $&#123;color 1793d0&#125;Album:  $&#123;color #c4c4c4&#125;$&#123;mpd_album 25&#125;</span></span><br><span class="line"><span class="string">  $&#123;color 1793d0&#125;Title:  $&#123;color #a3a3a3&#125;$&#123;mpd_title 25&#125;</span></span><br><span class="line"><span class="string">  $&#123;color 1793d0&#125;Length: $&#123;color #e5e5e5&#125;$&#123;mpd_length 15&#125;</span></span><br><span class="line"><span class="string">  #$&#123;color 1793d0&#125;Channels: $&#123;color #e5e5e5&#125;$&#123;mpd_channels&#125;</span></span><br><span class="line"><span class="string">  #$&#123;color 1793d0&#125;Samplerate: $&#123;color #e5e5e5&#125;$&#123;mpd_bits&#125;/$&#123;mpd_samplerate&#125; Hz</span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">  $&#123;color 1793d0&#125;Format:$&#123;color #e5e5e5&#125;$&#123;execi 3 /etc/apl-files/conky/format.sh | cut -d ":" -f 2&#125;</span></span><br><span class="line"><span class="string">  $&#123;color 1793d0&#125;Rate:$&#123;color #e5e5e5&#125;  $&#123;execi 3 /etc/apl-files/conky/rate.sh | cut -d ":" -f 2&#125;</span></span><br><span class="line"><span class="string">  $&#123;color 1793d0&#125;Period size:$&#123;color #e5e5e5&#125;$&#123;execi 3 /etc/apl-files/conky/period.sh | cut -d ":" -f 2&#125;</span></span><br><span class="line"><span class="string">  $&#123;color 1793d0&#125;Buffer size:$&#123;color #e5e5e5&#125;$&#123;execi 3 /etc/apl-files/conky/buffer.sh | cut -d ":" -f 2&#125;</span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">  $&#123;color #1e90ff&#125;$&#123;mpd_bar&#125;</span></span><br><span class="line"><span class="string">        $&#123;color 1793d0&#125;Random: $&#123;color #a3a3a3&#125;$&#123;mpd_random&#125; $&#123;color 1793d0&#125;Repeat: $&#123;color #a3a3a3&#125;$&#123;mpd_repeat&#125;</span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">  $endif]]</span>;</span><br></pre></td></tr></table></figure>
+<p>如无法检测CPU温度</p>
+<p>请安装lm-sensors</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">sudo pacman -Sy lm-sensors</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="Fluxbox-Make-a-few-change"><a href="#Fluxbox-Make-a-few-change" class="headerlink" title="Fluxbox - Make a few change"></a>Fluxbox - Make a few change</h3><h4 id="自动挂载音乐磁盘"><a href="#自动挂载音乐磁盘" class="headerlink" title="自动挂载音乐磁盘"></a>自动挂载音乐磁盘</h4><p>编辑<code>/etc/fstab</code>（记得备份）</p>
+<p>添加磁盘名，挂载点等信息：比如Thunar挂载点在<code>/run/media/$USER/Disk_Label</code></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/dev/sdb1 /ssd-disk1 ext4 rw,noatime,discard,<span class="attribute">data</span>=ordered 0 2</span><br><span class="line">/dev/sdb2 /ssd-disk2 ntfs<span class="built_in"> default </span>0 2</span><br></pre></td></tr></table></figure>
+<h4 id="Conky"><a href="#Conky" class="headerlink" title="Conky"></a>Conky</h4><p>更新Conky配置文件。Convert conkyrc file to compatible with new version.</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用/usr/share/doc/conky-XXXX-pre/里面的<span class="built_in">convert</span>.lua文件，将~/.fluxbox/scripts/conky中的conky脚本全部转化为新配置文件。这样fluxbox菜单中的Conky Size就可以用了。There is <span class="keyword">a</span> lua script <span class="keyword">in</span> <span class="built_in">folder</span> `/usr/share/doc/conky-XXXX-pre/`,<span class="keyword">it</span> will <span class="built_in">convert</span> old conkyrc <span class="built_in">file</span> <span class="built_in">to</span> <span class="keyword">a</span> <span class="built_in">new</span> <span class="literal">one</span> that compatible <span class="keyword">with</span> <span class="built_in">new</span> <span class="built_in">version</span>.You should also <span class="built_in">convert</span> <span class="built_in">file</span> <span class="keyword">in</span> ~/.fluxbox/scripts/conky ，<span class="keyword">then</span> <span class="keyword">the</span> <span class="keyword">items</span> <span class="keyword">in</span> fluxbox —— conky size work well.</span><br></pre></td></tr></table></figure>
+<h4 id="添加菜单和快捷键-Menu-amp-Keys"><a href="#添加菜单和快捷键-Menu-amp-Keys" class="headerlink" title="添加菜单和快捷键 - Menu &amp; Keys"></a>添加菜单和快捷键 - Menu &amp; Keys</h4><p>自定义菜单和快捷键 -  Setup Menu &amp; Keys</p>
+<p>Here are my menu &amp; keys set, you can see annotations below.</p>
+<p><code>~/.fluxbox/menu</code></p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">begin</span>] (Audiophile Linux)</span><br><span class="line">[<span class="meta">exec</span>] (Play music) &#123;deadbeef&#125;</span><br><span class="line">[<span class="meta">exec</span>] (File Manager) &#123;thunar&#125;</span><br><span class="line">[<span class="meta">submenu</span>] (Browsers)</span><br><span class="line"> [<span class="meta">exec</span>] (Firefox) &#123;firefox&#125;</span><br><span class="line"> [<span class="meta">exec</span>] (Chromium) &#123;chromium&#125;</span><br><span class="line">[<span class="meta">end</span>]</span><br><span class="line">[<span class="meta">submenu</span>] (DAC setup)</span><br><span class="line">  <span class="meta"># [exec] (List Cards) &#123;aplay -l &gt; /tmp/cards &amp; Eterm -c green -t ml-theme-small -g 90x23 -O --shade 80 -e less /tmp/cards&#125;</span></span><br><span class="line">  [<span class="meta">exec</span>] (List Cards) &#123;aplay -l &gt; /tmp/cards &amp; xfce4-terminal --command=<span class="string">'less /tmp/cards'</span>&#125;</span><br><span class="line">  [<span class="meta">exec</span>] (Restart mpd) &#123;Eterm -c green -t ml-theme-small -g <span class="number">90</span>x23 -O --shade <span class="number">80</span> -e ~/.fluxbox/scripts/./restart-mpd&#125;</span><br><span class="line">  <span class="meta"># [exec] (Edit mpd.conf) &#123;Eterm -c green -t ml-theme-small -g 90x23 -O --shade 80 -e sudo nano /etc/mpd.conf&#125;</span></span><br><span class="line">  [<span class="meta">exec</span>] (Edit mpd.conf) &#123;xfce4-terminal --command=<span class="string">'sudo nano /etc/mpd.conf'</span>&#125;</span><br><span class="line">     [<span class="meta">separator</span>] </span><br><span class="line">  [<span class="meta">exec</span>] (RESET MPD conf) &#123;Eterm -t ml-theme-small -g <span class="number">90</span>x23 <span class="number">-0</span> --shade <span class="number">80</span> -e sudo cp /etc/apl-files/mpd.conf /etc/mpd.conf&#125;</span><br><span class="line">[<span class="meta">end</span>]</span><br><span class="line">[<span class="meta">submenu</span>] (Music)</span><br><span class="line">[<span class="meta">submenu</span>] (Players)</span><br><span class="line"> [<span class="meta">exec</span>] (Cantata) &#123;cantata&#125;</span><br><span class="line"> [<span class="meta">exec</span>] (Deadbeef) &#123;deadbeef&#125;</span><br><span class="line"> [<span class="meta">exec</span>] (Audacious) &#123;audacious&#125;</span><br><span class="line"> [<span class="meta">exec</span>] (qjackctl) &#123;qjackctl&#125;</span><br><span class="line">[<span class="meta">end</span>]</span><br><span class="line">[<span class="meta">submenu</span>] (Multimedia)</span><br><span class="line">  [<span class="meta">exec</span>] (VLC) &#123;vlc&#125;</span><br><span class="line">  [<span class="meta">exec</span>] (Kodi) &#123;kodi&#125;</span><br><span class="line">[<span class="meta">end</span>]</span><br><span class="line">[<span class="meta">submenu</span>] (Rip &amp; Tag)</span><br><span class="line"> [<span class="meta">exec</span>] (Audex CD Rip) &#123;audex&#125;</span><br><span class="line"> [<span class="meta">exec</span>] (Asunder CD Rip) &#123;asunder&#125;</span><br><span class="line"> [<span class="meta">exec</span>] (EasyTag) &#123;easytag&#125;</span><br><span class="line">[<span class="meta">end</span>]</span><br><span class="line"> [<span class="meta">submenu</span>] (Set Def. Card)</span><br><span class="line"><span class="meta">#  [exec] (Help) &#123;Eterm -c green -t ml-theme-small -g 90x23 -O --shade 80 -e less /config/.asoundrc-help&#125;</span></span><br><span class="line">  [<span class="meta">exec</span>] (card0 Default) &#123;~/.fluxbox/scripts/./make1st-<span class="keyword">default</span>&#125;</span><br><span class="line">  [<span class="meta">exec</span>] (card1 Default) &#123;~/.fluxbox/scripts/./make2nd-<span class="keyword">default</span>&#125;</span><br><span class="line">  [<span class="meta">exec</span>] (card2 Default) &#123;~/.fluxbox/scripts/./make3rd-<span class="keyword">default</span>&#125;</span><br><span class="line"><span class="meta">#  [exec] (Edit default card) &#123;gedit ~/.asoundrc&#125;</span></span><br><span class="line"> [<span class="meta">end</span>]</span><br><span class="line"> <span class="meta">#[separator]</span></span><br><span class="line">  [<span class="meta">exec</span>] (Conky) &#123;conky&#125;</span><br><span class="line">  [<span class="meta">exec</span>] (XFburn) &#123;xfburn&#125;</span><br><span class="line">  [<span class="meta">exec</span>] (Transmission) &#123;transmission-gtk&#125;</span><br><span class="line">  [<span class="meta">exec</span>] (Text Editor) &#123;mousepad&#125;</span><br><span class="line"><span class="meta"># [exec] (Text Editor root) &#123;gksu mousepad&#125;</span></span><br><span class="line">  [<span class="meta">exec</span>] (Gimp) &#123;gimp&#125;</span><br><span class="line"><span class="meta"># [exec] (gtk-chtheme) &#123;gtk-chtheme&#125;</span></span><br><span class="line">  [<span class="meta">restart</span>] (Restart Fluxbox)</span><br><span class="line">[<span class="meta">end</span>]</span><br><span class="line">[<span class="meta">submenu</span>] (Appearance)</span><br><span class="line">[<span class="meta">config</span>] (Configure)</span><br><span class="line"> [<span class="meta">submenu</span>] (Menu size) &#123;Choose Size...&#125;</span><br><span class="line"> [<span class="meta">stylesdir</span>] (~/.fluxbox/styles)</span><br><span class="line"> [<span class="meta">restart</span>] (Apply style)</span><br><span class="line"> [<span class="meta">end</span>]</span><br><span class="line">[<span class="meta">submenu</span>] (Conky size) &#123;Choose Size...&#125;</span><br><span class="line"> [<span class="meta">exec</span>] (size <span class="number">10</span>) &#123;~/.fluxbox/scripts/conky/conky<span class="number">-10</span>&#125;</span><br><span class="line"> [<span class="meta">exec</span>] (size <span class="number">12</span>) &#123;~/.fluxbox/scripts/conky/conky<span class="number">-12</span>&#125;</span><br><span class="line"> [<span class="meta">exec</span>] (size <span class="number">14</span>) &#123;~/.fluxbox/scripts/conky/conky<span class="number">-14</span>&#125;</span><br><span class="line"> [<span class="meta">exec</span>] (size <span class="number">16</span>) &#123;~/.fluxbox/scripts/conky/conky<span class="number">-16</span>&#125;</span><br><span class="line"> [<span class="meta">exec</span>] (size <span class="number">18</span>) &#123;~/.fluxbox/scripts/conky/conky<span class="number">-18</span>&#125;</span><br><span class="line"> [<span class="meta">exec</span>] (size <span class="number">20</span>) &#123;~/.fluxbox/scripts/conky/conky<span class="number">-20</span>&#125;</span><br><span class="line"><span class="meta"># [exec] (size 22) &#123;~/.fluxbox/scripts/conky/conky-22&#125;</span></span><br><span class="line"><span class="meta"># [exec] (size 24) &#123;~/.fluxbox/scripts/conky/conky-24&#125;</span></span><br><span class="line"><span class="meta"># [exec] (size 26) &#123;~/.fluxbox/scripts/conky/conky-26&#125;</span></span><br><span class="line"><span class="meta"># [exec] (size 28) &#123;~/.fluxbox/scripts/conky/conky-28&#125;</span></span><br><span class="line"><span class="meta"># [exec] (size 30) &#123;~/.fluxbox/scripts/conky/conky-30&#125;</span></span><br><span class="line"><span class="meta"># [exec] (size 32) &#123;~/.fluxbox/scripts/conky/conky-32&#125;</span></span><br><span class="line">[<span class="meta">end</span>]</span><br><span class="line">  [<span class="meta">exec</span>] (Theme &amp; Font) &#123;lxappearance&#125;</span><br><span class="line">[<span class="meta">end</span>]</span><br><span class="line"><span class="meta">#[exec] (X-terminal) &#123;Eterm -c green -t ml-theme-small -g 90x23 -L 10000 -O --shade 80&#125;</span></span><br><span class="line">[<span class="meta">exec</span>] (Xfce4-terminal) &#123;xfce4-terminal&#125;</span><br><span class="line">[<span class="meta">exec</span>] (OBS) &#123;obs&#125;</span><br><span class="line">[<span class="meta">exec</span>] (OSD-Lyrics) &#123;osdlyrics&#125;</span><br><span class="line"><span class="meta">#[submenu] (X-Terminals) &#123;Choose Size...&#125;</span></span><br><span class="line"><span class="meta">#[exec] (terminator) &#123;terminator --geometry=2030x980&#125;</span></span><br><span class="line"><span class="meta">#[exec] (4K-term) &#123;Eterm -c green -t BlueSteel3 -g 100x24 -L 10000 -O --shade 80&#125;</span></span><br><span class="line"><span class="meta">#[exec] (Normal) &#123;Eterm -c green -t BlueSteel2 -g 90x23 -O --shade 80&#125;</span></span><br><span class="line"><span class="meta">#[end]</span></span><br><span class="line"> [<span class="meta">separator</span>] </span><br><span class="line">  [<span class="meta">exit</span>] (Exit Session) </span><br><span class="line">  [<span class="meta">exec</span>] (Reboot) &#123;sudo shutdown -r now&#125;</span><br><span class="line">  [<span class="meta">exec</span>] (Poweroff) &#123;sudo shutdown -P now&#125;</span><br><span class="line">[<span class="meta">end</span>]</span><br><span class="line">[<span class="meta">end</span>]</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>[exec] (Xfce4-terminal) {xfce4-terminal}</code> ： 我将终端更改成Xfce4-terminal。I change shell to xfce4-terminal, now you’ve see how to add items to fluxbox menu —— 【[Type] (Label) {Command}】.</li>
+</ul>
+<p><code>~/.fluxbox/keys</code></p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">! fluxbox-update_configs added '(workspace=[current])' to (Next|Prev)(Window|Group)</span></span><br><span class="line"><span class="comment">! check lines marked by 'FBCV13' if they are correctly updated</span></span><br><span class="line"><span class="comment">!mouse actions added by fluxbox-update_configs</span></span><br><span class="line"><span class="attr">OnTitlebar</span> <span class="string">Mouse1 :MacroCmd &#123;Focus&#125; &#123;Raise&#125; &#123;ActivateTab&#125;</span></span><br><span class="line"><span class="comment">!mouse actions added by fluxbox-update_configs</span></span><br><span class="line"><span class="attr">OnTitlebar</span> <span class="string">Move1 :StartMoving</span></span><br><span class="line"><span class="attr">OnLeftGrip</span> <span class="string">Move1 :StartResizing bottomleft</span></span><br><span class="line"><span class="attr">OnRightGrip</span> <span class="string">Move1 :StartResizing bottomright</span></span><br><span class="line"><span class="attr">OnWindowBorder</span> <span class="string">Move1 :StartMoving</span></span><br><span class="line"></span><br><span class="line"><span class="comment">!mouse actions added by fluxbox-update_configs</span></span><br><span class="line"><span class="attr">OnTitlebar</span> <span class="string">Mouse2 :StartTabbing</span></span><br><span class="line"></span><br><span class="line"><span class="comment">!mouse actions added by fluxbox-update_configs</span></span><br><span class="line"><span class="attr">OnTitlebar</span> <span class="string">Double Mouse1 :Shade</span></span><br><span class="line"><span class="attr">OnTitlebar</span> <span class="string">Mouse3 :WindowMenu</span></span><br><span class="line"></span><br><span class="line"><span class="comment">!mouse actions added by fluxbox-update_configs</span></span><br><span class="line"><span class="attr">OnWindow</span> <span class="string">Mod1 Mouse1 :MacroCmd &#123;Raise&#125; &#123;Focus&#125; &#123;StartMoving&#125;</span></span><br><span class="line"><span class="attr">OnWindow</span> <span class="string">Mod1 Mouse3 :MacroCmd &#123;Raise&#125; &#123;Focus&#125; &#123;StartResizing BottomRight&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">!mouse actions added by fluxbox-update_configs</span></span><br><span class="line"><span class="attr">OnDesktop</span> <span class="string">Mouse1 :hideMenus</span></span><br><span class="line"><span class="attr">OnDesktop</span> <span class="string">Mouse2 :workspaceMenu</span></span><br><span class="line"><span class="attr">OnDesktop</span> <span class="string">Mouse3 :rootMenu</span></span><br><span class="line"></span><br><span class="line"><span class="attr">Mod1</span> <span class="string">Tab :NextWindow (workspace=[current]) !! FBCV13 !!</span></span><br><span class="line"><span class="attr">Mod1</span> <span class="string">Shift Tab :PrevWindow (workspace=[current]) !! FBCV13 !!</span></span><br><span class="line"><span class="attr">Mod1</span> <span class="string">1 :Workspace 1</span></span><br><span class="line"><span class="attr">Mod1</span> <span class="string">2 :Workspace 2</span></span><br><span class="line"><span class="attr">Mod1</span> <span class="string">3 :Workspace 3</span></span><br><span class="line"><span class="attr">Mod1</span> <span class="string">4 :Workspace 4</span></span><br><span class="line"><span class="attr">Mod1</span> <span class="string">5 :Workspace 5</span></span><br><span class="line"><span class="attr">Mod1</span> <span class="string">6 :Workspace 6</span></span><br><span class="line"><span class="attr">Mod1</span> <span class="string">Escape :MaximizeWindow</span></span><br><span class="line"><span class="attr">Mod1</span> <span class="string">F1 :RootMenu</span></span><br><span class="line"><span class="comment">#Mod1 n :RootMenu</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># change to a specific workspace</span></span><br><span class="line"><span class="comment">#Mod1 1 :ExecCommand wmctrl -s 0</span></span><br><span class="line"><span class="comment">#Mod1 2 :ExecCommand wmctrl -s 1</span></span><br><span class="line"><span class="comment">#Mod1 3 :ExecCommand wmctrl -s 2</span></span><br><span class="line"><span class="comment">#Mod1 4 :ExecCommand wmctrl -s 3</span></span><br><span class="line"><span class="comment">#Mod1 5 :ExecCommand wmctrl -s 4</span></span><br><span class="line"><span class="comment">#Mod1 6 :ExecCommand wmctrl -s 5</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 自定义的快捷键 - Customized</span></span><br><span class="line"><span class="attr">Mod1</span> <span class="string">q :ExecCommand xfce4-terminal</span></span><br><span class="line"><span class="attr">Mod1</span> <span class="string">w :ExecCommand deadbeef</span></span><br><span class="line"><span class="attr">Mod1</span> <span class="string">e :ExecCommand thunar</span></span><br><span class="line"><span class="attr">Mod1</span> <span class="string">r :ExecCommand firefox</span></span><br><span class="line"><span class="attr">Mod1</span> <span class="string">t :ExecCommand virtualbox</span></span><br><span class="line"><span class="comment"># 显示桌面</span></span><br><span class="line"><span class="attr">Mod4</span> <span class="string">d :ShowDesktop</span></span><br><span class="line"><span class="attr">Mod4</span> <span class="string">Up :MaximizeWindow</span></span><br><span class="line"><span class="attr">Mod4</span> <span class="string">Down :MinimizeWindow</span></span><br><span class="line"><span class="attr">Mod4</span> <span class="string">Left :ShadeOn</span></span><br><span class="line"><span class="attr">Mod4</span> <span class="string">Right :ShadeOff</span></span><br><span class="line"><span class="comment"># 截屏</span></span><br><span class="line"><span class="attr">Print</span> :<span class="string">ExecCommand scrot</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Print :ExecCommand scrot</code> : <code>pacman -Sy scrot</code> to install scrot ! Forat:<code>【Key】 :【Function】</code></li>
+</ul>
+<h4 id="让Fcitx运行于Fluxbox-wm"><a href="#让Fcitx运行于Fluxbox-wm" class="headerlink" title="让Fcitx运行于Fluxbox wm"></a>让Fcitx运行于Fluxbox wm</h4><p><code>pacman -Syu &amp;&amp; pacman -Sy fcitx-im fcitx-rime fcitx-configtool</code></p>
+<p>在<code>~/.pam_environment</code>中添加[亲测好用,推荐]</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GTK_IM_MODULE <span class="attribute">DEFAULT</span>=fcitx</span><br><span class="line">QT_IM_MODULE  <span class="attribute">DEFAULT</span>=fcitx</span><br><span class="line">XMODIFIERS    <span class="attribute">DEFAULT</span>=\@im=fcitx</span><br></pre></td></tr></table></figure>
+<p>最后在<code>~/.fluxbox/startup</code>中在fluxbox启动之前添加 ： <code>fcitx&amp;</code></p>
+<h4 id="设置成Windows-10-的界面-Make-a-Windows-10-Theme"><a href="#设置成Windows-10-的界面-Make-a-Windows-10-Theme" class="headerlink" title="设置成Windows 10 的界面 - Make a Windows 10 Theme !"></a>设置成Windows 10 的界面 - Make a Windows 10 Theme !</h4><p>安装xfce4桌面</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -Sy xfce4 xfce4-appfinder xfce4-cpugraph-<span class="keyword">plugin</span> xfce4-eyes-<span class="keyword">plugin</span> xfce4-mpc-<span class="keyword">plugin</span> xfce4-power-manager xfce4-session xfce4-terminal xfce4-weather-<span class="keyword">plugin</span> xfce4-artwork xfce4-datetime-<span class="keyword">plugin</span> xfce4-fsguard-<span class="keyword">plugin</span> xfce4-netload-<span class="keyword">plugin</span> xfce4-pulseaudio-<span class="keyword">plugin</span> xfce4-settings xfce4-time-<span class="keyword">out</span>-<span class="keyword">plugin</span> xfce4-whiskermenu-<span class="keyword">plugin</span> xfce4-battery-<span class="keyword">plugin</span> xfce4-dev-tools xfce4-genmon-<span class="keyword">plugin</span> xfce4-<span class="keyword">notes</span>-<span class="keyword">plugin</span> xfce4-screensaver xfce4-smartbookmark-<span class="keyword">plugin</span> xfce4-<span class="keyword">timer</span>-<span class="keyword">plugin</span> xfce4-xkb-<span class="keyword">plugin</span> xfce4-clipman-<span class="keyword">plugin</span> xfce4-dict xfce4-mailwatch-<span class="keyword">plugin</span> xfce4-notifyd xfce4-screenshooter xfce4-systemload-<span class="keyword">plugin</span> xfce4-verve-<span class="keyword">plugin</span> xfce4-cpufreq-<span class="keyword">plugin</span> xfce4-diskperf-<span class="keyword">plugin</span> xfce4-mount-<span class="keyword">plugin</span> xfce4-panel xfce4-sensors-<span class="keyword">plugin</span> xfce4-taskmanager xfce4-wavelan-<span class="keyword">plugin</span> xfce4-nitifyd</span><br></pre></td></tr></table></figure>
+<p>安装支持软件：蓝牙、pulse audio python3 ag</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">pacman</span> -Sy <span class="keyword">bluez </span><span class="keyword">blueman </span>feh pavucontrol fcitx-im fcitx-rime fcitx-configtool pulseaudio-<span class="keyword">bluetooth </span>ristretto python-pip the_silver_searcher python3 timeshift cronie typora</span><br></pre></td></tr></table></figure>
+<p>更改xfce4为win10主题：</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/SofianeHamlaoui/Go-undercover &amp;&amp; <span class="keyword">cd</span> Go-undercover</span><br><span class="line">sudo chmod +<span class="keyword">x</span> ./install.<span class="keyword">sh</span></span><br><span class="line">sudo ./install.<span class="keyword">sh</span></span><br></pre></td></tr></table></figure>
+<p>在xfce4桌面下运行：</p>
+<p><code>go-undercover</code></p>
+<p>设置默认启动Xfce桌面请更改<code>~/.xinit</code>文件。如果你是从Fluxbox切换Xfce4，请先退出Fluxbox再使用<code>startxfce4</code>启动Xfce4桌面。</p>
+<h3 id="其他-Others"><a href="#其他-Others" class="headerlink" title="其他 - Others"></a>其他 - Others</h3><ul>
+<li><code>pacman -Sy feh</code> 这是图片查看软件</li>
+<li>设置主机名 - Change hostname :  <code>echo lh-name &gt; /etc/hostname</code></li>
+<li>其他还有很多啊，什么<code>alsamixer</code> ,什么<code>aplay -l</code>……对了，OBS只能用PulseAudio。</li>
+</ul>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="升级系统后出现initramfs-unpacking-failed-invalid-magic-at-start-of-compressed-archive"><a href="#升级系统后出现initramfs-unpacking-failed-invalid-magic-at-start-of-compressed-archive" class="headerlink" title="升级系统后出现initramfs: unpacking failed: invalid magic at start of compressed archive"></a>升级系统后出现<code>initramfs: unpacking failed: invalid magic at start of compressed archive</code></h3><p>参考：<a href="https://bbs.archlinux.org/viewtopic.php?id=252429" target="_blank" rel="noopener">https://bbs.archlinux.org/viewtopic.php?id=252429</a></p>
+<p>修改<code>mkinitcpio.conf</code>，取消<code>COMPRESSION=&quot;lz4&quot;</code>注释。运行<code>mkinitcpio -P</code></p>
+<h2 id="总结-Command-used"><a href="#总结-Command-used" class="headerlink" title="总结 - Command used"></a>总结 - Command used</h2><blockquote>
+<p>分好分区后:</p>
+<p>sda1:EFI分区</p>
+<p>sda2:ext4根分区</p>
+<p>sda3:减缓分区</p>
+</blockquote>
+<ul>
+<li><code>mount /dev/sda2 /mnt</code></li>
+<li><code>mkswap /dev/sda3 &amp;&amp; swapon /dev/sda3</code></li>
+<li><code>timw cp -ax / /mnt</code></li>
+<li><code>arch-chroot /mnt /bin/bash</code></li>
+<li><code>cd /etc/apl-files</code></li>
+<li><code>./runme.sh</code></li>
+<li><code>mkdir /boot/efi &amp;&amp; mount /dev/sda1 /boot/efi</code></li>
+<li><code>grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=arch_linux --recheck --debug</code></li>
+<li><code>grub-mkconfig -o /boot/grub/grub.cfg</code></li>
+<li><code>passwd root</code></li>
+<li><code>./autologin.sh &amp;&amp; ./enable-wless</code></li>
+<li><code>ln -s /usr/share/zoneinfo/Hongkong /etc/localtime</code></li>
+<li><code>hwclock --systohc --utc</code> </li>
+<li><code>exit</code></li>
+<li><code>genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</code></li>
+<li><code>reboot</code></li>
+</ul>
+<hr>
+<ul>
+<li><p><code>pacman-key --init</code></p>
+</li>
+<li><p><code>pacman-key --populate archlinux</code></p>
+</li>
+<li><p><code>pacman -Sy</code></p>
+</li>
+<li><p>火狐浏览器打开<code>mirrors.tuna.tsinghua.edu.cn</code>自行修改arch镜像源，添加archlinuxcn。</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">添加ArhlinuxCN：在<span class="regexp">/etc/</span>pacman.conf最后面添加：</span><br><span class="line"></span><br><span class="line">[archlinuxcn]</span><br><span class="line">Server = <span class="string">https:</span><span class="comment">//mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch"</span></span><br><span class="line"></span><br><span class="line">添加镜像源：</span><br><span class="line">编辑 <span class="regexp">/etc/</span>pacman.d/mirrorlist， 在文件的最顶端添加：</span><br><span class="line"></span><br><span class="line">Server = <span class="string">https:</span><span class="comment">//mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>pacman -Sy archlinux-keyring archlinuxcn-keyring</code></p>
+</li>
+<li><p><code>pacman -Syu</code></p>
+</li>
+<li><p><code>nano /etc/locale.gen</code></p>
+</li>
+<li><p><code>echo &#39;LANG=zh_CN.UTF-8&#39; &gt; /etc/locale.conf</code></p>
+</li>
+<li><p><code>pacman -S wqy-zenhei</code></p>
+</li>
+<li><p><code>sudo locale-gen</code></p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p><code>pacman -Sy xfce4</code></p>
+</li>
+<li><p><code>pacman -Sy xfce4-appfinder xfce4-cpugraph-plugin xfce4-eyes-plugin xfce4-mpc-plugin xfce4-power-manager xfce4-session xfce4-terminal xfce4-weather-plugin xfce4-artwork xfce4-datetime-plugin xfce4-fsguard-plugin xfce4-netload-plugin xfce4-pulseaudio-plugin xfce4-settings xfce4-time-out-plugin xfce4-whiskermenu-plugin xfce4-battery-plugin xfce4-dev-tools xfce4-genmon-plugin xfce4-notes-plugin xfce4-screensaver xfce4-smartbookmark-plugin xfce4-timer-plugin xfce4-xkb-plugin xfce4-clipman-plugin xfce4-dict xfce4-mailwatch-plugin xfce4-notifyd xfce4-screenshooter xfce4-systemload-plugin xfce4-verve-plugin xfce4-cpufreq-plugin xfce4-diskperf-plugin xfce4-mount-plugin xfce4-panel xfce4-sensors-plugin xfce4-taskmanager xfce4-wavelan-plugin xfce4-nitifyd</code></p>
+</li>
+<li><p><code>pacman -Sy bluez blueman feh pavucontrol fcitx-im fcitx-rime fcitx-configtool pulseaudio-bluetooth ristretto python-pip the_silver_searcher python3 timeshift cronie typora</code></p>
+</li>
+<li><p>修改主题</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 更改xfce4为win10主题：</span></span><br><span class="line">git clone https:<span class="string">//github.com/SofianeHamlaoui/Go-undercover</span> &amp;&amp; <span class="keyword">cd</span> Go-undercover</span><br><span class="line">sudo chmod +x <span class="string">./install.sh</span></span><br><span class="line">sudo <span class="string">./install.sh</span></span><br><span class="line"><span class="comment"># 在xfce4桌面下运行：</span></span><br><span class="line">go-undercover</span><br></pre></td></tr></table></figure>
+<h2 id="截屏-Screenshots"><a href="#截屏-Screenshots" class="headerlink" title="截屏 - Screenshots"></a>截屏 - Screenshots</h2></li>
+</ul>
+<p><img src="ss01.png" alt="ss01"></p>
+<p><img src="ss02.png" alt="ss02"></p>
+<p><img src="win1.png" alt="win"></p>
+<p><img src="win2.png" alt="win"></p>
+<p>安装记录（没有讲解！）：</p>
+<p><iframe src="//player.bilibili.com/player.html?aid=797031703&bvid=BV1Ey4y1y7Qr&cid=234096629&page=1" frameborder="no" scrolling="no" width="95%" height="600" border="0" framespacing="0" allowfullscreen="true"></iframe></p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/2020/Build-a-blog-with-Hexo-framework/" data-toggle="tooltip" data-placement="top" title="Build a blog with Hexo framework">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/2020/Markdown/" data-toggle="tooltip" data-placement="top" title="Markdown">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <div class="tip">
+          <p>
+            If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+          </p>
+        </div>
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=Install Audiophile Linux v5 with UEFI+GPT&body=Hi,I found this website and thought you might like it https://rmshadows.gitee.io/2020/Install-Audiophile-Linux-v5-with-UEFI-GPT/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!--修改--artalk-->
+<!-- 0.artalk安装代码 -->
+
+<!-- CSS -->
+<link href="https://civiccccc.ltd/artalk/dist/Artalk.css" rel="stylesheet" />
+<link href="https://civiccccc.ltd/artalk/dist/Artalk.css" rel="stylesheet" />
+<!-- JS -->
+<script src="https://civiccccc.ltd/artalk/dist/Artalk.js"></script>
+<!-- Artalk -->
+<div id="Comments"></div>
+<script>
+  Artalk.init({
+    el: '#Comments', // 绑定元素的 Selector
+    pageKey: 'https://rmshadows.gitee.io/2020/Install-Audiophile-Linux-v5-with-UEFI-GPT/', // 固定链接
+    pageTitle: '关于引入 Artalk 的这档子事', // 页面标题 (留空自动获取)
+    server: 'https://civiccccc.ltd/artalk', // 后端地址
+    site: 'CIVICCCCC 的博客', // 你的站点名
+  })
+</script>
+<!-- artalk安装代码已完成 -->
+
+
+
+<!-- 1. gitalk comment -->
+
+
+
+<!-- 2. gitment comment -->
+
+
+
+<!-- 3. disqus comment -->
+
+
+<!--修改--Livere-->
+
+
+<!--修改--ISSO-->
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <!--div id="toc" class="toc-article" -->
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          
+            <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#安装Audiophile-Linux-Get-Start"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">安装Audiophile Linux - Get Start</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#制作启动盘-Grab-APL"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">制作启动盘 - Grab APL</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#在UEFI下启动安装盘并进行磁盘分区-BOOT-WITH-UEFI-amp-Create-partitions"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">在UEFI下启动安装盘并进行磁盘分区 - BOOT WITH UEFI &amp; Create partitions</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#准备就绪，开始安装-Install-APL"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">准备就绪，开始安装 - Install APL</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#安装启动引导-Grub-install-x86-64-efi"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">安装启动引导 - Grub-install x86_64-efi</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#收尾工作-Last-step"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">收尾工作 - Last step</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#开机优化-Power-on-our-APL-amp-Make-it-easy-to-use"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">开机优化 - Power-on our APL &amp; Make it easy to use</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#初始化pacman-Init-pacman"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">初始化pacman - Init pacman</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#设置语言-Set-up-language："><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">设置语言 - Set up language：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#关于硬盘-HDD-amp-SSD"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">关于硬盘 - HDD &amp; SSD</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#官方关于音乐设置-About-Audio-Cards："><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">官方关于音乐设置 - About Audio Cards：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#关于桌面Conky"><span class="toc-nav-number">2.5.</span> <span class="toc-nav-text">关于桌面Conky</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Fluxbox-Make-a-few-change"><span class="toc-nav-number">2.6.</span> <span class="toc-nav-text">Fluxbox - Make a few change</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#自动挂载音乐磁盘"><span class="toc-nav-number">2.6.1.</span> <span class="toc-nav-text">自动挂载音乐磁盘</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Conky"><span class="toc-nav-number">2.6.2.</span> <span class="toc-nav-text">Conky</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#添加菜单和快捷键-Menu-amp-Keys"><span class="toc-nav-number">2.6.3.</span> <span class="toc-nav-text">添加菜单和快捷键 - Menu &amp; Keys</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#让Fcitx运行于Fluxbox-wm"><span class="toc-nav-number">2.6.4.</span> <span class="toc-nav-text">让Fcitx运行于Fluxbox wm</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#设置成Windows-10-的界面-Make-a-Windows-10-Theme"><span class="toc-nav-number">2.6.5.</span> <span class="toc-nav-text">设置成Windows 10 的界面 - Make a Windows 10 Theme !</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#其他-Others"><span class="toc-nav-number">2.7.</span> <span class="toc-nav-text">其他 - Others</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#问题"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">问题</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#升级系统后出现initramfs-unpacking-failed-invalid-magic-at-start-of-compressed-archive"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">升级系统后出现initramfs: unpacking failed: invalid magic at start of compressed archive</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#总结-Command-used"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">总结 - Command used</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#截屏-Screenshots"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">截屏 - Screenshots</span></a></li></ol>
+          
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#Audiophile Linux" title="Audiophile Linux">Audiophile Linux</a>
+            
+            <a class="tag" href="/tags/#AP Linux Installation" title="AP Linux Installation">AP Linux Installation</a>
+            
+            <a class="tag" href="/tags/#UEFI+GPT Arch Linux" title="UEFI+GPT Arch Linux">UEFI+GPT Arch Linux</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://civiccccc.ltd" target="_blank">主站</a>
+          </li>
+          
+          <li>
+            <a href="https://github.com/xjx0106" target="_blank">国庆电播小弟</a>
+          </li>
+          
+          <li>
+            <a href="https://github.com/itcast-ying" target="_blank">itcast-ying</a>
+          </li>
+          
+          <li>
+            <a href="https://github.com/cjj19970505" target="_blank">Xeon-J</a>
+          </li>
+          
+          <li>
+            <a href="https://github.com/XeonKHJ" target="_blank">Xeon-H</a>
+          </li>
+          
+          <li>
+            <a href="https://gitee.com/rmshadows" target="_blank">Gitee - Ryan Yim</a>
+          </li>
+          
+          <li>
+            <a href="https://rmshadows.gitee.io/404" target="_blank">404 No Found Page</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+    <!-- Footer (contains ThemeColor、viewer) -->
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+            <li>
+              <a href="/feed.xml">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/rmshadows">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+            <li>
+              <a target="_blank" href="https://www.instagram.com/just_aaaa_r">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+            <li>
+              <a target="_blank" href="https://www.zhihu.com/people/rmshadows">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa  fa-stack-1x fa-inverse">知</i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Ryan Yim
+          2025
+          <br>
+          Theme by
+          <a href="http://beantech.org" target="_blank" rel="noopener">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a href="https://v-vincen.life/" target="_blank" rel="noopener">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+<!-- jQuery -->
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="/js/jquery.js"></script> -->
+<!-- <script type="text/javascript" src="//cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
+<!-- Bootstrap Core JavaScript -->
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<!--2022-03-28 添加了随机丝带特效-->
+
+  <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+
+<script type="text/javascript" src="/js/hux-blog.min.js"></script>
+
+<!-- catalog -->
+<script type="text/javascript" async="true" src="/js/catalog.js?v=1.0.0"></script>
+
+<!-- totop(rocket) -->
+<script type="text/javascript" async="true" src="/js/totop.js?v=1.0.0"></script>
+
+<!-- Busuanzi JavaScript -->
+
+  <!-- <script type="text/javascript" async="true" src="/js/busuanzi.pure.mini.js"></script> -->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+  <!-- Scroll start -->
+  <script type="text/javascript" src="/js/scroll.js"></script>
+  <!-- Scroll end -->
+
+
+
+  <!-- ThemeColor start -->
+  <script type="text/javascript" src="/js/themecolor.js"></script>
+  <!-- ThemeColor end -->
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  <script type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+  <script type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){ hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if($('#tag_cloud').length !== 0){ async("https://rmshadows.gitee.io/js/jquery.tagcloud.js",function(){ $.fn.tagcloud.defaults = { //size: {start: 1, end: 1, unit: 'em'}, color: {start:
+'#bbbbee', end: '#0085a1'}, }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+    
+    <!---自定义的代码 所有页面-->
+    
+        <script type="text/javascript" src="/js/on_mouse_clicked/emotions.js"></script>
+    
+
+    <!-- Search -->
+    
+    <div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/ziploader.js"></script>
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+    
+
+    <!-- Image to hack wechat -->
+    <!-- <img src="https://rmshadows.gitee.io/img/icon_wechat.png" width="0" height="0" /> -->
+    <!-- Migrate from head to bottom, no longer block render and still work -->
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+
+</html>

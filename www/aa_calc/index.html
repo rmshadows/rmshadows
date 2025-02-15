@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<title>AA Cost Calculator</title>
+	<meta property="og:title" content="AA Cost Calculator" />
+	<meta property="og:description" content="AA制？輕鬆啦！" />
+</head>
+<body class="keyboard-hidden">
+
+<h2>AA Cost Calculator</h2>
+<p>by K. C. Ho</p>
+
+<p>&nbsp;</p>
+<div class="lines">
+	<p class="section-head">使用說明</p>
+	<ol>
+		<li>先於 "Result" 輸入參與 AA 制的人；</li>
+		<li>於 "Dishes" 輸入每項東西的總價 (如 "38.5")；</li>
+		<li>勾選需要分擔該項東西的人 ("全不選" 即 "所有人一同分擔")；</li>
+		<li>(如適用) 勾選 "TX" 以啟用/停用折扣或稅項；</li>
+		<li>於 "Price = $ &times;" 後方空格輸入折扣或稅項 (預設為 "1"，表示不附加任何折扣或稅項；服務費15%，請輸入"1.15"；全單八折優惠，請輸入"0.8")。</li>
+	</ol>
+</div>
+<p>&nbsp;</p>
+
+<div class="wrap">
+	<p class="section-head">Dishes</p>
+	<p><a href="javascript:addDish()">+ Add Dish</a></p>
+	<table id="dish-table">
+		<tr class="price-head">
+			<th width="30">TX</th>
+			<th width="80">Total<br>Price</th>
+		</tr>
+		<tr class="price-head price-bottom">
+			<th colspan="2">&nbsp;</th>
+		</tr>
+	</table>
+
+	<p>if(TX == enabled):</p>
+	<div class="wtax-if">
+		Price = $ &times;
+		<div class="fake-input" id="d-tax"></div>
+	</div>
+</div>
+
+<div class="wrap">
+	<p class="section-head" id="people-anchor">Result</p>
+	<table id="people-table">
+		<tr>
+			<th colspan="3" class="left-align">Active?</th>
+			<th>應付</th>
+			<th>已付</th>
+		</tr>
+	</table>
+	<p><a href="javascript:addPerson()">+ Add Person</a></p>
+
+	<p>&nbsp;</p>
+	<p>結帳應付 <span id="grand-total"></span></p>
+	<div class="wtax-if">
+		實付 = $
+		<div class="fake-input" id="d-real"></div>
+		(<span id="diff"></span>)
+	</div>
+	<p class="half-btn">
+		<a href="javascript:clearDishes()" class="crimson">Checkout</a>
+	</p><!--
+ --><p class="half-btn">
+ 		<a href="javascript:clearBalance()" class="crimson">Reset balance</a>
+ 	</p><!--
+ --><p class="half-btn">
+ 		<a href="javascript:clearAll()" class="crimson">Reset all</a>
+ 	</p>
+</div>
+
+<!-- //////  WAREHOUSE  ////// -->
+<div class="warehouse">
+	<table>
+		<tr>
+			<td id="price-checkbox" class="checkbox-hide"><input type="checkbox" id="nchk"></td>
+		</tr>
+		<tr id="person-row">
+			<td>
+				<input type="checkbox" class="a" checked>
+			</td>
+			<td class="n">#</td>
+			<td>
+				<input type="text" id="ntxt" placeholder="(Name?)">
+			</td>
+			<td class="p pt-price">$</td>
+			<td>
+				<div class="f fake-input"></div>
+			</td>
+		</tr>
+		<tr id="d0" class="dish-row">
+			<td>
+				<input type="checkbox" class="d-tax" checked="true">
+			</td>
+			<td class="left-align">
+				<div class="fake-input d-price"></div>
+				<br><small class="d-cal">=$</small>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<div id="keyboard-placeholder" class="kb-height">
+	&nbsp;
+</div>
+
+<div id="keyboard" class="kb-height"><!--
+ --><span class="disp persons"></span><!--
+ --><span class="disp top">
+		<span id="user-input">0</span><!--
+	 --><span class="result-wrap">
+	 		&nbsp;=
+	 		<span id="user-result">0</span>
+	 	</span>
+	</span><!--
+ --><span class="kys">
+		<button data-num="1">1</button>
+	</span><!--
+ --><span class="kys">
+		<button data-num="2">2</button>
+	</span><!--
+ --><span class="kys">
+		<button data-num="3">3</button>
+	</span><!--
+ --><span class="kys">
+		<button class="opr" data-num="*">&times;</button>
+	</span><!--
+ --><span class="kys">
+		<button class="opr" data-opr="C">
+			<small>C</small>
+		</button>
+	</span><!--
+ --><span class="kys">
+		<button data-num="4">4</button>
+	</span><!--
+ --><span class="kys">
+		<button data-num="5">5</button>
+	</span><!--
+ --><span class="kys">
+		<button data-num="6">6</button>
+	</span><!--
+ --><span class="kys">
+		<button class="opr" data-num="-">-</button>
+	</span><!--
+ --><span class="kys">
+		<button class="mac" data-opr="B">
+			<small>delete</small>
+		</button>
+	</span><!--
+ --><span class="kys">
+		<button data-num="7">7</button>
+	</span><!--
+ --><span class="kys">
+		<button data-num="8">8</button>
+	</span><!--
+ --><span class="kys">
+		<button data-num="9">9</button>
+	</span><!--
+ --><span class="kys">
+		<button class="opr" data-num="+">+</button>
+	</span><!--
+ --><span class="kys">
+		<button class="act" data-opr="N">
+			<span class="rotate">＞</span>
+		</button>
+	</span><!--
+ --><span class="kys">
+		<button data-num="Z">0</button>
+	</span><!--
+ --><span class="kys">
+		<button data-num="ZZ">00</button>
+	</span><!--
+ --><span class="kys">
+		<button data-num=".">.</button>
+	</span><!--
+ --><span class="kys">
+		<button class="opr" data-num="/">/</button>
+	</span><!--
+ --><span class="kys">
+		<button class="act mac" data-opr="Q">
+			<small>OK</small>
+		</button>
+	</span>
+</div>
+
+<style>
+::-webkit-input-placeholder {
+	color: #ddd;
+}
+::-moz-placeholder {
+	color: #ddd;
+}
+ol, ul {
+	margin: 0 0 0 -27px;
+}
+ol li, ul li {
+	margin: 0 0 15px;
+}
+input[type="text"],
+div.fake-input,
+#keyboard,
+#keyboard > span {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+p.half-btn {
+	width: 33.3%;
+	display: inline-block;
+	vertical-align: middle;
+	margin-bottom: 0;
+}
+div.wtax-if {
+	padding: 10px;
+	border: 1px dashed #ccc;
+	margin: 0 -5px;
+}
+.kb-height {
+	height: 270px;
+}
+#keyboard {
+	position: fixed;
+	max-width: 100%;
+	/*left: 0;*/
+	bottom: 0;
+	right: 0;
+	background: #eee;
+	padding: 5px;
+	-webkit-transition: bottom 0.15s linear;
+	-moz-transition: bottom 0.15s linear;
+	transition: bottom 0.15s linear;
+}
+body.keyboard-hidden #keyboard-placeholder,
+body.keyboard-hidden #keyboard {
+	display: none;
+}
+body.keyboard-hidden #keyboard.pop-down {
+	display: block;
+	bottom: -270px;
+}
+#keyboard > span {
+	height: 18%;
+	width: 20%;
+	display: inline-block;
+	vertical-align: middle;
+	padding: 2px;
+}
+#keyboard span {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+#keyboard > span.colspan-2 {
+	width: 40%;
+}
+#keyboard > span.disp {
+	width: 100%;
+	display: block;
+}
+#keyboard > span.disp.persons {
+	color: #aaa;
+    white-space: inherit;
+    text-overflow: inherit;
+}
+#keyboard > span.disp.persons.person-alert {
+	color:#ff5722;
+	-webkit-animation: blink 0.3s linear 1;
+	-moz-animation: blink 0.3s linear 1;
+	animation: blink 0.3s linear 1;
+}
+#keyboard > span.disp.top {
+	height: 10%;
+	text-align: right;
+}
+#keyboard > span.disp > span {
+	display: inline-block;
+	vertical-align: middle;
+}
+#keyboard span#user-input {
+	/*width: 80%;*/
+	font-size: 16px;
+	font-weight: bold;
+}
+#keyboard span.result-wrap {
+	min-width: 20%;
+	text-align: left;
+	color: #aaa;
+}
+#keyboard > span.disabled > button {
+	margin-top: 100px;
+}
+#keyboard button {
+	touch-action: manipulation;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	font-size: 17px;
+	width: 100%;
+	height: 100%;
+	border: 0;
+	background: #fff;
+	color: #222;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	-webkit-box-shadow: 0 1px 1px #ddd;
+	-moz-box-shadow: 0 1px 1px #ddd;
+	box-shadow: 0 1px 1px #ddd;
+	outline: 0;
+	cursor: pointer;
+}
+#keyboard button.opr {
+	background: #e5f7ff;
+}
+#keyboard button.act,
+#keyboard button.act.mac {
+	background: none;
+	-webkit-border-radius: none;
+	-moz-border-radius: none;
+	border-radius: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	color: dodgerblue;
+}
+#keyboard button.mac {
+	position: relative;
+	background: #748288;
+	color: #fff;
+}
+#keyboard button.mac.special {
+	background: #f7984a;
+}
+#keyboard button.mac small {
+	right: 5px;
+	bottom: 5px;
+	position: absolute;
+	font-size: 12px;
+}
+#keyboard > span > button > span {
+	display: block;
+	-webkit-transform: rotateZ(90deg) scale(0.65, 1.3);
+	-moz-transform: rotateZ(90deg) scale(0.65, 1.3);
+	transform: rotateZ(90deg) scale(0.65, 1.3);
+}
+body, p, h1, h2, button, input {
+	margin: 0;
+	padding: 0;
+	font-family: Helvatica, Arial, sans-serif;
+}
+body {
+	padding: 15px;
+	padding-bottom: 0;
+}
+body, p {
+	font-size: 13px;
+}
+.wrap {
+	padding: 15px 0;
+}
+table {
+	border-collapse: collapse;
+}
+th, td {
+	text-align: center;
+	white-space: nowrap;
+}
+th {
+	padding: 0 2px;
+}
+th.name-header.tight {
+	line-height: 10px;
+	font-size: 12px;
+}
+table,
+input[type="text"],
+div.fake-input {
+	width: 100%;
+}
+input[type="text"],
+div.fake-input {
+	min-width: 100px;
+	border: 2px solid #eee;
+	font-size: 13px;
+	padding: 5px;
+	outline: 0;
+}
+div.fake-input {
+	min-width: inherit;
+	width: 80px;
+	height: 30px;
+	vertical-align: middle;
+	white-space: nowrap;
+	line-height: 16px;
+	overflow: hidden;
+	display: inline-block;
+	text-align: left;
+	cursor: text;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+div.fake-input.active,
+input:focus {
+	border-color: dodgerblue;
+}
+div.fake-input.active:after {
+	content: '';
+	border-left: 1px solid #999;
+	display: inline-block;
+	vertical-align: bottom;
+	height: 16px;
+	-webkit-animation: blink 1s linear infinite;
+	-moz-animation: blink 1s linear infinite;
+	animation: blink 1s linear infinite;
+}
+@-webkit-keyframes blink {
+	0%, 40% {
+		opacity: 1;
+	}
+	50%, 100% {
+		opacity: 0;
+	}
+}
+@-moz-keyframes blink {
+	0%, 40% {
+		opacity: 1;
+	}
+	50%, 100% {
+		opacity: 0;
+	}
+}
+@keyframes blink {
+	0%, 40% {
+		opacity: 1;
+	}
+	50%, 100% {
+		opacity: 0;
+	}
+}
+input[type="checkbox"] {
+	width:30px;
+	height:30px;
+}
+td.checkbox-hide, th.checkbox-hide,
+input.cb-hide,
+button.cb-hide,
+#keyboard > span.cb-hide {
+	display: none;
+}
+td.cb-hide {
+	text-indent: -999px;
+	visibility: hidden;
+}
+div.warehouse {
+	display: none;
+}
+a {
+	display: block;
+	padding: 10px;
+	background: #cddc39;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	color: #fff;
+	margin: 8px 0 10px;
+	text-align: center;
+	text-decoration: none;
+}
+a.crimson {
+	color: #ff5722;
+	background: none;
+	text-decoration: underline;
+	font-size: 12px;
+}
+a.highlight {
+	background: dodgerblue;
+	font-weight: bold;
+}
+p.section-head {
+	font-weight: bold;
+	padding: 5px 15px 3px;
+	margin: 15px -15px 10px;
+	border-bottom: 1px dashed #222;
+	color: #222;
+}
+strong {
+	font-size: 18px;
+	font-weight: normal;
+}
+table#people-table tr th {
+	padding: 0 0 5px;
+}
+tr.dish-row {
+	opacity: 0.4; 
+}
+tr.dish-row.active-row,
+body.keyboard-hidden tr.dish-row {
+	opacity: 1; 
+}
+th.left-align,
+td.left-align {
+	text-align: left;
+}
+th.right-align,
+td.right-align {
+	text-align: right;
+}
+td.pt-price {
+	padding: 0 8px;
+}
+td a {
+	margin: 0;
+}
+.lines p {
+	padding-top: 5px;
+}
+td small {
+	color: #bbb;
+}
+th.name-header {
+	vertical-align: bottom;
+}
+.price-head + .price-bottom {
+	display: none;
+}
+
+.price-bottom th.name-header {
+	vertical-align: top;
+	padding-bottom: 5px;
+}
+</style>
+
+<script
+	src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
+
+<script>
+var curMaxPerson = 0;
+var curMaxDish = 0;
+
+var curVal = [];
+
+var keyboard_target;
+var curThread_name = 0;
+var curThread_price = 0;
+var curThread_body = 0;
+var curThread_keyboard = 0;
+var emptyPersons = [];
+var emptyPersons_json = [];
+
+var global_price = 0;
+
+// mapTriggers();
+
+var canMouseDown = false;
+var canTouch = false;
+var prevWinHeight = window.innerHeight;
+
+// const kbHeight = 270;
+// const windowMinHeight = 90;
+
+$("#keyboard .kys").mousedown(onMouseDown);
+$("#keyboard .kys").click(onClick);
+$("#keyboard .kys").bind('touchstart', onTouchStart);
+
+function onClick(){
+	if(canMouseDown===false)
+		return receiveNumpad($(this));
+	return false;
+}
+function onMouseDown(){
+	if(canMouseDown===false){
+		canMouseDown = true;
+		$("#keyboard button").off("click");
+	}
+	if(canTouch===false)
+		return receiveNumpad($(this));
+	return false;
+}
+function onTouchStart(){
+	if(canTouch===false){
+		canTouch = true;
+		$("#keyboard button").off("click");
+		$("#keyboard button").off("mousedown");
+	}
+	return receiveNumpad($(this));
+}
+
+function toNum(string){
+	try {return eval(string);} catch (e) {return NaN;}
+}
+
+$("a").click(hideKeyboard);
+
+function onCheckboxChanged(){
+	
+	// CONSOLE LOG
+	vlog('onCheckboxChanged()');
+
+	showPersons(keyboard_target);
+	calc();
+}
+
+function mapTriggers(){
+	
+	// CONSOLE LOG
+	vlog('mapTriggers()');
+
+	$("#dish-table input[type='checkbox']").change(onCheckboxChanged);
+	$("#people-table input[type='checkbox']").change(changePName);
+	$("input[type='text']").click(hideKeyboard);
+	$(".fake-input").click(popThis);
+	// $("input[type='text']").on("keyup", calc);
+}
+
+function hideKeyboard(){
+	
+	// CONSOLE LOG
+	vlog('hideKeyboard()');
+
+	$("body").addClass("keyboard-hidden");
+	$("#keyboard").addClass("pop-down");
+	var thisThread = ++curThread_keyboard;
+	window.setTimeout(function(){
+		onFinishKeyboardAnimation(thisThread);
+	}, 200);
+	$(window).off("resize");
+	$(window).off("scroll");
+
+	if(keyboard_target){
+		keyboard_target.removeClass("active");
+	}
+	return keyboard_target=null;
+}
+
+function popThis(){
+	return popKeyboard($(this));
+}
+
+function getName(i){
+	return $('#p' + i + '-name').val();
+}
+
+function showPersons(targ){
+	
+	// CONSOLE LOG
+	vlog('showPersons()');
+
+	if(targ) {
+		if(!targ.hasClass('d-price')) {
+			$(".dish-row").addClass("active-row");
+			$(".disp.persons").removeClass('person-alert');
+
+			if(targ.attr('id')==='d-tax'){
+				$('.disp.persons').text('輸入稅項或折扣');
+			}
+			else if(targ.attr('id')==='d-real'){
+				$('.disp.persons').text('輸入實付金額');
+			}
+			else if(targ.attr('id').indexOf('-paid')!==-1) {
+				var id = targ.attr('id').split('-')[0];
+				var val = $('#' + id + '-name').val();
+
+				if(val===''){
+					val = '(Person #'+id.substr(1)+')';
+				}
+				$('.disp.persons').text('輸入' + val + '已付金額');
+			}
+			return;
+		}
+	}
+	else {
+		return;
+	}
+	const parent = targ.parent().parent();
+	$("tr").removeClass("active-row");
+	parent.addClass("active-row");
+
+	const checkboxes = parent.find("input[type='checkbox']");
+
+	var checked = [];
+	checkboxes.each(function(i){
+		if(i>0 && $(this).prop('checked')) {
+			var name = getName(i);
+			if(name !== '') {
+				checked.push(name);
+			}
+		}
+	});
+	if(checked.length===0) {
+		for(var i=1; i<=curMaxPerson; i++){
+			var name = getName(i);
+			if(name !== '')
+				checked.push(name);
+		}
+	}
+
+	$(".disp.persons").removeClass('person-alert').text('for: ' + checked.join(' + '));
+	return false;
+}
+
+function getWindowSpaceHeight_delay(){
+	
+	// CONSOLE LOG
+	vlog('getWindowSpaceHeight_delay()');
+
+	const thisThread = ++curThread_body;
+
+	window.setTimeout(function(){
+		getWindowSpaceHeight(thisThread);
+	}, 300);
+}
+
+function setKbMaxHeight(minH){
+	
+	// CONSOLE LOG
+	vlog('setKbMaxHeight()');
+
+	var keyboard_bottom = $(window).height() - window.innerHeight;
+
+	if(keyboard_bottom < 0){
+		keyboard_bottom = 0;
+	}
+	$("#keyboard").css('margin-bottom', keyboard_bottom + 'px');
+	return $(".kb-height").css('max-height', (window.innerHeight - minH));
+}
+
+function getWindowSpaceHeight(thisThread) {
+
+	if(thisThread !== curThread_body){
+		if(thisThread % 10 === 0
+			&& window.innerHeight !== prevWinHeight) {
+			// Okay.
+		}
+		else{
+			return;
+		}
+	}
+	
+	// CONSOLE LOG
+	vlog('getWindowSpaceHeight()');
+
+	prevWinHeight = window.innerHeight;
+	const px16 = $("#d-tax").height();
+	const windowRatio = (px16 / 16);
+
+	setKbMaxHeight(px16*5);
+	// console.log('getWindowSpaceHeight()');
+	// $(".kb-height").height(kbHeight);
+
+	// var windowHeight = $("#keyboard").offset().top - $("html").scrollTop();
+	var windowHeight = window.innerHeight - $("#keyboard").height();
+
+	if($(".disp.top").height() < (22 * windowRatio)) {
+	// 	$(".kb-height").height($(".kb-height").height() - (windowMinHeight - windowHeight));
+		setKbMaxHeight(px16*4);
+		$("#keyboard").css('right', 0);
+		$("#keyboard").css('left', 'auto');
+		$("#keyboard").css('width', '270px');
+		windowHeight = px16*4;
+	}
+	else{
+		$("#keyboard").css('left', 0);
+		$("#keyboard").css('right', 'auto');
+
+		const fullWidth = $(".section-head").width() + (30 * windowRatio);
+		$("#keyboard").css('width', fullWidth + 'px');
+	}
+	return {
+		height: windowHeight,
+		ratio: windowRatio
+	};
+}
+
+function onFinishKeyboardAnimation(thisThread) {
+	if(thisThread !== curThread_keyboard) {
+		return;
+	}
+	$("#keyboard").removeClass("pop-down");
+}
+
+function popKeyboard(ths){
+	
+	// CONSOLE LOG
+	vlog('popKeyboard()');
+
+	$("body").removeClass("keyboard-hidden");
+	const targ = ths;
+	const this_val = targ.text();
+
+	const win = getWindowSpaceHeight(++curThread_body);
+	const target_pos = targ.offset().top - Math.ceil(win.height/4);
+
+	$(window).scrollTo({left:0, top:target_pos}, 160);
+	$(window).resize(function(){
+		getWindowSpaceHeight_delay();
+	})
+	$(window).scroll(function(){
+		getWindowSpaceHeight_delay();
+	})
+
+	$('.fake-input').removeClass("active");
+	targ.addClass("active");
+
+	showPersons(targ);
+	changeKeys(targ);
+	keyboard_target = targ;
+	curVal = this_val.split('');
+	return updateKeyboard(this_val);
+}
+
+function changeKeys(targ) {
+	
+	// CONSOLE LOG
+	vlog('changeKeys()');
+
+	// const classN = 'cb-hide';
+	// const btn_pastable = ".changable-btn-pastable";
+	// const btn_normal = ".changable-btn-normal";
+	// const btn_ctrlD = btn_pastable + ' button.mac';
+
+	// const btn_00 = ".changable-btn-00";
+	// const btn_0 = ".changable-btn-0";
+
+	// var id = targ.attr('id');
+	// if(id && id.indexOf('-paid') !== -1){
+	// 	// for "paid" section
+
+	// 	$(btn_0).addClass(classN);
+	// 	$(btn_00).removeClass(classN);
+
+	// 	// const above_cell = $('#p'+(parseInt(targ.data('id')-1)+'-paid')).text();
+
+	// 	// if(id !== 'p1-paid' && above_cell !== ''){
+	// 	// 	$(btn_normal).addClass(classN);
+	// 	// 	$(btn_pastable).removeClass(classN);
+	// 	// 	$("#ctrl_d").data('val', above_cell);
+	// 	// 	return;
+	// 	// }
+	// }
+	// else{
+	// 	$(btn_00).addClass(classN);
+	// 	$(btn_0).removeClass(classN);
+	// }
+	// $(btn_pastable).addClass(classN);
+	// $(btn_normal).removeClass(classN);
+}
+
+function toF(num, return_integer) {
+	if(!num) {
+		num = 0;
+	}
+	if(return_integer && return_integer===true){
+		return Math.floor(num*10)/10;
+	}
+	return num.toFixed(1);
+}
+
+function updateKeyboard(text){
+	
+	// CONSOLE LOG
+	vlog('updateKeyboard()');
+
+	if(text === ''){
+		text = '0';
+	}
+
+	$("#user-input").text(text);
+	// .replace(/(\d)(?=(\d{3})+([\+\-\*\/\.]|$))/g, '$1,')
+
+	var n = toNum(text);
+	if(isNaN(n)){
+		n = '';
+	}
+	else{
+		n = toF(n);
+	}
+	$("#user-result").text(n);
+	return calc();
+}
+
+function goTo(param){
+	
+	// CONSOLE LOG
+	vlog('goTo()');
+
+	if($('.person-alert').length === 0){
+		// check if forgot select
+
+		if(keyboard_target.hasClass('d-price') && keyboard_target.text()!=='') {
+			var chk_count = 0;
+			keyboard_target.parent().parent().find("input[type='checkbox']").each(function(i){
+				if(i>0 && $(this).prop('checked')) {
+					chk_count++;
+					return false;
+				}
+			});
+			if(chk_count===0){
+				$('.persons').addClass('person-alert');
+				return false;
+			}
+		}
+	}
+
+	var list = $(".wrap .fake-input");
+	var target;
+
+	for(var i=0; i<list.length; i++){
+		if(list[i] === keyboard_target[0]) {
+			target = i + param;
+		}
+	}
+
+	if(target >= list.length) {
+		target -= list.length;
+	}
+	else if(target < 0) {
+		target += list.length;
+	}
+
+	if(list[target]) {
+		if(list[target].id === 'd-tax') {
+			if(keyboard_target.text() !== ''){
+				// add one more row
+				return addDish(null, function(){
+					var le = $('.wrap table .fake-input.d-price');
+					popKeyboard($(le[le.length-1]));
+				});
+			}
+		}
+		return popKeyboard($(list[target]));
+	}
+	else {
+		return hideKeyboard();
+	}
+}
+
+function receiveNumpad(ths_parent){
+	
+	// CONSOLE LOG
+	vlog('receiveNumpad()');
+
+	const ths = ths_parent.find('button');
+	const num = ths.data('num');
+	$("#user-input").append(num);
+
+	const non_zeros = '123456789';
+	const nums = '0' + non_zeros;
+	const allow_last = nums + '.';
+	const oprs = '+-*/';
+	var last_char = 'NULL';
+
+	if(curVal.join('')==='0'){
+		curVal = [];
+	}
+	if(curVal.length > 0){
+		last_char = curVal[curVal.length-1];
+	}
+	const can_use_opr = (curVal.length > 0) && (allow_last.indexOf(last_char) !== -1);
+	const targetId = keyboard_target.attr('id');
+	const last_char_not_zero = (curVal.length>=1 && oprs.indexOf(last_char)===-1);
+
+	const is_pay_table = targetId && targetId.indexOf('-paid')!==-1;
+
+	if(num) {
+		if(num==='-' && curVal.length===0 && is_pay_table) {
+			curVal.push('0', '-');
+		}
+		else if(num === 'ZZ' && last_char_not_zero) {	// '00'
+			curVal.push('0', '0');
+		}
+		else if(num === 'ZZZ' && last_char_not_zero) {	// '000'
+			curVal.push('0', '0', '0');
+		}
+		else if((num+'').indexOf('Z')!==-1) {	// '0'
+			curVal.push('0');
+		}
+		else if(num==='.' && nums.indexOf(last_char)===-1) {
+			curVal.push('0', '.');
+		}
+		else if(oprs.indexOf(num)===-1 || can_use_opr){
+			curVal.push(num);
+		}
+	}
+	else {
+		var opr = ths.data('opr');
+
+		switch(opr) {
+			case 'T':
+				curVal = ($('#ctrl_d').data('val')+'').split('');
+				break;
+			case 'C':
+				var orig_val = keyboard_target.data('original');
+				if(!isNaN(orig_val)){
+					curVal = (orig_val+'').split("");
+				}
+				else{
+					curVal = [];
+				}
+				break;
+			case 'B':
+				curVal.pop();
+				break;
+			case 'Q':
+				return hideKeyboard();
+			case 'P':
+				return goTo(-1);
+			case 'N':
+				return goTo(1);
+		}
+	}
+	var text = curVal.join('');
+	if(text === ''){
+		text = '0';
+	}
+	else if(text === '0') {
+		curVal = [];
+	}
+	keyboard_target.text((text==='0' ? '' : text));
+	return updateKeyboard(text);
+}
+
+function addDish(skipReturns_r, callback_function){
+	
+	// CONSOLE LOG
+	vlog('addDish()');
+
+	var skipReturns = (skipReturns_r && skipReturns_r===true);
+	var newDiv = $("#d0").clone()
+		.attr('id', 'd' + (++curMaxDish))
+		;
+	newDiv.insertBefore(".price-bottom");
+
+	if(callback_function) {
+		callback_function();
+	}
+	if(skipReturns) {
+		return;
+	}
+	return mapTriggers();
+}
+
+function addPerson(skipReturns_r){
+	
+	// CONSOLE LOG
+	vlog('addPerson()');
+
+	var skipReturns = (skipReturns_r && skipReturns_r===true);
+	var curPerson = ++curMaxPerson;
+	var div = $("#person-row").clone();
+	div.attr("id", "");
+	div.find(".n").text('#' + curPerson);
+	div.find("#ntxt")
+		.attr("id", "p" + curPerson + "-name")
+		.on('keyup', changePName);
+	div.find(".p")
+		.attr('id', 'p' + curPerson + '-total');
+	div.find(".f")
+		.attr('id', 'p' + curPerson + '-paid')
+		.data('id', curPerson);
+	div.find(".a")
+		.attr('id', 'p' + curPerson + '-ac');
+	$("#people-table").append(div);
+	$(".price-head").append(
+		$("<th></th>")
+			.addClass('p' + curPerson + '-n')
+			.addClass("name-header")
+	);
+
+	var checkboxDiv = $("#price-checkbox").clone();
+	checkboxDiv.attr('id', '');
+	checkboxDiv.find('#nchk').attr('id', '').addClass('d-p' + curPerson);
+
+	$(".dish-row").append(checkboxDiv);
+	// $("td.colspan").attr("colspan", curMaxPerson);
+	// $("td.td-full-width").attr("colspan", curMaxPerson + 2);
+
+	if(skipReturns){
+		return;
+	}
+	$(window).scrollTo({left:0, top:"100%"}, 0);
+	changePName_proc(++curThread_name);
+	return mapTriggers();
+}
+
+function disp(str) {
+	return str.split('').join("<br>");
+}
+
+function changePName_proc(thisThread) {
+
+	if(thisThread !== curThread_name){
+		return;
+	}
+	// CONSOLE LOG
+	vlog('changePName_proc()');
+
+	var persons = [];
+	var emptyPers = [];
+	var emptyPers_json = [];
+
+	var classN = "cb-hide";
+	$(".a").removeClass(classN);
+	$(".pt-price").removeClass(classN);
+
+	for(var id=1; id<=curMaxPerson; id++){
+		var name = getName(id);
+		if(name !== ''){
+			$('.p'+id+'-n').removeClass('tight').html(disp(name));
+			if(name.length > 2){
+				$('.p'+id+'-n').addClass('tight');
+			}
+			persons.push(name);
+		}
+		else {
+			$('#p'+id+'-ac').addClass(classN);
+			$('#p'+id+'-total').addClass(classN);
+		}
+		if(name === '' || $('#p'+id+'-ac').prop('checked')===false){
+			emptyPers.push(id);
+
+			if(name === ''){
+				emptyPers_json.push(id);
+			}
+		}
+	}
+	localStorage.persons = JSON.stringify(persons);
+	emptyPersons = emptyPers;
+	emptyPersons_json = emptyPers_json;
+	indicateEmpties();
+	return calc();
+}
+
+function indicateEmpties(){
+	
+	// CONSOLE LOG
+	vlog('indicateEmpties()');
+
+	var classN = 'checkbox-hide';
+
+	$('.' + classN).removeClass(classN);
+	for(var i=0; i<emptyPersons.length; i++){
+		$(".p" + emptyPersons[i] + "-n").addClass(classN);
+		$(".d-p" + emptyPersons[i]).parent().addClass(classN);
+	}
+}
+
+function clearDishes(){
+	if(confirm("清除所有菜式，並保留上次餘額？")) {
+
+		var details = JSON.parse(localStorage.details);
+		details.dishes = [];
+
+		for(var i=1; i<=curMaxPerson; i++) {
+			details.paid[i] = $("#p"+i+"-total").data('val');
+		}
+		localStorage.details = JSON.stringify(details);
+		return window.location.reload();
+	}
+	return false;
+}
+function clearBalance(){
+	if(confirm("清除所有結餘？")) {
+		localStorage.removeItem("details");
+		return window.location.reload();
+	}
+	return false;
+}
+function clearAll(){
+	if(confirm("清除所有紀錄？")) {
+		localStorage.clear();
+		return window.location.reload();
+	}
+	return false;
+}
+
+function initPersons(persons){
+	
+	// CONSOLE LOG
+	vlog('initPersons()');
+
+	if(persons.length===0) {
+		persons = ['User1'];
+	}
+	for(var id=0; id<=persons.length; id++){
+		addPerson(true);
+	}
+	for(var id=0; id<persons.length; id++){
+		$('#p' + (id+1) + '-name').val(persons[id]);
+	}
+	changePName_proc(++curThread_name);
+
+	if(localStorage.details) {
+		return fetchDetailsFromLS();
+	}
+	return addDish();
+}
+
+function withSymbol(price) {
+	if(price < 0) {
+		return '取回$' + toF(0-price);
+	}
+	return '$' + toF(price);
+}
+
+function withNega(price){
+	if(price < 0) {
+		return '-$' + toF(0-price);
+	}
+	return '+$' + toF(price);
+}
+
+function fetchDetailsFromLS(){
+	
+	// CONSOLE LOG
+	vlog('fetchDetailsFromLS()');
+
+	var data = JSON.parse(localStorage.details);
+	var dishes = data.dishes;
+	var paid = data.paid;
+	var tax = data.tax;
+
+	$("#d-tax").text(tax);
+	if(dishes.length===0) {
+		addDish();
+	}
+	else{
+		for(var i=1; i<dishes.length; i++){
+			addDish(true);
+			$("#d"+i+" .d-price").text(dishes[i].price);
+			$("#d"+i+" .d-tax").prop('checked', dishes[i].with_tax);
+			for(var j=0;j<dishes[i].persons.length;j++){
+				$("#d"+i+" .d-p"+dishes[i].persons[j]).prop('checked',true);
+			}
+		}
+		mapTriggers();
+	}
+	for(var i=1; i<paid.length; i++){
+		$("#p"+i+"-paid").text(paid[i]).data('original', paid[i]);
+	}
+	return calc();
+}
+
+function fetchNameFromLS(){
+	
+	// CONSOLE LOG
+	vlog('fetchNameFromLS()');
+
+	var persons = JSON.parse(localStorage.persons);
+	return initPersons(persons);
+}
+
+if(localStorage.persons) {
+	fetchNameFromLS();
+}
+else {
+	initPersons([]);
+}
+
+function changePName(){
+	
+	// CONSOLE LOG
+	vlog('changePName()');
+
+	var thisThread = ++curThread_name;
+	window.setTimeout(function(){
+		changePName_proc(thisThread);
+	}, 300);
+}
+
+function calc(){
+	var thisThread = ++curThread_price;
+	
+	// CONSOLE LOG
+	vlog('calc('+thisThread+')');
+
+	window.setTimeout(function(){
+		calc_proc(thisThread);
+	}, 300);
+}
+
+function calc_each(return_price_raw){
+	
+	// CONSOLE LOG
+	vlog('calc_each()');
+
+	var total_price = 0;
+	var return_price = !(return_price_raw===false);
+	var price = [];
+	const tax_text = $("#d-tax").text();
+	const realpay_text = $("#d-real").text();
+	var tax = toNum(tax_text);
+	const realpay = toNum(realpay_text);
+	const should_skip_realpay = isNaN(realpay);
+
+	if(isNaN(tax)) {
+		tax = 1;
+		$("#d-tax").text(tax);
+	}
+	var res = [];
+
+	for(var i=1; i<=curMaxDish; i++){
+		var this_row = $("#d" + i);
+		var this_price = toNum(this_row.find(".d-price").text());
+		var this_price_with_tax;
+
+		var price_for = [];	// person
+
+		var pax_count;
+		var price_for_json = [];	// changed "personId" to "pax_count"
+
+		pax_count = 0;
+		for(var ps=1; ps<=curMaxPerson; ps++) {
+			if(return_price && !price[ps]) {
+				price[ps] = 0;
+			}
+			if(emptyPersons_json.indexOf(ps)===-1){
+				pax_count++;
+			}
+			if(emptyPersons.indexOf(ps)!==-1){
+				continue;
+			}
+			if(this_row.find(".d-p"+ps).prop('checked')) {
+				price_for.push(ps);
+				price_for_json.push(pax_count);
+			}
+		}
+
+		if(isNaN(this_price)){
+			this_price = 0;
+		}
+
+		if(price_for.length===0) {
+			pax_count = 0;
+			for(var ps=1; ps<=curMaxPerson; ps++){
+				if(emptyPersons_json.indexOf(ps)===-1){
+					pax_count++;
+				}
+				if(emptyPersons.indexOf(ps)!==-1){
+					continue;
+				}
+				price_for.push(ps);
+				price_for_json.push(pax_count);
+			}
+		}
+
+		this_price_with_tax = this_price;
+
+		var with_tax = this_row.find('.d-tax').prop('checked');
+		if(with_tax) {
+			this_price_with_tax = this_price * tax;
+		}
+		var shared_price = this_price_with_tax / price_for.length;
+
+		total_price += this_price_with_tax;
+
+		// if(return_price){
+			for(var ind=0; ind<price_for.length; ind++){
+				price[price_for[ind]] += shared_price;
+			}
+		// }
+		// else{
+			this_row.find(".d-cal").html('=' + withSymbol(shared_price) + ' &times; '+price_for.length);
+		// }
+
+		res[i] = {
+			price: this_price,
+			persons: price_for_json,
+			with_tax: with_tax
+		};
+	}
+
+	var diff = 0;
+	if(!should_skip_realpay){
+		diff = (realpay - total_price);
+	}
+	$("#diff").text(withNega(diff));
+
+	$("#grand-total").text(withSymbol(total_price));
+	global_price = total_price;
+
+	if(return_price){
+		return {
+			totals: price,
+			dishes: res,
+			tax: tax_text
+		};
+	}
+	return false;
+}
+
+function calc_proc(thisThread){
+	if(thisThread !== curThread_price){
+		return;
+	}
+	// CONSOLE LOG
+	vlog('calc_proc('+thisThread+')');
+
+	$("td.p").text('$');
+	// calc_each(false);
+	calc_total();
+}
+
+function vlog(arg) {
+	return;
+	// return console.log(arg);
+}
+
+function calc_total(){
+	
+	// CONSOLE LOG
+	vlog('calc_total()');
+
+	var data = calc_each();
+	var price = data.totals;
+	var paid_res = [];
+
+	var pax_count = 0;
+	for(var ps=1; ps<=curMaxPerson; ps++){
+
+		var paid = toNum($("#p"+ps+"-paid").text());
+		if(isNaN(paid)) {
+			paid = 0;
+		}
+		if(emptyPersons_json.indexOf(ps)===-1){
+			pax_count++;
+		}
+		else{
+			continue;
+		}
+		paid_res[pax_count] = paid;
+		$("#p"+ps+"-total")
+			.text(withSymbol(price[ps] - paid))
+			.data('val', toF(paid - price[ps], true));
+	}
+
+	// console.log("LS Saved.");
+	localStorage.details = JSON.stringify({
+		dishes: data.dishes,
+		tax: data.tax,
+		paid: paid_res
+	});
+	// window.scrollTo(0, document.getElementById("people-anchor").offsetTop);
+}
+</script>
+	
+</body>
+</html>

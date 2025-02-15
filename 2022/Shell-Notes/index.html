@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+
+  <!-- Baidu Tongji -->
+  
+
+  <!-- Baidu Push -->
+  
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc" />
+  <meta name="baidu-site-verification" content="PpzM9WxOJU" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="This is CIVICCCCC&#39;s blog..." />
+  <meta name="keyword" content="rmshadows,civiccccc,blog,Blog" />
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg" />
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+  <!-- Bootstrap Core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/beantech.min.css" />
+
+  <!-- Pygments Highlight CSS -->
+  
+<link rel="stylesheet" href="../../css/highlight.css">
+<link rel="stylesheet" href="../../css/widget.css">
+<link rel="stylesheet" href="../../css/rocket.css">
+<link rel="stylesheet" href="../../css/signature.css">
+<link rel="stylesheet" href="../../css/catalog.css">
+<link rel="stylesheet" href="../../css/livemylife.css">
+
+
+  
+  <!-- wave start -->
+  <link rel="stylesheet" href="/css/wave.css" />
+  <!-- wave end -->
+  
+
+  
+  <!-- top start (article top hot config) -->
+  <link rel="stylesheet" href="/css/top.css" />
+  <!-- top end -->
+  
+
+  
+  <!-- ThemeColor start -->
+  <link rel="stylesheet" href="/css/scroll.css" />
+  <!-- ThemeColor end -->
+  
+
+  
+  <!-- viewer start (Picture preview) -->
+  <link rel="stylesheet" href="/css/viewer.min.css" />
+  <!-- viewer end -->
+  
+
+  
+  <!-- Search start -->
+  <link rel="stylesheet" href="/css/search.css" />
+  <!-- Search end -->
+  
+
+  
+  <!-- ThemeColor start -->
+  <link rel="stylesheet" href="/css/themecolor.css" />
+  <!-- ThemeColor end -->
+  
+
+  
+
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+    href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://rmshadows.gitee.io/2022/Shell-Notes/">
+  <title>
+    
+    Shell Notes - RYAN | be yourself
+    
+  </title>
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="atom.xml" title="Hello ~(○｀ 3′○)~ I'm Ryan Yim" type="application/atom+xml">
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+
+<body ontouchstart="" class="body--home">
+    <!-- ThemeColor -->
+    
+    <!-- ThemeColor -->
+<!-- <div class="toggle" onclick="document.body.classList.toggle('body--dark')">Switch Color</div> -->
+
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons bright-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+
+    
+
+    <!-- Navigation (contains search)-->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Hello ~(○｀ 3′○)~ I&#39;m Ryan Yim</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">Home</a>
+          </li>
+
+          
+
+          
+          
+
+          
+          <li>
+            <a href="/about/">About</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a href="/archive/">Archives</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a href="/categories/">Categories</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a href="/tags/">Tags</a>
+          </li>
+          
+          
+
+          
+          <li><a class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+
+<script>
+  // Drop Bootstarp low-performance Navbar
+  // Use customize navbar with high-quality material design animation
+  // in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+    <!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+    <!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    header.intro-header {
+       /*post*/
+        background-image: url('https://rmshadows.gitee.io//img/header_img/lml_bg.jpg');
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/rmshadows.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#Linux Shell" title="Linux Shell">Linux Shell</a>
+              
+              <a class="tag" href="/tags/#Bash" title="Bash">Bash</a>
+              
+            </div>
+            <h1>Shell Notes</h1>
+            <h2 class="subheading">我的Shell脚本笔记</h2>
+            <span class="meta">
+              Posted by Ryan Yim on
+              2022-03-27
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">22</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">4.7k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+    <!-- Main Content (Post contains
+    Pager、
+    tip、
+    socialshare、
+    gitalk、gitment、disqus-comment、
+    Catalog、
+    Sidebar、
+    Featured-Tags、
+    Friends Blog、
+    anchorjs、
+    ) -->
+    <!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1 id="Shell-Notes"><a href="#Shell-Notes" class="headerlink" title="Shell Notes"></a>Shell Notes</h1><blockquote>
+<p>Linux shell脚本笔记</p>
+</blockquote>
+<h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><h3 id="数组应用"><a href="#数组应用" class="headerlink" title="数组应用"></a>数组应用</h3><blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/644793620" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/644793620</a> (<a href="https://itsfoss.com/bash-arrays/" target="_blank" rel="noopener">https://itsfoss.com/bash-arrays/</a>)</p>
+<p><a href="https://www.cnblogs.com/sparkdev/p/7152164.html" target="_blank" rel="noopener">https://www.cnblogs.com/sparkdev/p/7152164.html</a></p>
+</blockquote>
+<h4 id="基础访问"><a href="#基础访问" class="headerlink" title="基础访问"></a>基础访问</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 数组定义</span></span><br><span class="line"><span class="comment"># 隐式定义arr数组</span></span><br><span class="line">arr[0]=apple</span><br><span class="line">arr[1]=apple1</span><br><span class="line"><span class="comment"># 显式申明</span></span><br><span class="line"><span class="built_in">declare</span> -a arr</span><br><span class="line"><span class="comment"># 初始化</span></span><br><span class="line">arr=(apple orange pear)</span><br><span class="line">等同于<span class="built_in">declare</span> -a arr=(apple orange pear)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数组长度</span></span><br><span class="line"><span class="variable">$&#123;#arr[@]&#125;</span></span><br><span class="line"><span class="comment"># 数组中某个元素长度</span></span><br><span class="line">arr=(a aaa aaaa)</span><br><span class="line"><span class="comment"># 3</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;#arr[1]&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 访问数组元素</span></span><br><span class="line">distros=(Ubuntu Fedora SUSE <span class="string">"Arch Linux"</span> Nix)</span><br><span class="line"><span class="comment"># 格式：$&#123;array_name[N]&#125;</span></span><br><span class="line"><span class="comment"># SUSE</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;distros[2]&#125;</span></span><br><span class="line"><span class="comment"># 变量索引</span></span><br><span class="line">i=2</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;distros[$i]&#125;</span></span><br><span class="line"><span class="comment"># hello会被当作0处理</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;myArr[hello]&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 追加数组元素</span></span><br><span class="line">distros+=(<span class="string">"Debian"</span>)</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">distros=(<span class="string">"<span class="variable">$&#123;distros[@]&#125;</span>"</span> Debian)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 截取子数组</span></span><br><span class="line"><span class="built_in">declare</span> -a arr=(a b c d e f g)</span><br><span class="line"><span class="comment"># c d e 从index2开始截取3个</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;arr[@]:2:3&#125;</span></span><br><span class="line">a=(<span class="variable">$&#123;arr[@]:1:3&#125;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从index4开始的全部</span></span><br><span class="line"><span class="variable">$&#123;arr[@]:4&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 连接两个数组</span></span><br><span class="line">abc=(a b c)</span><br><span class="line">distros=(<span class="string">"<span class="variable">$&#123;distros[@]&#125;</span>"</span> <span class="string">"<span class="variable">$&#123;abc[@]&#125;</span>"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印数组列表 竖列</span></span><br><span class="line">arrList=(1 2 3 4)</span><br><span class="line"><span class="keyword">for</span> ele <span class="keyword">in</span> <span class="variable">$&#123;arrList[@]&#125;</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"<span class="variable">$ele</span>"</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="comment"># 一行表达</span></span><br><span class="line"><span class="keyword">for</span> element <span class="keyword">in</span> <span class="string">"<span class="variable">$&#123;myArr[@]&#125;</span>"</span>; <span class="keyword">do</span> <span class="built_in">echo</span> <span class="variable">$element</span> <span class="keyword">done</span></span><br><span class="line"><span class="function"><span class="title">printlnArr</span></span> ()&#123;</span><br><span class="line">    <span class="comment"># printlnArr $&#123;arr[*]&#125;</span></span><br><span class="line">    <span class="keyword">for</span> ele <span class="keyword">in</span> <span class="variable">$1</span></span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">      <span class="built_in">echo</span> <span class="string">"<span class="variable">$ele</span>"</span></span><br><span class="line">    <span class="keyword">done</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 一行打印数组所有元素 $&#123;array[*]&#125;</span></span><br><span class="line"><span class="comment"># 1 2 3 4</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;distros[*]&#125;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;dupArr[@]&#125;</span></span><br><span class="line"><span class="function"><span class="title">printArr</span></span>()&#123;</span><br><span class="line">    <span class="comment"># printArr $&#123;distros[*]&#125;</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制传入的数组</span></span><br><span class="line"><span class="function"><span class="title">test</span></span>() &#123;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"函数接收到的参数列表为：<span class="variable">$@</span>"</span> </span><br><span class="line">    newarr=($*)</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"新数组的值为：<span class="variable">$&#123;newarr[@]&#125;</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">test</span> <span class="variable">$&#123;dupArr[@]&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用索引将元素设置在任何位置</span></span><br><span class="line">array_name[N]=new_value</span><br><span class="line"><span class="comment"># 但请记住使用正确的索引编号。 如果在现有索引上使用它，新值将替换该元素。如果你使用“越界”索引，它仍会添加到最后一个元素之后。例如，如果数组长度为 6，并且你尝试在索引 9 处设置新值，则该值仍将作为最后一个元素添加到第 7 个位置（索引 6）。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除数组元素 使用 Shell 内置的 unset 通过提供索引号来删除数组元素：</span></span><br><span class="line"><span class="built_in">unset</span> array_name[N]</span><br><span class="line"><span class="comment"># 通过 unset 来删除整个数组：</span></span><br><span class="line"><span class="built_in">unset</span> array_name</span><br></pre></td></tr></table></figure>
+<h4 id="进阶运用"><a href="#进阶运用" class="headerlink" title="进阶运用"></a>进阶运用</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 去除重复</span></span><br><span class="line"><span class="comment"># 去除重复</span></span><br><span class="line">dupArr=(1 2 3 4 5 5 6 7 8 9 4 3 2 4 5 6 8)</span><br><span class="line"><span class="comment"># 去除dupArr中相同元素</span></span><br><span class="line">dupArrlen=<span class="variable">$&#123;#dupArr[@]&#125;</span></span><br><span class="line"><span class="keyword">for</span>((i=0;i&lt;<span class="variable">$dupArrlen</span>;i++)) </span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  <span class="keyword">for</span>((j=<span class="variable">$dupArrlen</span>-1;j&gt;i;j--)) </span><br><span class="line">  <span class="keyword">do</span></span><br><span class="line">    <span class="keyword">if</span> [[ <span class="variable">$&#123;dupArr[i]&#125;</span> = <span class="variable">$&#123;dupArr[j]&#125;</span> ]];<span class="keyword">then</span> </span><br><span class="line">      <span class="built_in">unset</span> dupArr[i] </span><br><span class="line">    <span class="keyword">fi</span> </span><br><span class="line">  <span class="keyword">done</span> </span><br><span class="line"><span class="keyword">done</span></span><br><span class="line">result=()</span><br><span class="line">index=0</span><br><span class="line"><span class="keyword">for</span> each <span class="keyword">in</span> <span class="variable">$&#123;dupArr[@]&#125;</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  result[<span class="variable">$index</span>]=<span class="variable">$each</span></span><br><span class="line">  index=$((index+1))</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="function"><span class="title">arrRemoveDup</span></span>() &#123;</span><br><span class="line">  <span class="comment"># arrRemoveDup $&#123;dupArr[*]&#125;</span></span><br><span class="line">  <span class="comment"># echo $&#123;result[*]&#125;</span></span><br><span class="line">  arrRemoveDupArr=($*)</span><br><span class="line">  arrRemoveDupArrlen=<span class="variable">$&#123;#arrRemoveDupArr[@]&#125;</span></span><br><span class="line">  <span class="keyword">for</span> ((i = 0; i &lt; <span class="variable">$arrRemoveDupArrlen</span>; i++)); <span class="keyword">do</span></span><br><span class="line">    <span class="keyword">for</span> ((j = <span class="variable">$arrRemoveDupArrlen</span> - 1; j &gt; i; j--)); <span class="keyword">do</span></span><br><span class="line">      <span class="keyword">if</span> [[ <span class="variable">$&#123;arrRemoveDupArr[i]&#125;</span> = <span class="variable">$&#123;arrRemoveDupArr[j]&#125;</span> ]]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">unset</span> arrRemoveDupArr[i]</span><br><span class="line">      <span class="keyword">fi</span></span><br><span class="line">    <span class="keyword">done</span></span><br><span class="line">  <span class="keyword">done</span></span><br><span class="line">  result=()</span><br><span class="line">  index=0</span><br><span class="line">  <span class="keyword">for</span> each <span class="keyword">in</span> <span class="variable">$&#123;arrRemoveDupArr[@]&#125;</span>; <span class="keyword">do</span></span><br><span class="line">    result[<span class="variable">$index</span>]=<span class="variable">$each</span></span><br><span class="line">    index=$((index + 1))</span><br><span class="line">  <span class="keyword">done</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数组排序</span></span><br><span class="line"><span class="comment"># 仅能排序数字(if判断中"-gt" 改为 “-lt"可实现降序)</span></span><br><span class="line"><span class="keyword">for</span> ((a = 0; a &lt; <span class="variable">$&#123;#mm[*]&#125;</span>; a++)); <span class="keyword">do</span></span><br><span class="line">  <span class="keyword">for</span> ((k = <span class="variable">$a</span> + 1; k &lt; <span class="variable">$&#123;#mm[*]&#125;</span>; k++)); <span class="keyword">do</span></span><br><span class="line">    <span class="keyword">if</span> [ <span class="variable">$&#123;mm[$a]&#125;</span> -gt <span class="variable">$&#123;mm[$k]&#125;</span> ]; <span class="keyword">then</span></span><br><span class="line">      qq=<span class="variable">$&#123;mm[$a]&#125;</span></span><br><span class="line">      mm[<span class="variable">$a</span>]=<span class="variable">$&#123;mm[$k]&#125;</span></span><br><span class="line">      mm[<span class="variable">$k</span>]=<span class="variable">$qq</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">  <span class="keyword">done</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="function"><span class="title">sortNumArr1</span></span>() &#123;</span><br><span class="line">  <span class="comment"># sortNumArr $&#123;toSort[*]&#125; # bb=$&#123;mm[*]&#125;</span></span><br><span class="line">  mm=($*)</span><br><span class="line">  <span class="keyword">for</span> ((a = 0; a &lt; <span class="variable">$&#123;#mm[*]&#125;</span>; a++)); <span class="keyword">do</span></span><br><span class="line">    <span class="keyword">for</span> ((k = <span class="variable">$a</span> + 1; k &lt; <span class="variable">$&#123;#mm[*]&#125;</span>; k++)); <span class="keyword">do</span></span><br><span class="line">      <span class="keyword">if</span> [ <span class="variable">$&#123;mm[$a]&#125;</span> -gt <span class="variable">$&#123;mm[$k]&#125;</span> ]; <span class="keyword">then</span></span><br><span class="line">        qq=<span class="variable">$&#123;mm[$a]&#125;</span></span><br><span class="line">        mm[<span class="variable">$a</span>]=<span class="variable">$&#123;mm[$k]&#125;</span></span><br><span class="line">        mm[<span class="variable">$k</span>]=<span class="variable">$qq</span></span><br><span class="line">      <span class="keyword">fi</span></span><br><span class="line">    <span class="keyword">done</span></span><br><span class="line">  <span class="keyword">done</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 仅能排序数字</span></span><br><span class="line"><span class="function"><span class="title">sortNumArr2</span></span>() &#123;</span><br><span class="line">  <span class="comment"># 定义函数 exchangeEle() 交换数组中两个元素的位置</span></span><br><span class="line">  <span class="function"><span class="title">exchangeEle</span></span>() &#123;</span><br><span class="line">    <span class="comment"># 使用临时变量保存数组元素</span></span><br><span class="line">    <span class="built_in">local</span> temp=<span class="variable">$&#123;exchangeEleArr[$1]&#125;</span></span><br><span class="line">    <span class="comment"># 交换元素的位置</span></span><br><span class="line">    exchangeEleArr[<span class="variable">$1</span>]=<span class="variable">$&#123;exchangeEleArr[$2]&#125;</span></span><br><span class="line">    exchangeEleArr[<span class="variable">$2</span>]=<span class="variable">$temp</span></span><br><span class="line">    <span class="built_in">return</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment"># sortArrByStr $&#123;aa[*]&#125;</span></span><br><span class="line">  <span class="comment"># echo $&#123;rr[*]&#125;</span></span><br><span class="line">  exchangeEleArr=($*)</span><br><span class="line">  <span class="comment"># 通过 for 循环对数组排序，注意此时是以字符串来比较的</span></span><br><span class="line">  <span class="keyword">for</span> ((last = <span class="variable">$&#123;#exchangeEleArr[@]&#125;</span>; last &gt; 1; last--)); <span class="keyword">do</span></span><br><span class="line">    <span class="keyword">for</span> ((i = 0; i &lt; last - 1; i++)); <span class="keyword">do</span></span><br><span class="line">      [[ <span class="string">"<span class="variable">$&#123;exchangeEleArr[$i]&#125;</span>"</span> -gt <span class="string">"<span class="variable">$&#123;exchangeEleArr[$((i+1))]&#125;</span>"</span> ]] &amp;&amp; exchangeEle <span class="variable">$i</span> $((i+1))</span><br><span class="line">    <span class="keyword">done</span></span><br><span class="line">  <span class="keyword">done</span></span><br><span class="line">  rr=<span class="variable">$&#123;exchangeEleArr[*]&#125;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据字符串排序</span></span><br><span class="line"><span class="function"><span class="title">sortArrByStr</span></span>() &#123;</span><br><span class="line">  <span class="comment"># 定义函数 exchangeEle() 交换数组中两个元素的位置</span></span><br><span class="line">  <span class="function"><span class="title">exchangeEle</span></span>() &#123;</span><br><span class="line">    <span class="comment"># 使用临时变量保存数组元素</span></span><br><span class="line">    <span class="built_in">local</span> temp=<span class="variable">$&#123;exchangeEleArr[$1]&#125;</span></span><br><span class="line">    <span class="comment"># 交换元素的位置</span></span><br><span class="line">    exchangeEleArr[<span class="variable">$1</span>]=<span class="variable">$&#123;exchangeEleArr[$2]&#125;</span></span><br><span class="line">    exchangeEleArr[<span class="variable">$2</span>]=<span class="variable">$temp</span></span><br><span class="line">    <span class="built_in">return</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment"># sortArrByStr $&#123;aa[*]&#125;</span></span><br><span class="line">  <span class="comment"># echo $&#123;rr[*]&#125;</span></span><br><span class="line">  exchangeEleArr=($*)</span><br><span class="line">  <span class="comment"># 通过 for 循环对数组排序，注意此时是以字符串来比较的</span></span><br><span class="line">  <span class="keyword">for</span> ((last = <span class="variable">$&#123;#exchangeEleArr[@]&#125;</span>; last &gt; 1; last--)); <span class="keyword">do</span></span><br><span class="line">    <span class="keyword">for</span> ((i = 0; i &lt; last - 1; i++)); <span class="keyword">do</span></span><br><span class="line">      [[ <span class="string">"<span class="variable">$&#123;exchangeEleArr[$i]&#125;</span>"</span> &gt; <span class="string">"<span class="variable">$&#123;exchangeEleArr[$((i + 1))]&#125;</span>"</span> ]] &amp;&amp; exchangeEle <span class="variable">$i</span> $((i + 1))</span><br><span class="line">    <span class="keyword">done</span></span><br><span class="line">  <span class="keyword">done</span></span><br><span class="line">  rr=<span class="variable">$&#123;exchangeEleArr[*]&#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="字符串处理"><a href="#字符串处理" class="headerlink" title="字符串处理"></a>字符串处理</h3><h4 id="分割字符串"><a href="#分割字符串" class="headerlink" title="分割字符串"></a>分割字符串</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash  </span></span><br><span class="line"><span class="comment"># Example to split a string using trim (tr) command  </span></span><br><span class="line">strTosplit=<span class="string">"We;welcome;you;on;yiibai!"</span>  </span><br><span class="line">strArr=($(<span class="built_in">echo</span> <span class="string">"<span class="variable">$strTosplit</span>"</span> | tr <span class="string">";"</span> <span class="string">"\n"</span>))  </span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="string">"<span class="variable">$&#123;my_arr[@]&#125;</span>"</span>  </span><br><span class="line"><span class="keyword">do</span>  </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$i</span>  </span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 更多请阅读：https://www.yiibai.com/bash/bash-split-string.html</span></span><br><span class="line"><span class="comment">#Example for bash split string by space  </span></span><br><span class="line"></span><br><span class="line"><span class="built_in">read</span> -p <span class="string">"Enter any string separated by space: "</span> str  <span class="comment">#reading string value  </span></span><br><span class="line"></span><br><span class="line">IFS=<span class="string">' '</span> <span class="comment">#setting space as delimiter  </span></span><br><span class="line"><span class="built_in">read</span> -ra ADDR &lt;&lt;&lt;<span class="string">"<span class="variable">$str</span>"</span> <span class="comment">#reading str as an array as tokens separated by IFS  </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="string">"<span class="variable">$&#123;ADDR[@]&#125;</span>"</span>; <span class="comment">#accessing each element of array  </span></span><br><span class="line"><span class="keyword">do</span>  </span><br><span class="line"><span class="built_in">echo</span> <span class="string">"<span class="variable">$i</span>"</span>  </span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line">提取等号前面字段 只能一个符号</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"name=usr"</span> | cut -d <span class="string">'='</span> -f 1</span><br><span class="line">提取xxx字符串后面的</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"name.se rusr"</span> | sed <span class="string">'s/.xxx.*//'</span></span><br></pre></td></tr></table></figure>
+<h4 id="字符串转数组"><a href="#字符串转数组" class="headerlink" title="字符串转数组"></a>字符串转数组</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 字符串转数组：以“;”为分隔符分隔的数组</span></span><br><span class="line">listToArr=<span class="string">"a;b;v;x"</span></span><br><span class="line">OLD_IFS=<span class="string">"<span class="variable">$IFS</span>"</span></span><br><span class="line"><span class="comment"># 以“;”为分隔符</span></span><br><span class="line">IFS=<span class="string">";"</span></span><br><span class="line">gotArr=(<span class="variable">$listToArr</span>)</span><br><span class="line">IFS=<span class="string">"<span class="variable">$OLD_IFS</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"分割后的数组长度是: <span class="variable">$&#123;#gotArr[@]&#125;</span>"</span></span><br><span class="line"><span class="keyword">for</span> ele <span class="keyword">in</span> <span class="variable">$&#123;gotArr[@]&#125;</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"<span class="variable">$ele</span>"</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 函数</span></span><br><span class="line">strToArr=<span class="string">"a;b;v;x"</span></span><br><span class="line">strSplitor=<span class="string">";"</span></span><br><span class="line"><span class="function"><span class="title">strSplit</span></span> () &#123;</span><br><span class="line">  OLD_IFS=<span class="string">"<span class="variable">$IFS</span>"</span></span><br><span class="line">  <span class="comment"># 以“;”为分隔符</span></span><br><span class="line">  IFS=<span class="string">"<span class="variable">$strSplitor</span>"</span></span><br><span class="line">  gotArr=(<span class="variable">$1</span>)</span><br><span class="line">  IFS=<span class="string">"<span class="variable">$OLD_IFS</span>"</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"分割后的数组长度是: <span class="variable">$&#123;#gotArr[@]&#125;</span>"</span></span><br><span class="line">  <span class="keyword">for</span> ele <span class="keyword">in</span> <span class="variable">$&#123;gotArr[@]&#125;</span></span><br><span class="line">  <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"<span class="variable">$ele</span>"</span></span><br><span class="line">  <span class="keyword">done</span></span><br><span class="line">&#125;</span><br><span class="line">strSplit <span class="string">"<span class="variable">$strToArr</span>"</span></span><br></pre></td></tr></table></figure>
+<h4 id="Sed处理文本"><a href="#Sed处理文本" class="headerlink" title="Sed处理文本"></a>Sed处理文本</h4><p>（见<code>Why-Linux</code>文章）</p>
+<h4 id="查找文本文件中是否存在某字符串"><a href="#查找文本文件中是否存在某字符串" class="headerlink" title="查找文本文件中是否存在某字符串"></a>查找文本文件中是否存在某字符串</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查找文件中的字符串</span></span><br><span class="line">check_var=<span class="string">"export PATH=\"\$PATH:/usr/sbin\""</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$check_var</span></span><br><span class="line"><span class="keyword">if</span> cat <span class="string">'./new.txt'</span> | grep <span class="string">"<span class="variable">$check_var</span>"</span> &gt; /dev/null</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"域名为  <span class="variable">$check_var</span>  已存在"</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"newexport PATH=\"\$PATH:/usr/sbin\""</span> &gt;&gt; ./new.txt</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"未找到"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> sudo cat <span class="string">'/etc/network/interfaces.d/setup'</span> | grep <span class="string">"<span class="variable">$check_var</span>"</span> &gt; /dev/null</span><br><span class="line">    <span class="keyword">then</span></span><br><span class="line">    prompt -w <span class="string">"有"</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    prompt -m <span class="string">"无"</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<h2 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h2><h3 id="环境判断"><a href="#环境判断" class="headerlink" title="环境判断"></a>环境判断</h3><h4 id="判断文件夹、文件是否存在"><a href="#判断文件夹、文件是否存在" class="headerlink" title="判断文件夹、文件是否存在"></a>判断文件夹、文件是否存在</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 判断文件存在</span></span><br><span class="line">fileToCheck=<span class="string">""</span></span><br><span class="line"><span class="keyword">if</span> [ -f <span class="string">"<span class="variable">$fileToCheck</span>"</span> ];<span class="keyword">then</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"File "</span><span class="variable">$fileToCheck</span><span class="string">" exist."</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"File "</span><span class="variable">$fileToCheck</span><span class="string">" not found."</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 判断文件夹存在 注意："~/.config"的表达无效</span></span><br><span class="line">pathToCheck=<span class="string">""</span></span><br><span class="line"><span class="keyword">if</span> [ -d <span class="string">"<span class="variable">$pathToCheck</span>"</span> ];<span class="keyword">then</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"文件夹存在"</span></span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"文件夹不存在"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 否定直接加!</span></span><br><span class="line"><span class="keyword">if</span> [ ! -f <span class="string">"<span class="variable">$pathToCheck</span>"</span> ]; <span class="keyword">then</span></span><br><span class="line">  touch <span class="string">"<span class="variable">$pathToCheck</span>"</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<h4 id="判断是否安装某命令"><a href="#判断是否安装某命令" class="headerlink" title="判断是否安装某命令"></a>判断是否安装某命令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 方法1</span></span><br><span class="line">cmdToCheck=<span class="string">"git"</span></span><br><span class="line"><span class="keyword">if</span> ! [ -x <span class="string">"<span class="variable">$(command -v "$cmdToCheck")</span>"</span> ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Error: "</span><span class="variable">$cmdToCheck</span><span class="string">" is not installed."</span> &gt;&amp;2</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Command found! : "</span><span class="variable">$cmdToCheck</span><span class="string">""</span> &gt;&amp;1</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 方法2</span></span><br><span class="line">cmdToCheck=<span class="string">"node"</span></span><br><span class="line"><span class="keyword">if</span> ! <span class="built_in">type</span> <span class="string">"<span class="variable">$cmdToCheck</span>"</span> &gt;/dev/null 2&gt;&amp;1; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Error: "</span><span class="variable">$cmdToCheck</span><span class="string">" is not installed."</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Command found! : "</span><span class="variable">$cmdToCheck</span><span class="string">""</span> &gt;&amp;1</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<h3 id="输入判断"><a href="#输入判断" class="headerlink" title="输入判断"></a>输入判断</h3><h4 id="判断Yes、No"><a href="#判断Yes、No" class="headerlink" title="判断Yes、No"></a>判断Yes、No</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 方法1：</span></span><br><span class="line"><span class="function"><span class="title">print_comfirm</span></span> () &#123;</span><br><span class="line">  flag=<span class="literal">true</span></span><br><span class="line">  <span class="keyword">while</span> <span class="variable">$flag</span></span><br><span class="line">  <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">read</span> -r -p <span class="string">"Sure to send to printer? [Y/n] "</span> input</span><br><span class="line">    <span class="keyword">case</span> <span class="variable">$input</span> <span class="keyword">in</span> [yY][eE][sS]|[yY])</span><br><span class="line">      mv <span class="variable">$filepath</span> .</span><br><span class="line">      prompt -s <span class="string">"正在打印...."</span></span><br><span class="line">      lp <span class="variable">$file</span></span><br><span class="line">      flag=<span class="literal">false</span></span><br><span class="line">    ;;</span><br><span class="line">    [nN][oO]|[nN])</span><br><span class="line">      <span class="built_in">exit</span> 0</span><br><span class="line">      flag=<span class="literal">false</span></span><br><span class="line">    ;;</span><br><span class="line">    *)</span><br><span class="line">      prompt -w <span class="string">"Invalid input..."</span></span><br><span class="line">    ;;</span><br><span class="line">    <span class="keyword">esac</span></span><br><span class="line">  <span class="keyword">done</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># 模板：</span></span><br><span class="line"><span class="built_in">echo</span> -en <span class="string">"\033[1;32mAfter send to printer, file'll be renamed to \033[1;31m“ <span class="variable">$filerename</span> ” \033[1;33m"</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">read</span> -t 5 -p <span class="string">"Sure to send to printer ? (Y/n) "</span> input</span><br><span class="line">    <span class="keyword">then</span> </span><br><span class="line">      <span class="keyword">if</span> [ -z <span class="string">"<span class="variable">$&#123;input&#125;</span>"</span> ];<span class="keyword">then</span></span><br><span class="line">        input=<span class="string">'y'</span></span><br><span class="line">      <span class="keyword">fi</span></span><br><span class="line">    <span class="keyword">else</span> </span><br><span class="line">      prompt -e <span class="string">"\n\nERROR: Timeout, quit[1]. Canceled and released !"</span></span><br><span class="line">      <span class="built_in">exit</span> 1</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    <span class="keyword">case</span> <span class="variable">$input</span> <span class="keyword">in</span> [yY][eE][sS]|[yY])</span><br><span class="line">      <span class="built_in">echo</span> <span class="string">"Yes"</span></span><br><span class="line">    ;;</span><br><span class="line">    [nN][oO]|[nN])</span><br><span class="line">      <span class="built_in">exit</span> 0</span><br><span class="line">      flag=<span class="literal">false</span></span><br><span class="line">    ;;</span><br><span class="line">    *)</span><br><span class="line">      prompt -w <span class="string">"Invalid input..."</span></span><br><span class="line">    ;;</span><br><span class="line">    <span class="keyword">esac</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制这个</span></span><br><span class="line"><span class="function"><span class="title">comfirm</span></span> () &#123;</span><br><span class="line">  flag=<span class="literal">true</span></span><br><span class="line">  ask=<span class="variable">$1</span></span><br><span class="line">  <span class="keyword">while</span> <span class="variable">$flag</span></span><br><span class="line">  <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">read</span> -r -p <span class="string">"<span class="variable">$ask</span> [y/N] "</span> input</span><br><span class="line">    <span class="keyword">if</span> [ -z <span class="string">"<span class="variable">$&#123;input&#125;</span>"</span> ];<span class="keyword">then</span></span><br><span class="line">      <span class="comment"># 默认选择N</span></span><br><span class="line">      input=<span class="string">'n'</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    <span class="keyword">case</span> <span class="variable">$input</span> <span class="keyword">in</span> [yY][eE][sS]|[yY])</span><br><span class="line">      <span class="built_in">return</span> 1</span><br><span class="line">      flag=<span class="literal">false</span></span><br><span class="line">    ;;</span><br><span class="line">    [nN][oO]|[nN])</span><br><span class="line">      <span class="built_in">return</span> 2</span><br><span class="line">      flag=<span class="literal">false</span></span><br><span class="line">    ;;</span><br><span class="line">    *)</span><br><span class="line">      prompt -w <span class="string">"Invalid option..."</span></span><br><span class="line">    ;;</span><br><span class="line">    <span class="keyword">esac</span></span><br><span class="line">  <span class="keyword">done</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">comfirm <span class="string">"问题描述"</span></span><br><span class="line">choice=$?</span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$choice</span> == 1 ];<span class="keyword">then</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"Y"</span></span><br><span class="line"><span class="keyword">elif</span> [ <span class="variable">$choice</span> == 2 ];<span class="keyword">then</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"N"</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"未知返回值"</span></span><br><span class="line">  <span class="built_in">exit</span> 5</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 方法二：</span></span><br><span class="line">YES=(Y y)</span><br><span class="line"><span class="built_in">read</span> -r res</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="variable">$&#123;YES[@]&#125;</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  <span class="keyword">if</span> [ <span class="string">"<span class="variable">$i</span>"</span> == <span class="string">"<span class="variable">$res</span>"</span> ]</span><br><span class="line">  <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Yes"</span></span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"NO"</span></span><br><span class="line">  <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 方法三：简单的确认</span></span><br><span class="line"><span class="built_in">echo</span> -n <span class="string">"(y/n)"</span></span><br><span class="line"><span class="built_in">read</span> -r res</span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$res</span> == <span class="string">'y'</span> ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Yes"</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"Else"</span></span><br><span class="line">	<span class="built_in">exit</span> 1</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置延时</span></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">read</span> -t 5 -p <span class="string">"please enter your name:"</span> name </span><br><span class="line"><span class="keyword">then</span> </span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"hello <span class="variable">$name</span>, welcome to my script"</span> </span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"sorry,too slow"</span> </span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<h4 id="判断字符串是否为数字"><a href="#判断字符串是否为数字" class="headerlink" title="判断字符串是否为数字"></a>判断字符串是否为数字</h4><blockquote>
+<p><a href="https://pythonjishu.com/ebwtgxhewebkbgo/" target="_blank" rel="noopener">https://pythonjishu.com/ebwtgxhewebkbgo/</a></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 正则表达式判断 注意：输入不准为空！</span></span><br><span class="line">toCheck=<span class="string">""</span></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">echo</span> <span class="string">"<span class="variable">$toCheck</span>"</span> | grep -q <span class="string">"^[0-9]*$"</span>; <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"String "</span><span class="variable">$toCheck</span><span class="string">" is a number"</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"String "</span><span class="variable">$toCheck</span><span class="string">" is not a number"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用echo命令进行求值 不可判断空输入!</span></span><br><span class="line">toCheck=<span class="string">""</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$(echo "$toCheck" | tr -d '[:digit:]')</span>"</span> = <span class="string">""</span> ]; <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"String "</span><span class="variable">$toCheck</span><span class="string">" is a number"</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"String "</span><span class="variable">$toCheck</span><span class="string">" is not a number"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用sed (使用sed命令将字符串中的非数字字符替换为空，然后比较替换前后的字符串长度是否一致，如果一致，则原始字符串为纯数字)</span></span><br><span class="line"><span class="comment"># 不可判断空输入!</span></span><br><span class="line">toCheck=<span class="string">""</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$(echo "$toCheck" | sed 's/[0-9]//g')</span>"</span> = <span class="string">""</span> ]; <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"String "</span><span class="variable">$toCheck</span><span class="string">" is a number"</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"String "</span><span class="variable">$toCheck</span><span class="string">" is not a number"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用awk进行判断(使用awk命令对字符串进行求值，如果能够正确求值，则原始字符串为数字)</span></span><br><span class="line"><span class="comment"># 可判断空输入</span></span><br><span class="line">toCheck=<span class="string">""</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"<span class="variable">$toCheck</span>"</span> | awk <span class="string">'&#123;if ($0 ~ /^[0-9]+$/) printf(""$toCheck" is a number\n"); else printf(""$toCheck" is not a number\n")&#125;'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用expr进行判断(使用expr命令对字符串进行求值，如果能够求值则原始字符串为数字，否则会得到一个错误提示)</span></span><br><span class="line"><span class="comment"># 可判断空输入</span></span><br><span class="line">toCheck=<span class="string">""</span></span><br><span class="line"><span class="keyword">if</span> [ $(expr <span class="string">"<span class="variable">$toCheck</span>"</span> + 0 2&gt;/dev/null) ]; <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"String "</span><span class="variable">$toCheck</span><span class="string">" is a number"</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"String "</span><span class="variable">$toCheck</span><span class="string">" is not a number"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用BASH中的正式表达式</span></span><br><span class="line"><span class="comment"># 可判断空输入</span></span><br><span class="line">toCheck=<span class="string">""</span></span><br><span class="line">bash_re=<span class="string">'^[0-9]+$'</span></span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$toCheck</span> =~ <span class="variable">$bash_re</span> ]]; <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"String "</span><span class="variable">$toCheck</span><span class="string">" is a number"</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"String "</span><span class="variable">$toCheck</span><span class="string">" is not a number"</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<h4 id="判断root密码是否正确以及免密码su"><a href="#判断root密码是否正确以及免密码su" class="headerlink" title="判断root密码是否正确以及免密码su"></a>判断root密码是否正确以及免密码su</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 注意，下面缩进不能更改！</span></span><br><span class="line"><span class="comment"># 以root身份运行, 代码来源：https://jimolonely.github.io/2019/04/15/linux/022-su-in-script/</span></span><br><span class="line">ROOT_PASSWD=<span class="string">"123456"</span></span><br><span class="line"><span class="function"><span class="title">doAsRoot</span></span> () &#123;</span><br><span class="line">su - root &lt;&lt;! &gt;/dev/null 2&gt;&amp;1</span><br><span class="line"><span class="variable">$ROOT_PASSWD</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">" Exec <span class="variable">$1</span> as root"</span></span><br><span class="line"><span class="variable">$1</span></span><br><span class="line">!</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查root密码是否正确</span></span><br><span class="line"><span class="comment"># 待检测的密码</span></span><br><span class="line">ROOT_PASSWD=<span class="string">"123456"</span></span><br><span class="line"><span class="comment"># 检查root密码是否正确</span></span><br><span class="line"><span class="function"><span class="title">checkRootPasswd</span></span> () &#123;</span><br><span class="line"><span class="comment"># &gt;/dev/null是不显示到标准输出</span></span><br><span class="line"><span class="comment"># 2&gt;&amp;1 错误重定向到标准输出</span></span><br><span class="line">su - root &lt;&lt;! &gt;/dev/null 2&gt;/dev/null</span><br><span class="line"><span class="variable">$ROOT_PASSWD</span></span><br><span class="line"><span class="comment"># 下面是要执行的命令</span></span><br><span class="line"><span class="built_in">pwd</span></span><br><span class="line">!</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"<span class="variable">$ROOT_PASSWD</span>"</span> | sudo -S cmd</span><br></pre></td></tr></table></figure>
+<h2 id="数学运算"><a href="#数学运算" class="headerlink" title="数学运算"></a>数学运算</h2><h3 id="整数计算"><a href="#整数计算" class="headerlink" title="整数计算"></a>整数计算</h3><blockquote>
+<p>这里的只能整数</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 加减法</span></span><br><span class="line">num=0</span><br><span class="line">num=$((num+1))</span><br><span class="line">total=$((<span class="variable">$f1</span> + <span class="variable">$f2</span>))</span><br><span class="line">sub=$((10-3))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 乘法 除法 </span></span><br><span class="line">MEGA=$((<span class="variable">$GIGA</span> * 1024))</span><br><span class="line">div=$((20 / 4))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 幂运算符**</span></span><br><span class="line">a=<span class="variable">$1</span></span><br><span class="line">b=<span class="variable">$2</span></span><br><span class="line">result=$((a**b))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算余数</span></span><br><span class="line">rem=$((17%5))</span><br></pre></td></tr></table></figure>
+<h3 id="浮点数计算"><a href="#浮点数计算" class="headerlink" title="浮点数计算"></a>浮点数计算</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 浮点数计算：https://www.jb51.cc/bash/392906.html</span></span><br><span class="line"><span class="comment"># 会得到0，因为只支持整数</span></span><br><span class="line">RESULT=$((<span class="variable">$IMG_WIDTH</span>/<span class="variable">$IMG2_WIDTH</span>))</span><br><span class="line"><span class="comment"># 浮点数应该这样</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"scale=2; <span class="variable">$&#123;userinput&#125;</span>"</span> | bc</span><br></pre></td></tr></table></figure>
+<h2 id="标准输出-Std-out"><a href="#标准输出-Std-out" class="headerlink" title="标准输出 - Std.out"></a>标准输出 - Std.out</h2><h3 id="打印带颜色的文字"><a href="#打印带颜色的文字" class="headerlink" title="打印带颜色的文字"></a>打印带颜色的文字</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 方案1:</span></span><br><span class="line">用<span class="built_in">echo</span>命令打印带有色彩的文字：</span><br><span class="line">文字色： <span class="built_in">echo</span> -e <span class="string">"\e[1;31mThis is red text\e[0m"</span></span><br><span class="line">This is red text?\e[1;31m 将颜色设置为红色</span><br><span class="line">?\e[0m 将颜色重新置回</span><br><span class="line">颜色码：重置=0，黑色=30，红色=31，绿色=32，黄色=33，蓝色=34，洋红=35，青色=36，白色=37</span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">"\e[1;42mGreed Background\e[0m"</span></span><br><span class="line">Greed Background颜色码：重置=0，黑色=40，红色=41，绿色=42，黄色=43，蓝色=44，洋红=45，青色=46，白色=47</span><br><span class="line">文字闪动：<span class="built_in">echo</span> -e <span class="string">"\033[37;31;5mMySQL Server Stop...\033[39;49;0m"</span></span><br><span class="line">红色数字处还有其他数字参数：0 关闭所有属性、1 设置高亮度（加粗）、4 下划线、5 闪烁、7 反显、8 消隐</span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">"\e[1;32m  \e[0m"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 方案2:推荐</span></span><br><span class="line"><span class="comment"># 颜色colors</span></span><br><span class="line">CDEF=<span class="string">" \033[0m"</span>                                     <span class="comment"># default color</span></span><br><span class="line">CCIN=<span class="string">" \033[0;36m"</span>                                  <span class="comment"># info color</span></span><br><span class="line">CGSC=<span class="string">" \033[0;32m"</span>                                  <span class="comment"># success color</span></span><br><span class="line">CRER=<span class="string">" \033[0;31m"</span>                                  <span class="comment"># error color</span></span><br><span class="line">CWAR=<span class="string">" \033[0;33m"</span>                                  <span class="comment"># warning color</span></span><br><span class="line">b_CDEF=<span class="string">" \033[1;37m"</span>                                <span class="comment"># bold default color</span></span><br><span class="line">b_CCIN=<span class="string">" \033[1;36m"</span>                                <span class="comment"># bold info color</span></span><br><span class="line">b_CGSC=<span class="string">" \033[1;32m"</span>                                <span class="comment"># bold success color</span></span><br><span class="line">b_CRER=<span class="string">" \033[1;31m"</span>                                <span class="comment"># bold error color</span></span><br><span class="line">b_CWAR=<span class="string">" \033[1;33m"</span>  </span><br><span class="line"></span><br><span class="line"><span class="comment"># echo like ...  with  flag type  and display message  colors</span></span><br><span class="line"><span class="comment"># -s 绿</span></span><br><span class="line"><span class="comment"># -e 红</span></span><br><span class="line"><span class="comment"># -w 黄</span></span><br><span class="line"><span class="comment"># -i 蓝</span></span><br><span class="line"><span class="function"><span class="title">prompt</span></span> () &#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="variable">$&#123;1&#125;</span> <span class="keyword">in</span></span><br><span class="line">    <span class="string">"-s"</span>|<span class="string">"--success"</span>)</span><br><span class="line">      <span class="built_in">echo</span> -e <span class="string">"<span class="variable">$&#123;b_CGSC&#125;</span><span class="variable">$&#123;@/-s/&#125;</span><span class="variable">$&#123;CDEF&#125;</span>"</span>;;          <span class="comment"># print success message</span></span><br><span class="line">    <span class="string">"-e"</span>|<span class="string">"--error"</span>)</span><br><span class="line">      <span class="built_in">echo</span> -e <span class="string">"<span class="variable">$&#123;b_CRER&#125;</span><span class="variable">$&#123;@/-e/&#125;</span><span class="variable">$&#123;CDEF&#125;</span>"</span>;;          <span class="comment"># print error message</span></span><br><span class="line">    <span class="string">"-w"</span>|<span class="string">"--warning"</span>)</span><br><span class="line">      <span class="built_in">echo</span> -e <span class="string">"<span class="variable">$&#123;b_CWAR&#125;</span><span class="variable">$&#123;@/-w/&#125;</span><span class="variable">$&#123;CDEF&#125;</span>"</span>;;          <span class="comment"># print warning message</span></span><br><span class="line">    <span class="string">"-i"</span>|<span class="string">"--info"</span>)</span><br><span class="line">      <span class="built_in">echo</span> -e <span class="string">"<span class="variable">$&#123;b_CCIN&#125;</span><span class="variable">$&#123;@/-i/&#125;</span><span class="variable">$&#123;CDEF&#125;</span>"</span>;;          <span class="comment"># print info message</span></span><br><span class="line">    *)</span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">"<span class="variable">$@</span>"</span></span><br><span class="line">    ;;</span><br><span class="line">  <span class="keyword">esac</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="系统信息获取"><a href="#系统信息获取" class="headerlink" title="系统信息获取"></a>系统信息获取</h2><h3 id="获取显示设备信息"><a href="#获取显示设备信息" class="headerlink" title="获取显示设备信息"></a>获取显示设备信息</h3><blockquote>
+<p><a href="https://segmentfault.com/a/1190000039239040" target="_blank" rel="noopener">https://segmentfault.com/a/1190000039239040</a></p>
+</blockquote>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取屏幕分辨率1600 x 900 </span></span><br><span class="line"><span class="comment"># Screen 0: minimum 8 x 8, current 1600 x 900, maximum 32767 x 32767 </span></span><br><span class="line">xrandr | grep -o <span class="string">"current [0-9]* x [0-9]*"</span> | sed -e <span class="string">'s/current *//g'</span></span><br><span class="line"><span class="comment"># 分别获取</span></span><br><span class="line"><span class="attribute">SCREEN</span>=$(xrandr | grep -o <span class="string">"current [0-9]* x [0-9]*"</span> | sed -e <span class="string">'s/current *//g'</span>)</span><br><span class="line"><span class="attribute">SCREEN_W</span>=$(echo <span class="variable">$SCREEN</span> | sed -e <span class="string">'s/ x [0-9]*//'</span>)</span><br><span class="line"><span class="attribute">SCREEN_H</span>=$(echo <span class="variable">$SCREEN</span> | sed -e <span class="string">'s/[0-9]* x //'</span>)</span><br><span class="line"></span><br><span class="line">在屏幕上关闭一个窗口的时候，有时会想起一句古老的诗，人生天地间，忽如远行客。我要写的截屏工具，也许能留住任一窗口璀璨的瞬间，只要我知道它在哪里。一个窗口在哪里，是由它的左上角坐标以及它的宽度和高度决定的。在我还没发现 X 窗口系统的 xwininfo 这个工具之前，我只能考虑使用诗歌来实现这样的截屏工具……xwininfo 说，我知道你想要知道的，只要你用鼠标点一下你想点的……</span><br><span class="line">$ xwininfo</span><br><span class="line">xwininfo: Please select the window about which you</span><br><span class="line">          would like information by clicking the</span><br><span class="line">          mouse <span class="keyword">in</span> that window.</span><br><span class="line">declare -a WIN_PARAMS</span><br><span class="line">WIN_PARAMS=($(xwininfo | sed -n -e <span class="string">'/^[[:space:]]*Absolute ..*[XY]/p; </span></span><br><span class="line"><span class="string">                      /^[[:space:]]*Relative ..*[XY]/p; </span></span><br><span class="line"><span class="string">                      /^[[:space:]]*Width:/p; </span></span><br><span class="line"><span class="string">                      /^[[:space:]]*Height:/p'</span> | awk <span class="string">'BEGIN&#123;FS=":"&#125;&#123;print $2&#125;'</span>))</span><br></pre></td></tr></table></figure>
+<h3 id="获取剪贴板"><a href="#获取剪贴板" class="headerlink" title="获取剪贴板"></a>获取剪贴板</h3><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">复制（到 gnome 的剪贴板）</span><br><span class="line">xsel &lt; <span class="keyword">file</span>.txt</span><br><span class="line"><span class="keyword">cat</span> <span class="keyword">file</span>.txt | xsel</span><br><span class="line"></span><br><span class="line">粘贴</span><br><span class="line">xsel &gt; <span class="keyword">file</span>.txt</span><br></pre></td></tr></table></figure>
+<h3 id="获取文件夹内容"><a href="#获取文件夹内容" class="headerlink" title="获取文件夹内容"></a>获取文件夹内容</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># http://t.zoukankan.com/yuandaozhe-p-14519296.html</span></span><br><span class="line"><span class="comment"># 直接循环处理文件</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">doFiles</span></span>()&#123;</span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> `ls <span class="variable">$1</span>` <span class="comment">#注意此处这是两个反引号，表示运行系统命令</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">if</span> [ -d <span class="variable">$1</span><span class="string">"/"</span><span class="variable">$file</span> ] <span class="comment">#注意此处之间一定要加上空格，否则会报错</span></span><br><span class="line">    <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"Msg: Directory "</span><span class="variable">$1</span><span class="string">"/'<span class="variable">$file</span>' Passed."</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">if</span> [[ <span class="string">"<span class="variable">$file</span>"</span> == *<span class="string">"<span class="variable">$2</span>"</span> ]];  </span><br><span class="line">        <span class="keyword">then</span> </span><br><span class="line">             <span class="built_in">echo</span> <span class="string">"Change this line to do sth. --&gt; <span class="variable">$file</span>"</span></span><br><span class="line">        <span class="keyword">fi</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 直接循环处理文件(递归)</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">doFilesRecur</span></span>()&#123;</span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> `ls <span class="variable">$1</span>`</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">if</span> [ -d <span class="variable">$1</span><span class="string">"/"</span><span class="variable">$file</span> ]</span><br><span class="line">    <span class="keyword">then</span></span><br><span class="line">        doFilesRecur <span class="variable">$1</span><span class="string">"/"</span><span class="variable">$file</span> <span class="variable">$2</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">if</span> [[ <span class="string">"<span class="variable">$file</span>"</span> == *<span class="string">"<span class="variable">$2</span>"</span> ]];  </span><br><span class="line">        <span class="keyword">then</span> </span><br><span class="line">             <span class="built_in">echo</span> <span class="string">"Change this line to do sth. --&gt; <span class="variable">$file</span>"</span></span><br><span class="line">        <span class="keyword">fi</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 返回gf_list文件列表</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">getFiles</span></span>()&#123;</span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> `ls <span class="variable">$1</span>`</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">if</span> [ -d <span class="variable">$1</span><span class="string">"/"</span><span class="variable">$file</span> ]</span><br><span class="line">    <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"Msg: Directory "</span><span class="variable">$1</span><span class="string">"/'<span class="variable">$file</span>' Passed."</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">if</span> [[ <span class="string">"<span class="variable">$file</span>"</span> == *<span class="string">"<span class="variable">$2</span>"</span> ]];  </span><br><span class="line">        <span class="keyword">then</span> </span><br><span class="line">             <span class="comment"># 未验证</span></span><br><span class="line">             file=<span class="string">"<span class="variable">$1</span>"</span>/<span class="string">"<span class="variable">$file</span>"</span></span><br><span class="line">             file_list=<span class="variable">$file_list</span>♨<span class="variable">$file</span></span><br><span class="line">        <span class="keyword">fi</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line">OLD_IFS=<span class="string">"<span class="variable">$IFS</span>"</span></span><br><span class="line">IFS=<span class="string">"♨"</span></span><br><span class="line">gf_list=(<span class="variable">$file_list</span>)</span><br><span class="line">IFS=<span class="string">"<span class="variable">$OLD_IFS</span>"</span></span><br><span class="line"><span class="comment"># 未验证</span></span><br><span class="line">gfr_list=(<span class="variable">$&#123;gfr_list[@]&#125;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 返回gfr_list文件列表(递归)</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">getFilesRecur</span></span>()&#123;</span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> `ls <span class="variable">$1</span>`</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">if</span> [ -d <span class="variable">$1</span><span class="string">"/"</span><span class="variable">$file</span> ]</span><br><span class="line">    <span class="keyword">then</span></span><br><span class="line">        getFilesRecur <span class="variable">$1</span><span class="string">"/"</span><span class="variable">$file</span> <span class="variable">$2</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">if</span> [[ <span class="string">"<span class="variable">$file</span>"</span> == *<span class="string">"<span class="variable">$2</span>"</span> ]];  </span><br><span class="line">        <span class="keyword">then</span> </span><br><span class="line">             file=<span class="string">"<span class="variable">$1</span>"</span>/<span class="string">"<span class="variable">$file</span>"</span></span><br><span class="line">             file_list=<span class="variable">$file_list</span>♨<span class="variable">$file</span></span><br><span class="line">        <span class="keyword">fi</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line">OLD_IFS=<span class="string">"<span class="variable">$IFS</span>"</span></span><br><span class="line">IFS=<span class="string">"♨"</span></span><br><span class="line">gfr_list=(<span class="variable">$file_list</span>)</span><br><span class="line">IFS=<span class="string">"<span class="variable">$OLD_IFS</span>"</span></span><br><span class="line">gfr_list=(<span class="variable">$&#123;gfr_list[@]&#125;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 用法：目录+扩展名</span></span><br><span class="line">doFilesRecur <span class="string">"."</span> <span class="string">"mp4"</span></span><br><span class="line">getFiles <span class="string">"."</span> <span class="string">"mp4"</span></span><br><span class="line"><span class="comment"># 打印列表</span></span><br><span class="line"><span class="keyword">for</span> each <span class="keyword">in</span> <span class="variable">$&#123;gf_list[@]&#125;</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"<span class="variable">$each</span>"</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<h3 id="时间日期"><a href="#时间日期" class="headerlink" title="时间日期"></a>时间日期</h3><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">参考：https:<span class="regexp">//www</span>.cnblogs.com/howhy/p/<span class="number">5999762</span>.html</span><br><span class="line">当前时间：date <span class="string">"+%Y%m%d%H%M%S"</span></span><br><span class="line"><span class="number">20220212202614</span></span><br><span class="line">比如今日是<span class="number">2012</span>-<span class="number">04</span>-<span class="number">22</span></span><br><span class="line">$ date -d <span class="string">"+1 day"</span> +%Y-%m-%d</span><br><span class="line"><span class="number">2012</span>-<span class="number">04</span>-<span class="number">23</span></span><br><span class="line">$ date -d <span class="string">"2012-04-10 +1 day "</span> +%Y-%m-%d</span><br><span class="line"><span class="number">2012</span>-<span class="number">04</span>-<span class="number">11</span></span><br><span class="line">$ date -d <span class="string">"-1 year "</span> +%Y-%m-%d</span><br><span class="line"><span class="number">2011</span>-<span class="number">04</span>-<span class="number">22</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2021-02-19 23:32:18</span></span><br><span class="line">date +<span class="string">"%Y-%m-%d %T"</span></span><br><span class="line"><span class="comment"># 2021-02-19-23-34-47</span></span><br><span class="line">date +<span class="string">"%Y-%m-%d %T"</span> | sed -e <span class="string">"s/ /-/g; s/:/-/g"</span></span><br></pre></td></tr></table></figure>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="Gnome-Terminal运行脚本时打开窗口"><a href="#Gnome-Terminal运行脚本时打开窗口" class="headerlink" title="Gnome-Terminal运行脚本时打开窗口"></a>Gnome-Terminal运行脚本时打开窗口</h3><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gnome-terminal <span class="comment">-- 【脚本路径】</span></span><br></pre></td></tr></table></figure>
+<h3 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h3><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">实践中的一个具体例子</span><br><span class="line">让我们详细描述从外壳运行复杂命令（管道）时会发生什么。我们假设我们有一个bash过程（在Debian的标准用户的<span class="keyword">shell</span>），以PID  4374; 在此外壳中，我们键入命令：<span class="keyword">ls</span> | <span class="keyword">sort</span>。</span><br><span class="line"><span class="keyword">shell</span>首先解释键入的命令。在我们的例子中，它理解有两个程序（<span class="keyword">ls</span>和<span class="keyword">sort</span>），数据流从一个程序流向另一个程序（由|字符表示，称为pipe）。bash首先创建一个未命名的管道（该管道最初仅存在于bash流程本身中）。</span><br><span class="line">然后，<span class="keyword">shell</span>克隆自己；这就导致了一个新的bash进程，PID  ＃4521（PID的是抽象的数字，一般没有特别的意思）。进程＃4521继承了管道，这意味着它能够在其“输入”侧进行写入；bash将其标准输出流重定向到此管道的输入。然后，它执行（并用其替换）该<span class="keyword">ls</span>程序，该程序列出了当前目录的内容。由于<span class="keyword">ls</span>在其标准输出上进行写入，并且此输出先前已被重定向，因此结果将有效地发送到管道中。</span><br><span class="line">第二个命令发生类似的操作：bash再次克隆自身，导致bash进程号为pid＃4522的新进程。由于它也是＃4374的子进程，因此它也继承了管道。bash然后将其标准输入连接到管道输出，然后执行（并用其替换）<span class="keyword">sort</span>命令，该命令对输入进行排序并显示结果。</span><br><span class="line">难题的所有部分都已设置好：<span class="keyword">ls</span>读取当前目录并将文件列表写入管道；<span class="keyword">sort</span>读取此列表，按字母顺序对其进行排序，然后显示结果。然后，进程＃4521和＃4522终止，并且＃4374（在操作过程中正在等待它们），恢复控制并显示提示，以允许用户键入新命令。</span><br></pre></td></tr></table></figure>
+<h3 id="多行注释"><a href="#多行注释" class="headerlink" title="多行注释"></a>多行注释</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">:&lt;&lt;!</span><br><span class="line"><span class="keyword">for</span> each <span class="keyword">in</span> <span class="variable">$&#123;APP_NAME[@]&#125;</span></span><br><span class="line">  <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"<span class="variable">$each</span>"</span></span><br><span class="line">  <span class="keyword">done</span></span><br><span class="line">!</span><br></pre></td></tr></table></figure>
+<h3 id="其他-1"><a href="#其他-1" class="headerlink" title="其他"></a>其他</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># shell处理apt source文件：</span></span><br><span class="line">sudo <span class="built_in">echo</span> <span class="string">""</span> &gt; /etc/apt/sources.list是无效的</span><br><span class="line">应该使用：<span class="built_in">echo</span> <span class="string">""</span> | sudo tee /etc/apt/sources.list</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取php版本号</span></span><br><span class="line">systemctl list-unit-files | grep <span class="string">"\-"</span>fpm | grep ^php | sed <span class="string">'s/.fpm.*//'</span></span><br><span class="line">systemctl list-unit-files | grep <span class="string">"\-"</span>fpm | grep ^php | sed <span class="string">'s/.fpm.*//'</span> | sed <span class="string">'s/php//g'</span></span><br></pre></td></tr></table></figure>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="屏幕截图-录屏脚本"><a href="#屏幕截图-录屏脚本" class="headerlink" title="屏幕截图/录屏脚本"></a>屏幕截图/录屏脚本</h3><blockquote>
+<p><a href="https://segmentfault.com/a/1190000039239040" target="_blank" rel="noopener">https://segmentfault.com/a/1190000039239040</a></p>
+</blockquote>
+<p>截屏：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">NAME=$(date +<span class="string">"%Y-%m-%d %T"</span> | sed -e <span class="string">"s/ /-/g; s/:/-/g"</span>)</span><br><span class="line">IMAGE=/tmp/<span class="variable">$&#123;NAME&#125;</span>.png</span><br><span class="line"><span class="comment"># echo $IMAGE</span></span><br><span class="line"><span class="comment"># 获取分辨率</span></span><br><span class="line">SCREEN=$(xrandr | grep -o <span class="string">"current [0-9]* x [0-9]*"</span> | sed -e <span class="string">'s/current *//g'</span>)</span><br><span class="line">SCREEN_W=$(<span class="built_in">echo</span> <span class="variable">$SCREEN</span> | sed -e <span class="string">'s/ x [0-9]*//'</span>)</span><br><span class="line">SCREEN_H=$(<span class="built_in">echo</span> <span class="variable">$SCREEN</span> | sed -e <span class="string">'s/[0-9]* x //'</span>)</span><br><span class="line"><span class="comment"># 获取窗口几何</span></span><br><span class="line"><span class="built_in">declare</span> -a WIN_PARAMS</span><br><span class="line">WIN_PARAMS=($(xwininfo | sed -n -e <span class="string">'/^[[:space:]]*Absolute ..*[XY]/p; </span></span><br><span class="line"><span class="string">                      /^[[:space:]]*Relative ..*[XY]/p; </span></span><br><span class="line"><span class="string">                      /^[[:space:]]*Width:/p; </span></span><br><span class="line"><span class="string">                      /^[[:space:]]*Height:/p'</span> | awk <span class="string">'BEGIN&#123;FS=":"&#125;&#123;print $2&#125;'</span>))</span><br><span class="line"><span class="comment"># 构造理想中的截图区。</span></span><br><span class="line"><span class="comment"># 之所以如此，与 xwininfo 输出的窗口左上角相对坐标有关。</span></span><br><span class="line"><span class="comment"># MARGIN=$&#123;WIN_PARAMS[2]&#125;</span></span><br><span class="line">MARGIN=12</span><br><span class="line">WIN_X=$((<span class="variable">$&#123;WIN_PARAMS[0]&#125;</span> - <span class="variable">$&#123;WIN_PARAMS[2]&#125;</span>))</span><br><span class="line">WIN_Y=$((<span class="variable">$&#123;WIN_PARAMS[1]&#125;</span> - <span class="variable">$&#123;WIN_PARAMS[3]&#125;</span>))</span><br><span class="line">WIN_W=$((<span class="variable">$&#123;WIN_PARAMS[4]&#125;</span> + <span class="variable">$&#123;WIN_PARAMS[2]&#125;</span> + <span class="variable">$MARGIN</span>))</span><br><span class="line">WIN_H=$((<span class="variable">$&#123;WIN_PARAMS[5]&#125;</span> + <span class="variable">$&#123;WIN_PARAMS[3]&#125;</span> + <span class="variable">$MARGIN</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 截图区越界处理</span></span><br><span class="line"><span class="keyword">if</span> ((<span class="variable">$WIN_X</span> &lt; 0)); <span class="keyword">then</span> WIN_X=0; <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">if</span> ((<span class="variable">$WIN_Y</span> &lt; 0)); <span class="keyword">then</span> WIN_Y=0; <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">if</span> ((<span class="variable">$WIN_W</span> + <span class="variable">$WIN_X</span> &gt; <span class="variable">$SCREEN_W</span>)); <span class="keyword">then</span> WIN_W=$((<span class="variable">$SCREEN_W</span> - <span class="variable">$WIN_X</span>)); <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">if</span> ((<span class="variable">$WIN_H</span> + <span class="variable">$WIN_Y</span> &gt; <span class="variable">$SCREEN_H</span>)); <span class="keyword">then</span> WIN_H=$((<span class="variable">$SCREEN_H</span> - <span class="variable">$WIN_Y</span>)); <span class="keyword">fi</span></span><br><span class="line">ffmpeg -video_size <span class="variable">$&#123;WIN_W&#125;</span>x<span class="variable">$&#123;WIN_H&#125;</span> \</span><br><span class="line">       -f x11grab -ss 00:00:00 \</span><br><span class="line">       -i :0.0+<span class="variable">$&#123;WIN_X&#125;</span>,<span class="variable">$&#123;WIN_Y&#125;</span> \</span><br><span class="line">       -frames:v 1 <span class="variable">$IMAGE</span> 2&gt;/dev/null</span><br><span class="line">gimp <span class="variable">$IMAGE</span> &amp;</span><br></pre></td></tr></table></figure>
+<p>录屏：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">NAME=$(date +<span class="string">"%Y-%m-%d %T"</span> | sed -e <span class="string">"s/ /-/g; s/:/-/g"</span>)</span><br><span class="line">RECORD=/tmp/<span class="variable">$&#123;NAME&#125;</span>.mkv</span><br><span class="line">OUTPUT=/tmp/output-<span class="variable">$&#123;NAME&#125;</span>.mkv</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取屏幕分辨率</span></span><br><span class="line">SCREEN=$(xrandr | grep -o <span class="string">"current [0-9]* x [0-9]*"</span> | sed -e <span class="string">'s/current *//g'</span>)</span><br><span class="line">SCREEN_W=$(<span class="built_in">echo</span> <span class="variable">$SCREEN</span> | sed -e <span class="string">'s/ x [0-9]*//'</span>)</span><br><span class="line">SCREEN_H=$(<span class="built_in">echo</span> <span class="variable">$SCREEN</span> | sed -e <span class="string">'s/[0-9]* x //'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取窗口几何参数</span></span><br><span class="line"><span class="built_in">declare</span> -a WIN_PARAMS</span><br><span class="line">WIN_PARAMS=($(xwininfo | sed -n -e <span class="string">'/^[[:space:]]*Absolute ..*[XY]/p; </span></span><br><span class="line"><span class="string">                      /^[[:space:]]*Relative ..*[XY]/p; </span></span><br><span class="line"><span class="string">                      /^[[:space:]]*Width:/p; </span></span><br><span class="line"><span class="string">                      /^[[:space:]]*Height:/p'</span> | awk <span class="string">'BEGIN&#123;FS=":"&#125;&#123;print $2&#125;'</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 构造理想中的截图区。</span></span><br><span class="line"><span class="comment"># 之所以如此，与 xwininfo 输出的窗口左上角相对坐标有关。</span></span><br><span class="line">MARGIN=<span class="variable">$&#123;WIN_PARAMS[2]&#125;</span></span><br><span class="line">WIN_X=$((<span class="variable">$&#123;WIN_PARAMS[0]&#125;</span> - <span class="variable">$&#123;WIN_PARAMS[2]&#125;</span>))</span><br><span class="line">WIN_Y=$((<span class="variable">$&#123;WIN_PARAMS[1]&#125;</span> - <span class="variable">$&#123;WIN_PARAMS[3]&#125;</span>))</span><br><span class="line">WIN_W=$((<span class="variable">$&#123;WIN_PARAMS[4]&#125;</span> + <span class="variable">$&#123;WIN_PARAMS[2]&#125;</span> + <span class="variable">$MARGIN</span>))</span><br><span class="line">WIN_H=$((<span class="variable">$&#123;WIN_PARAMS[5]&#125;</span> + <span class="variable">$&#123;WIN_PARAMS[3]&#125;</span> + <span class="variable">$MARGIN</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 截图区越界处理</span></span><br><span class="line"><span class="keyword">if</span> ((<span class="variable">$WIN_X</span> &lt; 0)); <span class="keyword">then</span> WIN_X=0; <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">if</span> ((<span class="variable">$WIN_Y</span> &lt; 0)); <span class="keyword">then</span> WIN_Y=0; <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">if</span> ((<span class="variable">$WIN_W</span> + <span class="variable">$WIN_X</span> &gt; <span class="variable">$SCREEN_W</span>)); <span class="keyword">then</span> WIN_W=$((<span class="variable">$SCREEN_W</span> - <span class="variable">$WIN_X</span>)); <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">if</span> ((<span class="variable">$WIN_H</span> + <span class="variable">$WIN_Y</span> &gt; <span class="variable">$SCREEN_H</span>)); <span class="keyword">then</span> WIN_H=$((<span class="variable">$SCREEN_H</span> - <span class="variable">$WIN_Y</span>)); <span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 录制指定窗口区域</span></span><br><span class="line">ffmpeg -video_size <span class="variable">$&#123;WIN_W&#125;</span>x<span class="variable">$&#123;WIN_H&#125;</span> \</span><br><span class="line">       -framerate 25 -f x11grab \</span><br><span class="line">       -i :0.0+<span class="variable">$&#123;WIN_X&#125;</span>,<span class="variable">$&#123;WIN_Y&#125;</span> \</span><br><span class="line">       -c:v libx264rgb -crf 0 -preset ultrafast <span class="variable">$RECORD</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 视频后处理</span></span><br><span class="line">ffmpeg -i <span class="variable">$RECORD</span> -c:v libx264rgb -crf 0 -preset veryslow <span class="variable">$OUTPUT</span></span><br></pre></td></tr></table></figure>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/2023/Research-on-the-Definition-of-Excessive-Rights-Protection-Behavior/" data-toggle="tooltip" data-placement="top" title="Research-on-the-Definition-of-Excessive-Rights-Protection-Behavior">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/2022/Python-Notes/" data-toggle="tooltip" data-placement="top" title="Python Notes">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <div class="tip">
+          <p>
+            If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+          </p>
+        </div>
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=Shell Notes&body=Hi,I found this website and thought you might like it https://rmshadows.gitee.io/2022/Shell-Notes/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!--修改--artalk-->
+<!-- 0.artalk安装代码 -->
+
+<!-- CSS -->
+<link href="https://civiccccc.ltd/artalk/dist/Artalk.css" rel="stylesheet" />
+<link href="https://civiccccc.ltd/artalk/dist/Artalk.css" rel="stylesheet" />
+<!-- JS -->
+<script src="https://civiccccc.ltd/artalk/dist/Artalk.js"></script>
+<!-- Artalk -->
+<div id="Comments"></div>
+<script>
+  Artalk.init({
+    el: '#Comments', // 绑定元素的 Selector
+    pageKey: 'https://rmshadows.gitee.io/2022/Shell-Notes/', // 固定链接
+    pageTitle: '关于引入 Artalk 的这档子事', // 页面标题 (留空自动获取)
+    server: 'https://civiccccc.ltd/artalk', // 后端地址
+    site: 'CIVICCCCC 的博客', // 你的站点名
+  })
+</script>
+<!-- artalk安装代码已完成 -->
+
+
+
+<!-- 1. gitalk comment -->
+
+
+
+<!-- 2. gitment comment -->
+
+
+
+<!-- 3. disqus comment -->
+
+
+<!--修改--Livere-->
+
+
+<!--修改--ISSO-->
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <!--div id="toc" class="toc-article" -->
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          
+            <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Shell-Notes"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Shell Notes</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#数据结构"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">数据结构</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#数组应用"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">数组应用</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#基础访问"><span class="toc-nav-number">1.1.1.1.</span> <span class="toc-nav-text">基础访问</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#进阶运用"><span class="toc-nav-number">1.1.1.2.</span> <span class="toc-nav-text">进阶运用</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#字符串处理"><span class="toc-nav-number">1.1.2.</span> <span class="toc-nav-text">字符串处理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#分割字符串"><span class="toc-nav-number">1.1.2.1.</span> <span class="toc-nav-text">分割字符串</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#字符串转数组"><span class="toc-nav-number">1.1.2.2.</span> <span class="toc-nav-text">字符串转数组</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Sed处理文本"><span class="toc-nav-number">1.1.2.3.</span> <span class="toc-nav-text">Sed处理文本</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#查找文本文件中是否存在某字符串"><span class="toc-nav-number">1.1.2.4.</span> <span class="toc-nav-text">查找文本文件中是否存在某字符串</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#条件判断"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">条件判断</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#环境判断"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">环境判断</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#判断文件夹、文件是否存在"><span class="toc-nav-number">1.2.1.1.</span> <span class="toc-nav-text">判断文件夹、文件是否存在</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#判断是否安装某命令"><span class="toc-nav-number">1.2.1.2.</span> <span class="toc-nav-text">判断是否安装某命令</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#输入判断"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">输入判断</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#判断Yes、No"><span class="toc-nav-number">1.2.2.1.</span> <span class="toc-nav-text">判断Yes、No</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#判断字符串是否为数字"><span class="toc-nav-number">1.2.2.2.</span> <span class="toc-nav-text">判断字符串是否为数字</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#判断root密码是否正确以及免密码su"><span class="toc-nav-number">1.2.2.3.</span> <span class="toc-nav-text">判断root密码是否正确以及免密码su</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#数学运算"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">数学运算</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#整数计算"><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">整数计算</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#浮点数计算"><span class="toc-nav-number">1.3.2.</span> <span class="toc-nav-text">浮点数计算</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#标准输出-Std-out"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">标准输出 - Std.out</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#打印带颜色的文字"><span class="toc-nav-number">1.4.1.</span> <span class="toc-nav-text">打印带颜色的文字</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#系统信息获取"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">系统信息获取</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#获取显示设备信息"><span class="toc-nav-number">1.5.1.</span> <span class="toc-nav-text">获取显示设备信息</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#获取剪贴板"><span class="toc-nav-number">1.5.2.</span> <span class="toc-nav-text">获取剪贴板</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#获取文件夹内容"><span class="toc-nav-number">1.5.3.</span> <span class="toc-nav-text">获取文件夹内容</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#时间日期"><span class="toc-nav-number">1.5.4.</span> <span class="toc-nav-text">时间日期</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#其他"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">其他</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Gnome-Terminal运行脚本时打开窗口"><span class="toc-nav-number">1.6.1.</span> <span class="toc-nav-text">Gnome-Terminal运行脚本时打开窗口</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#管道"><span class="toc-nav-number">1.6.2.</span> <span class="toc-nav-text">管道</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#多行注释"><span class="toc-nav-number">1.6.3.</span> <span class="toc-nav-text">多行注释</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#其他-1"><span class="toc-nav-number">1.6.4.</span> <span class="toc-nav-text">其他</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#示例"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">示例</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#屏幕截图-录屏脚本"><span class="toc-nav-number">1.7.1.</span> <span class="toc-nav-text">屏幕截图&#x2F;录屏脚本</span></a></li></ol></li></ol></li></ol>
+          
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#Linux Shell" title="Linux Shell">Linux Shell</a>
+            
+            <a class="tag" href="/tags/#Bash" title="Bash">Bash</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://civiccccc.ltd" target="_blank">主站</a>
+          </li>
+          
+          <li>
+            <a href="https://github.com/xjx0106" target="_blank">国庆电播小弟</a>
+          </li>
+          
+          <li>
+            <a href="https://github.com/itcast-ying" target="_blank">itcast-ying</a>
+          </li>
+          
+          <li>
+            <a href="https://github.com/cjj19970505" target="_blank">Xeon-J</a>
+          </li>
+          
+          <li>
+            <a href="https://github.com/XeonKHJ" target="_blank">Xeon-H</a>
+          </li>
+          
+          <li>
+            <a href="https://gitee.com/rmshadows" target="_blank">Gitee - Ryan Yim</a>
+          </li>
+          
+          <li>
+            <a href="https://rmshadows.gitee.io/404" target="_blank">404 No Found Page</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+    <!-- Footer (contains ThemeColor、viewer) -->
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+            <li>
+              <a href="/feed.xml">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/rmshadows">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+            <li>
+              <a target="_blank" href="https://www.instagram.com/just_aaaa_r">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+            <li>
+              <a target="_blank" href="https://www.zhihu.com/people/rmshadows">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa  fa-stack-1x fa-inverse">知</i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Ryan Yim
+          2025
+          <br>
+          Theme by
+          <a href="http://beantech.org" target="_blank" rel="noopener">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a href="https://v-vincen.life/" target="_blank" rel="noopener">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+<!-- jQuery -->
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="/js/jquery.js"></script> -->
+<!-- <script type="text/javascript" src="//cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
+<!-- Bootstrap Core JavaScript -->
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<!--2022-03-28 添加了随机丝带特效-->
+
+  <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+
+<script type="text/javascript" src="/js/hux-blog.min.js"></script>
+
+<!-- catalog -->
+<script type="text/javascript" async="true" src="/js/catalog.js?v=1.0.0"></script>
+
+<!-- totop(rocket) -->
+<script type="text/javascript" async="true" src="/js/totop.js?v=1.0.0"></script>
+
+<!-- Busuanzi JavaScript -->
+
+  <!-- <script type="text/javascript" async="true" src="/js/busuanzi.pure.mini.js"></script> -->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+  <!-- Scroll start -->
+  <script type="text/javascript" src="/js/scroll.js"></script>
+  <!-- Scroll end -->
+
+
+
+  <!-- ThemeColor start -->
+  <script type="text/javascript" src="/js/themecolor.js"></script>
+  <!-- ThemeColor end -->
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  <script type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+  <script type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){ hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if($('#tag_cloud').length !== 0){ async("https://rmshadows.gitee.io/js/jquery.tagcloud.js",function(){ $.fn.tagcloud.defaults = { //size: {start: 1, end: 1, unit: 'em'}, color: {start:
+'#bbbbee', end: '#0085a1'}, }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+    
+    <!---自定义的代码 所有页面-->
+    
+        <script type="text/javascript" src="/js/on_mouse_clicked/emotions.js"></script>
+    
+
+    <!-- Search -->
+    
+    <div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/ziploader.js"></script>
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+    
+
+    <!-- Image to hack wechat -->
+    <!-- <img src="https://rmshadows.gitee.io/img/icon_wechat.png" width="0" height="0" /> -->
+    <!-- Migrate from head to bottom, no longer block render and still work -->
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+
+</html>
