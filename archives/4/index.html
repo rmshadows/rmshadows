@@ -479,9 +479,9 @@ Thanks for the great work of Vincent, the Hexo-Theme-LiveMyLife’s author!
     sidebar-container
 ">
     
-        <!--   -->
-<h5><a href="/rmshadows/">VISITORS</a></h5>
-
+        <!--  <% if (site.posts.length){ %> -->
+<h5><a href="<%= config.root %>">VISITORS</a></h5>
+<% if (config.busuanzi){ %>
 <div class="widget">
   <span>
     Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
@@ -491,8 +491,8 @@ Thanks for the great work of Vincent, the Hexo-Theme-LiveMyLife’s author!
     <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
   </span>
 </div>
-
-<!--   -->
+<% } %>
+<!--  <% } %> -->
 
         <hr>
     
@@ -532,15 +532,31 @@ Thanks for the great work of Vincent, the Hexo-Theme-LiveMyLife’s author!
     
     
     
-    <a href="/rmshadows/tags/#President XiJinping&#39;s The Thought on Socialism with Chinese Characteristics for a New Era" title="President XiJinping&#39;s The Thought on Socialism with Chinese Characteristics for a New Era" rel="1">President XiJinping&#39;s The Thought on Socialism with Chinese Characteristics for a New Era</a>
-    
-    
-    
     <a href="/rmshadows/tags/#Android" title="Android" rel="2">Android</a>
     
     
     
     <a href="/rmshadows/tags/#Kotlin" title="Kotlin" rel="1">Kotlin</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#President XiJinping&#39;s The Thought on Socialism with Chinese Characteristics for a New Era" title="President XiJinping&#39;s The Thought on Socialism with Chinese Characteristics for a New Era" rel="1">President XiJinping&#39;s The Thought on Socialism with Chinese Characteristics for a New Era</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#C" title="C" rel="1">C</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#C++" title="C++" rel="1">C++</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Hexo" title="Hexo" rel="1">Hexo</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Gitee + Hexo建立博客" title="Gitee + Hexo建立博客" rel="1">Gitee + Hexo建立博客</a>
     
     
     
@@ -556,27 +572,11 @@ Thanks for the great work of Vincent, the Hexo-Theme-LiveMyLife’s author!
     
     
     
-    <a href="/rmshadows/tags/#Hexo" title="Hexo" rel="1">Hexo</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#Gitee + Hexo建立博客" title="Gitee + Hexo建立博客" rel="1">Gitee + Hexo建立博客</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#C" title="C" rel="1">C</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#C++" title="C++" rel="1">C++</a>
+    <a href="/rmshadows/tags/#Java" title="Java" rel="1">Java</a>
     
     
     
     <a href="/rmshadows/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife" rel="1">Hexo-Theme-LiveMyLife</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#Java" title="Java" rel="1">Java</a>
     
     
     
@@ -616,7 +616,7 @@ Thanks for the great work of Vincent, the Hexo-Theme-LiveMyLife’s author!
     
     
     
-    <a href="/rmshadows/tags/#Moment" title="Moment" rel="1">Moment</a>
+    <a href="/rmshadows/tags/#Updates" title="Updates" rel="1">Updates</a>
     
     
     
@@ -636,11 +636,7 @@ Thanks for the great work of Vincent, the Hexo-Theme-LiveMyLife’s author!
     
     
     
-    <a href="/rmshadows/tags/#Python3" title="Python3" rel="1">Python3</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#Python Packages" title="Python Packages" rel="1">Python Packages</a>
+    <a href="/rmshadows/tags/#Moment" title="Moment" rel="1">Moment</a>
     
     
     
@@ -664,10 +660,6 @@ Thanks for the great work of Vincent, the Hexo-Theme-LiveMyLife’s author!
     
     
     
-    <a href="/rmshadows/tags/#Updates" title="Updates" rel="1">Updates</a>
-    
-    
-    
     <a href="/rmshadows/tags/#Windows" title="Windows" rel="1">Windows</a>
     
     
@@ -681,6 +673,14 @@ Thanks for the great work of Vincent, the Hexo-Theme-LiveMyLife’s author!
     
     
     <a href="/rmshadows/tags/#VB Script" title="VB Script" rel="1">VB Script</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Python3" title="Python3" rel="1">Python3</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Python Packages" title="Python Packages" rel="1">Python Packages</a>
     
     
     
@@ -846,7 +846,7 @@ Thanks for the great work of Vincent, the Hexo-Theme-LiveMyLife’s author!
   
   <li><a href="https://gitee.com/rmshadows" target="_blank">Gitee - Ryan Yim</a></li>
   
-  <li><a href="https://rmshadows.gitee.io/404" target="_blank">404 No Found Page</a></li>
+  <li><a href="https://civiccccc.ltd/rmshadows/404" target="_blank">404 - No Found Page</a></li>
   
 </ul>
 
@@ -878,12 +878,12 @@ Thanks for the great work of Vincent, the Hexo-Theme-LiveMyLife’s author!
       <li>Notes</li>
     </a>
     
-    <a href="/rmshadows/categories/#Daily">
-      <li>Daily</li>
-    </a>
-    
     <a href="/rmshadows/categories/#Hows">
       <li>Hows</li>
+    </a>
+    
+    <a href="/rmshadows/categories/#Daily">
+      <li>Daily</li>
     </a>
     
     <a href="/rmshadows/categories/#Release">
