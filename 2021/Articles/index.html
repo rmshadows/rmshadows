@@ -155,6 +155,13 @@
 
           
           <li>
+            <a href="/rmshadows/about/">About</a>
+          </li>
+          
+          
+
+          
+          <li>
             <a href="/rmshadows/archive/">Archives</a>
           </li>
           
@@ -163,13 +170,6 @@
           
           <li>
             <a href="/rmshadows/categories/">Categories</a>
-          </li>
-          
-          
-
-          
-          <li>
-            <a href="/rmshadows/about/">About</a>
           </li>
           
           
@@ -275,11 +275,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">283</span> Minutes
+              Estimated Reading Time <span class="post-count">315</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">72.3k</span> In Total
+              Words <span class="post-count">80.7k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -352,7 +352,363 @@
 <h1 id="CIVICCCCC-LTD"><a href="#CIVICCCCC-LTD" class="headerlink" title="CIVICCCCC.LTD"></a>CIVICCCCC.LTD</h1><blockquote>
 <p>这里是我自己写的文章目录</p>
 </blockquote>
-<h1 id="Debian-org"><a href="#Debian-org" class="headerlink" title="Debian.org"></a>Debian.org</h1><h2 id="给新用户有关不破坏其Debian系统的建议"><a href="#给新用户有关不破坏其Debian系统的建议" class="headerlink" title="给新用户有关不破坏其Debian系统的建议"></a>给新用户有关不破坏其Debian系统的建议</h2><blockquote>
+<h1 id="Debian-org"><a href="#Debian-org" class="headerlink" title="Debian.org"></a>Debian.org</h1><h2 id="Debian12升级到Debian13"><a href="#Debian12升级到Debian13" class="headerlink" title="Debian12升级到Debian13"></a>Debian12升级到Debian13</h2><blockquote>
+<p>Upgrades from Debian 12 (bookworm) 2025-08-30</p>
+<p><a href="https://www.debian.org/releases/trixie/release-notes/upgrading.html#upgrades-from-debian-oldrelease-oldreleasename" target="_blank" rel="noopener">https://www.debian.org/releases/trixie/release-notes/upgrading.html#upgrades-from-debian-oldrelease-oldreleasename</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">个人笔记：</span><br></pre></td></tr></table></figure>
+<p>从 Debian 12 (bookworm) 升级</p>
+<p>4.1. 升级前的准备</p>
+<p>在开始升级之前，我们建议你阅读 <strong>《需要注意的 trixie 相关问题》</strong>。该章节涵盖了一些虽然与升级过程本身没有直接关系，但在升级前仍然很重要的问题。</p>
+<p><strong>——4.1.1. 备份数据或配置信息</strong></p>
+<p>在升级系统之前，强烈建议你进行完整备份，或者至少备份任何你不能承受丢失的数据或配置信息。升级工具和过程本身相当可靠，但如果在升级过程中发生硬件故障，可能会导致系统严重损坏。</p>
+<p>需要重点备份的内容有：</p>
+<ul>
+<li><code>/etc</code></li>
+<li><code>/var/lib/dpkg</code></li>
+<li><code>/var/lib/apt/extended_states</code></li>
+<li>以及以下命令的输出：</li>
+</ul>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dpkg --<span class="keyword">get</span>-selections <span class="string">'*'</span></span><br><span class="line"><span class="meta">#（引号非常重要）</span></span><br></pre></td></tr></table></figure>
+<p>如果你使用 <strong>aptitude</strong> 管理软件包，还需要备份：</p>
+<ul>
+<li><code>/var/lib/aptitude/pkgstates</code></li>
+</ul>
+<p>升级过程本身不会修改 <code>/home</code> 目录的内容。<br> 但是，一些应用程序（例如 Mozilla 套件的部分组件、GNOME 和 KDE 桌面环境）已知在新版本首次启动时会用默认值覆盖现有用户设置。<br> 作为预防措施，你可能需要备份用户主目录中的隐藏文件和隐藏目录（“点文件”）。这些备份有助于恢复或重建旧的用户设置。你也可以提前告知用户这一点。</p>
+<p>任何软件包安装操作都必须以超级用户权限执行，因此请以 <strong>root</strong> 身份登录，或使用 <code>su</code> 或 <code>sudo</code> 获取必要的权限。</p>
+<p>升级有一些前提条件，在实际执行升级之前需要确认。</p>
+<p><strong>——4.1.2. 提前通知用户</strong></p>
+<p>在计划升级时，最好提前通知所有用户。<br> 通过 <strong>ssh</strong> 连接访问系统的用户在升级期间通常几乎不会受到影响，并且一般可以继续工作。</p>
+<p>如果想要更谨慎一些，可以在升级前备份或卸载 <code>/home</code> 分区。</p>
+<p>在升级到 <strong>trixie</strong> 时，你必须进行 <strong>内核升级</strong>，因此升级完成后需要重启系统。</p>
+<p><strong>——4.1.3. 为服务停机做好准备</strong></p>
+<p>系统可能提供了一些与即将升级的软件包相关的服务。<br> 在升级过程中，这些服务会在对应的软件包被替换和配置时停止运行。<br> 在此期间，这些服务将不可用。</p>
+<p>服务停机的具体时长取决于：</p>
+<ul>
+<li>系统中要升级的软件包数量</li>
+<li>管理员回答软件包升级配置问题所花费的时间</li>
+</ul>
+<p>需要注意的是，如果升级过程无人值守，而系统在升级中途请求输入，则服务可能会长时间不可用。</p>
+<p>如果被升级的系统为用户或网络提供了关键服务，可以通过以下方式减少停机时间：</p>
+<ol>
+<li>先执行 <strong>最小系统升级</strong>（见 <em>Minimal system upgrade</em> 部分）。</li>
+<li>然后进行内核升级并重启。</li>
+<li>再升级与你的关键服务相关的软件包。</li>
+</ol>
+<p>在执行完整升级（见 <em>Upgrading the system</em> 部分）之前，先确保这些关键服务已升级并正常运行。这样可以保证在整个升级过程中它们都可用，从而最大限度减少停机时间。</p>
+<p><strong>——4.1.4. 准备恢复</strong></p>
+<p>虽然 Debian 会尽量确保系统在升级后仍然可引导，但仍然存在升级后无法重启系统的可能性。本章及下章会记录已知的潜在问题。</p>
+<p>因此，确保在系统无法重启或远程管理系统无法启动网络时，能够进行恢复是非常有必要的。</p>
+<p>如果你通过 SSH 链接远程升级，建议采取必要的预防措施，以便能够通过远程串口终端访问服务器。因为在升级内核并重启后，你可能需要通过本地控制台修复系统配置。另外，如果升级过程中系统意外重启，也可能需要通过本地控制台进行恢复。</p>
+<p>对于紧急恢复，我们通常建议使用 Trixie Debian 安装程序的救援模式。使用安装程序的好处是，你可以在多种恢复方法中选择最适合你的方案。更多信息，请参考《安装指南》第 8 章中“恢复损坏的系统”部分（<a href="https://www.debian.org/releases/trixie/installmanual）以及" target="_blank" rel="noopener">https://www.debian.org/releases/trixie/installmanual）以及</a> Debian Installer FAQ。</p>
+<p>如果上述方法失败，你需要有备用的启动方式，以便访问和修复系统。一个选择是使用专门的救援或 live 安装镜像。启动后，你应该能够挂载根文件系统并 chroot 进入系统，进行问题排查和修复。</p>
+<p><strong>——4.1.4.1. 使用 initrd 在启动时调试 shell</strong></p>
+<p><code>initramfs-tools</code> 包会在生成的 initrd 中包含调试 shell³。如果 initrd 无法挂载根文件系统，你会进入这个调试 shell，它提供基本命令来帮助追踪问题并尝试修复。</p>
+<p>基本检查项包括：</p>
+<ul>
+<li><code>/dev</code> 下是否存在正确的设备文件；</li>
+<li>已加载的模块（<code>cat /proc/modules</code>）；</li>
+<li><code>dmesg</code> 输出中是否有驱动加载错误。</li>
+</ul>
+<p><code>dmesg</code> 输出还会显示哪些设备文件分配给了哪些磁盘，你应将其与 <code>echo $ROOT</code> 的输出对比，以确保根文件系统在预期的设备上。</p>
+<p>如果修复了问题，输入 <code>exit</code> 将退出调试 shell 并继续启动过程。当然，你还需要修复根本问题并重新生成 initrd，以防下一次启动失败。</p>
+<p><strong>——4.1.4.2. 使用 systemd 在启动时调试 shell</strong></p>
+<p>如果系统在 systemd 下启动失败，可以通过修改内核命令行获取调试 root shell。</p>
+<ul>
+<li>如果基础启动成功，但部分服务启动失败，可以在内核参数中添加 <code>systemd.unit=rescue.target</code>。</li>
+<li>否则，内核参数 <code>systemd.unit=emergency.target</code> 会在最早的阶段提供 root shell。但此时根文件系统尚未以读写模式挂载，你需要手动执行：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount -o remount,rw /</span><br></pre></td></tr></table></figure>
+<p>另一种方法是通过 <code>debug-shell.service</code> 启用 systemd 的“早期调试 shell”。下一次启动时，该服务会在 tty9 上打开 root 登录 shell。可以通过内核参数 <code>systemd.debug-shell=1</code> 启用，或者使用命令 <code>systemctl enable debug-shell</code> 永久启用（调试完成后应禁用）。</p>
+<p>更多关于 systemd 启动故障调试的信息，请参考 Freedesktop.org 的“Diagnosing Boot Problems”文章。</p>
+<p><strong>——4.1.5. 为升级准备安全环境</strong></p>
+<p><strong>重要提示</strong></p>
+<p>如果你使用某些 VPN 服务（如 tinc），请注意它们可能在升级过程中不可用。请参见“为服务停机做准备”。</p>
+<p>为了在远程升级时增加安全保障，建议在 <code>screen</code> 或 <code>tmux</code> 提供的虚拟控制台中运行升级过程，这样即使远程连接暂时中断，也不会影响升级。</p>
+<p>使用 <code>micro-evtd</code> 包提供的 watchdog 守护进程的用户，应在升级前停止守护进程并禁用 watchdog 定时器，以避免升级过程中意外重启：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">service micro-evtd stop</span><br><span class="line">/usr/sbin/microapl -a system_set_watchdog off</span><br></pre></td></tr></table></figure>
+<p><strong>——4.2. 从“纯净” Debian 系统开始</strong></p>
+<p>本章描述的升级过程是针对“纯净” Debian stable 系统设计的。APT 控制系统上安装的软件包。如果你的 APT 配置中除了 bookworm 之外还包含其他源，或者安装了来自其他发行版或第三方的软件包，为确保升级可靠，你可能需要先移除这些干扰因素。</p>
+<p>APT 正在迁移到新的包下载源配置格式。<code>/etc/apt/sources.list</code> 文件以及 <code>/etc/apt/sources.list.d/</code> 下的 *.list 文件将被目录下以 <code>.sources</code> 结尾的新文件替代，使用新的、可读性更高的 deb822 格式。有关详细信息，请参阅 sources.list(5)。本说明中的 APT 配置示例将使用新的 deb822 格式。</p>
+<p>如果系统使用多个源文件，你需要确保它们保持一致。</p>
+<p><strong>——4.2.1. 升级到 Debian 12 (bookworm)</strong></p>
+<p>仅支持从 Debian 12 (bookworm) 升级。显示你的 Debian 版本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/debian_version</span><br></pre></td></tr></table></figure>
+<p>如果需要，请先按照 Debian 12 的发行说明（<a href="https://www.debian.org/releases/bookworm/releasenotes）中的说明升级到" target="_blank" rel="noopener">https://www.debian.org/releases/bookworm/releasenotes）中的说明升级到</a> Debian 12。</p>
+<p><strong>——4.2.2. 升级到最新的点版本</strong></p>
+<p>此过程假设你的系统已经更新到 bookworm 的最新点版本。如果尚未更新或不确定，请参照《升级你的 bookworm 系统》的说明进行操作。</p>
+<p><strong>——4.2.3. Debian Backports</strong></p>
+<p>Debian Backports 允许 Debian stable 用户运行更新版本的软件包（在测试和安全支持方面有一定权衡）。Debian Backports 团队维护下一 Debian 发行版的一部分软件包，并对其进行调整和重新编译，使其可在当前 Debian stable 上使用。</p>
+<p>来自 bookworm-backports 的软件包版本号低于 trixie 中的版本，因此在发行版升级过程中，它们应像“纯净” bookworm 软件包一样正常升级。虽然目前没有已知潜在问题，但从 backports 升级的路径测试较少，相应风险更高。</p>
+<p><strong>注意</strong></p>
+<p>虽然常规 Debian Backports 是受支持的，但从 sloppy backports（使用指向 bookworm-backports-sloppy 的 APT 源条目）没有干净的升级路径。</p>
+<p>和非官方源一样，建议用户在升级前从 APT 源文件中删除 “bookworm-backports” 条目。升级完成后，可以考虑添加 “trixie-backports”（参见 <a href="https://backports.debian.org/Instructions/）。" target="_blank" rel="noopener">https://backports.debian.org/Instructions/）。</a></p>
+<p>更多信息，请参阅 Backports Wiki 页面。</p>
+<p><strong>——4.2.4. 准备软件包数据库</strong></p>
+<p>在继续升级之前，应确保软件包数据库准备就绪。如果你使用其他软件包管理器（如 aptitude 或 synaptic），请检查任何待处理的操作。计划安装或删除的软件包可能会干扰升级过程。请注意，只有在 APT 源文件仍指向 “bookworm” 而非 “stable” 或 “trixie” 的情况下才能纠正此类问题；参见检查你的 APT 配置。</p>
+<p><strong>——4.2.5. 删除过时的软件包</strong></p>
+<p>在升级前删除系统中已过时的软件包是个好主意。它们可能在升级过程中引入复杂性，并且存在安全风险，因为这些软件包不再维护。</p>
+<p><strong>——4.2.6. 删除非 Debian 软件包</strong></p>
+<p>下面提供两种查找已安装但非 Debian 软件包的方法，可使用 apt 或 apt-forktracer。请注意，这两种方法都不是 100% 准确的（例如，apt 示例可能列出曾经由 Debian 提供但现在不再提供的软件包，如旧内核包）。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt list <span class="string">'?narrow(?installed, ?not(?origin(Debian)))'</span></span><br><span class="line">apt-forktracer | sort</span><br></pre></td></tr></table></figure>
+<p><strong>——4.2.7. 清理残留配置文件</strong></p>
+<p>之前的升级可能留下未使用的配置文件副本，例如旧版本的配置文件、软件包维护者提供的版本等。删除这些残留文件可以避免混淆。查找残留文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /etc -name <span class="string">'*.dpkg-*'</span> -o -name <span class="string">'*.ucf-*'</span> -o -name <span class="string">'*.merge-error'</span></span><br></pre></td></tr></table></figure>
+<p><strong>——4.2.8. 非自由和非自由固件组件</strong></p>
+<p>如果你安装了非自由固件，建议在 APT 源中添加 non-free-firmware。</p>
+<p><strong>——4.2.9. proposed-updates 段</strong></p>
+<p>如果你在 APT 源文件中列出了 proposed-updates 段，升级系统前应将其删除。这是一种预防措施，可降低冲突发生的可能性。</p>
+<p><strong>——4.2.10. 非官方源</strong></p>
+<p>如果系统中存在任何非 Debian 软件包，应注意这些软件包在升级过程中可能因依赖冲突而被删除。如果这些软件包是通过在 APT 源文件中添加额外软件包存档安装的，应检查该存档是否提供了为 trixie 编译的软件包，并在修改 Debian 软件包源条目时同时调整该源条目。</p>
+<p>部分用户可能在 bookworm 系统上安装了非官方 backport 的“更新”版本软件包。这类软件包在升级时最可能引起问题，因为它们可能导致文件冲突。第 4 章“升级过程中可能出现的问题”提供了处理文件冲突的方法。</p>
+<p><strong>——4.2.11. 禁用 APT pinning</strong></p>
+<p>如果你配置 APT 从 stable 之外的发行版（如 testing）安装某些软件包，可能需要更改 APT pinning 配置（存储在 /etc/apt/preferences 和 /etc/apt/preferences.d/）以允许将软件包升级到新 stable 版本中的版本。</p>
+<p>关于 APT pinning 的更多信息，请参阅 apt_preferences(5)——<a href="https://manpages.debian.org/trixie/apt_preferences(5)。" target="_blank" rel="noopener">https://manpages.debian.org/trixie/apt_preferences(5)。</a></p>
+<p><strong>——4.2.12. 检查软件包状态</strong></p>
+<p>无论使用哪种升级方法，都建议先检查所有软件包的状态，并确认所有软件包处于可升级状态。以下命令将显示状态为 Half-Installed 或 Failed-Config 的软件包，以及任何错误状态的软件包：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg --audit</span><br></pre></td></tr></table></figure>
+<p>你也可以使用 aptitude 或以下命令检查系统上所有软件包的状态：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -l</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg --get-selections <span class="string">'*'</span> &gt; ~/curr-pkgs.txt</span><br></pre></td></tr></table></figure>
+<p>另外，也可以使用 apt：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt list --installed &gt; ~/curr-pkgs.txt</span><br></pre></td></tr></table></figure>
+<p>在升级之前，最好移除任何 hold（保留）状态的软件包。如果任何对升级至关重要的软件包处于 hold 状态，升级将会失败：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-mark showhold</span><br></pre></td></tr></table></figure>
+<p>如果你在本地修改并重新编译了某个软件包，但没有更改名称或在版本号中添加 epoch，则必须将其置于 hold 状态以防止被升级。</p>
+<p>APT 中的 hold 状态可以使用以下命令更改：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-mark hold package_name</span><br></pre></td></tr></table></figure>
+<p>将 <code>hold</code> 替换为 <code>unhold</code> 可以取消 hold 状态。</p>
+<p>如果有需要修复的问题，最好确保你的 APT 源文件仍指向 bookworm，如“检查你的 APT 配置”中所述。</p>
+<p><strong>——4.3. 准备 APT 源文件</strong></p>
+<p>在开始升级之前，必须重新配置 APT 以添加 trixie 的源，并通常移除 bookworm 的源。</p>
+<p>如“从‘纯净’ Debian 开始”中所述，我们建议使用新的 deb822 格式，因此你需要将 <code>/etc/apt/sources.list</code> 以及 <code>/etc/apt/sources.list.d/</code> 下的所有 *.list 文件替换为一个名为 <code>debian.sources</code> 的文件（如果尚未完成）。下面给出了该文件的典型示例。</p>
+<p>APT 会考虑所有配置的源中可用的软件包，并安装版本号最高的软件包，优先选择文件中最先列出的条目。因此，如果你有多个镜像位置，应先列出本地硬盘上的镜像，然后是 CD-ROM，最后是远程镜像。</p>
+<p>一个发行版通常既可通过代号（如 “bookworm”，“trixie”）引用，也可通过状态名称（即 “oldstable”，“stable”，“testing”，“unstable”）引用。通过代号引用发行版的好处是不会被新发行版意外惊讶，因此这里采用该方式。当然，这也意味着你需要自己关注发行公告。如果使用状态名称，则一旦发布新版本，你将立即看到大量软件包更新。</p>
+<p>Debian 提供两个公告邮件列表，帮助你及时了解与 Debian 发行版相关的信息：</p>
+<ul>
+<li>订阅 Debian 发布公告列表，你将在每次 Debian 发布新版本时收到通知，例如 “trixie” 从 “testing” 变为 “stable”。</li>
+<li>订阅 Debian 安全公告列表，你将在每次 Debian 发布安全公告时收到通知。</li>
+</ul>
+<p><strong>——4.3.1. 添加 APT 网络源</strong></p>
+<p>在新安装中，APT 默认配置为使用 Debian APT CDN 服务，这可以确保从网络上离你最近的服务器自动下载软件包。由于这是较新的服务，旧版本的安装可能仍指向主要 Debian 服务器或镜像。如果尚未切换，建议在 APT 配置中使用 CDN 服务。</p>
+<p>要使用 CDN 服务，APT 的正确配置（假设使用 main 和 non-free-firmware）应写入 <code>/etc/apt/sources.list.d/debian.sources</code> 文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Types: deb</span><br><span class="line">URIs: https:&#x2F;&#x2F;deb.debian.org&#x2F;debian</span><br><span class="line">Suites: trixie trixie-updates</span><br><span class="line">Components: main non-free-firmware</span><br><span class="line">Signed-By: &#x2F;usr&#x2F;share&#x2F;keyrings&#x2F;debian-archive-keyring.gpg</span><br><span class="line"></span><br><span class="line">Types: deb</span><br><span class="line">URIs: https:&#x2F;&#x2F;security.debian.org&#x2F;debian-security</span><br><span class="line">Suites: trixie-security</span><br><span class="line">Components: main non-free-firmware</span><br><span class="line">Signed-By: &#x2F;usr&#x2F;share&#x2F;keyrings&#x2F;debian-archive-keyring.gpg</span><br></pre></td></tr></table></figure>
+<p>确保删除旧的源文件。</p>
+<p>如果使用网络上离你更近的镜像效果更好，可以将 URIs 行替换为镜像地址，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">URIs: https:&#x2F;&#x2F;mirrors.kernel.org&#x2F;debian</span><br></pre></td></tr></table></figure>
+<p>如果想使用 contrib 或 non-free 组件，可将其添加到所有 Components 行。</p>
+<p>添加新源后，通过在 APT 源文件前加 <code>#</code> 来禁用之前的存档条目。</p>
+<p><strong>——4.3.2. 添加本地镜像源</strong></p>
+<p>你也可以修改 APT 源文件以使用本地磁盘上的镜像（例如通过 NFS 挂载）。</p>
+<p>例如，软件包镜像位于 <code>/var/local/debian/</code>，主目录如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;var&#x2F;local&#x2F;debian&#x2F;dists&#x2F;trixie&#x2F;main&#x2F;...</span><br><span class="line">&#x2F;var&#x2F;local&#x2F;debian&#x2F;dists&#x2F;trixie&#x2F;contrib&#x2F;...</span><br></pre></td></tr></table></figure>
+<p>在 <code>/etc/apt/sources.list.d/debian.sources</code> 文件中添加：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Types: deb</span><br><span class="line">URIs: file:&#x2F;var&#x2F;local&#x2F;debian</span><br><span class="line">Suites: trixie</span><br><span class="line">Components: main non-free-firmware</span><br><span class="line">Signed-By: &#x2F;usr&#x2F;share&#x2F;keyrings&#x2F;debian-archive-keyring.gpg</span><br></pre></td></tr></table></figure>
+<p>添加新源后，同样需要禁用之前的存档条目。</p>
+<p><strong>——4.3.3. 添加光盘源</strong></p>
+<p>如果只想使用 DVD（或 CD、蓝光），请在所有 APT 源文件中将现有条目前加 <code>#</code> 注释掉。</p>
+<p>确保 <code>/etc/fstab</code> 中有一行，能够将 CD-ROM 挂载到 <code>/media/cdrom</code>，例如 <code>/dev/sr0</code> 为 CD-ROM：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;dev&#x2F;sr0 &#x2F;media&#x2F;cdrom auto noauto,ro 0 0</span><br></pre></td></tr></table></figure>
+<p>注意第四字段中的 <code>noauto,ro</code> 之间不能有空格。</p>
+<p>验证方法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mount /media/cdrom    <span class="comment"># 挂载 CD</span></span><br><span class="line">ls -alF /media/cdrom  <span class="comment"># 查看 CD 根目录</span></span><br><span class="line">umount /media/cdrom   <span class="comment"># 卸载 CD</span></span><br></pre></td></tr></table></figure>
+<p>然后执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-cdrom add</span><br></pre></td></tr></table></figure>
+<p>为每张 Debian Binary CD-ROM 添加数据到 APT 数据库。</p>
+<p><strong>——4.4. 升级软件包</strong></p>
+<p>推荐使用 apt 工具从以前的 Debian 发行版进行升级。</p>
+<p><strong>注意</strong><br> apt 适用于交互操作，不应在脚本中使用。脚本中应使用 apt-get，它的输出稳定，更适合解析。</p>
+<p>不要忘记将所有必需分区（尤其是 root 和 /usr）以读写方式挂载：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount -o remount,rw /mountpoint</span><br></pre></td></tr></table></figure>
+<p>接着应再次检查 APT 源文件（/etc/apt/sources.list.d/ 下的文件）是否指向 “trixie” 或 “stable”，不应有指向 bookworm 的源。</p>
+<p><strong>注意</strong><br> CD-ROM 的源行有时可能指向 “unstable”，虽可能造成困惑，但不应更改。</p>
+<p><strong>——4.4.1. 记录升级过程</strong></p>
+<p>apt 会在 <code>/var/log/apt/history.log</code> 记录软件包状态变更，在 <code>/var/log/apt/term.log</code> 记录终端输出。dpkg 还会在 <code>/var/log/dpkg.log</code> 记录所有软件包状态变更。使用 aptitude 时，也会在 <code>/var/log/aptitude</code> 记录状态变更。</p>
+<p>出现问题时，你可以查看日志，并在需要时在 bug 报告中提供准确信息。</p>
+<p>term.log 可以让你查看屏幕滚动过的内容。如果在系统控制台，可切换到 VT2（Alt+F2）查看。</p>
+<p><strong>——4.4.2. 更新软件包列表</strong></p>
+<p>首先需要获取新版本可用的软件包列表：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt update</span><br></pre></td></tr></table></figure>
+<p><strong>——4.4.3. 确保升级有足够空间</strong></p>
+<p>升级前必须确保系统有足够硬盘空间。安装从网络获取的软件包会存放在 <code>/var/cache/apt/archives</code>（下载过程中还有 partial/ 子目录），因此必须确保存放 <code>/var/</code> 的分区有足够空间。下载完成后，你可能还需要更多空间来安装升级后的软件包（可能包含更大二进制文件或更多数据）以及升级过程中拉取的新软件包。如果空间不足，可能导致升级不完整，难以恢复。</p>
+<p>apt 可以显示安装所需的详细磁盘空间信息。执行升级前，可运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt -o APT::Get::Trivial-Only=<span class="literal">true</span> full-upgrade</span><br></pre></td></tr></table></figure>
+<p>输出示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">XXX upgraded, XXX newly installed, XXX to remove and XXX not upgraded.</span><br><span class="line">Need to get xx.xMB of archives.</span><br><span class="line">After this operation, AAAMB of additional disk space will be used.</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong><br> 在升级开始时运行此命令可能报错，需要先执行最小系统升级后再运行此命令。</p>
+<p>如果空间不足，apt 会提示类似：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">E: You don&#39;t have enough free space in &#x2F;var&#x2F;cache&#x2F;apt&#x2F;archives&#x2F;.</span><br></pre></td></tr></table></figure>
+<p>此时应提前清理空间：</p>
+<ul>
+<li>删除之前下载的软件包：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt clean</span><br></pre></td></tr></table></figure>
+<ul>
+<li>删除不再需要的依赖包：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt autoremove</span><br></pre></td></tr></table></figure>
+<ul>
+<li>可使用 debfoster 查找冗余包，但建议手动审核。</li>
+<li>删除占用过多空间且当前不需要的软件包，可在升级后重新安装。可用 popcon-largest-unused、dpigs 或 wajig size 查找占用最多空间的软件包，也可通过 aptitude 排序查看。</li>
+<li>删除不需要的本地化文件，可用 localepurge 只保留所需语言环境。</li>
+<li>临时移动或删除 <code>/var/log/</code> 下日志文件。</li>
+<li>使用其他文件系统作为临时 <code>/var/cache/apt/archives</code>（USB、临时硬盘等），但不要使用 NFS 挂载。</li>
+</ul>
+<p>示例（USB 临时缓存）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">apt clean</span><br><span class="line">cp -ax /var/cache/apt/archives /media/usbkey/</span><br><span class="line">mount --<span class="built_in">bind</span> /media/usbkey/archives /var/cache/apt/archives</span><br><span class="line"><span class="comment"># 升级后恢复：</span></span><br><span class="line">umount /var/cache/apt/archives</span><br><span class="line">rm -rf /media/usbkey/archives</span><br></pre></td></tr></table></figure>
+<ul>
+<li>执行最小升级或部分升级后再进行完整升级，可在升级前清理软件包缓存。</li>
+</ul>
+<p>安全删除软件包时，建议将 APT 源切换回 bookworm。</p>
+<p><strong>——4.4.4. 停止监控系统</strong></p>
+<p>apt 升级过程中可能需要临时停止系统服务，因此最好先停止那些可能在升级过程中重启已终止服务的监控服务。例如 Debian 中的 monit 服务。</p>
+<p>好的 ✅ 我明白了，你只需要我把英文原文逐段翻译成中文，不做任何总结或说明。下面是对应的翻译：</p>
+<hr>
+<h3 id="4-4-5-最小化系统升级"><a href="#4-4-5-最小化系统升级" class="headerlink" title="4.4.5. 最小化系统升级"></a>4.4.5. 最小化系统升级</h3><p>在某些情况下，直接执行完整升级（如下所述）可能会删除大量你希望保留的软件包。因此我们推荐采用两步升级流程：首先进行最小化升级以解决这些冲突，然后再执行完整升级（详见 <em>升级系统</em> 一节）。</p>
+<p>为此，请先运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt upgrade --without-new-pkgs</span><br></pre></td></tr></table></figure>
+<p>这将升级那些无需删除或安装其他软件包即可升级的软件包。</p>
+<p>当系统磁盘空间紧张，无法运行完整升级时，最小化系统升级也很有用。</p>
+<p>如果已安装 <code>apt-listchanges</code> 软件包，它会（在默认配置下）在下载软件包后，通过分页器显示关于已升级软件包的重要信息。阅读后按 <strong>q</strong> 退出分页器并继续升级。</p>
+<hr>
+<h3 id="4-4-6-升级系统"><a href="#4-4-6-升级系统" class="headerlink" title="4.4.6. 升级系统"></a>4.4.6. 升级系统</h3><p>完成前面的步骤后，现在就可以继续执行升级的主要部分了。运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt full-upgrade</span><br></pre></td></tr></table></figure>
+<p>这将对系统进行完整升级，安装所有软件包的最新可用版本，并解决不同发行版间的软件包依赖关系变化。如果有必要，它会安装一些新软件包（通常是新的库版本或重命名的软件包），并移除所有冲突的已废弃软件包。</p>
+<p>如果你是通过 CD/DVD/BD 升级系统，升级过程中可能会要求你在不同阶段插入指定的光盘。由于相互依赖的软件包分布在不同光盘上，可能需要多次插入同一张光盘。</p>
+<p>那些无法在不更改其他软件包安装状态的情况下升级的软件包会保持在当前版本（显示为“held back”）。这可以通过 <code>aptitude</code> 手动选择这些软件包安装，或运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install package</span><br></pre></td></tr></table></figure>
+<p>来解决。</p>
+<p><strong>——4.5. 升级过程中可能出现的问题</strong></p>
+<p><strong>——4.5.1. 完整升级失败，错误为 “Could not perform immediate configuration”</strong></p>
+<p>在某些情况下，运行 <code>apt full-upgrade</code> 下载软件包后可能会失败，出现以下错误：</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">E: Could <span class="keyword">not</span> <span class="keyword">perform</span> <span class="keyword">immediate</span> <span class="keyword">configuration</span> <span class="keyword">on</span> <span class="string">'package'</span>.  Please see man <span class="number">5</span> apt.conf under APT::<span class="keyword">Immediate</span>-Configure <span class="keyword">for</span> details.</span><br></pre></td></tr></table></figure>
+<p>此时，可以运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt full-upgrade -o APT::Immediate-Configure=0</span><br></pre></td></tr></table></figure>
+<p>继续升级。</p>
+<p>另一种解决方法是临时在 APT 源中同时加入 <strong>bookworm</strong> 和 <strong>trixie</strong>，然后执行 <code>apt update</code>。</p>
+<p><strong>——4.5.2. 预期的软件包移除</strong></p>
+<p>升级到 trixie 的过程中，系统可能会要求移除部分软件包。具体列表会因系统中安装的软件包而异。发布说明中给出了关于移除的一般建议，但如有疑问，建议在继续操作前仔细检查每种方法所提议的移除列表。</p>
+<p>关于 <strong>trixie</strong> 中被废弃的软件包，参见 <em>Obsolete packages</em> 一节。</p>
+<p><strong>——4.5.3. 冲突或 Pre-Depends 循环</strong></p>
+<p>有时需要在 APT 中启用 <code>APT::Force-LoopBreak</code> 选项，才能临时移除某个必需软件包，以解决 <strong>Conflicts/Pre-Depends 循环</strong>。apt 会提示你并中止升级。</p>
+<p>你可以通过在 apt 命令行中加上：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-o APT::Force-LoopBreak=1</span><br></pre></td></tr></table></figure>
+<p>来解决。</p>
+<p>在某些情况下，系统依赖关系可能损坏严重，需要人工干预。通常意味着使用 apt 或：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg --remove package_name</span><br></pre></td></tr></table></figure>
+<p>来移除有问题的软件包，或运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt -f install</span><br><span class="line">dpkg --configure --pending</span><br></pre></td></tr></table></figure>
+<p>在极端情况下，你可能需要强制重新安装某个软件包，例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg --install /path/to/package_name.deb</span><br></pre></td></tr></table></figure>
+<p><strong>——4.5.4. 文件冲突</strong></p>
+<p>如果你从一个“纯粹的 bookworm 系统”升级，通常不会发生文件冲突。但如果你安装过非官方 backports，可能会遇到。典型错误如下：</p>
+<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Unpacking &lt;<span class="keyword">package</span>-foo&gt; (from &lt;<span class="keyword">package</span>-foo-<span class="keyword">file</span>&gt;) ...</span><br><span class="line">dpkg: <span class="literal">error</span> processing &lt;<span class="keyword">package</span>-foo&gt; (<span class="comment">--install):</span></span><br><span class="line">trying <span class="keyword">to</span> overwrite `&lt;some-<span class="keyword">file</span>-name&gt;',</span><br><span class="line">which <span class="keyword">is</span> also <span class="keyword">in</span> <span class="keyword">package</span> &lt;<span class="keyword">package</span>-bar&gt;</span><br><span class="line">dpkg-deb: subprocess paste killed by <span class="keyword">signal</span> (Broken pipe)</span><br><span class="line">Errors were encountered <span class="keyword">while</span> processing:</span><br><span class="line">&lt;<span class="keyword">package</span>-foo&gt;</span><br></pre></td></tr></table></figure>
+<p>你可以尝试强制移除错误信息最后一行提到的软件包：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -r --force-depends package_name</span><br></pre></td></tr></table></figure>
+<p>修复后，重新执行之前的 apt 命令即可继续升级。</p>
+<p><strong>——4.5.5. 配置更改</strong></p>
+<p>在升级过程中，你会被询问一些关于软件包配置或重新配置的问题。</p>
+<p>当被问到是否要用软件包维护者提供的新版本替换 <code>/etc/init.d</code> 目录中的文件，或 <code>/etc/manpath.config</code> 文件时，通常需要回答“是”，以保证系统一致性。旧版本会以 <code>.dpkg-old</code> 扩展名保存，你随时可以恢复。</p>
+<p>如果不确定该怎么做，可以记下软件包或文件名，稍后再处理。升级过程中屏幕上的信息也可以在 typescript 文件中回溯。</p>
+<h4 id="——4-5-6-控制台会话切换"><a href="#——4-5-6-控制台会话切换" class="headerlink" title="——4.5.6. 控制台会话切换"></a><strong>——4.5.6. 控制台会话切换</strong></h4><p>如果你在系统本地控制台中运行升级，可能会在某些时刻失去升级进程的可见性。例如在带图形界面的系统中，当显示管理器重启时就会发生。</p>
+<p>要恢复升级进程所在的控制台，可以使用：</p>
+<ul>
+<li>在图形启动界面下：<code>Ctrl+Alt+F1</code></li>
+<li>在本地文本模式控制台下：<code>Alt+F1</code></li>
+</ul>
+<p>（替换 F1 为对应的虚拟终端编号）。<br> 你也可以用 <code>Alt+左方向键</code> 或 <code>Alt+右方向键</code> 在不同文本终端之间切换。</p>
+<p><strong>——4.6. 升级内核及相关软件包</strong></p>
+<p>本节解释如何升级内核以及相关的潜在问题。你可以安装 Debian 提供的 <code>linux-image-*</code> 软件包，或者从源码编译自定义内核。</p>
+<p>注意：本节的大部分信息基于你将使用 Debian 的模块化内核（配合 <code>initramfs-tools</code> 和 <code>udev</code>）。如果你选择使用不需要 initrd 的自定义内核，或使用不同的 initrd 生成工具，则部分信息可能不适用。</p>
+<p><strong>——4.6.1. 安装内核元包</strong></p>
+<p>当你从 <strong>bookworm</strong> 升级到 <strong>trixie</strong> 时，强烈建议安装 <code>linux-image-*</code> 元包（如果之前未安装）。这些元包会在升级时自动拉取更新的内核版本。</p>
+<p>你可以通过以下命令确认是否已安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -l <span class="string">'linux-image*'</span> | grep ^ii | grep -i meta</span><br></pre></td></tr></table></figure>
+<p>如果没有输出，则需要手动安装一个新的 <code>linux-image</code> 软件包，或安装一个内核元包。要查看可用的内核元包列表，运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-cache search linux-image- | grep -i meta | grep -v transition</span><br></pre></td></tr></table></figure>
+<p>如果不确定选择哪个包，运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -r</span><br></pre></td></tr></table></figure>
+<p>并查找名称类似的软件包。例如，如果显示为 <code>4.9.0-8-amd64</code>，推荐安装 <code>linux-image-amd64</code>。<br> 你也可以用：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt show linux-image-amd64</span><br></pre></td></tr></table></figure>
+<p>来查看详细描述，以帮助选择合适的内核包。</p>
+<p>安装后，使用：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install linux-image-amd64</span><br></pre></td></tr></table></figure>
+<p>安装即可。安装完成后，应在合适的时间点重启系统以使用新内核。但在首次重启前，请参考 <em>重启前需要做的事</em>。</p>
+<p>对于更高级用户，可以通过 <code>linux-source</code> 包编译自定义内核，使用 <code>make deb-pkg</code> 目标来构建二进制包。详细信息见 <strong>Debian Linux Kernel Handbook</strong>（可通过 <code>debian-kernel-handbook</code> 包获得）。</p>
+<p>如果可能，建议在完整升级之前单独升级内核，以减少系统暂时无法启动的风险。不过，这只应在完成最小化升级（见 <em>最小化系统升级</em>）后进行。</p>
+<p><strong>——4.6.2. 64 位小端 PowerPC (ppc64el) 页面大小</strong></p>
+<p>从 trixie 开始，ppc64el 架构的默认 Linux 内核（<code>linux-image-powerpc64le</code>）将内存页大小从 <strong>64 KiB</strong> 改为 <strong>4 KiB</strong>。这样与其他常见架构保持一致，并避免了较大页大小带来的某些不兼容问题（尤其是 nouveau 和 xe 驱动，以及某些用户空间应用）。总体上，这会减少内存使用，略微增加 CPU 使用率。</p>
+<p>提供了一个备用内核包 <code>linux-image-powerpc64le-64k</code>，它使用 <strong>64 KiB</strong> 页大小。如果满足以下条件之一，你需要安装该备用内核：</p>
+<ul>
+<li>需要运行 <strong>64 KiB 页面大小的虚拟机</strong>。</li>
+<li>需要使用 <strong>PowerPC Nest (NX) 压缩</strong>。</li>
+<li>使用了 <strong>块大小大于 4 KiB 的文件系统</strong>（例如 Btrfs）。</li>
+</ul>
+<p>你可以用以下命令检查：</p>
+<ul>
+<li><p><strong>Btrfs</strong>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file -s device | grep -o <span class="string">'sectorsize [0-9]*'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>ext4</strong>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tune2fs -l device | grep <span class="string">'^Block size:'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>XFS</strong>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xfs_info device | grep -o <span class="string">'bsize=[0-9]*'</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>对于某些应用（如数据库服务器），64 KiB 页大小可能提供更好的性能，此时备用内核包可能更合适。</p>
+<p><strong>——4.7. 升级后的清理</strong></p>
+<p>推荐执行两个步骤来清理已升级的发行版：</p>
+<ol>
+<li><p>删除新出现的冗余或已废弃软件包（详见 <em>升级前保证有足够空间</em> 和 <em>Obsolete packages</em>）。建议检查它们使用的配置文件，并考虑使用 <strong>purge</strong> 移除以清理配置文件。另见 <em>清理已删除的软件包</em>。</p>
+</li>
+<li><p>升级 APT 源。APT 已弃用旧的仓库配置格式 —— 详见 <em>准备 APT sources 文件</em> 和 <code>sources.list(5)</code>。如果还未更新，可以使用新功能：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt modernize-sources</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong>——4.8. 清理自动安装的软件包</strong></p>
+<p>有些软件包可能是作为其他软件包的依赖被安装的。在新版本中，这些依赖关系可能已更改，apt 会提示删除这些自动安装的软件包。运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt autoremove</span><br></pre></td></tr></table></figure>
+<p><strong>——4.9. 已废弃的软件包</strong></p>
+<p>随着引入大量新软件包，<strong>trixie</strong> 也淘汰了一些旧软件包。这些软件包不会提供升级路径。</p>
+<p>虽然你仍然可以继续使用废弃的软件包，但 Debian 项目通常会在 <strong>trixie 发布后一年</strong> 内停止为其提供安全支持，在此期间也通常不再提供其他支持。建议尽可能替换为可用的替代方案。</p>
+<p>软件包被移除的原因可能包括：</p>
+<ul>
+<li>上游已不再维护</li>
+<li>没有 Debian 开发者愿意维护</li>
+<li>其功能已被其他软件取代</li>
+<li>或者因严重 bug 不适合 trixie</li>
+</ul>
+<p>在后一种情况中，软件包可能仍在 “unstable” 发行版中存在。</p>
+<p>你可以用以下命令列出并清除这些包：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt list <span class="string">'?obsolete'</span></span><br><span class="line">apt purge <span class="string">'?obsolete'</span></span><br></pre></td></tr></table></figure>
+<p>关于某个包被移除的原因，可以在 <strong>Debian Bug Tracking System</strong> 中查看相关的归档报告。</p>
+<p>关于 trixie 的废弃软件包列表，请参考 <em>Noteworthy obsolete packages</em>。</p>
+<p><strong>——4.9.1. 清理已删除的软件包</strong></p>
+<p>一般建议清理已删除的软件包，尤其是：</p>
+<ul>
+<li>在更早的升级中被移除的</li>
+<li>或第三方供应商提供的</li>
+</ul>
+<p>特别是旧的 <strong>init.d 脚本</strong> 可能会引起问题。</p>
+<p>⚠️ 注意：清理软件包时会删除其日志文件，如有需要，请提前备份。</p>
+<p>列出可能残留配置文件的已删除软件包：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt list <span class="string">'?config-files'</span></span><br></pre></td></tr></table></figure>
+<p>一键清理：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt purge <span class="string">'?config-files'</span></span><br></pre></td></tr></table></figure>
+<p><strong>——4.9.2. 过渡性空包 (Transitional dummy packages)</strong></p>
+<p>某些 bookworm 软件包在 trixie 中被 <strong>过渡性空包</strong> 替代。它们是空占位符，用来简化升级。例如，一个原本是单一软件包的应用，在新版本中被拆分成多个软件包，那么旧包名就会对应一个空包，它依赖于新软件包，确保升级顺利进行。</p>
+<p>安装完成后，可以安全地删除这些冗余空包。</p>
+<p>这些空包的描述中通常会说明用途。但并不完全统一，例如有些空包是为了保留，以拉取一个完整软件套件，或者跟踪某个程序的最新版本。</p>
+<blockquote>
+<p><strong><a href="https://www.debian.org/releases/trixie/release-notes/upgrading.html#id1" target="_blank" rel="noopener">[1]</a></strong> 如果 <code>debconf</code> 的优先级设置得过高，你可能会阻止配置提示，但依赖默认答案（而这些答案并不适用于你的系统）的服务将无法启动。</p>
+<p><strong><a href="https://www.debian.org/releases/trixie/release-notes/upgrading.html#id2" target="_blank" rel="noopener">[2]</a></strong> 例如：DNS 或 DHCP 服务，尤其是在没有冗余或故障转移的情况下。在 DHCP 的场景中，如果租约时间小于升级过程所需的时间，最终用户可能会被断开网络连接。</p>
+<p><strong><a href="https://www.debian.org/releases/trixie/release-notes/upgrading.html#id3" target="_blank" rel="noopener">[3]</a></strong> 可以通过在启动参数中添加 <code>panic=0</code> 来禁用此功能。</p>
+<p><strong><a href="https://www.debian.org/releases/trixie/release-notes/upgrading.html#id6" target="_blank" rel="noopener">[4]</a></strong> Debian 的软件包管理系统通常不允许某个软件包移除或替换属于另一个软件包的文件，除非它被定义为替换该软件包。</p>
+<p><strong><a href="https://www.debian.org/releases/trixie/release-notes/upgrading.html#id11" target="_blank" rel="noopener">[5]</a></strong> 或者只要在此期间没有其他版本发布即可。通常，在任何给定时间里，只有两个稳定版本会被支持。</p>
+</blockquote>
+<h2 id="给新用户有关不破坏其Debian系统的建议"><a href="#给新用户有关不破坏其Debian系统的建议" class="headerlink" title="给新用户有关不破坏其Debian系统的建议"></a>给新用户有关不破坏其Debian系统的建议</h2><blockquote>
 <p>来源：<a href="https://wiki.debian.org/DontBreakDebian" target="_blank" rel="noopener">https://wiki.debian.org/DontBreakDebian</a></p>
 </blockquote>
 <p>Debian是一个强大而可靠的系统，但是具有root访问权限的用户可以进行所需的任何更改。这样，新用户很容易通过不采用Debian方式来破坏系统。此页面列出了新用户常犯的错误。可以安全地完成此处列出的某些操作，但前提是您有足够的经验来知道在出现问题时如何修复系统。</p>
@@ -2857,7 +3213,7 @@
 <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">sudo systemctl restart openmeetings</span></span><br></pre></td></tr></table></figure>
 <p>现在，您可以  <code>https://meetings.example.com</code>  使用自己喜欢的Web浏览器浏览并登录并使用该应用程序。</p>
 <p>恭喜，您的服务器上现已安装了Apache OpenMeetings。您可以邀请您的朋友并开始使用OpenMeetings进行在线会议。</p>
-
+<h5 id=""><a href="#" class="headerlink" title=" "></a> </h5>
 
         <hr>
         <!-- Pager -->
@@ -2982,7 +3338,7 @@
         <strong class="toc-title">Contents</strong>
         
           
-            <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#CIVICCCCC-LTD"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">CIVICCCCC.LTD</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Debian-org"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Debian.org</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#给新用户有关不破坏其Debian系统的建议"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">给新用户有关不破坏其Debian系统的建议</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#System-rescue-org"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">System-rescue.org</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#基本使用方法"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">基本使用方法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#引导系统急救"><span class="toc-nav-number">3.1.1.</span> <span class="toc-nav-text">引导系统急救</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#将System-Rescue安装在系统盘"><span class="toc-nav-number">3.1.2.</span> <span class="toc-nav-text">将System Rescue安装在系统盘</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#GPT分区模式"><span class="toc-nav-number">3.1.3.</span> <span class="toc-nav-text">GPT分区模式</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#开始使用"><span class="toc-nav-number">3.1.4.</span> <span class="toc-nav-text">开始使用</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#网络配置与应用程序"><span class="toc-nav-number">3.1.5.</span> <span class="toc-nav-text">网络配置与应用程序</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#挂载NTFS磁盘"><span class="toc-nav-number">3.1.6.</span> <span class="toc-nav-text">挂载NTFS磁盘</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#在串行控制台上启动"><span class="toc-nav-number">3.1.7.</span> <span class="toc-nav-text">在串行控制台上启动</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#在U盘上安装-SystemRescue"><span class="toc-nav-number">3.1.8.</span> <span class="toc-nav-text">在U盘上安装 SystemRescue</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#系统急救镜像内置工具"><span class="toc-nav-number">3.1.9.</span> <span class="toc-nav-text">系统急救镜像内置工具</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#进阶使用方法"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">进阶使用方法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#刻录可启动的System-Rescue-DVD光盘"><span class="toc-nav-number">3.2.1.</span> <span class="toc-nav-text">刻录可启动的System Rescue DVD光盘</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#使用-pacman-安装额外的软件包"><span class="toc-nav-number">3.2.2.</span> <span class="toc-nav-text">使用 pacman 安装额外的软件包</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#使用-yay-从-AUR-安装额外的包"><span class="toc-nav-number">3.2.3.</span> <span class="toc-nav-text">使用 yay 从 AUR 安装额外的包</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#使用YAML配置System-Rescue"><span class="toc-nav-number">3.2.4.</span> <span class="toc-nav-text">使用YAML配置System Rescue</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#使用-YAML-文件配置-SystemRescue：sysconfig-字段范围"><span class="toc-nav-number">3.2.5.</span> <span class="toc-nav-text">使用 YAML 文件配置 SystemRescue：sysconfig 字段范围</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#让您自己的程序接管用户交互的虚拟终端：autoterminal"><span class="toc-nav-number">3.2.6.</span> <span class="toc-nav-text">让您自己的程序接管用户交互的虚拟终端：autoterminal</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#当图形桌面出现时启动程序：gui-autostart"><span class="toc-nav-number">3.2.7.</span> <span class="toc-nav-text">当图形桌面出现时启动程序：gui_autostart</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#安全地删除数据"><span class="toc-nav-number">3.2.8.</span> <span class="toc-nav-text">安全地删除数据</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#使用rsync备份和传输数据"><span class="toc-nav-number">3.2.9.</span> <span class="toc-nav-text">使用rsync备份和传输数据</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#从无法启动的Windows计算机备份数据"><span class="toc-nav-number">3.2.10.</span> <span class="toc-nav-text">从无法启动的Windows计算机备份数据</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#自动运行自己的脚本"><span class="toc-nav-number">3.2.11.</span> <span class="toc-nav-text">自动运行自己的脚本</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#使用SystemRescueCd管理远程服务器"><span class="toc-nav-number">3.2.12.</span> <span class="toc-nav-text">使用SystemRescueCd管理远程服务器</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#引导损坏的linux系统"><span class="toc-nav-number">3.2.13.</span> <span class="toc-nav-text">引导损坏的linux系统</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#PXE网络启动"><span class="toc-nav-number">3.2.14.</span> <span class="toc-nav-text">PXE网络启动</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#自定义SYSTEMRESCUE模块"><span class="toc-nav-number">3.2.15.</span> <span class="toc-nav-text">自定义SYSTEMRESCUE模块</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#使用Backing-Store持久化储存你的更改"><span class="toc-nav-number">3.2.16.</span> <span class="toc-nav-text">使用Backing Store持久化储存你的更改</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#管理脚本"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">管理脚本</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#sysrescue-customize：自定义-SystemRescue-ISO-映像"><span class="toc-nav-number">3.3.1.</span> <span class="toc-nav-text">sysrescue-customize：自定义 SystemRescue ISO 映像</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#mountall：挂载所有磁盘和卷"><span class="toc-nav-number">3.3.2.</span> <span class="toc-nav-text">mountall：挂载所有磁盘和卷</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Reverse-ssh：访问在NAT之后运行的SystemRescue主机的SSH"><span class="toc-nav-number">3.3.3.</span> <span class="toc-nav-text">Reverse_ssh：访问在NAT之后运行的SystemRescue主机的SSH</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#LVM（逻辑卷管理器）"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">LVM（逻辑卷管理器）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#LVM概述"><span class="toc-nav-number">3.4.1.</span> <span class="toc-nav-text">LVM概述</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#逻辑卷管理器LVM的工作方式"><span class="toc-nav-number">3.4.2.</span> <span class="toc-nav-text">逻辑卷管理器LVM的工作方式</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#从LVM卷引导Linux"><span class="toc-nav-number">3.4.3.</span> <span class="toc-nav-text">从LVM卷引导Linux</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#将Linux根文件系统移至LVM"><span class="toc-nav-number">3.4.4.</span> <span class="toc-nav-text">将Linux根文件系统移至LVM</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#使用LVM进行一致的备份"><span class="toc-nav-number">3.4.5.</span> <span class="toc-nav-text">使用LVM进行一致的备份</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#磁盘分区"><span class="toc-nav-number">3.5.</span> <span class="toc-nav-text">磁盘分区</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#磁盘分区介绍"><span class="toc-nav-number">3.5.1.</span> <span class="toc-nav-text">磁盘分区介绍</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#分区属性（标识符、标志、名称）"><span class="toc-nav-number">3.5.2.</span> <span class="toc-nav-text">分区属性（标识符、标志、名称）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#标准分区工具"><span class="toc-nav-number">3.5.3.</span> <span class="toc-nav-text">标准分区工具</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#GPT-新的磁盘布局"><span class="toc-nav-number">3.5.4.</span> <span class="toc-nav-text">GPT 新的磁盘布局</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Grub-引导阶段"><span class="toc-nav-number">3.5.5.</span> <span class="toc-nav-text">Grub 引导阶段</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#修复损坏的-Grub"><span class="toc-nav-number">3.5.6.</span> <span class="toc-nav-text">修复损坏的 Grub</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Linux网络"><span class="toc-nav-number">3.6.</span> <span class="toc-nav-text">Linux网络</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Vultr-com"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Vultr.com</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#UFW快速入门指南"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">UFW快速入门指南</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#iptables快速入门指南"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">iptables快速入门指南</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#在Nginx上将HTTP请求重定向到HTTPS"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">在Nginx上将HTTP请求重定向到HTTPS</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Jitsi部署"><span class="toc-nav-number">4.4.</span> <span class="toc-nav-text">Jitsi部署</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#在Ubuntu-20-04-LTS上安装Jitsi-Meet"><span class="toc-nav-number">4.4.1.</span> <span class="toc-nav-text">在Ubuntu 20.04 LTS上安装Jitsi Meet</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#一键部署Jitsi"><span class="toc-nav-number">4.4.2.</span> <span class="toc-nav-text">一键部署Jitsi</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Ubuntu-16-04安装Openmeetings"><span class="toc-nav-number">4.5.</span> <span class="toc-nav-text">Ubuntu 16-04安装Openmeetings</span></a></li></ol></li></ol>
+            <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#CIVICCCCC-LTD"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">CIVICCCCC.LTD</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Debian-org"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Debian.org</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Debian12升级到Debian13"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">Debian12升级到Debian13</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-4-5-最小化系统升级"><span class="toc-nav-number">2.1.1.</span> <span class="toc-nav-text">4.4.5. 最小化系统升级</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-4-6-升级系统"><span class="toc-nav-number">2.1.2.</span> <span class="toc-nav-text">4.4.6. 升级系统</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#——4-5-6-控制台会话切换"><span class="toc-nav-number">2.1.2.1.</span> <span class="toc-nav-text">——4.5.6. 控制台会话切换</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#给新用户有关不破坏其Debian系统的建议"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">给新用户有关不破坏其Debian系统的建议</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#System-rescue-org"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">System-rescue.org</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#基本使用方法"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">基本使用方法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#引导系统急救"><span class="toc-nav-number">3.1.1.</span> <span class="toc-nav-text">引导系统急救</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#将System-Rescue安装在系统盘"><span class="toc-nav-number">3.1.2.</span> <span class="toc-nav-text">将System Rescue安装在系统盘</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#GPT分区模式"><span class="toc-nav-number">3.1.3.</span> <span class="toc-nav-text">GPT分区模式</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#开始使用"><span class="toc-nav-number">3.1.4.</span> <span class="toc-nav-text">开始使用</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#网络配置与应用程序"><span class="toc-nav-number">3.1.5.</span> <span class="toc-nav-text">网络配置与应用程序</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#挂载NTFS磁盘"><span class="toc-nav-number">3.1.6.</span> <span class="toc-nav-text">挂载NTFS磁盘</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#在串行控制台上启动"><span class="toc-nav-number">3.1.7.</span> <span class="toc-nav-text">在串行控制台上启动</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#在U盘上安装-SystemRescue"><span class="toc-nav-number">3.1.8.</span> <span class="toc-nav-text">在U盘上安装 SystemRescue</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#系统急救镜像内置工具"><span class="toc-nav-number">3.1.9.</span> <span class="toc-nav-text">系统急救镜像内置工具</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#进阶使用方法"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">进阶使用方法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#刻录可启动的System-Rescue-DVD光盘"><span class="toc-nav-number">3.2.1.</span> <span class="toc-nav-text">刻录可启动的System Rescue DVD光盘</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#使用-pacman-安装额外的软件包"><span class="toc-nav-number">3.2.2.</span> <span class="toc-nav-text">使用 pacman 安装额外的软件包</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#使用-yay-从-AUR-安装额外的包"><span class="toc-nav-number">3.2.3.</span> <span class="toc-nav-text">使用 yay 从 AUR 安装额外的包</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#使用YAML配置System-Rescue"><span class="toc-nav-number">3.2.4.</span> <span class="toc-nav-text">使用YAML配置System Rescue</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#使用-YAML-文件配置-SystemRescue：sysconfig-字段范围"><span class="toc-nav-number">3.2.5.</span> <span class="toc-nav-text">使用 YAML 文件配置 SystemRescue：sysconfig 字段范围</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#让您自己的程序接管用户交互的虚拟终端：autoterminal"><span class="toc-nav-number">3.2.6.</span> <span class="toc-nav-text">让您自己的程序接管用户交互的虚拟终端：autoterminal</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#当图形桌面出现时启动程序：gui-autostart"><span class="toc-nav-number">3.2.7.</span> <span class="toc-nav-text">当图形桌面出现时启动程序：gui_autostart</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#安全地删除数据"><span class="toc-nav-number">3.2.8.</span> <span class="toc-nav-text">安全地删除数据</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#使用rsync备份和传输数据"><span class="toc-nav-number">3.2.9.</span> <span class="toc-nav-text">使用rsync备份和传输数据</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#从无法启动的Windows计算机备份数据"><span class="toc-nav-number">3.2.10.</span> <span class="toc-nav-text">从无法启动的Windows计算机备份数据</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#自动运行自己的脚本"><span class="toc-nav-number">3.2.11.</span> <span class="toc-nav-text">自动运行自己的脚本</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#使用SystemRescueCd管理远程服务器"><span class="toc-nav-number">3.2.12.</span> <span class="toc-nav-text">使用SystemRescueCd管理远程服务器</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#引导损坏的linux系统"><span class="toc-nav-number">3.2.13.</span> <span class="toc-nav-text">引导损坏的linux系统</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#PXE网络启动"><span class="toc-nav-number">3.2.14.</span> <span class="toc-nav-text">PXE网络启动</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#自定义SYSTEMRESCUE模块"><span class="toc-nav-number">3.2.15.</span> <span class="toc-nav-text">自定义SYSTEMRESCUE模块</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#使用Backing-Store持久化储存你的更改"><span class="toc-nav-number">3.2.16.</span> <span class="toc-nav-text">使用Backing Store持久化储存你的更改</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#管理脚本"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">管理脚本</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#sysrescue-customize：自定义-SystemRescue-ISO-映像"><span class="toc-nav-number">3.3.1.</span> <span class="toc-nav-text">sysrescue-customize：自定义 SystemRescue ISO 映像</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#mountall：挂载所有磁盘和卷"><span class="toc-nav-number">3.3.2.</span> <span class="toc-nav-text">mountall：挂载所有磁盘和卷</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Reverse-ssh：访问在NAT之后运行的SystemRescue主机的SSH"><span class="toc-nav-number">3.3.3.</span> <span class="toc-nav-text">Reverse_ssh：访问在NAT之后运行的SystemRescue主机的SSH</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#LVM（逻辑卷管理器）"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">LVM（逻辑卷管理器）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#LVM概述"><span class="toc-nav-number">3.4.1.</span> <span class="toc-nav-text">LVM概述</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#逻辑卷管理器LVM的工作方式"><span class="toc-nav-number">3.4.2.</span> <span class="toc-nav-text">逻辑卷管理器LVM的工作方式</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#从LVM卷引导Linux"><span class="toc-nav-number">3.4.3.</span> <span class="toc-nav-text">从LVM卷引导Linux</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#将Linux根文件系统移至LVM"><span class="toc-nav-number">3.4.4.</span> <span class="toc-nav-text">将Linux根文件系统移至LVM</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#使用LVM进行一致的备份"><span class="toc-nav-number">3.4.5.</span> <span class="toc-nav-text">使用LVM进行一致的备份</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#磁盘分区"><span class="toc-nav-number">3.5.</span> <span class="toc-nav-text">磁盘分区</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#磁盘分区介绍"><span class="toc-nav-number">3.5.1.</span> <span class="toc-nav-text">磁盘分区介绍</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#分区属性（标识符、标志、名称）"><span class="toc-nav-number">3.5.2.</span> <span class="toc-nav-text">分区属性（标识符、标志、名称）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#标准分区工具"><span class="toc-nav-number">3.5.3.</span> <span class="toc-nav-text">标准分区工具</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#GPT-新的磁盘布局"><span class="toc-nav-number">3.5.4.</span> <span class="toc-nav-text">GPT 新的磁盘布局</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Grub-引导阶段"><span class="toc-nav-number">3.5.5.</span> <span class="toc-nav-text">Grub 引导阶段</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#修复损坏的-Grub"><span class="toc-nav-number">3.5.6.</span> <span class="toc-nav-text">修复损坏的 Grub</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Linux网络"><span class="toc-nav-number">3.6.</span> <span class="toc-nav-text">Linux网络</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Vultr-com"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Vultr.com</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#UFW快速入门指南"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">UFW快速入门指南</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#iptables快速入门指南"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">iptables快速入门指南</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#在Nginx上将HTTP请求重定向到HTTPS"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">在Nginx上将HTTP请求重定向到HTTPS</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Jitsi部署"><span class="toc-nav-number">4.4.</span> <span class="toc-nav-text">Jitsi部署</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#在Ubuntu-20-04-LTS上安装Jitsi-Meet"><span class="toc-nav-number">4.4.1.</span> <span class="toc-nav-text">在Ubuntu 20.04 LTS上安装Jitsi Meet</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#一键部署Jitsi"><span class="toc-nav-number">4.4.2.</span> <span class="toc-nav-text">一键部署Jitsi</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Ubuntu-16-04安装Openmeetings"><span class="toc-nav-number">4.5.</span> <span class="toc-nav-text">Ubuntu 16-04安装Openmeetings</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-number">4.5.0.0.1.</span> <span class="toc-nav-text"> </span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
           
         
         </div>

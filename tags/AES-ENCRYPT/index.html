@@ -155,6 +155,13 @@
 
           
           <li>
+            <a href="/rmshadows/about/">About</a>
+          </li>
+          
+          
+
+          
+          <li>
             <a href="/rmshadows/archive/">Archives</a>
           </li>
           
@@ -163,13 +170,6 @@
           
           <li>
             <a href="/rmshadows/categories/">Categories</a>
-          </li>
-          
-          
-
-          
-          <li>
-            <a href="/rmshadows/about/">About</a>
           </li>
           
           
@@ -602,21 +602,6 @@
           <li>
             12-03
             <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/rmshadows/2020/Bilibili-navigation/" style="color: #0085a1">
-              <span>
-                My Bilibili navigation
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            12-03
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
             <a href="/rmshadows/2020/Debian-Server/" style="color: #0085a1">
               <span>
                 Debian Server
@@ -889,9 +874,9 @@
     sidebar-container
 ">
     
-        <!--   -->
-<h5><a href="/rmshadows/">VISITORS</a></h5>
-
+        <!--  <% if (site.posts.length){ %> -->
+<h5><a href="<%= config.root %>">VISITORS</a></h5>
+<% if (config.busuanzi){ %>
 <div class="widget">
   <span>
     Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
@@ -901,8 +886,8 @@
     <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
   </span>
 </div>
-
-<!--   -->
+<% } %>
+<!--  <% } %> -->
 
         <hr>
     
@@ -926,6 +911,10 @@
     
     
     
+    <a href="/rmshadows/tags/#President XiJinping&#39;s The Thought on Socialism with Chinese Characteristics for a New Era" title="President XiJinping&#39;s The Thought on Socialism with Chinese Characteristics for a New Era" rel="1">President XiJinping&#39;s The Thought on Socialism with Chinese Characteristics for a New Era</a>
+    
+    
+    
     <a href="/rmshadows/tags/#Mao Zedong Thought" title="Mao Zedong Thought" rel="1">Mao Zedong Thought</a>
     
     
@@ -939,10 +928,6 @@
     
     
     <a href="/rmshadows/tags/#HuJintao&#39;s Scientific outlook on Development" title="HuJintao&#39;s Scientific outlook on Development" rel="1">HuJintao&#39;s Scientific outlook on Development</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#President XiJinping&#39;s The Thought on Socialism with Chinese Characteristics for a New Era" title="President XiJinping&#39;s The Thought on Socialism with Chinese Characteristics for a New Era" rel="1">President XiJinping&#39;s The Thought on Socialism with Chinese Characteristics for a New Era</a>
     
     
     
@@ -962,7 +947,7 @@
     
     
     
-    <a href="/rmshadows/tags/#Daily" title="Daily" rel="8">Daily</a>
+    <a href="/rmshadows/tags/#Daily" title="Daily" rel="7">Daily</a>
     
     
     
@@ -982,15 +967,11 @@
     
     
     
-    <a href="/rmshadows/tags/#Java" title="Java" rel="1">Java</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#Linux Command Guiding" title="Linux Command Guiding" rel="1">Linux Command Guiding</a>
-    
-    
-    
     <a href="/rmshadows/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife" rel="1">Hexo-Theme-LiveMyLife</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Java" title="Java" rel="1">Java</a>
     
     
     
@@ -1014,15 +995,23 @@
     
     
     
-    <a href="/rmshadows/tags/#PEncoder" title="PEncoder" rel="1">PEncoder</a>
+    <a href="/rmshadows/tags/#Linux Command Guiding" title="Linux Command Guiding" rel="1">Linux Command Guiding</a>
     
     
     
-    <a href="/rmshadows/tags/#Password Manager" title="Password Manager" rel="1">Password Manager</a>
+    <a href="/rmshadows/tags/#Python3" title="Python3" rel="1">Python3</a>
     
     
     
-    <a href="/rmshadows/tags/#AES ENCRYPT" title="AES ENCRYPT" rel="1">AES ENCRYPT</a>
+    <a href="/rmshadows/tags/#Python Packages" title="Python Packages" rel="1">Python Packages</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Updates" title="Updates" rel="1">Updates</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Moment" title="Moment" rel="1">Moment</a>
     
     
     
@@ -1034,15 +1023,15 @@
     
     
     
-    <a href="/rmshadows/tags/#Updates" title="Updates" rel="1">Updates</a>
+    <a href="/rmshadows/tags/#PEncoder" title="PEncoder" rel="1">PEncoder</a>
     
     
     
-    <a href="/rmshadows/tags/#Linux Shell" title="Linux Shell" rel="1">Linux Shell</a>
+    <a href="/rmshadows/tags/#Password Manager" title="Password Manager" rel="1">Password Manager</a>
     
     
     
-    <a href="/rmshadows/tags/#Bash" title="Bash" rel="1">Bash</a>
+    <a href="/rmshadows/tags/#AES ENCRYPT" title="AES ENCRYPT" rel="1">AES ENCRYPT</a>
     
     
     
@@ -1066,15 +1055,11 @@
     
     
     
-    <a href="/rmshadows/tags/#Python3" title="Python3" rel="1">Python3</a>
+    <a href="/rmshadows/tags/#Linux Shell" title="Linux Shell" rel="1">Linux Shell</a>
     
     
     
-    <a href="/rmshadows/tags/#Python Packages" title="Python Packages" rel="1">Python Packages</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#Moment" title="Moment" rel="1">Moment</a>
+    <a href="/rmshadows/tags/#Bash" title="Bash" rel="1">Bash</a>
     
     
     
@@ -1115,10 +1100,6 @@
     
     
     <a href="/rmshadows/tags/#Firewall" title="Firewall" rel="1">Firewall</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#Biibili" title="Biibili" rel="1">Biibili</a>
     
     
     
@@ -1267,7 +1248,7 @@
     <!-- <h5>ARCHIVES</h5> -->
     <h5><a href="/rmshadows/archives/">ARCHIVES</a></h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2024/07/">七月 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2024/02/">二月 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2023/11/">十一月 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2023/06/">六月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2022/03/">三月 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/09/">九月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/01/">一月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/12/">十二月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/10/">十月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/09/">九月 2020</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/04/">四月 2020</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2024/07/">七月 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2024/02/">二月 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2023/11/">十一月 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2023/06/">六月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2022/03/">三月 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/09/">九月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/01/">一月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/12/">十二月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/10/">十月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/09/">九月 2020</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/04/">四月 2020</a><span class="archive-list-count">1</span></li></ul>
     </div>
 
 
