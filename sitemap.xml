@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://rmshadows.github.io/2022/Linux-Applications/</loc>
+    
+    <lastmod>2026-01-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://rmshadows.github.io/2024/OfficeNote/</loc>
+    
+    <lastmod>2025-12-27</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://rmshadows.github.io/2020/Toolkit/</loc>
+    
+    <lastmod>2025-12-27</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://rmshadows.github.io/2020/Why-Linux/</loc>
     
     <lastmod>2025-12-22</lastmod>
@@ -12,20 +33,6 @@
     <loc>https://rmshadows.github.io/2020/Linux-notes/</loc>
     
     <lastmod>2025-12-22</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://rmshadows.github.io/2020/Toolkit/</loc>
-    
-    <lastmod>2025-12-22</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://rmshadows.github.io/2022/Linux-Applications/</loc>
-    
-    <lastmod>2025-10-01</lastmod>
     
   </url>
   
@@ -58,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://rmshadows.github.io/about/index.html</loc>
+    <loc>https://rmshadows.github.io/archive/index.html</loc>
     
     <lastmod>2025-02-15</lastmod>
     
@@ -72,7 +79,7 @@
   </url>
   
   <url>
-    <loc>https://rmshadows.github.io/archive/index.html</loc>
+    <loc>https://rmshadows.github.io/about/index.html</loc>
     
     <lastmod>2025-02-15</lastmod>
     
@@ -115,13 +122,6 @@
   
   <url>
     <loc>https://rmshadows.github.io/2020/Recent-Updates/</loc>
-    
-    <lastmod>2025-02-15</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://rmshadows.github.io/2024/OfficeNote/</loc>
     
     <lastmod>2025-02-15</lastmod>
     
@@ -263,7 +263,7 @@
 
   <url>
     <loc>https://rmshadows.github.io/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -271,364 +271,364 @@
   
   <url>
     <loc>https://rmshadows.github.io/tags/Administrative-Professional-Ability-Test/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/tags/APAT/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/tags/Marxist-Philosophy/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/tags/Mao-Zedong-Thought/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/tags/Deng-Xiaoping-Theory/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/tags/JiangZemin-s-Three-Represents-important-Thought/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/tags/HuJintao-s-Scientific-outlook-on-Development/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/tags/President-XiJinping-s-The-Thought-on-Socialism-with-Chinese-Characteristics-for-a-New-Era/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/tags/Android/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/tags/Kotlin/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/tags/C/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/tags/C/</loc>
-    <lastmod>2025-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://rmshadows.github.io/tags/Hexo-Theme-LiveMyLife/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/tags/Hexo/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/tags/Gitee-Hexo%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/tags/Daily/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/tags/GNU-Linux/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/tags/Debian/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://rmshadows.github.io/tags/Hexo-Theme-LiveMyLife/</loc>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/tags/Java/</loc>
-    <lastmod>2025-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://rmshadows.github.io/tags/Linux-Command-Guiding/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/tags/Audiophile-Linux/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/tags/AP-Linux-Installation/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/tags/UEFI-GPT-Arch-Linux/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://rmshadows.github.io/tags/Linux-Command-Guiding/</loc>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/tags/Linux-Applications/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/tags/Linux-Software/</loc>
-    <lastmod>2025-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://rmshadows.github.io/tags/Moment/</loc>
-    <lastmod>2025-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://rmshadows.github.io/tags/PEncoder/</loc>
-    <lastmod>2025-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://rmshadows.github.io/tags/Password-Manager/</loc>
-    <lastmod>2025-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://rmshadows.github.io/tags/AES-ENCRYPT/</loc>
-    <lastmod>2025-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://rmshadows.github.io/tags/Linux-Shell/</loc>
-    <lastmod>2025-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://rmshadows.github.io/tags/Bash/</loc>
-    <lastmod>2025-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://rmshadows.github.io/tags/Text-Transmission/</loc>
-    <lastmod>2025-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://rmshadows.github.io/tags/Java-Swing/</loc>
-    <lastmod>2025-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://rmshadows.github.io/tags/HTML/</loc>
-    <lastmod>2025-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://rmshadows.github.io/tags/Website/</loc>
-    <lastmod>2025-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://rmshadows.github.io/tags/Web/</loc>
-    <lastmod>2025-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://rmshadows.github.io/tags/CSS/</loc>
-    <lastmod>2025-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://rmshadows.github.io/tags/JavaScript/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/tags/Updates/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://rmshadows.github.io/tags/Windows/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <loc>https://rmshadows.github.io/tags/PEncoder/</loc>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://rmshadows.github.io/tags/CMD/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <loc>https://rmshadows.github.io/tags/Password-Manager/</loc>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://rmshadows.github.io/tags/Bat/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <loc>https://rmshadows.github.io/tags/AES-ENCRYPT/</loc>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://rmshadows.github.io/tags/VB-Script/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <loc>https://rmshadows.github.io/tags/Moment/</loc>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://rmshadows.github.io/tags/HTML/</loc>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://rmshadows.github.io/tags/Website/</loc>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://rmshadows.github.io/tags/Web/</loc>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://rmshadows.github.io/tags/CSS/</loc>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://rmshadows.github.io/tags/JavaScript/</loc>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://rmshadows.github.io/tags/Text-Transmission/</loc>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://rmshadows.github.io/tags/Java-Swing/</loc>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://rmshadows.github.io/tags/Linux-Shell/</loc>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://rmshadows.github.io/tags/Bash/</loc>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/tags/Python3/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/tags/Python-Packages/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://rmshadows.github.io/tags/Windows/</loc>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://rmshadows.github.io/tags/CMD/</loc>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://rmshadows.github.io/tags/Bat/</loc>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://rmshadows.github.io/tags/VB-Script/</loc>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/tags/Toolkit/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/tags/Games/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/tags/Basic-Legal-Knowledge/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/tags/Server/</loc>
-    <lastmod>2025-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://rmshadows.github.io/tags/Veterinary/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/tags/Firewall/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://rmshadows.github.io/tags/Veterinary/</loc>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/tags/Article-translation/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -637,42 +637,42 @@
   
   <url>
     <loc>https://rmshadows.github.io/categories/Administrative-Professional-Ability-Test/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/categories/Notes/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/categories/Hows/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/categories/Daily/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/categories/Release/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://rmshadows.github.io/categories/Tools/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
