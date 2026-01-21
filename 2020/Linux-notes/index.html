@@ -155,14 +155,14 @@
 
           
           <li>
-            <a href="/rmshadows/archive/">Archives</a>
+            <a href="/rmshadows/about/">About</a>
           </li>
           
           
 
           
           <li>
-            <a href="/rmshadows/about/">About</a>
+            <a href="/rmshadows/archive/">Archives</a>
           </li>
           
           
@@ -281,7 +281,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">6.6k</span> In Total
+              Words <span class="post-count">6.7k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -575,7 +575,43 @@
 </ul>
 <h3 id="usb-modeswitch——控制“多状态”USB设备的模式"><a href="#usb-modeswitch——控制“多状态”USB设备的模式" class="headerlink" title="usb-modeswitch——控制“多状态”USB设备的模式"></a>usb-modeswitch——控制“多状态”USB设备的模式</h3><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">控制“多状态”USB设备的模式。一些新的USB设备有他们的专有Windows驱动板，其中大多数是WWAN和WLAN加密狗。当第一次插入时，它们就像一个闪存，并从那里开始安装Windows驱动程序。如果驱动程序已经安装，它会使存储设备消失，并显示一个新设备(主要是与调制解调器端口组合)。在Linux上，大多数情况下驱动程序作为内核模块可用，如“usbserial”或“option”。但是，设备最初默认绑定到“usb存储”。然后usb_modeswitch可以向设备发送提供的批量消息(很可能是一个大容量存储命令)，此消息必须通过分析Windows驱动程序的动作来确定。在某些情况下，USB控制命令用于切换。这些情况由自定义函数处理，不需要提供批量消息。通常，程序是通过一组针对许多已知设备的配置来分发的，这允许在插入时对设备进行完全自动的处理，这可以通过将usb_modeswitch与udev守护进程启动的包装器脚本usb_modeswitch_dispatcher结合起来实现。注意，usb_modeswitch本身没有特定的Linux依赖项。</span><br><span class="line">————————————————</span><br><span class="line">版权声明：本文为CSDN博主「佛戏人生」的原创文章，遵循<span class="keyword">CC</span> 4.0 <span class="keyword">BY</span>-<span class="keyword">SA</span>版权协议，转载请附上原文出处链接及本声明。</span><br><span class="line">原文链接：https:<span class="comment">//blog.csdn.net/qq_20677327/article/details/107950948</span></span><br></pre></td></tr></table></figure>
 <p>选项    含义<br>-h —help    显示选项摘要<br>-e —version    打印版本信息并退出<br>-v —default-vendor NUM    要查找的Vendor ID(强制)，通常以十六进制数字的形式给出(例如:0x12d1)。每个USB设备由一个编号被指定给供应商由USB协会和一个编号为各自的模型(Product ID)被供应商选择<br>-p —default-product NUM    要查找的Product ID(必须)<br>-V —target-vendor NUM    目标Vendor ID。当给定时，将搜索和检测最初为信息目的。如果成功检查(选项-s)是活动的，建议提供目标id(Vendor/Product)或目标类<br>-j —find-mbim    返回配置编号与MBIM接口和退出<br>-P —target-product NUM    目标Produnct ID<br>-b —bus-num NUM    总线编号<br>-g —device-num NUM    如果bus和设备号码被提供，在一个特定的USB端口上的一个特定设备的处理是有保证的，相比之下只使用USB ID。这是重要的，如果在一个系统上有多个类似的设备<br>-C —target-class NUM    根据USB规范的目标设备类。有些设备在切换成功后仍保留原来的Vendor/Product ID。为了防止它们再次被处理，可以检查device类。对于未切换的设备，它总是8(存储类)，对于切换的调制解调器，它通常是0xff(特定于供应商)。在复合模式中，观察第一个接口的类<br>-m —message-endpoint NUM    用于数据传输的特定端点。只作测试用途;通常端点由设备属性决定<br>-M —message-content STRING    作为交换命令发送的批量消息。以十六进制字符串的形式提供<br>-2, -3 —message-content2, —message-content3 STRING    作为交换命令发送的其他批量消息。以十六进制字符串的形式提供。当与大容量存储命令一起使用时，强烈建议set -need-response符合规范并避免可能出现的错误<br>-w —release-delay NUM    在发出所有批量消息之后，在释放接口之前等待NUM毫秒。对于旧系统上的某些调制解调器(特别是在弹出消息后)是必需的<br>-n —need-response    读取对大容量存储命令传输的响应(命令状态包装器)。如果没有读取响应，一些设备在切换时有困难;大多数设备会立即消失。当发送带有-2和-3的多个大容量存储命令时，可能需要设置此选项以避免传输错误<br>-r —response-endpoint NUM    如果选项-n是活动的，尝试从那里读取对存储命令的响应。只作测试用途;通常端点由设备属性决定<br>-K —std-eject    应用标准的SCSI序列“允许介质删除”和“弹出”。意味着- n。一个“消息”可以添加-M，它将在弹出序列之后传输<br>-d —detach-only    只需分离当前驱动程序。对于一些早期设备成功切换来说，这已经足够了。否则，这个特性可以用作特殊情况下的“手术刀”，比如将驱动程序从单独的接口中分离出来<br>-H —huawei-mode    发送华为老式设备使用的特殊控制信息<br>-J —huawei-new-mode    发送一个特定的批量消息，所有新的华为设备都使用<br>-S —sierra-mode    发送一个由Sierra设备使用的特殊控制消息<br>-G —gct-mode    发送GCT芯片组使用的特殊控制消息<br>-T —kobil-mode    发送Kobil设备使用的特殊控制信息<br>-N —sequans-mode    发送一个特殊的控制信息使用Sequans芯片组<br>-A —mobileaction-mode    发送一个由移动操作设备使用的特殊控制消息<br>-B —qisda-mode    发送一个特殊的控制消息使用Qisda设备<br>-E —quanta-mode    发送量子设备使用的特殊控制信息<br>-F —pantech-mode NUM    发送由Pantech设备使用的特殊控制信息。值NUM将作为“wValue”在控制消息中使用<br>-Z —blackberry-mode    发送一些较新的黑莓设备使用的特殊控制信息<br>-O —sony-mode    采用索尼爱立信设备使用的特殊序列。意味着选择——check-success<br>-L —cisco-mode    发送一系列由思科设备使用的批量消息<br>-R —reset-usb    发送USB复位命令到设备。可与任何切换方式组合或单独使用。它总是作为所有设备交互的最后一步来完成。很少有设备需要它来完成切换;除此之外，它在测试期间也很有用<br>-c —config-file FILENAME    使用特定的配置文件。如果在命令行参数中提供了任何ID或切换选项，则忽略该选项。在这种情况下，必须在命令行上提供所有强制参数<br>-f —long-config STRING    在配置文件语法中以命令行多行字符串的形式提供设备详细信息<br>-t —stdinput    在配置文件语法中从标准输入读取设备细节，例如从命令管道重定向(多行文本)<br>-Q —quiet    不要显示进度或错误消息<br>-W —verbose    在运行之前打印所有设置并显示libusb调试消息<br>-D —sysmode    稍微改变程序的行为。发出一条包含有效目标设备ID的成功消息，并发出系统slog通知。主要用于与包装器脚本集成<br>-s —check-success NUM    切换后，继续检查结果，直到最大。NUM秒。如果提供了目标id或目标类，则它们的出现表明一定成功。否则，原设备的断开被视为可能的证据<br>-I —no-inquire    不要从设备获取SCSI属性(默认为on)。为了正确识别不同的设备，存储部分的属性提供了有价值的信息。对于已知和受支持的设备来说，这是不需要的<br>-i —interface NUM    选择初始USB接口(默认为0)。仅用于测试目的<br>-u —configuration NUM    选择USB配置(应用于任何其他可能的切换操作之后)<br>-a —altsetting NUM    选择备用USB接口设置(切换后应用)。主要用于测试</p>
-<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><h3 id="Git常用命令"><a href="#Git常用命令" class="headerlink" title="Git常用命令"></a>Git常用命令</h3><p>Git新建分支推送远程</p>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><h3 id="Git常用命令"><a href="#Git常用命令" class="headerlink" title="Git常用命令"></a>Git常用命令</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>type</th>
+<th>用在什么时候</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>feat</td>
+<td>新功能 / 新能力</td>
+</tr>
+<tr>
+<td>fix</td>
+<td>修 bug</td>
+</tr>
+<tr>
+<td>perf</td>
+<td>性能 / 结构 / 内部优化</td>
+</tr>
+<tr>
+<td>style</td>
+<td>UI / 样式 / 动画 / 排版</td>
+</tr>
+<tr>
+<td>refactor</td>
+<td>重构（不加功能、不修 bug）</td>
+</tr>
+<tr>
+<td>chore</td>
+<td>构建、CI、依赖、杂项</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Git新建分支推送远程</p>
 <figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 新建分支</span></span><br><span class="line">git branch name</span><br><span class="line"><span class="meta"># 切换分支</span></span><br><span class="line">git <span class="keyword">switch</span> name</span><br><span class="line"><span class="meta"># 上面两天可以写成一句：</span></span><br><span class="line">git checkout -b name</span><br><span class="line"><span class="meta"># 推送远程</span></span><br><span class="line">git push --<span class="keyword">set</span>-upstream origin name</span><br></pre></td></tr></table></figure>
 <h4 id="Git删除远程分支"><a href="#Git删除远程分支" class="headerlink" title="Git删除远程分支"></a>Git删除远程分支</h4><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 删除本地分支</span></span><br><span class="line">git branch -d dev</span><br><span class="line"><span class="meta"># 删除远程分支</span></span><br><span class="line">git <span class="keyword">push</span> origin --<span class="keyword">delete</span> dev</span><br></pre></td></tr></table></figure>
 <h4 id="删除本地仓库中远程仓库已经不存在的分支"><a href="#删除本地仓库中远程仓库已经不存在的分支" class="headerlink" title="删除本地仓库中远程仓库已经不存在的分支"></a>删除本地仓库中远程仓库已经不存在的分支</h4><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用如下命令，查看远程分支、本地分支以及它们的对应关系 </span></span><br><span class="line">git remote <span class="keyword">show </span><span class="keyword">origin</span></span><br><span class="line"><span class="keyword"># </span>使用如下命令删除远程仓库已经不存在的分支 </span><br><span class="line">git remote prune <span class="keyword">origin</span></span><br><span class="line"><span class="keyword"># </span>删除远程分支</span><br><span class="line">git push <span class="keyword">origin </span>-d remotebranch</span><br></pre></td></tr></table></figure>
