@@ -871,9 +871,9 @@ Current Versi......
     sidebar-container
 ">
     
-        <!--  <% if (site.posts.length){ %> -->
-<h5><a href="<%= config.root %>">VISITORS</a></h5>
-<% if (config.busuanzi){ %>
+        <!--   -->
+<h5><a href="/rmshadows/">VISITORS</a></h5>
+
 <div class="widget">
   <span>
     Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
@@ -883,8 +883,8 @@ Current Versi......
     <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
   </span>
 </div>
-<% } %>
-<!--  <% } %> -->
+
+<!--   -->
 
         <hr>
     
@@ -908,18 +908,6 @@ Current Versi......
     
     
     
-    <a href="/rmshadows/tags/#President XiJinping&#39;s The Thought on Socialism with Chinese Characteristics for a New Era" title="President XiJinping&#39;s The Thought on Socialism with Chinese Characteristics for a New Era" rel="1">President XiJinping&#39;s The Thought on Socialism with Chinese Characteristics for a New Era</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#Android" title="Android" rel="2">Android</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#Kotlin" title="Kotlin" rel="1">Kotlin</a>
-    
-    
-    
     <a href="/rmshadows/tags/#Mao Zedong Thought" title="Mao Zedong Thought" rel="1">Mao Zedong Thought</a>
     
     
@@ -933,6 +921,18 @@ Current Versi......
     
     
     <a href="/rmshadows/tags/#HuJintao&#39;s Scientific outlook on Development" title="HuJintao&#39;s Scientific outlook on Development" rel="1">HuJintao&#39;s Scientific outlook on Development</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#President XiJinping&#39;s The Thought on Socialism with Chinese Characteristics for a New Era" title="President XiJinping&#39;s The Thought on Socialism with Chinese Characteristics for a New Era" rel="1">President XiJinping&#39;s The Thought on Socialism with Chinese Characteristics for a New Era</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Android" title="Android" rel="2">Android</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Kotlin" title="Kotlin" rel="1">Kotlin</a>
     
     
     
@@ -1024,6 +1024,10 @@ Current Versi......
     
     
     
+    <a href="/rmshadows/tags/#Updates" title="Updates" rel="1">Updates</a>
+    
+    
+    
     <a href="/rmshadows/tags/#Linux Shell" title="Linux Shell" rel="1">Linux Shell</a>
     
     
@@ -1081,10 +1085,6 @@ Current Versi......
     
     
     <a href="/rmshadows/tags/#VB Script" title="VB Script" rel="1">VB Script</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#Updates" title="Updates" rel="1">Updates</a>
     
     
     
@@ -1801,6 +1801,21 @@ https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
     <!-- <img src="https://rmshadows.github.io/rmshadows/img/icon_wechat.png" width="0" height="0" /> -->
     <!-- Migrate from head to bottom, no longer block render and still work -->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>
