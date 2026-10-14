@@ -65,6 +65,13 @@
   </url>
   
   <url>
+    <loc>https://civiccccc.ltd/2022/Shell-Notes/</loc>
+    
+    <lastmod>2026-10-14</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://civiccccc.ltd/2021/Text-Send-a-Crossplatform-text-transmission-tool/</loc>
     
     <lastmod>2026-10-14</lastmod>
@@ -72,14 +79,14 @@
   </url>
   
   <url>
-    <loc>https://civiccccc.ltd/2023/Research-on-the-Definition-of-Excessive-Rights-Protection-Behavior/</loc>
+    <loc>https://civiccccc.ltd/2026/Sci-Net-Lab/</loc>
     
     <lastmod>2026-10-14</lastmod>
     
   </url>
   
   <url>
-    <loc>https://civiccccc.ltd/2022/Shell-Notes/</loc>
+    <loc>https://civiccccc.ltd/2023/Research-on-the-Definition-of-Excessive-Rights-Protection-Behavior/</loc>
     
     <lastmod>2026-10-14</lastmod>
     
@@ -100,14 +107,14 @@
   </url>
   
   <url>
-    <loc>https://civiccccc.ltd/2024/OfficeNote/</loc>
+    <loc>https://civiccccc.ltd/2020/PEncoder-v2-1-has-released/</loc>
     
     <lastmod>2026-10-14</lastmod>
     
   </url>
   
   <url>
-    <loc>https://civiccccc.ltd/2020/PEncoder-v2-1-has-released/</loc>
+    <loc>https://civiccccc.ltd/2024/OfficeNote/</loc>
     
     <lastmod>2026-10-14</lastmod>
     
@@ -424,6 +431,13 @@
   </url>
   
   <url>
+    <loc>https://civiccccc.ltd/tags/Java/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://civiccccc.ltd/tags/Linux-Command-Guiding/</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>daily</changefreq>
@@ -501,6 +515,13 @@
   </url>
   
   <url>
+    <loc>https://civiccccc.ltd/tags/Notes/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://civiccccc.ltd/tags/Linux-Shell/</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>daily</changefreq>
@@ -509,27 +530,6 @@
   
   <url>
     <loc>https://civiccccc.ltd/tags/Bash/</loc>
-    <lastmod>2026-10-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://civiccccc.ltd/tags/Text-Transmission/</loc>
-    <lastmod>2026-10-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://civiccccc.ltd/tags/Java-Swing/</loc>
-    <lastmod>2026-10-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://civiccccc.ltd/tags/Java/</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -565,6 +565,20 @@
   
   <url>
     <loc>https://civiccccc.ltd/tags/JavaScript/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://civiccccc.ltd/tags/Text-Transmission/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://civiccccc.ltd/tags/Java-Swing/</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
