@@ -58,13 +58,6 @@
   </url>
   
   <url>
-    <loc>https://rmshadows.github.io/2021/Text-Send-a-Crossplatform-text-transmission-tool/</loc>
-    
-    <lastmod>2026-10-14</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://rmshadows.github.io/2024/Shorewall-Firewall/</loc>
     
     <lastmod>2026-10-14</lastmod>
@@ -79,14 +72,21 @@
   </url>
   
   <url>
-    <loc>https://rmshadows.github.io/2023/Research-on-the-Definition-of-Excessive-Rights-Protection-Behavior/</loc>
+    <loc>https://rmshadows.github.io/2021/Text-Send-a-Crossplatform-text-transmission-tool/</loc>
     
     <lastmod>2026-10-14</lastmod>
     
   </url>
   
   <url>
-    <loc>https://rmshadows.github.io/2022/Python-Notes/</loc>
+    <loc>https://rmshadows.github.io/2026/Sci-Net-Lab/</loc>
+    
+    <lastmod>2026-10-14</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://rmshadows.github.io/2023/Research-on-the-Definition-of-Excessive-Rights-Protection-Behavior/</loc>
     
     <lastmod>2026-10-14</lastmod>
     
@@ -100,7 +100,7 @@
   </url>
   
   <url>
-    <loc>https://rmshadows.github.io/2024/OfficeNote/</loc>
+    <loc>https://rmshadows.github.io/2022/Python-Notes/</loc>
     
     <lastmod>2026-10-14</lastmod>
     
@@ -108,6 +108,20 @@
   
   <url>
     <loc>https://rmshadows.github.io/2020/PEncoder-v2-1-has-released/</loc>
+    
+    <lastmod>2026-10-14</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://rmshadows.github.io/2024/OfficeNote/</loc>
+    
+    <lastmod>2026-10-14</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://rmshadows.github.io/2026/Mental-Math-Formulas/</loc>
     
     <lastmod>2026-10-14</lastmod>
     
@@ -128,7 +142,7 @@
   </url>
   
   <url>
-    <loc>https://rmshadows.github.io/2026/Mental-Math-Formulas/</loc>
+    <loc>https://rmshadows.github.io/2022/Linux-Applications/</loc>
     
     <lastmod>2026-10-14</lastmod>
     
@@ -136,13 +150,6 @@
   
   <url>
     <loc>https://rmshadows.github.io/2020/Linux-notes/</loc>
-    
-    <lastmod>2026-10-14</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://rmshadows.github.io/2022/Linux-Applications/</loc>
     
     <lastmod>2026-10-14</lastmod>
     
@@ -191,14 +198,14 @@
   </url>
   
   <url>
-    <loc>https://rmshadows.github.io/2022/C-Notes/</loc>
+    <loc>https://rmshadows.github.io/2023/CUPS-Notes/</loc>
     
     <lastmod>2026-10-14</lastmod>
     
   </url>
   
   <url>
-    <loc>https://rmshadows.github.io/2023/CUPS-Notes/</loc>
+    <loc>https://rmshadows.github.io/2022/C-Notes/</loc>
     
     <lastmod>2026-10-14</lastmod>
     
@@ -240,7 +247,7 @@
   </url>
   
   <url>
-    <loc>https://rmshadows.github.io/2020/APAT-Marxist-Philosophy/</loc>
+    <loc>https://rmshadows.github.io/2020/APAT-Basic-Legal-Knowledge/</loc>
     
     <lastmod>2026-10-14</lastmod>
     
@@ -254,7 +261,7 @@
   </url>
   
   <url>
-    <loc>https://rmshadows.github.io/2020/APAT-Basic-Legal-Knowledge/</loc>
+    <loc>https://rmshadows.github.io/2020/APAT-Marxist-Philosophy/</loc>
     
     <lastmod>2026-10-14</lastmod>
     
@@ -438,14 +445,14 @@
   </url>
   
   <url>
-    <loc>https://rmshadows.github.io/tags/Moment/</loc>
+    <loc>https://rmshadows.github.io/tags/Math/</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://rmshadows.github.io/tags/Math/</loc>
+    <loc>https://rmshadows.github.io/tags/Moment/</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -460,6 +467,27 @@
   
   <url>
     <loc>https://rmshadows.github.io/tags/Linux-Software/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://rmshadows.github.io/tags/PEncoder/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://rmshadows.github.io/tags/Password-Manager/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://rmshadows.github.io/tags/AES-ENCRYPT/</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -487,21 +515,7 @@
   </url>
   
   <url>
-    <loc>https://rmshadows.github.io/tags/PEncoder/</loc>
-    <lastmod>2026-10-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://rmshadows.github.io/tags/Password-Manager/</loc>
-    <lastmod>2026-10-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://rmshadows.github.io/tags/AES-ENCRYPT/</loc>
+    <loc>https://rmshadows.github.io/tags/Notes/</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
