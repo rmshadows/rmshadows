@@ -422,27 +422,127 @@
         
         <hr>
 
-        <!-- comments start -->
-        <!--修改--artalk-->
-<!-- 0.artalk安装代码 -->
+        <!-- COMMENTS start (no fragment cache: per-page artalk options) -->
+        <!-- Artalk / COMMENTS gate -->
 
-<!-- CSS -->
-<link href="https://civiccccc.ltd/artalk/dist/Artalk.css" rel="stylesheet" />
-<link href="https://civiccccc.ltd/artalk/dist/Artalk.css" rel="stylesheet" />
-<!-- JS -->
-<script src="https://civiccccc.ltd/artalk/dist/Artalk.js"></script>
-<!-- Artalk -->
-<div id="Comments"></div>
+
+<section id="comments-section" class="comments-section" aria-label="COMMENTS">
+  <h5 class="comments-heading">COMMENTS</h5>
+
+  
+  <div id="comments-gate" class="comments-gate">
+    
+    
+    <p class="comments-gate-hint">请输入‘hello’。</p>
+    
+    <div class="comments-gate-row">
+      <input type="password" id="comments-unlock-input" class="comments-unlock-input" autocomplete="off" placeholder="Access key">
+      <button type="button" id="comments-unlock-btn" class="comments-gate-btn">Unlock</button>
+    </div>
+    <p id="comments-unlock-error" class="comments-unlock-error" hidden>Wrong key.</p>
+    
+  </div>
+  
+
+  <div id="Comments" hidden></div>
+</section>
+
 <script>
-  Artalk.init({
-    el: '#Comments', // 绑定元素的 Selector
-    pageKey: 'https://civiccccc.ltd/2020/Career/', // 固定链接
-    pageTitle: '', // 页面标题 (留空自动获取)
-    server: 'https://civiccccc.ltd/artalk', // 后端地址
-    site: 'CIVICCCCC的博客', // 你的站点名
-  })
+(function () {
+  var cfg = {
+    css: "https://civiccccc.ltd/artalk/dist/Artalk.css",
+    js: "https://civiccccc.ltd/artalk/dist/Artalk.js",
+    server: "https://civiccccc.ltd/artalk",
+    site: "CIVICCCCC的博客",
+    pageKey: "https://civiccccc.ltd/2020/Career/",
+    unlock: "hello",
+    needGate: true
+  };
+  var loaded = false;
+  var inited = false;
+
+  function loadScript(src) {
+    return new Promise(function (resolve, reject) {
+      var el = document.createElement('script');
+      el.src = src;
+      el.onload = function () { resolve(); };
+      el.onerror = reject;
+      document.head.appendChild(el);
+    });
+  }
+
+  function ensureArtalk() {
+    if (loaded) return Promise.resolve();
+    loaded = true;
+    if (!document.querySelector('link[data-artalk-css]')) {
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = cfg.css;
+      link.setAttribute('data-artalk-css', '1');
+      document.head.appendChild(link);
+    }
+    if (window.Artalk) return Promise.resolve();
+    return loadScript(cfg.js);
+  }
+
+  function initArtalk() {
+    if (inited) return;
+    inited = true;
+    var box = document.getElementById('Comments');
+    if (box) box.hidden = false;
+    var gate = document.getElementById('comments-gate');
+    if (gate) gate.hidden = true;
+    ensureArtalk().then(function () {
+      Artalk.init({
+        el: '#Comments',
+        pageKey: cfg.pageKey,
+        pageTitle: '',
+        server: cfg.server,
+        site: cfg.site
+      });
+    }).catch(function (e) {
+      console.error('COMMENTS load failed', e);
+      inited = false;
+    });
+  }
+
+  if (!cfg.needGate) {
+    initArtalk();
+    return;
+  }
+
+  var unlockBtn = document.getElementById('comments-unlock-btn');
+  var expandBtn = document.getElementById('comments-expand-btn');
+  var input = document.getElementById('comments-unlock-input');
+  var err = document.getElementById('comments-unlock-error');
+
+  function tryUnlock() {
+    if (!cfg.unlock) {
+      initArtalk();
+      return;
+    }
+    var val = input ? input.value : '';
+    if (val === cfg.unlock) {
+      if (err) err.hidden = true;
+      initArtalk();
+    } else if (err) {
+      err.hidden = false;
+    }
+  }
+
+  if (unlockBtn) {
+    unlockBtn.addEventListener('click', tryUnlock);
+    if (input) {
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') tryUnlock();
+      });
+    }
+  }
+  if (expandBtn) {
+    expandBtn.addEventListener('click', function () { initArtalk(); });
+  }
+})();
 </script>
-<!-- artalk安装代码已完成 -->
 
 
 
@@ -462,7 +562,7 @@
 
 <!--修改--ISSO-->
 
-        <!-- comments end -->
+        <!-- COMMENTS end -->
         <hr>
 
       </div>
@@ -472,15 +572,15 @@
 
     
       <aside id="sidebar">
-        <!--div id="toc" class="toc-article"  style="display:none" -->
-        <div id="toc" class="toc-article">
-        <strong class="toc-title">Contents</strong>
         
-          
-            <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#前言"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#工作"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">工作</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#工作记录"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">工作记录</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Python辅助填充新检疫系统的表单-弃用"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">Python辅助填充新检疫系统的表单(弃用)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#文件列表"><span class="toc-nav-number">2.2.0.1.</span> <span class="toc-nav-text">文件列表</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#使用方法"><span class="toc-nav-number">2.2.0.2.</span> <span class="toc-nav-text">使用方法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#准备"><span class="toc-nav-number">2.2.0.2.1.</span> <span class="toc-nav-text">准备</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#自动化——重点"><span class="toc-nav-number">2.2.0.2.2.</span> <span class="toc-nav-text">自动化——重点</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#注意"><span class="toc-nav-number">2.2.0.2.3.</span> <span class="toc-nav-text">注意</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#开发过程"><span class="toc-nav-number">2.2.0.3.</span> <span class="toc-nav-text">开发过程</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#更新日志"><span class="toc-nav-number">2.2.0.4.</span> <span class="toc-nav-text">更新日志</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Python自动生成产品证Excel表格"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">Python自动生成产品证Excel表格</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#文件列表-1"><span class="toc-nav-number">2.3.0.1.</span> <span class="toc-nav-text">文件列表</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#使用方法-1"><span class="toc-nav-number">2.3.0.2.</span> <span class="toc-nav-text">使用方法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#准备-1"><span class="toc-nav-number">2.3.0.2.1.</span> <span class="toc-nav-text">准备</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#截屏"><span class="toc-nav-number">2.3.0.3.</span> <span class="toc-nav-text">截屏</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#更新日志-1"><span class="toc-nav-number">2.3.0.4.</span> <span class="toc-nav-text">更新日志</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Python导出月报表打印文档——Linux-Only"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">Python导出月报表打印文档——Linux Only</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#文件列表-2"><span class="toc-nav-number">2.4.0.1.</span> <span class="toc-nav-text">文件列表</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#使用方法-2"><span class="toc-nav-number">2.4.0.2.</span> <span class="toc-nav-text">使用方法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#准备-2"><span class="toc-nav-number">2.4.0.2.1.</span> <span class="toc-nav-text">准备</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#运行"><span class="toc-nav-number">2.4.0.2.2.</span> <span class="toc-nav-text">运行</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#更新日志-2"><span class="toc-nav-number">2.4.0.3.</span> <span class="toc-nav-text">更新日志</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Python导出生猪进场统计表"><span class="toc-nav-number">2.5.</span> <span class="toc-nav-text">Python导出生猪进场统计表</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#文件组成"><span class="toc-nav-number">2.5.0.1.</span> <span class="toc-nav-text">文件组成</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#更新日志-3"><span class="toc-nav-number">2.5.0.2.</span> <span class="toc-nav-text">更新日志</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#使用截屏"><span class="toc-nav-number">2.5.0.3.</span> <span class="toc-nav-text">使用截屏</span></a></li></ol></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#产地检疫"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">产地检疫</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#屠宰检疫"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">屠宰检疫</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#杂记"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">杂记</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#猪耳标"><span class="toc-nav-number">5.1.</span> <span class="toc-nav-text">猪耳标</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#法律法规s-amp-通知文件"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">法律法规s &amp; 通知文件</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#中华人民共和国农业法"><span class="toc-nav-number">6.1.</span> <span class="toc-nav-text">中华人民共和国农业法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第一章-总-则"><span class="toc-nav-number">6.1.1.</span> <span class="toc-nav-text">第一章　总　　则</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第二章-农业生产经营体制"><span class="toc-nav-number">6.1.2.</span> <span class="toc-nav-text">第二章　农业生产经营体制</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第三章-农业生产"><span class="toc-nav-number">6.1.3.</span> <span class="toc-nav-text">第三章　农业生产</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第四章-农产品流通与加工"><span class="toc-nav-number">6.1.4.</span> <span class="toc-nav-text">第四章　农产品流通与加工</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第五章-粮食安全"><span class="toc-nav-number">6.1.5.</span> <span class="toc-nav-text">第五章　粮食安全</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第六章-农业投入与支持保护"><span class="toc-nav-number">6.1.6.</span> <span class="toc-nav-text">第六章　农业投入与支持保护</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第七章-农业科技与农业教育"><span class="toc-nav-number">6.1.7.</span> <span class="toc-nav-text">第七章　农业科技与农业教育</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第八章-农业资源与农业环境保护"><span class="toc-nav-number">6.1.8.</span> <span class="toc-nav-text">第八章　农业资源与农业环境保护</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第九章-农民权益保护"><span class="toc-nav-number">6.1.9.</span> <span class="toc-nav-text">第九章　农民权益保护</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第十章-农村经济发展"><span class="toc-nav-number">6.1.10.</span> <span class="toc-nav-text">第十章　农村经济发展</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第十一章-执法监督"><span class="toc-nav-number">6.1.11.</span> <span class="toc-nav-text">第十一章　执法监督</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第十二章-法律责任"><span class="toc-nav-number">6.1.12.</span> <span class="toc-nav-text">第十二章　法律责任</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第十三章-附-则"><span class="toc-nav-number">6.1.13.</span> <span class="toc-nav-text">第十三章　附　　则</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#农业行政处罚程序规定"><span class="toc-nav-number">6.2.</span> <span class="toc-nav-text">农业行政处罚程序规定</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第一章-总-则-1"><span class="toc-nav-number">6.2.1.</span> <span class="toc-nav-text">第一章　总　　则</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第二章-农业行政处罚的管辖"><span class="toc-nav-number">6.2.2.</span> <span class="toc-nav-text">第二章　农业行政处罚的管辖</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第三章-农业行政处罚的决定"><span class="toc-nav-number">6.2.3.</span> <span class="toc-nav-text">第三章　农业行政处罚的决定</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#第一节-简易程序"><span class="toc-nav-number">6.2.3.1.</span> <span class="toc-nav-text">第一节　简易程序</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#第二节-一般程序"><span class="toc-nav-number">6.2.3.2.</span> <span class="toc-nav-text">第二节　一般程序</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#第三节-听证程序"><span class="toc-nav-number">6.2.3.3.</span> <span class="toc-nav-text">第三节　听证程序</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第四章-执法文书的送达和处罚决定的执行"><span class="toc-nav-number">6.2.4.</span> <span class="toc-nav-text">第四章　执法文书的送达和处罚决定的执行</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第五章-结案和立卷归档"><span class="toc-nav-number">6.2.5.</span> <span class="toc-nav-text">第五章　结案和立卷归档</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第六章-附-则"><span class="toc-nav-number">6.2.6.</span> <span class="toc-nav-text">第六章　附　　则</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#中华人民共和国农产品质量安全法"><span class="toc-nav-number">6.3.</span> <span class="toc-nav-text">中华人民共和国农产品质量安全法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第一章-总-则-2"><span class="toc-nav-number">6.3.1.</span> <span class="toc-nav-text">第一章　总　　则</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第二章-农产品质量安全标准"><span class="toc-nav-number">6.3.2.</span> <span class="toc-nav-text">第二章　农产品质量安全标准</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第三章-农产品产地"><span class="toc-nav-number">6.3.3.</span> <span class="toc-nav-text">第三章　农产品产地</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第四章-农产品生产"><span class="toc-nav-number">6.3.4.</span> <span class="toc-nav-text">第四章　农产品生产</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第五章-农产品包装和标识"><span class="toc-nav-number">6.3.5.</span> <span class="toc-nav-text">第五章　农产品包装和标识</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第六章-监督检查"><span class="toc-nav-number">6.3.6.</span> <span class="toc-nav-text">第六章　监督检查</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第七章-法律责任"><span class="toc-nav-number">6.3.7.</span> <span class="toc-nav-text">第七章　法律责任</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第八章-附-则"><span class="toc-nav-number">6.3.8.</span> <span class="toc-nav-text">第八章　附　　则</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#中华人民共和国动物防疫法"><span class="toc-nav-number">6.4.</span> <span class="toc-nav-text">中华人民共和国动物防疫法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第一章-总-则-3"><span class="toc-nav-number">6.4.1.</span> <span class="toc-nav-text">第一章　总　　则</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第二章-动物疫病的预防"><span class="toc-nav-number">6.4.2.</span> <span class="toc-nav-text">第二章　动物疫病的预防</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第三章-动物疫情的报告、通报和公布"><span class="toc-nav-number">6.4.3.</span> <span class="toc-nav-text">第三章　动物疫情的报告、通报和公布</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第四章-动物疫病的控制和扑灭"><span class="toc-nav-number">6.4.4.</span> <span class="toc-nav-text">第四章　动物疫病的控制和扑灭</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第五章-动物和动物产品的检疫"><span class="toc-nav-number">6.4.5.</span> <span class="toc-nav-text">第五章　动物和动物产品的检疫</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第六章-动物诊疗"><span class="toc-nav-number">6.4.6.</span> <span class="toc-nav-text">第六章　动物诊疗</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第七章-监督管理"><span class="toc-nav-number">6.4.7.</span> <span class="toc-nav-text">第七章　监督管理</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第八章-保障措施"><span class="toc-nav-number">6.4.8.</span> <span class="toc-nav-text">第八章　保障措施</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第九章-法律责任"><span class="toc-nav-number">6.4.9.</span> <span class="toc-nav-text">第九章　法律责任</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第十章-附-则"><span class="toc-nav-number">6.4.10.</span> <span class="toc-nav-text">第十章　附　　则</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#动物检疫管理办法"><span class="toc-nav-number">6.5.</span> <span class="toc-nav-text">动物检疫管理办法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第一章-总-则-4"><span class="toc-nav-number">6.5.1.</span> <span class="toc-nav-text">第一章 总 则</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第二章-检疫申报"><span class="toc-nav-number">6.5.2.</span> <span class="toc-nav-text">第二章 检疫申报</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第三章-产地检疫"><span class="toc-nav-number">6.5.3.</span> <span class="toc-nav-text">第三章 产地检疫</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第四章-屠宰检疫"><span class="toc-nav-number">6.5.4.</span> <span class="toc-nav-text">第四章 屠宰检疫</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第五章-水产苗种产地检疫"><span class="toc-nav-number">6.5.5.</span> <span class="toc-nav-text">第五章 水产苗种产地检疫</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第六章-无规定动物疫病区动物检疫"><span class="toc-nav-number">6.5.6.</span> <span class="toc-nav-text">第六章 无规定动物疫病区动物检疫</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第七章-乳用种用动物检疫审批"><span class="toc-nav-number">6.5.7.</span> <span class="toc-nav-text">第七章 乳用种用动物检疫审批</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第八章-检疫监督"><span class="toc-nav-number">6.5.8.</span> <span class="toc-nav-text">第八章 检疫监督</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第九章-罚-则"><span class="toc-nav-number">6.5.9.</span> <span class="toc-nav-text">第九章 罚 则</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第十章-附-则-1"><span class="toc-nav-number">6.5.10.</span> <span class="toc-nav-text">第十章 附 则</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#农业农村部关于印发《生猪产地检疫规程》和《生猪屠宰检疫规程》的通知"><span class="toc-nav-number">6.6.</span> <span class="toc-nav-text">农业农村部关于印发《生猪产地检疫规程》和《生猪屠宰检疫规程》的通知</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#生猪产地检疫规程"><span class="toc-nav-number">6.6.1.</span> <span class="toc-nav-text">生猪产地检疫规程</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#生猪屠宰检疫规程"><span class="toc-nav-number">6.6.2.</span> <span class="toc-nav-text">生猪屠宰检疫规程</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#农业农村部关于印发《生猪产地检疫规程》和《生猪屠宰检疫规程》的通知-1"><span class="toc-nav-number">6.7.</span> <span class="toc-nav-text">农业农村部关于印发《生猪产地检疫规程》和《生猪屠宰检疫规程》的通知</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#兽药管理条例"><span class="toc-nav-number">6.8.</span> <span class="toc-nav-text">兽药管理条例</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第一章-总-则-5"><span class="toc-nav-number">6.8.1.</span> <span class="toc-nav-text">第一章　总　则</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第二章-新兽药研制"><span class="toc-nav-number">6.8.2.</span> <span class="toc-nav-text">第二章　新兽药研制</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第三章-兽药生产"><span class="toc-nav-number">6.8.3.</span> <span class="toc-nav-text">第三章　兽药生产</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第四章-兽药经营"><span class="toc-nav-number">6.8.4.</span> <span class="toc-nav-text">第四章　兽药经营</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第五章-兽药进出口"><span class="toc-nav-number">6.8.5.</span> <span class="toc-nav-text">第五章　兽药进出口</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第六章-兽药使用"><span class="toc-nav-number">6.8.6.</span> <span class="toc-nav-text">第六章　兽药使用</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第七章-兽药监督管理"><span class="toc-nav-number">6.8.7.</span> <span class="toc-nav-text">第七章　兽药监督管理</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第八章-法律责任"><span class="toc-nav-number">6.8.8.</span> <span class="toc-nav-text">第八章　法律责任</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第九章-附-则"><span class="toc-nav-number">6.8.9.</span> <span class="toc-nav-text">第九章　附　　则</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#中华人民共和国畜牧法"><span class="toc-nav-number">6.9.</span> <span class="toc-nav-text">中华人民共和国畜牧法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第一章-总-则-6"><span class="toc-nav-number">6.9.1.</span> <span class="toc-nav-text">第一章　总　　则</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第二章-畜禽遗传资源保护"><span class="toc-nav-number">6.9.2.</span> <span class="toc-nav-text">第二章　畜禽遗传资源保护</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第三章-种畜禽品种选育与生产经营"><span class="toc-nav-number">6.9.3.</span> <span class="toc-nav-text">第三章　种畜禽品种选育与生产经营</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第四章-畜禽养殖"><span class="toc-nav-number">6.9.4.</span> <span class="toc-nav-text">第四章　畜禽养殖</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第五章-畜禽交易与运输"><span class="toc-nav-number">6.9.5.</span> <span class="toc-nav-text">第五章　畜禽交易与运输</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第六章-质量安全保障"><span class="toc-nav-number">6.9.6.</span> <span class="toc-nav-text">第六章　质量安全保障</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第七章-法律责任-1"><span class="toc-nav-number">6.9.7.</span> <span class="toc-nav-text">第七章　法律责任</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#第八章-附-则-1"><span class="toc-nav-number">6.9.8.</span> <span class="toc-nav-text">第八章　附　　则</span></a></li></ol></li></ol></li></ol>
-          
+          <!-- 加密文：目录不进明文 HTML；解密后由 hbe 显示 #toc-div，再由 JS 从正文生成 -->
+          <div id="toc-div" class="toc-div-class" style="display:none">
+            <div id="toc" class="toc-article">
+              <strong class="toc-title">Contents</strong>
+              <ol class="nav toc-nav" id="hbe-toc-list"></ol>
+            </div>
+          </div>
         
-        </div>
       </aside>
     
 
@@ -702,6 +802,10 @@
 
 <!-- catalog -->
 <script type="text/javascript" async="true" src="/rmshadows/js/catalog.js?v=1.0.0"></script>
+
+  <!-- encrypted post: build TOC after decrypt (no plaintext headings in HTML) -->
+  <script type="text/javascript" src="/rmshadows/js/hbe-toc.js?v=1.0.0"></script>
+
 
 <!-- totop(rocket) -->
 <script type="text/javascript" async="true" src="/rmshadows/js/totop.js?v=1.0.0"></script>

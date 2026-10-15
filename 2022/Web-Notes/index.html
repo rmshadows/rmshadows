@@ -482,27 +482,127 @@
         
         <hr>
 
-        <!-- comments start -->
-        <!--修改--artalk-->
-<!-- 0.artalk安装代码 -->
+        <!-- COMMENTS start (no fragment cache: per-page artalk options) -->
+        <!-- Artalk / COMMENTS gate -->
 
-<!-- CSS -->
-<link href="https://civiccccc.ltd/artalk/dist/Artalk.css" rel="stylesheet" />
-<link href="https://civiccccc.ltd/artalk/dist/Artalk.css" rel="stylesheet" />
-<!-- JS -->
-<script src="https://civiccccc.ltd/artalk/dist/Artalk.js"></script>
-<!-- Artalk -->
-<div id="Comments"></div>
+
+<section id="comments-section" class="comments-section" aria-label="COMMENTS">
+  <h5 class="comments-heading">COMMENTS</h5>
+
+  
+  <div id="comments-gate" class="comments-gate">
+    
+    
+    <p class="comments-gate-hint">请输入‘hello’。</p>
+    
+    <div class="comments-gate-row">
+      <input type="password" id="comments-unlock-input" class="comments-unlock-input" autocomplete="off" placeholder="Access key">
+      <button type="button" id="comments-unlock-btn" class="comments-gate-btn">Unlock</button>
+    </div>
+    <p id="comments-unlock-error" class="comments-unlock-error" hidden>Wrong key.</p>
+    
+  </div>
+  
+
+  <div id="Comments" hidden></div>
+</section>
+
 <script>
-  Artalk.init({
-    el: '#Comments', // 绑定元素的 Selector
-    pageKey: 'https://civiccccc.ltd/2022/Web-Notes/', // 固定链接
-    pageTitle: '', // 页面标题 (留空自动获取)
-    server: 'https://civiccccc.ltd/artalk', // 后端地址
-    site: 'CIVICCCCC的博客', // 你的站点名
-  })
+(function () {
+  var cfg = {
+    css: "https://civiccccc.ltd/artalk/dist/Artalk.css",
+    js: "https://civiccccc.ltd/artalk/dist/Artalk.js",
+    server: "https://civiccccc.ltd/artalk",
+    site: "CIVICCCCC的博客",
+    pageKey: "https://civiccccc.ltd/2022/Web-Notes/",
+    unlock: "hello",
+    needGate: true
+  };
+  var loaded = false;
+  var inited = false;
+
+  function loadScript(src) {
+    return new Promise(function (resolve, reject) {
+      var el = document.createElement('script');
+      el.src = src;
+      el.onload = function () { resolve(); };
+      el.onerror = reject;
+      document.head.appendChild(el);
+    });
+  }
+
+  function ensureArtalk() {
+    if (loaded) return Promise.resolve();
+    loaded = true;
+    if (!document.querySelector('link[data-artalk-css]')) {
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = cfg.css;
+      link.setAttribute('data-artalk-css', '1');
+      document.head.appendChild(link);
+    }
+    if (window.Artalk) return Promise.resolve();
+    return loadScript(cfg.js);
+  }
+
+  function initArtalk() {
+    if (inited) return;
+    inited = true;
+    var box = document.getElementById('Comments');
+    if (box) box.hidden = false;
+    var gate = document.getElementById('comments-gate');
+    if (gate) gate.hidden = true;
+    ensureArtalk().then(function () {
+      Artalk.init({
+        el: '#Comments',
+        pageKey: cfg.pageKey,
+        pageTitle: '',
+        server: cfg.server,
+        site: cfg.site
+      });
+    }).catch(function (e) {
+      console.error('COMMENTS load failed', e);
+      inited = false;
+    });
+  }
+
+  if (!cfg.needGate) {
+    initArtalk();
+    return;
+  }
+
+  var unlockBtn = document.getElementById('comments-unlock-btn');
+  var expandBtn = document.getElementById('comments-expand-btn');
+  var input = document.getElementById('comments-unlock-input');
+  var err = document.getElementById('comments-unlock-error');
+
+  function tryUnlock() {
+    if (!cfg.unlock) {
+      initArtalk();
+      return;
+    }
+    var val = input ? input.value : '';
+    if (val === cfg.unlock) {
+      if (err) err.hidden = true;
+      initArtalk();
+    } else if (err) {
+      err.hidden = false;
+    }
+  }
+
+  if (unlockBtn) {
+    unlockBtn.addEventListener('click', tryUnlock);
+    if (input) {
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') tryUnlock();
+      });
+    }
+  }
+  if (expandBtn) {
+    expandBtn.addEventListener('click', function () { initArtalk(); });
+  }
+})();
 </script>
-<!-- artalk安装代码已完成 -->
 
 
 
@@ -522,7 +622,7 @@
 
 <!--修改--ISSO-->
 
-        <!-- comments end -->
+        <!-- COMMENTS end -->
         <hr>
 
       </div>
@@ -532,15 +632,14 @@
 
     
       <aside id="sidebar">
-        <!--div id="toc" class="toc-article" -->
-        <div id="toc" class="toc-article">
-        <strong class="toc-title">Contents</strong>
         
-          
-            <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#HTML-Notes"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">HTML Notes</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#基础"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">基础</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#HTML-标签"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">HTML 标签</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#标题：h1-h6"><span class="toc-nav-number">1.1.2.</span> <span class="toc-nav-text">标题：h1~h6</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#段内换行：br"><span class="toc-nav-number">1.1.3.</span> <span class="toc-nav-text">段内换行：br</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#段内分组：span"><span class="toc-nav-number">1.1.4.</span> <span class="toc-nav-text">段内分组：span</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#段落：p"><span class="toc-nav-number">1.1.5.</span> <span class="toc-nav-text">段落：p</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#预留格式：pre"><span class="toc-nav-number">1.1.6.</span> <span class="toc-nav-text">预留格式：pre</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#水平线：hr"><span class="toc-nav-number">1.1.7.</span> <span class="toc-nav-text">水平线：hr</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#空字符：-amp-nbsp"><span class="toc-nav-number">1.1.8.</span> <span class="toc-nav-text">空字符：&amp;nbsp;</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#超链接：a"><span class="toc-nav-number">1.1.9.</span> <span class="toc-nav-text">超链接：a</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#图片格式：img"><span class="toc-nav-number">1.1.10.</span> <span class="toc-nav-text">图片格式：img</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#区域标签：div"><span class="toc-nav-number">1.1.11.</span> <span class="toc-nav-text">区域标签：div</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#列表：ul、ol-li"><span class="toc-nav-number">1.1.12.</span> <span class="toc-nav-text">列表：ul、ol;li</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#表格：table-th-tr、td"><span class="toc-nav-number">1.1.13.</span> <span class="toc-nav-text">表格：table;th,tr、td</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#表单：Form-input、select、textarea"><span class="toc-nav-number">1.1.14.</span> <span class="toc-nav-text">表单：Form;input、select、textarea</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#表单的ID、VALUE、NAME"><span class="toc-nav-number">1.1.15.</span> <span class="toc-nav-text">表单的ID、VALUE、NAME</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#其他"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">其他</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#CSS-Notes"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">CSS Notes</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#一键添加哀悼功能——网页黑白特效"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">一键添加哀悼功能——网页黑白特效</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Java-Script"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Java Script</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#克隆网站"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">克隆网站</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-使用-wget-下载网页"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">1. 使用 wget 下载网页</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-下载网页及其资源（如图片、CSS等）"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">2. 下载网页及其资源（如图片、CSS等）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-下载整个网站"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">3. 下载整个网站</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-下载网页并将其转换为本地文件链接"><span class="toc-nav-number">4.4.</span> <span class="toc-nav-text">4. 下载网页并将其转换为本地文件链接</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#5-下载并指定保存文件名"><span class="toc-nav-number">4.5.</span> <span class="toc-nav-text">5. 下载并指定保存文件名</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#6-递归下载限制深度"><span class="toc-nav-number">4.6.</span> <span class="toc-nav-text">6. 递归下载限制深度</span></a></li></ol></li></ol>
-          
+          <div id="toc" class="toc-article">
+            <strong class="toc-title">Contents</strong>
+            
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#HTML-Notes"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">HTML Notes</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#基础"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">基础</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#HTML-标签"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">HTML 标签</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#标题：h1-h6"><span class="toc-nav-number">1.1.2.</span> <span class="toc-nav-text">标题：h1~h6</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#段内换行：br"><span class="toc-nav-number">1.1.3.</span> <span class="toc-nav-text">段内换行：br</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#段内分组：span"><span class="toc-nav-number">1.1.4.</span> <span class="toc-nav-text">段内分组：span</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#段落：p"><span class="toc-nav-number">1.1.5.</span> <span class="toc-nav-text">段落：p</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#预留格式：pre"><span class="toc-nav-number">1.1.6.</span> <span class="toc-nav-text">预留格式：pre</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#水平线：hr"><span class="toc-nav-number">1.1.7.</span> <span class="toc-nav-text">水平线：hr</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#空字符：-amp-nbsp"><span class="toc-nav-number">1.1.8.</span> <span class="toc-nav-text">空字符：&amp;nbsp;</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#超链接：a"><span class="toc-nav-number">1.1.9.</span> <span class="toc-nav-text">超链接：a</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#图片格式：img"><span class="toc-nav-number">1.1.10.</span> <span class="toc-nav-text">图片格式：img</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#区域标签：div"><span class="toc-nav-number">1.1.11.</span> <span class="toc-nav-text">区域标签：div</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#列表：ul、ol-li"><span class="toc-nav-number">1.1.12.</span> <span class="toc-nav-text">列表：ul、ol;li</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#表格：table-th-tr、td"><span class="toc-nav-number">1.1.13.</span> <span class="toc-nav-text">表格：table;th,tr、td</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#表单：Form-input、select、textarea"><span class="toc-nav-number">1.1.14.</span> <span class="toc-nav-text">表单：Form;input、select、textarea</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#表单的ID、VALUE、NAME"><span class="toc-nav-number">1.1.15.</span> <span class="toc-nav-text">表单的ID、VALUE、NAME</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#其他"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">其他</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#CSS-Notes"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">CSS Notes</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#一键添加哀悼功能——网页黑白特效"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">一键添加哀悼功能——网页黑白特效</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Java-Script"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Java Script</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#克隆网站"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">克隆网站</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-使用-wget-下载网页"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">1. 使用 wget 下载网页</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-下载网页及其资源（如图片、CSS等）"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">2. 下载网页及其资源（如图片、CSS等）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-下载整个网站"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">3. 下载整个网站</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-下载网页并将其转换为本地文件链接"><span class="toc-nav-number">4.4.</span> <span class="toc-nav-text">4. 下载网页并将其转换为本地文件链接</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#5-下载并指定保存文件名"><span class="toc-nav-number">4.5.</span> <span class="toc-nav-text">5. 下载并指定保存文件名</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#6-递归下载限制深度"><span class="toc-nav-number">4.6.</span> <span class="toc-nav-text">6. 递归下载限制深度</span></a></li></ol></li></ol>
+            
+          </div>
         
-        </div>
       </aside>
     
 
@@ -770,6 +869,7 @@
 
 <!-- catalog -->
 <script type="text/javascript" async="true" src="/rmshadows/js/catalog.js?v=1.0.0"></script>
+
 
 <!-- totop(rocket) -->
 <script type="text/javascript" async="true" src="/rmshadows/js/totop.js?v=1.0.0"></script>

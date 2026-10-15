@@ -260,11 +260,11 @@
           <div class="post-heading">
             <div class="tags">
               
+              <a class="tag" href="/rmshadows/tags/#Marxist Philosophy" title="Marxist Philosophy">Marxist Philosophy</a>
+              
               <a class="tag" href="/rmshadows/tags/#Administrative Professional Ability Test" title="Administrative Professional Ability Test">Administrative Professional Ability Test</a>
               
               <a class="tag" href="/rmshadows/tags/#APAT" title="APAT">APAT</a>
-              
-              <a class="tag" href="/rmshadows/tags/#Marxist Philosophy" title="Marxist Philosophy">Marxist Philosophy</a>
               
             </div>
             <h1>APAT-Marxist Philosophy</h1>
@@ -1043,27 +1043,127 @@
         
         <hr>
 
-        <!-- comments start -->
-        <!--修改--artalk-->
-<!-- 0.artalk安装代码 -->
+        <!-- COMMENTS start (no fragment cache: per-page artalk options) -->
+        <!-- Artalk / COMMENTS gate -->
 
-<!-- CSS -->
-<link href="https://civiccccc.ltd/artalk/dist/Artalk.css" rel="stylesheet" />
-<link href="https://civiccccc.ltd/artalk/dist/Artalk.css" rel="stylesheet" />
-<!-- JS -->
-<script src="https://civiccccc.ltd/artalk/dist/Artalk.js"></script>
-<!-- Artalk -->
-<div id="Comments"></div>
+
+<section id="comments-section" class="comments-section" aria-label="COMMENTS">
+  <h5 class="comments-heading">COMMENTS</h5>
+
+  
+  <div id="comments-gate" class="comments-gate">
+    
+    
+    <p class="comments-gate-hint">请输入‘hello’。</p>
+    
+    <div class="comments-gate-row">
+      <input type="password" id="comments-unlock-input" class="comments-unlock-input" autocomplete="off" placeholder="Access key">
+      <button type="button" id="comments-unlock-btn" class="comments-gate-btn">Unlock</button>
+    </div>
+    <p id="comments-unlock-error" class="comments-unlock-error" hidden>Wrong key.</p>
+    
+  </div>
+  
+
+  <div id="Comments" hidden></div>
+</section>
+
 <script>
-  Artalk.init({
-    el: '#Comments', // 绑定元素的 Selector
-    pageKey: 'https://civiccccc.ltd/2020/APAT-Marxist-Philosophy/', // 固定链接
-    pageTitle: '', // 页面标题 (留空自动获取)
-    server: 'https://civiccccc.ltd/artalk', // 后端地址
-    site: 'CIVICCCCC的博客', // 你的站点名
-  })
+(function () {
+  var cfg = {
+    css: "https://civiccccc.ltd/artalk/dist/Artalk.css",
+    js: "https://civiccccc.ltd/artalk/dist/Artalk.js",
+    server: "https://civiccccc.ltd/artalk",
+    site: "CIVICCCCC的博客",
+    pageKey: "https://civiccccc.ltd/2020/APAT-Marxist-Philosophy/",
+    unlock: "hello",
+    needGate: true
+  };
+  var loaded = false;
+  var inited = false;
+
+  function loadScript(src) {
+    return new Promise(function (resolve, reject) {
+      var el = document.createElement('script');
+      el.src = src;
+      el.onload = function () { resolve(); };
+      el.onerror = reject;
+      document.head.appendChild(el);
+    });
+  }
+
+  function ensureArtalk() {
+    if (loaded) return Promise.resolve();
+    loaded = true;
+    if (!document.querySelector('link[data-artalk-css]')) {
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = cfg.css;
+      link.setAttribute('data-artalk-css', '1');
+      document.head.appendChild(link);
+    }
+    if (window.Artalk) return Promise.resolve();
+    return loadScript(cfg.js);
+  }
+
+  function initArtalk() {
+    if (inited) return;
+    inited = true;
+    var box = document.getElementById('Comments');
+    if (box) box.hidden = false;
+    var gate = document.getElementById('comments-gate');
+    if (gate) gate.hidden = true;
+    ensureArtalk().then(function () {
+      Artalk.init({
+        el: '#Comments',
+        pageKey: cfg.pageKey,
+        pageTitle: '',
+        server: cfg.server,
+        site: cfg.site
+      });
+    }).catch(function (e) {
+      console.error('COMMENTS load failed', e);
+      inited = false;
+    });
+  }
+
+  if (!cfg.needGate) {
+    initArtalk();
+    return;
+  }
+
+  var unlockBtn = document.getElementById('comments-unlock-btn');
+  var expandBtn = document.getElementById('comments-expand-btn');
+  var input = document.getElementById('comments-unlock-input');
+  var err = document.getElementById('comments-unlock-error');
+
+  function tryUnlock() {
+    if (!cfg.unlock) {
+      initArtalk();
+      return;
+    }
+    var val = input ? input.value : '';
+    if (val === cfg.unlock) {
+      if (err) err.hidden = true;
+      initArtalk();
+    } else if (err) {
+      err.hidden = false;
+    }
+  }
+
+  if (unlockBtn) {
+    unlockBtn.addEventListener('click', tryUnlock);
+    if (input) {
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') tryUnlock();
+      });
+    }
+  }
+  if (expandBtn) {
+    expandBtn.addEventListener('click', function () { initArtalk(); });
+  }
+})();
 </script>
-<!-- artalk安装代码已完成 -->
 
 
 
@@ -1083,7 +1183,7 @@
 
 <!--修改--ISSO-->
 
-        <!-- comments end -->
+        <!-- COMMENTS end -->
         <hr>
 
       </div>
@@ -1093,15 +1193,14 @@
 
     
       <aside id="sidebar">
-        <!--div id="toc" class="toc-article" -->
-        <div id="toc" class="toc-article">
-        <strong class="toc-title">Contents</strong>
         
-          
-            <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#哲学"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">哲学</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#世界观、方法论"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">世界观、方法论</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#哲学的基本问题"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">哲学的基本问题</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#哲学基本派别"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">哲学基本派别</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#马克思主义基本原理"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">马克思主义基本原理</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#马克思主义哲学框架"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">马克思主义哲学框架</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#马克思主义哲学"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">马克思主义哲学</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#唯物论"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">唯物论</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#物质与运动"><span class="toc-nav-number">4.1.1.</span> <span class="toc-nav-text">物质与运动</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#运动与静止"><span class="toc-nav-number">4.1.2.</span> <span class="toc-nav-text">运动与静止</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#时间与空间"><span class="toc-nav-number">4.1.3.</span> <span class="toc-nav-text">时间与空间</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#物质与意识"><span class="toc-nav-number">4.1.4.</span> <span class="toc-nav-text">物质与意识</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#辩证法"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">辩证法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#联系与发展"><span class="toc-nav-number">4.2.1.</span> <span class="toc-nav-text">联系与发展</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#唯物辩证法三大基本规律"><span class="toc-nav-number">4.2.2.</span> <span class="toc-nav-text">唯物辩证法三大基本规律</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#质量互变规律"><span class="toc-nav-number">4.2.2.1.</span> <span class="toc-nav-text">质量互变规律</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#否定之否定规律-实质是扬弃"><span class="toc-nav-number">4.2.2.2.</span> <span class="toc-nav-text">否定之否定规律(实质是扬弃)</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#对立统一规律"><span class="toc-nav-number">4.2.2.3.</span> <span class="toc-nav-text">对立统一规律</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#认识论"><span class="toc-nav-number">4.2.3.</span> <span class="toc-nav-text">认识论</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#三个核心"><span class="toc-nav-number">4.2.3.1.</span> <span class="toc-nav-text">三个核心</span></a></li></ol></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#马克思主义哲学的社会历史观"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">马克思主义哲学的社会历史观</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#社会历史观的基本问题"><span class="toc-nav-number">5.1.</span> <span class="toc-nav-text">社会历史观的基本问题</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#社会基本矛盾运动"><span class="toc-nav-number">5.2.</span> <span class="toc-nav-text">社会基本矛盾运动</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#社会发展动力系统"><span class="toc-nav-number">5.3.</span> <span class="toc-nav-text">社会发展动力系统</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#马克思主义经济学"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">马克思主义经济学</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#商品"><span class="toc-nav-number">6.1.</span> <span class="toc-nav-text">商品</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#货币"><span class="toc-nav-number">6.2.</span> <span class="toc-nav-text">货币</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#资本主义制度本质"><span class="toc-nav-number">6.3.</span> <span class="toc-nav-text">资本主义制度本质</span></a></li></ol></li></ol>
-          
+          <div id="toc" class="toc-article">
+            <strong class="toc-title">Contents</strong>
+            
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#哲学"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">哲学</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#世界观、方法论"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">世界观、方法论</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#哲学的基本问题"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">哲学的基本问题</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#哲学基本派别"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">哲学基本派别</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#马克思主义基本原理"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">马克思主义基本原理</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#马克思主义哲学框架"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">马克思主义哲学框架</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#马克思主义哲学"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">马克思主义哲学</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#唯物论"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">唯物论</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#物质与运动"><span class="toc-nav-number">4.1.1.</span> <span class="toc-nav-text">物质与运动</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#运动与静止"><span class="toc-nav-number">4.1.2.</span> <span class="toc-nav-text">运动与静止</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#时间与空间"><span class="toc-nav-number">4.1.3.</span> <span class="toc-nav-text">时间与空间</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#物质与意识"><span class="toc-nav-number">4.1.4.</span> <span class="toc-nav-text">物质与意识</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#辩证法"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">辩证法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#联系与发展"><span class="toc-nav-number">4.2.1.</span> <span class="toc-nav-text">联系与发展</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#唯物辩证法三大基本规律"><span class="toc-nav-number">4.2.2.</span> <span class="toc-nav-text">唯物辩证法三大基本规律</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#质量互变规律"><span class="toc-nav-number">4.2.2.1.</span> <span class="toc-nav-text">质量互变规律</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#否定之否定规律-实质是扬弃"><span class="toc-nav-number">4.2.2.2.</span> <span class="toc-nav-text">否定之否定规律(实质是扬弃)</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#对立统一规律"><span class="toc-nav-number">4.2.2.3.</span> <span class="toc-nav-text">对立统一规律</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#认识论"><span class="toc-nav-number">4.2.3.</span> <span class="toc-nav-text">认识论</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#三个核心"><span class="toc-nav-number">4.2.3.1.</span> <span class="toc-nav-text">三个核心</span></a></li></ol></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#马克思主义哲学的社会历史观"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">马克思主义哲学的社会历史观</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#社会历史观的基本问题"><span class="toc-nav-number">5.1.</span> <span class="toc-nav-text">社会历史观的基本问题</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#社会基本矛盾运动"><span class="toc-nav-number">5.2.</span> <span class="toc-nav-text">社会基本矛盾运动</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#社会发展动力系统"><span class="toc-nav-number">5.3.</span> <span class="toc-nav-text">社会发展动力系统</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#马克思主义经济学"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">马克思主义经济学</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#商品"><span class="toc-nav-number">6.1.</span> <span class="toc-nav-text">商品</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#货币"><span class="toc-nav-number">6.2.</span> <span class="toc-nav-text">货币</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#资本主义制度本质"><span class="toc-nav-number">6.3.</span> <span class="toc-nav-text">资本主义制度本质</span></a></li></ol></li></ol>
+            
+          </div>
         
-        </div>
       </aside>
     
 
@@ -1122,11 +1221,11 @@
           </h5>
           <div class="tags">
             
+            <a class="tag" href="/rmshadows/tags/#Marxist Philosophy" title="Marxist Philosophy">Marxist Philosophy</a>
+            
             <a class="tag" href="/rmshadows/tags/#Administrative Professional Ability Test" title="Administrative Professional Ability Test">Administrative Professional Ability Test</a>
             
             <a class="tag" href="/rmshadows/tags/#APAT" title="APAT">APAT</a>
-            
-            <a class="tag" href="/rmshadows/tags/#Marxist Philosophy" title="Marxist Philosophy">Marxist Philosophy</a>
             
           </div>
         </section>
@@ -1327,6 +1426,7 @@
 
 <!-- catalog -->
 <script type="text/javascript" async="true" src="/rmshadows/js/catalog.js?v=1.0.0"></script>
+
 
 <!-- totop(rocket) -->
 <script type="text/javascript" async="true" src="/rmshadows/js/totop.js?v=1.0.0"></script>

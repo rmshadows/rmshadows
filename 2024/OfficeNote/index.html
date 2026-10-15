@@ -696,27 +696,127 @@
         
         <hr>
 
-        <!-- comments start -->
-        <!--修改--artalk-->
-<!-- 0.artalk安装代码 -->
+        <!-- COMMENTS start (no fragment cache: per-page artalk options) -->
+        <!-- Artalk / COMMENTS gate -->
 
-<!-- CSS -->
-<link href="https://civiccccc.ltd/artalk/dist/Artalk.css" rel="stylesheet" />
-<link href="https://civiccccc.ltd/artalk/dist/Artalk.css" rel="stylesheet" />
-<!-- JS -->
-<script src="https://civiccccc.ltd/artalk/dist/Artalk.js"></script>
-<!-- Artalk -->
-<div id="Comments"></div>
+
+<section id="comments-section" class="comments-section" aria-label="COMMENTS">
+  <h5 class="comments-heading">COMMENTS</h5>
+
+  
+  <div id="comments-gate" class="comments-gate">
+    
+    
+    <p class="comments-gate-hint">请输入‘hello’。</p>
+    
+    <div class="comments-gate-row">
+      <input type="password" id="comments-unlock-input" class="comments-unlock-input" autocomplete="off" placeholder="Access key">
+      <button type="button" id="comments-unlock-btn" class="comments-gate-btn">Unlock</button>
+    </div>
+    <p id="comments-unlock-error" class="comments-unlock-error" hidden>Wrong key.</p>
+    
+  </div>
+  
+
+  <div id="Comments" hidden></div>
+</section>
+
 <script>
-  Artalk.init({
-    el: '#Comments', // 绑定元素的 Selector
-    pageKey: 'https://civiccccc.ltd/2024/OfficeNote/', // 固定链接
-    pageTitle: '', // 页面标题 (留空自动获取)
-    server: 'https://civiccccc.ltd/artalk', // 后端地址
-    site: 'CIVICCCCC的博客', // 你的站点名
-  })
+(function () {
+  var cfg = {
+    css: "https://civiccccc.ltd/artalk/dist/Artalk.css",
+    js: "https://civiccccc.ltd/artalk/dist/Artalk.js",
+    server: "https://civiccccc.ltd/artalk",
+    site: "CIVICCCCC的博客",
+    pageKey: "https://civiccccc.ltd/2024/OfficeNote/",
+    unlock: "hello",
+    needGate: true
+  };
+  var loaded = false;
+  var inited = false;
+
+  function loadScript(src) {
+    return new Promise(function (resolve, reject) {
+      var el = document.createElement('script');
+      el.src = src;
+      el.onload = function () { resolve(); };
+      el.onerror = reject;
+      document.head.appendChild(el);
+    });
+  }
+
+  function ensureArtalk() {
+    if (loaded) return Promise.resolve();
+    loaded = true;
+    if (!document.querySelector('link[data-artalk-css]')) {
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = cfg.css;
+      link.setAttribute('data-artalk-css', '1');
+      document.head.appendChild(link);
+    }
+    if (window.Artalk) return Promise.resolve();
+    return loadScript(cfg.js);
+  }
+
+  function initArtalk() {
+    if (inited) return;
+    inited = true;
+    var box = document.getElementById('Comments');
+    if (box) box.hidden = false;
+    var gate = document.getElementById('comments-gate');
+    if (gate) gate.hidden = true;
+    ensureArtalk().then(function () {
+      Artalk.init({
+        el: '#Comments',
+        pageKey: cfg.pageKey,
+        pageTitle: '',
+        server: cfg.server,
+        site: cfg.site
+      });
+    }).catch(function (e) {
+      console.error('COMMENTS load failed', e);
+      inited = false;
+    });
+  }
+
+  if (!cfg.needGate) {
+    initArtalk();
+    return;
+  }
+
+  var unlockBtn = document.getElementById('comments-unlock-btn');
+  var expandBtn = document.getElementById('comments-expand-btn');
+  var input = document.getElementById('comments-unlock-input');
+  var err = document.getElementById('comments-unlock-error');
+
+  function tryUnlock() {
+    if (!cfg.unlock) {
+      initArtalk();
+      return;
+    }
+    var val = input ? input.value : '';
+    if (val === cfg.unlock) {
+      if (err) err.hidden = true;
+      initArtalk();
+    } else if (err) {
+      err.hidden = false;
+    }
+  }
+
+  if (unlockBtn) {
+    unlockBtn.addEventListener('click', tryUnlock);
+    if (input) {
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') tryUnlock();
+      });
+    }
+  }
+  if (expandBtn) {
+    expandBtn.addEventListener('click', function () { initArtalk(); });
+  }
+})();
 </script>
-<!-- artalk安装代码已完成 -->
 
 
 
@@ -736,7 +836,7 @@
 
 <!--修改--ISSO-->
 
-        <!-- comments end -->
+        <!-- COMMENTS end -->
         <hr>
 
       </div>
@@ -746,15 +846,14 @@
 
     
       <aside id="sidebar">
-        <!--div id="toc" class="toc-article" -->
-        <div id="toc" class="toc-article">
-        <strong class="toc-title">Contents</strong>
         
-          
-            <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Office——WPS-Office、LibreOffice"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Office——WPS Office、LibreOffice</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#LibreOffice"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">LibreOffice</span></a></li></ol></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Word"><span class="toc-nav-number"></span> <span class="toc-nav-text">Word</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#删除文档末尾的空白页"><span class="toc-nav-number"></span> <span class="toc-nav-text">删除文档末尾的空白页</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#页脚插入页码出现-PAGE-MERGEFORMAT-——-页码变成了域代码的显示方式"><span class="toc-nav-number"></span> <span class="toc-nav-text">页脚插入页码出现{PAGE*MERGEFORMAT} —— 页码变成了域代码的显示方式</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Excel"><span class="toc-nav-number"></span> <span class="toc-nav-text">Excel</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#对比数据（行内对比）"><span class="toc-nav-number"></span> <span class="toc-nav-text">对比数据（行内对比）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#匹配数据"><span class="toc-nav-number"></span> <span class="toc-nav-text">匹配数据</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#RANK"><span class="toc-nav-number"></span> <span class="toc-nav-text">RANK</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#VLOOKUP"><span class="toc-nav-number"></span> <span class="toc-nav-text">VLOOKUP</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#PPT"><span class="toc-nav-number"></span> <span class="toc-nav-text">PPT</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-number">1.</span> <span class="toc-nav-text"> </span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#杂项"><span class="toc-nav-number"></span> <span class="toc-nav-text">杂项</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#解决哔哩哔哩上传速度慢"><span class="toc-nav-number"></span> <span class="toc-nav-text">解决哔哩哔哩上传速度慢</span></a>
-          
+          <div id="toc" class="toc-article">
+            <strong class="toc-title">Contents</strong>
+            
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Office——WPS-Office、LibreOffice"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Office——WPS Office、LibreOffice</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#LibreOffice"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">LibreOffice</span></a></li></ol></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Word"><span class="toc-nav-number"></span> <span class="toc-nav-text">Word</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#删除文档末尾的空白页"><span class="toc-nav-number"></span> <span class="toc-nav-text">删除文档末尾的空白页</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#页脚插入页码出现-PAGE-MERGEFORMAT-——-页码变成了域代码的显示方式"><span class="toc-nav-number"></span> <span class="toc-nav-text">页脚插入页码出现{PAGE*MERGEFORMAT} —— 页码变成了域代码的显示方式</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Excel"><span class="toc-nav-number"></span> <span class="toc-nav-text">Excel</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#对比数据（行内对比）"><span class="toc-nav-number"></span> <span class="toc-nav-text">对比数据（行内对比）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#匹配数据"><span class="toc-nav-number"></span> <span class="toc-nav-text">匹配数据</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#RANK"><span class="toc-nav-number"></span> <span class="toc-nav-text">RANK</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#VLOOKUP"><span class="toc-nav-number"></span> <span class="toc-nav-text">VLOOKUP</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#PPT"><span class="toc-nav-number"></span> <span class="toc-nav-text">PPT</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-number">1.</span> <span class="toc-nav-text"> </span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#杂项"><span class="toc-nav-number"></span> <span class="toc-nav-text">杂项</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#解决哔哩哔哩上传速度慢"><span class="toc-nav-number"></span> <span class="toc-nav-text">解决哔哩哔哩上传速度慢</span></a>
+            
+          </div>
         
-        </div>
       </aside>
     
 
@@ -978,6 +1077,7 @@
 
 <!-- catalog -->
 <script type="text/javascript" async="true" src="/rmshadows/js/catalog.js?v=1.0.0"></script>
+
 
 <!-- totop(rocket) -->
 <script type="text/javascript" async="true" src="/rmshadows/js/totop.js?v=1.0.0"></script>

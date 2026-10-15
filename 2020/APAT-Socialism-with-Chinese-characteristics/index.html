@@ -746,27 +746,127 @@
         
         <hr>
 
-        <!-- comments start -->
-        <!--修改--artalk-->
-<!-- 0.artalk安装代码 -->
+        <!-- COMMENTS start (no fragment cache: per-page artalk options) -->
+        <!-- Artalk / COMMENTS gate -->
 
-<!-- CSS -->
-<link href="https://civiccccc.ltd/artalk/dist/Artalk.css" rel="stylesheet" />
-<link href="https://civiccccc.ltd/artalk/dist/Artalk.css" rel="stylesheet" />
-<!-- JS -->
-<script src="https://civiccccc.ltd/artalk/dist/Artalk.js"></script>
-<!-- Artalk -->
-<div id="Comments"></div>
+
+<section id="comments-section" class="comments-section" aria-label="COMMENTS">
+  <h5 class="comments-heading">COMMENTS</h5>
+
+  
+  <div id="comments-gate" class="comments-gate">
+    
+    
+    <p class="comments-gate-hint">请输入‘hello’。</p>
+    
+    <div class="comments-gate-row">
+      <input type="password" id="comments-unlock-input" class="comments-unlock-input" autocomplete="off" placeholder="Access key">
+      <button type="button" id="comments-unlock-btn" class="comments-gate-btn">Unlock</button>
+    </div>
+    <p id="comments-unlock-error" class="comments-unlock-error" hidden>Wrong key.</p>
+    
+  </div>
+  
+
+  <div id="Comments" hidden></div>
+</section>
+
 <script>
-  Artalk.init({
-    el: '#Comments', // 绑定元素的 Selector
-    pageKey: 'https://civiccccc.ltd/2020/APAT-Socialism-with-Chinese-characteristics/', // 固定链接
-    pageTitle: '', // 页面标题 (留空自动获取)
-    server: 'https://civiccccc.ltd/artalk', // 后端地址
-    site: 'CIVICCCCC的博客', // 你的站点名
-  })
+(function () {
+  var cfg = {
+    css: "https://civiccccc.ltd/artalk/dist/Artalk.css",
+    js: "https://civiccccc.ltd/artalk/dist/Artalk.js",
+    server: "https://civiccccc.ltd/artalk",
+    site: "CIVICCCCC的博客",
+    pageKey: "https://civiccccc.ltd/2020/APAT-Socialism-with-Chinese-characteristics/",
+    unlock: "hello",
+    needGate: true
+  };
+  var loaded = false;
+  var inited = false;
+
+  function loadScript(src) {
+    return new Promise(function (resolve, reject) {
+      var el = document.createElement('script');
+      el.src = src;
+      el.onload = function () { resolve(); };
+      el.onerror = reject;
+      document.head.appendChild(el);
+    });
+  }
+
+  function ensureArtalk() {
+    if (loaded) return Promise.resolve();
+    loaded = true;
+    if (!document.querySelector('link[data-artalk-css]')) {
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = cfg.css;
+      link.setAttribute('data-artalk-css', '1');
+      document.head.appendChild(link);
+    }
+    if (window.Artalk) return Promise.resolve();
+    return loadScript(cfg.js);
+  }
+
+  function initArtalk() {
+    if (inited) return;
+    inited = true;
+    var box = document.getElementById('Comments');
+    if (box) box.hidden = false;
+    var gate = document.getElementById('comments-gate');
+    if (gate) gate.hidden = true;
+    ensureArtalk().then(function () {
+      Artalk.init({
+        el: '#Comments',
+        pageKey: cfg.pageKey,
+        pageTitle: '',
+        server: cfg.server,
+        site: cfg.site
+      });
+    }).catch(function (e) {
+      console.error('COMMENTS load failed', e);
+      inited = false;
+    });
+  }
+
+  if (!cfg.needGate) {
+    initArtalk();
+    return;
+  }
+
+  var unlockBtn = document.getElementById('comments-unlock-btn');
+  var expandBtn = document.getElementById('comments-expand-btn');
+  var input = document.getElementById('comments-unlock-input');
+  var err = document.getElementById('comments-unlock-error');
+
+  function tryUnlock() {
+    if (!cfg.unlock) {
+      initArtalk();
+      return;
+    }
+    var val = input ? input.value : '';
+    if (val === cfg.unlock) {
+      if (err) err.hidden = true;
+      initArtalk();
+    } else if (err) {
+      err.hidden = false;
+    }
+  }
+
+  if (unlockBtn) {
+    unlockBtn.addEventListener('click', tryUnlock);
+    if (input) {
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') tryUnlock();
+      });
+    }
+  }
+  if (expandBtn) {
+    expandBtn.addEventListener('click', function () { initArtalk(); });
+  }
+})();
 </script>
-<!-- artalk安装代码已完成 -->
 
 
 
@@ -786,7 +886,7 @@
 
 <!--修改--ISSO-->
 
-        <!-- comments end -->
+        <!-- COMMENTS end -->
         <hr>
 
       </div>
@@ -796,15 +896,14 @@
 
     
       <aside id="sidebar">
-        <!--div id="toc" class="toc-article" -->
-        <div id="toc" class="toc-article">
-        <strong class="toc-title">Contents</strong>
         
-          
-            <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#毛泽东思想"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">毛泽东思想</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#毛泽东思想框架"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">毛泽东思想框架</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#什么是毛泽东思想"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">什么是毛泽东思想</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#毛泽东思想的发展"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">毛泽东思想的发展</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#萌芽时期"><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">萌芽时期</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#形成时期"><span class="toc-nav-number">1.3.2.</span> <span class="toc-nav-text">形成时期</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#成熟时期"><span class="toc-nav-number">1.3.3.</span> <span class="toc-nav-text">成熟时期</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#继续发展"><span class="toc-nav-number">1.3.4.</span> <span class="toc-nav-text">继续发展</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#毛泽东思想活的灵魂"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">毛泽东思想活的灵魂</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#新民主主义革命理论"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">新民主主义革命理论</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#旧民主主义和新民主主义"><span class="toc-nav-number">1.5.1.</span> <span class="toc-nav-text">旧民主主义和新民主主义</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#新民主主义革命纲领"><span class="toc-nav-number">1.5.2.</span> <span class="toc-nav-text">新民主主义革命纲领</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#新民主主义革命总路线（重点）"><span class="toc-nav-number">1.5.3.</span> <span class="toc-nav-text">新民主主义革命总路线（重点）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#新民主主义革命的发展道路和三大法宝"><span class="toc-nav-number">1.5.4.</span> <span class="toc-nav-text">新民主主义革命的发展道路和三大法宝</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#社会主义改造理论"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">社会主义改造理论</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#邓小平理论"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">邓小平理论</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#邓小平理论框架"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">邓小平理论框架</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#社会主义本质论"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">社会主义本质论</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#社会主义初级阶段论"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">社会主义初级阶段论</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#社会主义改革开放论"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">社会主义改革开放论</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#改革"><span class="toc-nav-number">2.4.1.</span> <span class="toc-nav-text">改革</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#对外开放"><span class="toc-nav-number">2.4.2.</span> <span class="toc-nav-text">对外开放</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#社会主义市场经济"><span class="toc-nav-number">2.5.</span> <span class="toc-nav-text">社会主义市场经济</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#三个代表"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">三个代表</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#内容"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">内容</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#怎么做"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">怎么做</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#科学发展观"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">科学发展观</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#内容-1"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">内容</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#核心词"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">核心词</span></a></li></ol>
-          
+          <div id="toc" class="toc-article">
+            <strong class="toc-title">Contents</strong>
+            
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#毛泽东思想"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">毛泽东思想</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#毛泽东思想框架"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">毛泽东思想框架</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#什么是毛泽东思想"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">什么是毛泽东思想</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#毛泽东思想的发展"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">毛泽东思想的发展</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#萌芽时期"><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">萌芽时期</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#形成时期"><span class="toc-nav-number">1.3.2.</span> <span class="toc-nav-text">形成时期</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#成熟时期"><span class="toc-nav-number">1.3.3.</span> <span class="toc-nav-text">成熟时期</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#继续发展"><span class="toc-nav-number">1.3.4.</span> <span class="toc-nav-text">继续发展</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#毛泽东思想活的灵魂"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">毛泽东思想活的灵魂</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#新民主主义革命理论"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">新民主主义革命理论</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#旧民主主义和新民主主义"><span class="toc-nav-number">1.5.1.</span> <span class="toc-nav-text">旧民主主义和新民主主义</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#新民主主义革命纲领"><span class="toc-nav-number">1.5.2.</span> <span class="toc-nav-text">新民主主义革命纲领</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#新民主主义革命总路线（重点）"><span class="toc-nav-number">1.5.3.</span> <span class="toc-nav-text">新民主主义革命总路线（重点）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#新民主主义革命的发展道路和三大法宝"><span class="toc-nav-number">1.5.4.</span> <span class="toc-nav-text">新民主主义革命的发展道路和三大法宝</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#社会主义改造理论"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">社会主义改造理论</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#邓小平理论"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">邓小平理论</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#邓小平理论框架"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">邓小平理论框架</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#社会主义本质论"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">社会主义本质论</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#社会主义初级阶段论"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">社会主义初级阶段论</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#社会主义改革开放论"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">社会主义改革开放论</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#改革"><span class="toc-nav-number">2.4.1.</span> <span class="toc-nav-text">改革</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#对外开放"><span class="toc-nav-number">2.4.2.</span> <span class="toc-nav-text">对外开放</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#社会主义市场经济"><span class="toc-nav-number">2.5.</span> <span class="toc-nav-text">社会主义市场经济</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#三个代表"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">三个代表</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#内容"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">内容</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#怎么做"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">怎么做</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#科学发展观"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">科学发展观</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#内容-1"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">内容</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#核心词"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">核心词</span></a></li></ol>
+            
+          </div>
         
-        </div>
       </aside>
     
 
@@ -1036,6 +1135,7 @@
 
 <!-- catalog -->
 <script type="text/javascript" async="true" src="/rmshadows/js/catalog.js?v=1.0.0"></script>
+
 
 <!-- totop(rocket) -->
 <script type="text/javascript" async="true" src="/rmshadows/js/totop.js?v=1.0.0"></script>
