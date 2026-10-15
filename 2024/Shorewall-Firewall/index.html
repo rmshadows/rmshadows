@@ -2162,27 +2162,127 @@ shorewall-host(5):
         
         <hr>
 
-        <!-- comments start -->
-        <!--修改--artalk-->
-<!-- 0.artalk安装代码 -->
+        <!-- COMMENTS start (no fragment cache: per-page artalk options) -->
+        <!-- Artalk / COMMENTS gate -->
 
-<!-- CSS -->
-<link href="https://civiccccc.ltd/artalk/dist/Artalk.css" rel="stylesheet" />
-<link href="https://civiccccc.ltd/artalk/dist/Artalk.css" rel="stylesheet" />
-<!-- JS -->
-<script src="https://civiccccc.ltd/artalk/dist/Artalk.js"></script>
-<!-- Artalk -->
-<div id="Comments"></div>
+
+<section id="comments-section" class="comments-section" aria-label="COMMENTS">
+  <h5 class="comments-heading">COMMENTS</h5>
+
+  
+  <div id="comments-gate" class="comments-gate">
+    
+    
+    <p class="comments-gate-hint">请输入‘hello’。</p>
+    
+    <div class="comments-gate-row">
+      <input type="password" id="comments-unlock-input" class="comments-unlock-input" autocomplete="off" placeholder="Access key">
+      <button type="button" id="comments-unlock-btn" class="comments-gate-btn">Unlock</button>
+    </div>
+    <p id="comments-unlock-error" class="comments-unlock-error" hidden>Wrong key.</p>
+    
+  </div>
+  
+
+  <div id="Comments" hidden></div>
+</section>
+
 <script>
-  Artalk.init({
-    el: '#Comments', // 绑定元素的 Selector
-    pageKey: 'https://rmshadows.github.io/2024/Shorewall-Firewall/', // 固定链接
-    pageTitle: '', // 页面标题 (留空自动获取)
-    server: 'https://civiccccc.ltd/artalk', // 后端地址
-    site: 'CIVICCCCC的博客', // 你的站点名
-  })
+(function () {
+  var cfg = {
+    css: "https://civiccccc.ltd/artalk/dist/Artalk.css",
+    js: "https://civiccccc.ltd/artalk/dist/Artalk.js",
+    server: "https://civiccccc.ltd/artalk",
+    site: "CIVICCCCC的博客",
+    pageKey: "https://rmshadows.github.io/2024/Shorewall-Firewall/",
+    unlock: "hello",
+    needGate: true
+  };
+  var loaded = false;
+  var inited = false;
+
+  function loadScript(src) {
+    return new Promise(function (resolve, reject) {
+      var el = document.createElement('script');
+      el.src = src;
+      el.onload = function () { resolve(); };
+      el.onerror = reject;
+      document.head.appendChild(el);
+    });
+  }
+
+  function ensureArtalk() {
+    if (loaded) return Promise.resolve();
+    loaded = true;
+    if (!document.querySelector('link[data-artalk-css]')) {
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = cfg.css;
+      link.setAttribute('data-artalk-css', '1');
+      document.head.appendChild(link);
+    }
+    if (window.Artalk) return Promise.resolve();
+    return loadScript(cfg.js);
+  }
+
+  function initArtalk() {
+    if (inited) return;
+    inited = true;
+    var box = document.getElementById('Comments');
+    if (box) box.hidden = false;
+    var gate = document.getElementById('comments-gate');
+    if (gate) gate.hidden = true;
+    ensureArtalk().then(function () {
+      Artalk.init({
+        el: '#Comments',
+        pageKey: cfg.pageKey,
+        pageTitle: '',
+        server: cfg.server,
+        site: cfg.site
+      });
+    }).catch(function (e) {
+      console.error('COMMENTS load failed', e);
+      inited = false;
+    });
+  }
+
+  if (!cfg.needGate) {
+    initArtalk();
+    return;
+  }
+
+  var unlockBtn = document.getElementById('comments-unlock-btn');
+  var expandBtn = document.getElementById('comments-expand-btn');
+  var input = document.getElementById('comments-unlock-input');
+  var err = document.getElementById('comments-unlock-error');
+
+  function tryUnlock() {
+    if (!cfg.unlock) {
+      initArtalk();
+      return;
+    }
+    var val = input ? input.value : '';
+    if (val === cfg.unlock) {
+      if (err) err.hidden = true;
+      initArtalk();
+    } else if (err) {
+      err.hidden = false;
+    }
+  }
+
+  if (unlockBtn) {
+    unlockBtn.addEventListener('click', tryUnlock);
+    if (input) {
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') tryUnlock();
+      });
+    }
+  }
+  if (expandBtn) {
+    expandBtn.addEventListener('click', function () { initArtalk(); });
+  }
+})();
 </script>
-<!-- artalk安装代码已完成 -->
 
 
 
@@ -2202,7 +2302,7 @@ shorewall-host(5):
 
 <!--修改--ISSO-->
 
-        <!-- comments end -->
+        <!-- COMMENTS end -->
         <hr>
 
       </div>
@@ -2212,15 +2312,14 @@ shorewall-host(5):
 
     
       <aside id="sidebar">
-        <!--div id="toc" class="toc-article" -->
-        <div id="toc" class="toc-article">
-        <strong class="toc-title">Contents</strong>
         
-          
-            <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Shorewall防火墙配置"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Shorewall防火墙配置</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#安装"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">安装</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#包介绍"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">包介绍</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#须知"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">须知</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#基础配置"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">基础配置</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Universal"><span class="toc-nav-number">1.4.1.</span> <span class="toc-nav-text">Universal</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#one-interface-TODO"><span class="toc-nav-number">1.4.2.</span> <span class="toc-nav-text">one-interface(TODO)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#two-interfaces-TODO"><span class="toc-nav-number">1.4.3.</span> <span class="toc-nav-text">two-interfaces(TODO)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#three-interfaces-TODO"><span class="toc-nav-number">1.4.4.</span> <span class="toc-nav-text">three-interfaces(TODO)</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Manpages"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">Manpages</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#第5节-—-文件和概念"><span class="toc-nav-number">1.5.1.</span> <span class="toc-nav-text">第5节 — 文件和概念</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#第8节-—-管理命令"><span class="toc-nav-number">1.5.2.</span> <span class="toc-nav-text">第8节 — 管理命令</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#配置文件"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">配置文件</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#etc-shorewall-zones"><span class="toc-nav-number">1.6.1.</span> <span class="toc-nav-text">&#x2F;etc&#x2F;shorewall&#x2F;zones</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#类型（TYPE）"><span class="toc-nav-number">1.6.1.1.</span> <span class="toc-nav-text">类型（TYPE）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#选项-OPTIONS"><span class="toc-nav-number">1.6.1.2.</span> <span class="toc-nav-text">选项 (OPTIONS)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#IN-OPTIONS-和-OUT-OPTIONS"><span class="toc-nav-number">1.6.1.3.</span> <span class="toc-nav-text">IN OPTIONS 和 OUT OPTIONS</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Universal示例"><span class="toc-nav-number">1.6.1.4.</span> <span class="toc-nav-text">Universal示例</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#etc-shorewall-interfaces"><span class="toc-nav-number">1.6.2.</span> <span class="toc-nav-text">&#x2F;etc&#x2F;shorewall&#x2F;interfaces</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#区域-Zone"><span class="toc-nav-number">1.6.2.1.</span> <span class="toc-nav-text">区域 (Zone)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#接口（INTERFACE）"><span class="toc-nav-number">1.6.2.2.</span> <span class="toc-nav-text">接口（INTERFACE）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#广播（BROADCAST）"><span class="toc-nav-number">1.6.2.3.</span> <span class="toc-nav-text">广播（BROADCAST）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#选项（OPTIONS）"><span class="toc-nav-number">1.6.2.4.</span> <span class="toc-nav-text">选项（OPTIONS）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Universal示例-1"><span class="toc-nav-number">1.6.2.5.</span> <span class="toc-nav-text">Universal示例</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#etc-shorewall-policy"><span class="toc-nav-number">1.6.3.</span> <span class="toc-nav-text">&#x2F;etc&#x2F;shorewall&#x2F;policy</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SOURCE-zone-…-FW-all-ezone-…"><span class="toc-nav-number">1.6.3.1.</span> <span class="toc-nav-text">SOURCE - zone[,…[+]]|$FW|all[+][!ezone[,…]]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#DEST-zone-…-FW-all-ezone-…"><span class="toc-nav-number">1.6.3.2.</span> <span class="toc-nav-text">DEST - zone[,…[+]]|$FW|all[+][!ezone[,…]]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#政策-POLICY-ACCEPT-DROP-REJECT-BLACKLIST-CONTINUE-QUEUE-NFQUEUE-queuenumber1-queuenumber2-c-bypass-bypass-NONE-policy-action-level-None"><span class="toc-nav-number">1.6.3.3.</span> <span class="toc-nav-text">政策 (POLICY) - {ACCEPT|DROP|REJECT|BLACKLIST|CONTINUE|QUEUE|NFQUEUE[([queuenumber1[:queuenumber2[c]][,bypass]]|bypass)]|NONE}[:{[+]policy-action[:level][,...]|None}]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#日志级别-LOGLEVEL-log-level-ULOG-NFLOG"><span class="toc-nav-number">1.6.3.4.</span> <span class="toc-nav-text">日志级别 (LOGLEVEL) - [log-level|ULOG|NFLOG]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#速率-RATE-limit"><span class="toc-nav-number">1.6.3.5.</span> <span class="toc-nav-text">速率 (RATE) - [-|limit]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#连接限制-CONNLIMIT-limit-mask"><span class="toc-nav-number">1.6.3.6.</span> <span class="toc-nav-text">连接限制 (CONNLIMIT) - limit[:mask]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Universal示例-2"><span class="toc-nav-number">1.6.3.7.</span> <span class="toc-nav-text">Universal示例</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#etc-shorewall-rules"><span class="toc-nav-number">1.6.4.</span> <span class="toc-nav-text">&#x2F;etc&#x2F;shorewall&#x2F;rules</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SECTION"><span class="toc-nav-number">1.6.4.1.</span> <span class="toc-nav-text">?SECTION</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#ACTION-target-log-level-none-tag"><span class="toc-nav-number">1.6.4.2.</span> <span class="toc-nav-text">ACTION - target[:{log-level|none}[!][:tag]]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SOURCE-source-spec-…"><span class="toc-nav-number">1.6.4.3.</span> <span class="toc-nav-text">SOURCE - source-spec[,…]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#DEST-dest-spec-…"><span class="toc-nav-number">1.6.4.4.</span> <span class="toc-nav-text">DEST - dest-spec[,…]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#PROTO-tcp-syn-ipp2p-ipp2p-udp-ipp2p-all-protocol-number-protocol-name-all"><span class="toc-nav-number">1.6.4.5.</span> <span class="toc-nav-text">PROTO- {-|tcp:[!]syn|ipp2p|ipp2p:udp|ipp2p:all|protocol-number|protocol-name|all}</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#DPORT-port-name-number-or-range-port-name-number-or-range-…-ipset"><span class="toc-nav-number">1.6.4.6.</span> <span class="toc-nav-text">DPORT - {-|port-name-number-or-range[,port-name-number-or-range]…|+ipset}</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SPORT-port-name-number-or-range-port-name-number-or-range-…-ipset"><span class="toc-nav-number">1.6.4.7.</span> <span class="toc-nav-text">SPORT - {-|port-name-number-or-range[,port-name-number-or-range]…|+ipset}</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#ORIGDEST-address-address-…-exclusion-exclusion"><span class="toc-nav-number">1.6.4.8.</span> <span class="toc-nav-text">ORIGDEST - [-|address[,address]…[exclusion]|exclusion]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#RATE-limit"><span class="toc-nav-number">1.6.4.9.</span> <span class="toc-nav-text">RATE - limit</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#USER-user-name-or-number-group-name-or-number-…"><span class="toc-nav-number">1.6.4.10.</span> <span class="toc-nav-text">USER - [!][user-name-or-number][:group-name-or-number][,…]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#MARK-value-mask-C"><span class="toc-nav-number">1.6.4.11.</span> <span class="toc-nav-text">MARK - [!]value[&#x2F;mask][:C]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#CONNLIMIT-d-limit-mask"><span class="toc-nav-number">1.6.4.12.</span> <span class="toc-nav-text">CONNLIMIT - [d:][!]limit[:mask]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#TIME-timeelement-amp-timeelement…"><span class="toc-nav-number">1.6.4.13.</span> <span class="toc-nav-text">TIME - timeelement[&amp;timeelement…]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#HEADERS-any-exactly-header-list-Optional-Added-in-Shorewall-4-4-15"><span class="toc-nav-number">1.6.4.14.</span> <span class="toc-nav-text">HEADERS - [!][any:|exactly:]header-list (Optional - Added in Shorewall 4.4.15)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SWITCH-switch-name-0-1"><span class="toc-nav-number">1.6.4.15.</span> <span class="toc-nav-text">SWITCH - [!]switch-name[&#x3D;{0|1}]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#HELPER-helper"><span class="toc-nav-number">1.6.4.16.</span> <span class="toc-nav-text">HELPER - [helper]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#示例"><span class="toc-nav-number">1.6.4.17.</span> <span class="toc-nav-text">示例</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Universal示例-3"><span class="toc-nav-number">1.6.4.18.</span> <span class="toc-nav-text">Universal示例</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#etc-shorewall-routes"><span class="toc-nav-number">1.6.5.</span> <span class="toc-nav-text">&#x2F;etc&#x2F;shorewall&#x2F;routes</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#etc-shorewall-hosts"><span class="toc-nav-number">1.6.6.</span> <span class="toc-nav-text">&#x2F;etc&#x2F;shorewall&#x2F;hosts</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Debian：已知问题"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">Debian：已知问题</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#FAQs"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">FAQs</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Installing-Shorewall——安装-Shorewall"><span class="toc-nav-number">1.8.1.</span> <span class="toc-nav-text">Installing Shorewall——安装 Shorewall</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Upgrading-Shorewall——升级-Shorewall"><span class="toc-nav-number">1.8.2.</span> <span class="toc-nav-text">Upgrading Shorewall——升级 Shorewall</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Port-Forwarding-Port-Redirection-——端口转发（端口重定向）"><span class="toc-nav-number">1.8.3.</span> <span class="toc-nav-text">Port Forwarding (Port Redirection)——端口转发（端口重定向）</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#谷歌机械翻译FAQs"><span class="toc-nav-number">1.9.</span> <span class="toc-nav-text">谷歌机械翻译FAQs</span></a></li></ol></li></ol>
-          
+          <div id="toc" class="toc-article">
+            <strong class="toc-title">Contents</strong>
+            
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Shorewall防火墙配置"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Shorewall防火墙配置</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#安装"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">安装</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#包介绍"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">包介绍</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#须知"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">须知</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#基础配置"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">基础配置</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Universal"><span class="toc-nav-number">1.4.1.</span> <span class="toc-nav-text">Universal</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#one-interface-TODO"><span class="toc-nav-number">1.4.2.</span> <span class="toc-nav-text">one-interface(TODO)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#two-interfaces-TODO"><span class="toc-nav-number">1.4.3.</span> <span class="toc-nav-text">two-interfaces(TODO)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#three-interfaces-TODO"><span class="toc-nav-number">1.4.4.</span> <span class="toc-nav-text">three-interfaces(TODO)</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Manpages"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">Manpages</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#第5节-—-文件和概念"><span class="toc-nav-number">1.5.1.</span> <span class="toc-nav-text">第5节 — 文件和概念</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#第8节-—-管理命令"><span class="toc-nav-number">1.5.2.</span> <span class="toc-nav-text">第8节 — 管理命令</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#配置文件"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">配置文件</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#etc-shorewall-zones"><span class="toc-nav-number">1.6.1.</span> <span class="toc-nav-text">&#x2F;etc&#x2F;shorewall&#x2F;zones</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#类型（TYPE）"><span class="toc-nav-number">1.6.1.1.</span> <span class="toc-nav-text">类型（TYPE）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#选项-OPTIONS"><span class="toc-nav-number">1.6.1.2.</span> <span class="toc-nav-text">选项 (OPTIONS)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#IN-OPTIONS-和-OUT-OPTIONS"><span class="toc-nav-number">1.6.1.3.</span> <span class="toc-nav-text">IN OPTIONS 和 OUT OPTIONS</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Universal示例"><span class="toc-nav-number">1.6.1.4.</span> <span class="toc-nav-text">Universal示例</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#etc-shorewall-interfaces"><span class="toc-nav-number">1.6.2.</span> <span class="toc-nav-text">&#x2F;etc&#x2F;shorewall&#x2F;interfaces</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#区域-Zone"><span class="toc-nav-number">1.6.2.1.</span> <span class="toc-nav-text">区域 (Zone)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#接口（INTERFACE）"><span class="toc-nav-number">1.6.2.2.</span> <span class="toc-nav-text">接口（INTERFACE）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#广播（BROADCAST）"><span class="toc-nav-number">1.6.2.3.</span> <span class="toc-nav-text">广播（BROADCAST）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#选项（OPTIONS）"><span class="toc-nav-number">1.6.2.4.</span> <span class="toc-nav-text">选项（OPTIONS）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Universal示例-1"><span class="toc-nav-number">1.6.2.5.</span> <span class="toc-nav-text">Universal示例</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#etc-shorewall-policy"><span class="toc-nav-number">1.6.3.</span> <span class="toc-nav-text">&#x2F;etc&#x2F;shorewall&#x2F;policy</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SOURCE-zone-…-FW-all-ezone-…"><span class="toc-nav-number">1.6.3.1.</span> <span class="toc-nav-text">SOURCE - zone[,…[+]]|$FW|all[+][!ezone[,…]]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#DEST-zone-…-FW-all-ezone-…"><span class="toc-nav-number">1.6.3.2.</span> <span class="toc-nav-text">DEST - zone[,…[+]]|$FW|all[+][!ezone[,…]]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#政策-POLICY-ACCEPT-DROP-REJECT-BLACKLIST-CONTINUE-QUEUE-NFQUEUE-queuenumber1-queuenumber2-c-bypass-bypass-NONE-policy-action-level-None"><span class="toc-nav-number">1.6.3.3.</span> <span class="toc-nav-text">政策 (POLICY) - {ACCEPT|DROP|REJECT|BLACKLIST|CONTINUE|QUEUE|NFQUEUE[([queuenumber1[:queuenumber2[c]][,bypass]]|bypass)]|NONE}[:{[+]policy-action[:level][,...]|None}]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#日志级别-LOGLEVEL-log-level-ULOG-NFLOG"><span class="toc-nav-number">1.6.3.4.</span> <span class="toc-nav-text">日志级别 (LOGLEVEL) - [log-level|ULOG|NFLOG]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#速率-RATE-limit"><span class="toc-nav-number">1.6.3.5.</span> <span class="toc-nav-text">速率 (RATE) - [-|limit]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#连接限制-CONNLIMIT-limit-mask"><span class="toc-nav-number">1.6.3.6.</span> <span class="toc-nav-text">连接限制 (CONNLIMIT) - limit[:mask]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Universal示例-2"><span class="toc-nav-number">1.6.3.7.</span> <span class="toc-nav-text">Universal示例</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#etc-shorewall-rules"><span class="toc-nav-number">1.6.4.</span> <span class="toc-nav-text">&#x2F;etc&#x2F;shorewall&#x2F;rules</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SECTION"><span class="toc-nav-number">1.6.4.1.</span> <span class="toc-nav-text">?SECTION</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#ACTION-target-log-level-none-tag"><span class="toc-nav-number">1.6.4.2.</span> <span class="toc-nav-text">ACTION - target[:{log-level|none}[!][:tag]]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SOURCE-source-spec-…"><span class="toc-nav-number">1.6.4.3.</span> <span class="toc-nav-text">SOURCE - source-spec[,…]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#DEST-dest-spec-…"><span class="toc-nav-number">1.6.4.4.</span> <span class="toc-nav-text">DEST - dest-spec[,…]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#PROTO-tcp-syn-ipp2p-ipp2p-udp-ipp2p-all-protocol-number-protocol-name-all"><span class="toc-nav-number">1.6.4.5.</span> <span class="toc-nav-text">PROTO- {-|tcp:[!]syn|ipp2p|ipp2p:udp|ipp2p:all|protocol-number|protocol-name|all}</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#DPORT-port-name-number-or-range-port-name-number-or-range-…-ipset"><span class="toc-nav-number">1.6.4.6.</span> <span class="toc-nav-text">DPORT - {-|port-name-number-or-range[,port-name-number-or-range]…|+ipset}</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SPORT-port-name-number-or-range-port-name-number-or-range-…-ipset"><span class="toc-nav-number">1.6.4.7.</span> <span class="toc-nav-text">SPORT - {-|port-name-number-or-range[,port-name-number-or-range]…|+ipset}</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#ORIGDEST-address-address-…-exclusion-exclusion"><span class="toc-nav-number">1.6.4.8.</span> <span class="toc-nav-text">ORIGDEST - [-|address[,address]…[exclusion]|exclusion]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#RATE-limit"><span class="toc-nav-number">1.6.4.9.</span> <span class="toc-nav-text">RATE - limit</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#USER-user-name-or-number-group-name-or-number-…"><span class="toc-nav-number">1.6.4.10.</span> <span class="toc-nav-text">USER - [!][user-name-or-number][:group-name-or-number][,…]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#MARK-value-mask-C"><span class="toc-nav-number">1.6.4.11.</span> <span class="toc-nav-text">MARK - [!]value[&#x2F;mask][:C]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#CONNLIMIT-d-limit-mask"><span class="toc-nav-number">1.6.4.12.</span> <span class="toc-nav-text">CONNLIMIT - [d:][!]limit[:mask]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#TIME-timeelement-amp-timeelement…"><span class="toc-nav-number">1.6.4.13.</span> <span class="toc-nav-text">TIME - timeelement[&amp;timeelement…]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#HEADERS-any-exactly-header-list-Optional-Added-in-Shorewall-4-4-15"><span class="toc-nav-number">1.6.4.14.</span> <span class="toc-nav-text">HEADERS - [!][any:|exactly:]header-list (Optional - Added in Shorewall 4.4.15)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SWITCH-switch-name-0-1"><span class="toc-nav-number">1.6.4.15.</span> <span class="toc-nav-text">SWITCH - [!]switch-name[&#x3D;{0|1}]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#HELPER-helper"><span class="toc-nav-number">1.6.4.16.</span> <span class="toc-nav-text">HELPER - [helper]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#示例"><span class="toc-nav-number">1.6.4.17.</span> <span class="toc-nav-text">示例</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Universal示例-3"><span class="toc-nav-number">1.6.4.18.</span> <span class="toc-nav-text">Universal示例</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#etc-shorewall-routes"><span class="toc-nav-number">1.6.5.</span> <span class="toc-nav-text">&#x2F;etc&#x2F;shorewall&#x2F;routes</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#etc-shorewall-hosts"><span class="toc-nav-number">1.6.6.</span> <span class="toc-nav-text">&#x2F;etc&#x2F;shorewall&#x2F;hosts</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Debian：已知问题"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">Debian：已知问题</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#FAQs"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">FAQs</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Installing-Shorewall——安装-Shorewall"><span class="toc-nav-number">1.8.1.</span> <span class="toc-nav-text">Installing Shorewall——安装 Shorewall</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Upgrading-Shorewall——升级-Shorewall"><span class="toc-nav-number">1.8.2.</span> <span class="toc-nav-text">Upgrading Shorewall——升级 Shorewall</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Port-Forwarding-Port-Redirection-——端口转发（端口重定向）"><span class="toc-nav-number">1.8.3.</span> <span class="toc-nav-text">Port Forwarding (Port Redirection)——端口转发（端口重定向）</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#谷歌机械翻译FAQs"><span class="toc-nav-number">1.9.</span> <span class="toc-nav-text">谷歌机械翻译FAQs</span></a></li></ol></li></ol>
+            
+          </div>
         
-        </div>
       </aside>
     
 
@@ -2442,6 +2541,7 @@ shorewall-host(5):
 
 <!-- catalog -->
 <script type="text/javascript" async="true" src="/rmshadows/js/catalog.js?v=1.0.0"></script>
+
 
 <!-- totop(rocket) -->
 <script type="text/javascript" async="true" src="/rmshadows/js/totop.js?v=1.0.0"></script>

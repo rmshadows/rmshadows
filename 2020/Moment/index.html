@@ -672,27 +672,127 @@
         
         <hr>
 
-        <!-- comments start -->
-        <!--修改--artalk-->
-<!-- 0.artalk安装代码 -->
+        <!-- COMMENTS start (no fragment cache: per-page artalk options) -->
+        <!-- Artalk / COMMENTS gate -->
 
-<!-- CSS -->
-<link href="https://civiccccc.ltd/artalk/dist/Artalk.css" rel="stylesheet" />
-<link href="https://civiccccc.ltd/artalk/dist/Artalk.css" rel="stylesheet" />
-<!-- JS -->
-<script src="https://civiccccc.ltd/artalk/dist/Artalk.js"></script>
-<!-- Artalk -->
-<div id="Comments"></div>
+
+<section id="comments-section" class="comments-section" aria-label="COMMENTS">
+  <h5 class="comments-heading">COMMENTS</h5>
+
+  
+  <div id="comments-gate" class="comments-gate">
+    
+    
+    <p class="comments-gate-hint">请输入‘hello’。</p>
+    
+    <div class="comments-gate-row">
+      <input type="password" id="comments-unlock-input" class="comments-unlock-input" autocomplete="off" placeholder="Access key">
+      <button type="button" id="comments-unlock-btn" class="comments-gate-btn">Unlock</button>
+    </div>
+    <p id="comments-unlock-error" class="comments-unlock-error" hidden>Wrong key.</p>
+    
+  </div>
+  
+
+  <div id="Comments" hidden></div>
+</section>
+
 <script>
-  Artalk.init({
-    el: '#Comments', // 绑定元素的 Selector
-    pageKey: 'https://rmshadows.github.io/2020/Moment/', // 固定链接
-    pageTitle: '', // 页面标题 (留空自动获取)
-    server: 'https://civiccccc.ltd/artalk', // 后端地址
-    site: 'CIVICCCCC的博客', // 你的站点名
-  })
+(function () {
+  var cfg = {
+    css: "https://civiccccc.ltd/artalk/dist/Artalk.css",
+    js: "https://civiccccc.ltd/artalk/dist/Artalk.js",
+    server: "https://civiccccc.ltd/artalk",
+    site: "CIVICCCCC的博客",
+    pageKey: "https://rmshadows.github.io/2020/Moment/",
+    unlock: "hello",
+    needGate: true
+  };
+  var loaded = false;
+  var inited = false;
+
+  function loadScript(src) {
+    return new Promise(function (resolve, reject) {
+      var el = document.createElement('script');
+      el.src = src;
+      el.onload = function () { resolve(); };
+      el.onerror = reject;
+      document.head.appendChild(el);
+    });
+  }
+
+  function ensureArtalk() {
+    if (loaded) return Promise.resolve();
+    loaded = true;
+    if (!document.querySelector('link[data-artalk-css]')) {
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = cfg.css;
+      link.setAttribute('data-artalk-css', '1');
+      document.head.appendChild(link);
+    }
+    if (window.Artalk) return Promise.resolve();
+    return loadScript(cfg.js);
+  }
+
+  function initArtalk() {
+    if (inited) return;
+    inited = true;
+    var box = document.getElementById('Comments');
+    if (box) box.hidden = false;
+    var gate = document.getElementById('comments-gate');
+    if (gate) gate.hidden = true;
+    ensureArtalk().then(function () {
+      Artalk.init({
+        el: '#Comments',
+        pageKey: cfg.pageKey,
+        pageTitle: '',
+        server: cfg.server,
+        site: cfg.site
+      });
+    }).catch(function (e) {
+      console.error('COMMENTS load failed', e);
+      inited = false;
+    });
+  }
+
+  if (!cfg.needGate) {
+    initArtalk();
+    return;
+  }
+
+  var unlockBtn = document.getElementById('comments-unlock-btn');
+  var expandBtn = document.getElementById('comments-expand-btn');
+  var input = document.getElementById('comments-unlock-input');
+  var err = document.getElementById('comments-unlock-error');
+
+  function tryUnlock() {
+    if (!cfg.unlock) {
+      initArtalk();
+      return;
+    }
+    var val = input ? input.value : '';
+    if (val === cfg.unlock) {
+      if (err) err.hidden = true;
+      initArtalk();
+    } else if (err) {
+      err.hidden = false;
+    }
+  }
+
+  if (unlockBtn) {
+    unlockBtn.addEventListener('click', tryUnlock);
+    if (input) {
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') tryUnlock();
+      });
+    }
+  }
+  if (expandBtn) {
+    expandBtn.addEventListener('click', function () { initArtalk(); });
+  }
+})();
 </script>
-<!-- artalk安装代码已完成 -->
 
 
 
@@ -712,7 +812,7 @@
 
 <!--修改--ISSO-->
 
-        <!-- comments end -->
+        <!-- COMMENTS end -->
         <hr>
 
       </div>
@@ -722,15 +822,14 @@
 
     
       <aside id="sidebar">
-        <!--div id="toc" class="toc-article" -->
-        <div id="toc" class="toc-article">
-        <strong class="toc-title">Contents</strong>
         
-          
-            <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#动态-Moment"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">动态 - Moment</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2026-02-贰零贰陆"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">2026-02-贰零贰陆</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2024-08-贰零贰肆"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">2024-08-贰零贰肆</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2023-06"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">2023-06</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2023-03-贰零贰叁"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">2023-03-贰零贰叁</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2022-11"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">2022-11</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2022-09"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">2022-09</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2022-06"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">2022-06</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2022-03"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">2022-03</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2022-01-贰零贰贰"><span class="toc-nav-number">1.9.</span> <span class="toc-nav-text">2022-01-贰零贰贰</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2021-12"><span class="toc-nav-number">1.10.</span> <span class="toc-nav-text">2021-12</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2021-11"><span class="toc-nav-number">1.11.</span> <span class="toc-nav-text">2021-11</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2021-07"><span class="toc-nav-number">1.12.</span> <span class="toc-nav-text">2021-07</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2021-06"><span class="toc-nav-number">1.13.</span> <span class="toc-nav-text">2021-06</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2021-01-贰零贰壹"><span class="toc-nav-number">1.14.</span> <span class="toc-nav-text">2021-01-贰零贰壹</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2020-10"><span class="toc-nav-number">1.15.</span> <span class="toc-nav-text">2020-10</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2020-09-贰零贰零"><span class="toc-nav-number">1.16.</span> <span class="toc-nav-text">2020-09-贰零贰零</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#杂记"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">杂记</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#椰子对线解题思路个人总结"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">椰子对线解题思路个人总结</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#模板-Template"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">模板 - Template</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Year-Month"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">Year-Month</span></a></li></ol></li></ol>
-          
+          <div id="toc" class="toc-article">
+            <strong class="toc-title">Contents</strong>
+            
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#动态-Moment"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">动态 - Moment</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2026-02-贰零贰陆"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">2026-02-贰零贰陆</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2024-08-贰零贰肆"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">2024-08-贰零贰肆</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2023-06"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">2023-06</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2023-03-贰零贰叁"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">2023-03-贰零贰叁</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2022-11"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">2022-11</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2022-09"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">2022-09</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2022-06"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">2022-06</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2022-03"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">2022-03</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2022-01-贰零贰贰"><span class="toc-nav-number">1.9.</span> <span class="toc-nav-text">2022-01-贰零贰贰</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2021-12"><span class="toc-nav-number">1.10.</span> <span class="toc-nav-text">2021-12</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2021-11"><span class="toc-nav-number">1.11.</span> <span class="toc-nav-text">2021-11</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2021-07"><span class="toc-nav-number">1.12.</span> <span class="toc-nav-text">2021-07</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2021-06"><span class="toc-nav-number">1.13.</span> <span class="toc-nav-text">2021-06</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2021-01-贰零贰壹"><span class="toc-nav-number">1.14.</span> <span class="toc-nav-text">2021-01-贰零贰壹</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2020-10"><span class="toc-nav-number">1.15.</span> <span class="toc-nav-text">2020-10</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2020-09-贰零贰零"><span class="toc-nav-number">1.16.</span> <span class="toc-nav-text">2020-09-贰零贰零</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#杂记"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">杂记</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#椰子对线解题思路个人总结"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">椰子对线解题思路个人总结</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#模板-Template"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">模板 - Template</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Year-Month"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">Year-Month</span></a></li></ol></li></ol>
+            
+          </div>
         
-        </div>
       </aside>
     
 
@@ -954,6 +1053,7 @@
 
 <!-- catalog -->
 <script type="text/javascript" async="true" src="/rmshadows/js/catalog.js?v=1.0.0"></script>
+
 
 <!-- totop(rocket) -->
 <script type="text/javascript" async="true" src="/rmshadows/js/totop.js?v=1.0.0"></script>

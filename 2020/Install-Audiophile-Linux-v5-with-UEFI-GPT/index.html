@@ -711,27 +711,127 @@
         
         <hr>
 
-        <!-- comments start -->
-        <!--修改--artalk-->
-<!-- 0.artalk安装代码 -->
+        <!-- COMMENTS start (no fragment cache: per-page artalk options) -->
+        <!-- Artalk / COMMENTS gate -->
 
-<!-- CSS -->
-<link href="https://civiccccc.ltd/artalk/dist/Artalk.css" rel="stylesheet" />
-<link href="https://civiccccc.ltd/artalk/dist/Artalk.css" rel="stylesheet" />
-<!-- JS -->
-<script src="https://civiccccc.ltd/artalk/dist/Artalk.js"></script>
-<!-- Artalk -->
-<div id="Comments"></div>
+
+<section id="comments-section" class="comments-section" aria-label="COMMENTS">
+  <h5 class="comments-heading">COMMENTS</h5>
+
+  
+  <div id="comments-gate" class="comments-gate">
+    
+    
+    <p class="comments-gate-hint">请输入‘hello’。</p>
+    
+    <div class="comments-gate-row">
+      <input type="password" id="comments-unlock-input" class="comments-unlock-input" autocomplete="off" placeholder="Access key">
+      <button type="button" id="comments-unlock-btn" class="comments-gate-btn">Unlock</button>
+    </div>
+    <p id="comments-unlock-error" class="comments-unlock-error" hidden>Wrong key.</p>
+    
+  </div>
+  
+
+  <div id="Comments" hidden></div>
+</section>
+
 <script>
-  Artalk.init({
-    el: '#Comments', // 绑定元素的 Selector
-    pageKey: 'https://rmshadows.github.io/2020/Install-Audiophile-Linux-v5-with-UEFI-GPT/', // 固定链接
-    pageTitle: '', // 页面标题 (留空自动获取)
-    server: 'https://civiccccc.ltd/artalk', // 后端地址
-    site: 'CIVICCCCC的博客', // 你的站点名
-  })
+(function () {
+  var cfg = {
+    css: "https://civiccccc.ltd/artalk/dist/Artalk.css",
+    js: "https://civiccccc.ltd/artalk/dist/Artalk.js",
+    server: "https://civiccccc.ltd/artalk",
+    site: "CIVICCCCC的博客",
+    pageKey: "https://rmshadows.github.io/2020/Install-Audiophile-Linux-v5-with-UEFI-GPT/",
+    unlock: "hello",
+    needGate: true
+  };
+  var loaded = false;
+  var inited = false;
+
+  function loadScript(src) {
+    return new Promise(function (resolve, reject) {
+      var el = document.createElement('script');
+      el.src = src;
+      el.onload = function () { resolve(); };
+      el.onerror = reject;
+      document.head.appendChild(el);
+    });
+  }
+
+  function ensureArtalk() {
+    if (loaded) return Promise.resolve();
+    loaded = true;
+    if (!document.querySelector('link[data-artalk-css]')) {
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = cfg.css;
+      link.setAttribute('data-artalk-css', '1');
+      document.head.appendChild(link);
+    }
+    if (window.Artalk) return Promise.resolve();
+    return loadScript(cfg.js);
+  }
+
+  function initArtalk() {
+    if (inited) return;
+    inited = true;
+    var box = document.getElementById('Comments');
+    if (box) box.hidden = false;
+    var gate = document.getElementById('comments-gate');
+    if (gate) gate.hidden = true;
+    ensureArtalk().then(function () {
+      Artalk.init({
+        el: '#Comments',
+        pageKey: cfg.pageKey,
+        pageTitle: '',
+        server: cfg.server,
+        site: cfg.site
+      });
+    }).catch(function (e) {
+      console.error('COMMENTS load failed', e);
+      inited = false;
+    });
+  }
+
+  if (!cfg.needGate) {
+    initArtalk();
+    return;
+  }
+
+  var unlockBtn = document.getElementById('comments-unlock-btn');
+  var expandBtn = document.getElementById('comments-expand-btn');
+  var input = document.getElementById('comments-unlock-input');
+  var err = document.getElementById('comments-unlock-error');
+
+  function tryUnlock() {
+    if (!cfg.unlock) {
+      initArtalk();
+      return;
+    }
+    var val = input ? input.value : '';
+    if (val === cfg.unlock) {
+      if (err) err.hidden = true;
+      initArtalk();
+    } else if (err) {
+      err.hidden = false;
+    }
+  }
+
+  if (unlockBtn) {
+    unlockBtn.addEventListener('click', tryUnlock);
+    if (input) {
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') tryUnlock();
+      });
+    }
+  }
+  if (expandBtn) {
+    expandBtn.addEventListener('click', function () { initArtalk(); });
+  }
+})();
 </script>
-<!-- artalk安装代码已完成 -->
 
 
 
@@ -751,7 +851,7 @@
 
 <!--修改--ISSO-->
 
-        <!-- comments end -->
+        <!-- COMMENTS end -->
         <hr>
 
       </div>
@@ -761,15 +861,14 @@
 
     
       <aside id="sidebar">
-        <!--div id="toc" class="toc-article" -->
-        <div id="toc" class="toc-article">
-        <strong class="toc-title">Contents</strong>
         
-          
-            <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#安装Audiophile-Linux-Get-Start"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">安装Audiophile Linux - Get Start</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#制作启动盘-Grab-APL"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">制作启动盘 - Grab APL</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#在UEFI下启动安装盘并进行磁盘分区-BOOT-WITH-UEFI-amp-Create-partitions"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">在UEFI下启动安装盘并进行磁盘分区 - BOOT WITH UEFI &amp; Create partitions</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#准备就绪，开始安装-Install-APL"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">准备就绪，开始安装 - Install APL</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#安装启动引导-Grub-install-x86-64-efi"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">安装启动引导 - Grub-install x86_64-efi</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#收尾工作-Last-step"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">收尾工作 - Last step</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#开机优化-Power-on-our-APL-amp-Make-it-easy-to-use"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">开机优化 - Power-on our APL &amp; Make it easy to use</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#初始化pacman-Init-pacman"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">初始化pacman - Init pacman</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#设置语言-Set-up-language："><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">设置语言 - Set up language：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#关于硬盘-HDD-amp-SSD"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">关于硬盘 - HDD &amp; SSD</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#官方关于音乐设置-About-Audio-Cards："><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">官方关于音乐设置 - About Audio Cards：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#关于桌面Conky"><span class="toc-nav-number">2.5.</span> <span class="toc-nav-text">关于桌面Conky</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Fluxbox-Make-a-few-change"><span class="toc-nav-number">2.6.</span> <span class="toc-nav-text">Fluxbox - Make a few change</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#自动挂载音乐磁盘"><span class="toc-nav-number">2.6.1.</span> <span class="toc-nav-text">自动挂载音乐磁盘</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Conky"><span class="toc-nav-number">2.6.2.</span> <span class="toc-nav-text">Conky</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#添加菜单和快捷键-Menu-amp-Keys"><span class="toc-nav-number">2.6.3.</span> <span class="toc-nav-text">添加菜单和快捷键 - Menu &amp; Keys</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#让Fcitx运行于Fluxbox-wm"><span class="toc-nav-number">2.6.4.</span> <span class="toc-nav-text">让Fcitx运行于Fluxbox wm</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#设置成Windows-10-的界面-Make-a-Windows-10-Theme"><span class="toc-nav-number">2.6.5.</span> <span class="toc-nav-text">设置成Windows 10 的界面 - Make a Windows 10 Theme !</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#其他-Others"><span class="toc-nav-number">2.7.</span> <span class="toc-nav-text">其他 - Others</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#问题"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">问题</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#升级系统后出现initramfs-unpacking-failed-invalid-magic-at-start-of-compressed-archive"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">升级系统后出现initramfs: unpacking failed: invalid magic at start of compressed archive</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#总结-Command-used"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">总结 - Command used</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#截屏-Screenshots"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">截屏 - Screenshots</span></a></li></ol>
-          
+          <div id="toc" class="toc-article">
+            <strong class="toc-title">Contents</strong>
+            
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#安装Audiophile-Linux-Get-Start"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">安装Audiophile Linux - Get Start</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#制作启动盘-Grab-APL"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">制作启动盘 - Grab APL</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#在UEFI下启动安装盘并进行磁盘分区-BOOT-WITH-UEFI-amp-Create-partitions"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">在UEFI下启动安装盘并进行磁盘分区 - BOOT WITH UEFI &amp; Create partitions</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#准备就绪，开始安装-Install-APL"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">准备就绪，开始安装 - Install APL</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#安装启动引导-Grub-install-x86-64-efi"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">安装启动引导 - Grub-install x86_64-efi</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#收尾工作-Last-step"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">收尾工作 - Last step</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#开机优化-Power-on-our-APL-amp-Make-it-easy-to-use"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">开机优化 - Power-on our APL &amp; Make it easy to use</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#初始化pacman-Init-pacman"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">初始化pacman - Init pacman</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#设置语言-Set-up-language："><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">设置语言 - Set up language：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#关于硬盘-HDD-amp-SSD"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">关于硬盘 - HDD &amp; SSD</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#官方关于音乐设置-About-Audio-Cards："><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">官方关于音乐设置 - About Audio Cards：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#关于桌面Conky"><span class="toc-nav-number">2.5.</span> <span class="toc-nav-text">关于桌面Conky</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Fluxbox-Make-a-few-change"><span class="toc-nav-number">2.6.</span> <span class="toc-nav-text">Fluxbox - Make a few change</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#自动挂载音乐磁盘"><span class="toc-nav-number">2.6.1.</span> <span class="toc-nav-text">自动挂载音乐磁盘</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Conky"><span class="toc-nav-number">2.6.2.</span> <span class="toc-nav-text">Conky</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#添加菜单和快捷键-Menu-amp-Keys"><span class="toc-nav-number">2.6.3.</span> <span class="toc-nav-text">添加菜单和快捷键 - Menu &amp; Keys</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#让Fcitx运行于Fluxbox-wm"><span class="toc-nav-number">2.6.4.</span> <span class="toc-nav-text">让Fcitx运行于Fluxbox wm</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#设置成Windows-10-的界面-Make-a-Windows-10-Theme"><span class="toc-nav-number">2.6.5.</span> <span class="toc-nav-text">设置成Windows 10 的界面 - Make a Windows 10 Theme !</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#其他-Others"><span class="toc-nav-number">2.7.</span> <span class="toc-nav-text">其他 - Others</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#问题"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">问题</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#升级系统后出现initramfs-unpacking-failed-invalid-magic-at-start-of-compressed-archive"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">升级系统后出现initramfs: unpacking failed: invalid magic at start of compressed archive</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#总结-Command-used"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">总结 - Command used</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#截屏-Screenshots"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">截屏 - Screenshots</span></a></li></ol>
+            
+          </div>
         
-        </div>
       </aside>
     
 
@@ -995,6 +1094,7 @@
 
 <!-- catalog -->
 <script type="text/javascript" async="true" src="/rmshadows/js/catalog.js?v=1.0.0"></script>
+
 
 <!-- totop(rocket) -->
 <script type="text/javascript" async="true" src="/rmshadows/js/totop.js?v=1.0.0"></script>

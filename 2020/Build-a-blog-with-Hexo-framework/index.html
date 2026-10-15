@@ -655,27 +655,127 @@
         
         <hr>
 
-        <!-- comments start -->
-        <!--修改--artalk-->
-<!-- 0.artalk安装代码 -->
+        <!-- COMMENTS start (no fragment cache: per-page artalk options) -->
+        <!-- Artalk / COMMENTS gate -->
 
-<!-- CSS -->
-<link href="https://civiccccc.ltd/artalk/dist/Artalk.css" rel="stylesheet" />
-<link href="https://civiccccc.ltd/artalk/dist/Artalk.css" rel="stylesheet" />
-<!-- JS -->
-<script src="https://civiccccc.ltd/artalk/dist/Artalk.js"></script>
-<!-- Artalk -->
-<div id="Comments"></div>
+
+<section id="comments-section" class="comments-section" aria-label="COMMENTS">
+  <h5 class="comments-heading">COMMENTS</h5>
+
+  
+  <div id="comments-gate" class="comments-gate">
+    
+    
+    <p class="comments-gate-hint">请输入‘hello’。</p>
+    
+    <div class="comments-gate-row">
+      <input type="password" id="comments-unlock-input" class="comments-unlock-input" autocomplete="off" placeholder="Access key">
+      <button type="button" id="comments-unlock-btn" class="comments-gate-btn">Unlock</button>
+    </div>
+    <p id="comments-unlock-error" class="comments-unlock-error" hidden>Wrong key.</p>
+    
+  </div>
+  
+
+  <div id="Comments" hidden></div>
+</section>
+
 <script>
-  Artalk.init({
-    el: '#Comments', // 绑定元素的 Selector
-    pageKey: 'https://rmshadows.github.io/2020/Build-a-blog-with-Hexo-framework/', // 固定链接
-    pageTitle: '', // 页面标题 (留空自动获取)
-    server: 'https://civiccccc.ltd/artalk', // 后端地址
-    site: 'CIVICCCCC的博客', // 你的站点名
-  })
+(function () {
+  var cfg = {
+    css: "https://civiccccc.ltd/artalk/dist/Artalk.css",
+    js: "https://civiccccc.ltd/artalk/dist/Artalk.js",
+    server: "https://civiccccc.ltd/artalk",
+    site: "CIVICCCCC的博客",
+    pageKey: "https://rmshadows.github.io/2020/Build-a-blog-with-Hexo-framework/",
+    unlock: "hello",
+    needGate: true
+  };
+  var loaded = false;
+  var inited = false;
+
+  function loadScript(src) {
+    return new Promise(function (resolve, reject) {
+      var el = document.createElement('script');
+      el.src = src;
+      el.onload = function () { resolve(); };
+      el.onerror = reject;
+      document.head.appendChild(el);
+    });
+  }
+
+  function ensureArtalk() {
+    if (loaded) return Promise.resolve();
+    loaded = true;
+    if (!document.querySelector('link[data-artalk-css]')) {
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = cfg.css;
+      link.setAttribute('data-artalk-css', '1');
+      document.head.appendChild(link);
+    }
+    if (window.Artalk) return Promise.resolve();
+    return loadScript(cfg.js);
+  }
+
+  function initArtalk() {
+    if (inited) return;
+    inited = true;
+    var box = document.getElementById('Comments');
+    if (box) box.hidden = false;
+    var gate = document.getElementById('comments-gate');
+    if (gate) gate.hidden = true;
+    ensureArtalk().then(function () {
+      Artalk.init({
+        el: '#Comments',
+        pageKey: cfg.pageKey,
+        pageTitle: '',
+        server: cfg.server,
+        site: cfg.site
+      });
+    }).catch(function (e) {
+      console.error('COMMENTS load failed', e);
+      inited = false;
+    });
+  }
+
+  if (!cfg.needGate) {
+    initArtalk();
+    return;
+  }
+
+  var unlockBtn = document.getElementById('comments-unlock-btn');
+  var expandBtn = document.getElementById('comments-expand-btn');
+  var input = document.getElementById('comments-unlock-input');
+  var err = document.getElementById('comments-unlock-error');
+
+  function tryUnlock() {
+    if (!cfg.unlock) {
+      initArtalk();
+      return;
+    }
+    var val = input ? input.value : '';
+    if (val === cfg.unlock) {
+      if (err) err.hidden = true;
+      initArtalk();
+    } else if (err) {
+      err.hidden = false;
+    }
+  }
+
+  if (unlockBtn) {
+    unlockBtn.addEventListener('click', tryUnlock);
+    if (input) {
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') tryUnlock();
+      });
+    }
+  }
+  if (expandBtn) {
+    expandBtn.addEventListener('click', function () { initArtalk(); });
+  }
+})();
 </script>
-<!-- artalk安装代码已完成 -->
 
 
 
@@ -695,7 +795,7 @@
 
 <!--修改--ISSO-->
 
-        <!-- comments end -->
+        <!-- COMMENTS end -->
         <hr>
 
       </div>
@@ -705,15 +805,14 @@
 
     
       <aside id="sidebar">
-        <!--div id="toc" class="toc-article" -->
-        <div id="toc" class="toc-article">
-        <strong class="toc-title">Contents</strong>
         
-          
-            <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#概况-Pre"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">概况 - Pre</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#上手-Get-Start"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">上手 - Get Start</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#搭建环境-Set-Up-Environment"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">搭建环境 - Set Up Environment</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#新建码云仓库-New-Gitee-Repository"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">新建码云仓库 - New Gitee Repository</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#本地工作区搭建-Local-Workplace"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">本地工作区搭建 - Local Workplace</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Gitee-Page"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">Gitee Page</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#我的配置-My-Blog"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">我的配置 - My Blog</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#主题搭建-Hexo-Theme"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">主题搭建 - Hexo Theme</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#主配置文件-config-yaml"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">主配置文件 - _config.yaml</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#博文加密——闹着玩"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">博文加密——闹着玩</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#添加鼠标特效"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">添加鼠标特效</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#添加ISSO评论系统"><span class="toc-nav-number">3.5.</span> <span class="toc-nav-text">添加ISSO评论系统</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#添加Livere和GitalkProxy参数"><span class="toc-nav-number">3.6.</span> <span class="toc-nav-text">添加Livere和GitalkProxy参数</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Hexo主题开发"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Hexo主题开发</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#源代码备份-Back-Up-Src"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">源代码备份 - Back Up Src</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#数学公式"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">数学公式</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#安装渲染器"><span class="toc-nav-number">6.1.</span> <span class="toc-nav-text">安装渲染器</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#开启mathjax"><span class="toc-nav-number">6.2.</span> <span class="toc-nav-text">开启mathjax</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#文章中开启mathjax标签"><span class="toc-nav-number">6.3.</span> <span class="toc-nav-text">文章中开启mathjax标签</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#评论系统指南"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">评论系统指南</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#关于Hexo部分报错解决办法"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">关于Hexo部分报错解决办法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#敏感标签"><span class="toc-nav-number">8.1.</span> <span class="toc-nav-text">敏感标签</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#升级依赖包"><span class="toc-nav-number">9.</span> <span class="toc-nav-text">升级依赖包</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#npm-check-updates"><span class="toc-nav-number">9.1.</span> <span class="toc-nav-text">npm-check-updates</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#npm-check"><span class="toc-nav-number">9.2.</span> <span class="toc-nav-text">npm-check</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#文章推荐"><span class="toc-nav-number">10.</span> <span class="toc-nav-text">文章推荐</span></a></li></ol>
-          
+          <div id="toc" class="toc-article">
+            <strong class="toc-title">Contents</strong>
+            
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#概况-Pre"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">概况 - Pre</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#上手-Get-Start"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">上手 - Get Start</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#搭建环境-Set-Up-Environment"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">搭建环境 - Set Up Environment</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#新建码云仓库-New-Gitee-Repository"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">新建码云仓库 - New Gitee Repository</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#本地工作区搭建-Local-Workplace"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">本地工作区搭建 - Local Workplace</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Gitee-Page"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">Gitee Page</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#我的配置-My-Blog"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">我的配置 - My Blog</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#主题搭建-Hexo-Theme"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">主题搭建 - Hexo Theme</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#主配置文件-config-yaml"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">主配置文件 - _config.yaml</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#博文加密——闹着玩"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">博文加密——闹着玩</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#添加鼠标特效"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">添加鼠标特效</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#添加ISSO评论系统"><span class="toc-nav-number">3.5.</span> <span class="toc-nav-text">添加ISSO评论系统</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#添加Livere和GitalkProxy参数"><span class="toc-nav-number">3.6.</span> <span class="toc-nav-text">添加Livere和GitalkProxy参数</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Hexo主题开发"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Hexo主题开发</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#源代码备份-Back-Up-Src"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">源代码备份 - Back Up Src</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#数学公式"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">数学公式</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#安装渲染器"><span class="toc-nav-number">6.1.</span> <span class="toc-nav-text">安装渲染器</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#开启mathjax"><span class="toc-nav-number">6.2.</span> <span class="toc-nav-text">开启mathjax</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#文章中开启mathjax标签"><span class="toc-nav-number">6.3.</span> <span class="toc-nav-text">文章中开启mathjax标签</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#评论系统指南"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">评论系统指南</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#关于Hexo部分报错解决办法"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">关于Hexo部分报错解决办法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#敏感标签"><span class="toc-nav-number">8.1.</span> <span class="toc-nav-text">敏感标签</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#升级依赖包"><span class="toc-nav-number">9.</span> <span class="toc-nav-text">升级依赖包</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#npm-check-updates"><span class="toc-nav-number">9.1.</span> <span class="toc-nav-text">npm-check-updates</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#npm-check"><span class="toc-nav-number">9.2.</span> <span class="toc-nav-text">npm-check</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#文章推荐"><span class="toc-nav-number">10.</span> <span class="toc-nav-text">文章推荐</span></a></li></ol>
+            
+          </div>
         
-        </div>
       </aside>
     
 
@@ -937,6 +1036,7 @@
 
 <!-- catalog -->
 <script type="text/javascript" async="true" src="/rmshadows/js/catalog.js?v=1.0.0"></script>
+
 
 <!-- totop(rocket) -->
 <script type="text/javascript" async="true" src="/rmshadows/js/totop.js?v=1.0.0"></script>

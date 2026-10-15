@@ -559,27 +559,127 @@
         
         <hr>
 
-        <!-- comments start -->
-        <!--修改--artalk-->
-<!-- 0.artalk安装代码 -->
+        <!-- COMMENTS start (no fragment cache: per-page artalk options) -->
+        <!-- Artalk / COMMENTS gate -->
 
-<!-- CSS -->
-<link href="https://civiccccc.ltd/artalk/dist/Artalk.css" rel="stylesheet" />
-<link href="https://civiccccc.ltd/artalk/dist/Artalk.css" rel="stylesheet" />
-<!-- JS -->
-<script src="https://civiccccc.ltd/artalk/dist/Artalk.js"></script>
-<!-- Artalk -->
-<div id="Comments"></div>
+
+<section id="comments-section" class="comments-section" aria-label="COMMENTS">
+  <h5 class="comments-heading">COMMENTS</h5>
+
+  
+  <div id="comments-gate" class="comments-gate">
+    
+    
+    <p class="comments-gate-hint">请输入‘hello’。</p>
+    
+    <div class="comments-gate-row">
+      <input type="password" id="comments-unlock-input" class="comments-unlock-input" autocomplete="off" placeholder="Access key">
+      <button type="button" id="comments-unlock-btn" class="comments-gate-btn">Unlock</button>
+    </div>
+    <p id="comments-unlock-error" class="comments-unlock-error" hidden>Wrong key.</p>
+    
+  </div>
+  
+
+  <div id="Comments" hidden></div>
+</section>
+
 <script>
-  Artalk.init({
-    el: '#Comments', // 绑定元素的 Selector
-    pageKey: 'https://rmshadows.github.io/2026/Mental-Math-Formulas/', // 固定链接
-    pageTitle: '', // 页面标题 (留空自动获取)
-    server: 'https://civiccccc.ltd/artalk', // 后端地址
-    site: 'CIVICCCCC的博客', // 你的站点名
-  })
+(function () {
+  var cfg = {
+    css: "https://civiccccc.ltd/artalk/dist/Artalk.css",
+    js: "https://civiccccc.ltd/artalk/dist/Artalk.js",
+    server: "https://civiccccc.ltd/artalk",
+    site: "CIVICCCCC的博客",
+    pageKey: "https://rmshadows.github.io/2026/Mental-Math-Formulas/",
+    unlock: "hello",
+    needGate: true
+  };
+  var loaded = false;
+  var inited = false;
+
+  function loadScript(src) {
+    return new Promise(function (resolve, reject) {
+      var el = document.createElement('script');
+      el.src = src;
+      el.onload = function () { resolve(); };
+      el.onerror = reject;
+      document.head.appendChild(el);
+    });
+  }
+
+  function ensureArtalk() {
+    if (loaded) return Promise.resolve();
+    loaded = true;
+    if (!document.querySelector('link[data-artalk-css]')) {
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = cfg.css;
+      link.setAttribute('data-artalk-css', '1');
+      document.head.appendChild(link);
+    }
+    if (window.Artalk) return Promise.resolve();
+    return loadScript(cfg.js);
+  }
+
+  function initArtalk() {
+    if (inited) return;
+    inited = true;
+    var box = document.getElementById('Comments');
+    if (box) box.hidden = false;
+    var gate = document.getElementById('comments-gate');
+    if (gate) gate.hidden = true;
+    ensureArtalk().then(function () {
+      Artalk.init({
+        el: '#Comments',
+        pageKey: cfg.pageKey,
+        pageTitle: '',
+        server: cfg.server,
+        site: cfg.site
+      });
+    }).catch(function (e) {
+      console.error('COMMENTS load failed', e);
+      inited = false;
+    });
+  }
+
+  if (!cfg.needGate) {
+    initArtalk();
+    return;
+  }
+
+  var unlockBtn = document.getElementById('comments-unlock-btn');
+  var expandBtn = document.getElementById('comments-expand-btn');
+  var input = document.getElementById('comments-unlock-input');
+  var err = document.getElementById('comments-unlock-error');
+
+  function tryUnlock() {
+    if (!cfg.unlock) {
+      initArtalk();
+      return;
+    }
+    var val = input ? input.value : '';
+    if (val === cfg.unlock) {
+      if (err) err.hidden = true;
+      initArtalk();
+    } else if (err) {
+      err.hidden = false;
+    }
+  }
+
+  if (unlockBtn) {
+    unlockBtn.addEventListener('click', tryUnlock);
+    if (input) {
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') tryUnlock();
+      });
+    }
+  }
+  if (expandBtn) {
+    expandBtn.addEventListener('click', function () { initArtalk(); });
+  }
+})();
 </script>
-<!-- artalk安装代码已完成 -->
 
 
 
@@ -599,7 +699,7 @@
 
 <!--修改--ISSO-->
 
-        <!-- comments end -->
+        <!-- COMMENTS end -->
         <hr>
 
       </div>
@@ -609,15 +709,14 @@
 
     
       <aside id="sidebar">
-        <!--div id="toc" class="toc-article" -->
-        <div id="toc" class="toc-article">
-        <strong class="toc-title">Contents</strong>
         
-          
-            <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#一、心算技巧（实用套路）"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">一、心算技巧（实用套路）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-平方心算"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1. 平方心算</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-1-尾数是-5-的平方"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">1.1 尾数是 5 的平方</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-2-接近-100-的平方"><span class="toc-nav-number">1.1.2.</span> <span class="toc-nav-text">1.2 接近 100 的平方</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-3-接近-50-的平方"><span class="toc-nav-number">1.1.3.</span> <span class="toc-nav-text">1.3 接近 50 的平方</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-4-11-30平方表（必背）"><span class="toc-nav-number">1.1.4.</span> <span class="toc-nav-text">1.4 11~30平方表（必背）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-5-平方差秒算"><span class="toc-nav-number">1.1.5.</span> <span class="toc-nav-text">1.5 平方差秒算</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-乘法心算（核心套路）"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">2. 乘法心算（核心套路）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-1-接近-100-的乘法"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">2.1 接近 100 的乘法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-2-接近-1000-的乘法"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">2.2 接近 1000 的乘法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-3-两位数乘-11"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">2.3 两位数乘 11</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-4-乘-9-99-999"><span class="toc-nav-number">1.2.4.</span> <span class="toc-nav-text">2.4 乘 9 &#x2F; 99 &#x2F; 999</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-5-乘-12（最常用）"><span class="toc-nav-number">1.2.5.</span> <span class="toc-nav-text">2.5 乘 12（最常用）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-6-乘-15（最常用）"><span class="toc-nav-number">1.2.6.</span> <span class="toc-nav-text">2.6 乘 15（最常用）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-7-乘-18（很强）"><span class="toc-nav-number">1.2.7.</span> <span class="toc-nav-text">2.7 乘 18（很强）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-8-乘-25-50-75"><span class="toc-nav-number">1.2.8.</span> <span class="toc-nav-text">2.8 乘 25 &#x2F; 50 &#x2F; 75</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-9-两位数乘两位数通用心算"><span class="toc-nav-number">1.2.9.</span> <span class="toc-nav-text">2.9 两位数乘两位数通用心算</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-加减心算"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">3. 加减心算</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-1-补整加法"><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">3.1 补整加法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-2-快速减法（借整）"><span class="toc-nav-number">1.3.2.</span> <span class="toc-nav-text">3.2 快速减法（借整）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-3-连加凑整"><span class="toc-nav-number">1.3.3.</span> <span class="toc-nav-text">3.3 连加凑整</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-除法心算"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">4. 除法心算</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#4-1-除以-5"><span class="toc-nav-number">1.4.1.</span> <span class="toc-nav-text">4.1 除以 5</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#4-2-除以-25"><span class="toc-nav-number">1.4.2.</span> <span class="toc-nav-text">4.2 除以 25</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#4-3-除以-125"><span class="toc-nav-number">1.4.3.</span> <span class="toc-nav-text">4.3 除以 125</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#4-4-除以-8-16"><span class="toc-nav-number">1.4.4.</span> <span class="toc-nav-text">4.4 除以 8 &#x2F; 16</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#5-折扣与百分数心算"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">5. 折扣与百分数心算</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#5-1-快速百分比"><span class="toc-nav-number">1.5.1.</span> <span class="toc-nav-text">5.1 快速百分比</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#5-2-折扣计算"><span class="toc-nav-number">1.5.2.</span> <span class="toc-nav-text">5.2 折扣计算</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#6-开平方快速估算"><span class="toc-nav-number">1.5.3.</span> <span class="toc-nav-text">6. 开平方快速估算</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#7-整除判断（检验神器）"><span class="toc-nav-number">1.5.4.</span> <span class="toc-nav-text">7. 整除判断（检验神器）</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#二、数学公式（代数恒等式）"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">二、数学公式（代数恒等式）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-平方公式"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">1. 平方公式</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#a-b-²-a²-2ab-b²"><span class="toc-nav-number">2.1.1.</span> <span class="toc-nav-text">(a+b)² &#x3D; a² + 2ab + b²</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#a−b-²-a²-−-2ab-b²"><span class="toc-nav-number">2.1.2.</span> <span class="toc-nav-text">(a−b)² &#x3D; a² − 2ab + b²</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#10a-5-²-a-a-1-·100-25"><span class="toc-nav-number">2.1.3.</span> <span class="toc-nav-text">(10a+5)² &#x3D; a(a+1)·100 + 25</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#a-b-a−b-a²-−-b²"><span class="toc-nav-number">2.1.4.</span> <span class="toc-nav-text">(a+b)(a−b) &#x3D; a² − b²</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-乘法公式"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">2. 乘法公式</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#a-b-c-ab-ac"><span class="toc-nav-number">2.2.1.</span> <span class="toc-nav-text">a(b+c) &#x3D; ab + ac</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#100−x-100−y-100-100−x−y-xy"><span class="toc-nav-number">2.2.2.</span> <span class="toc-nav-text">(100−x)(100−y) &#x3D; 100(100−x−y) + xy</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#ab×11-a-a-b-b（两位数）"><span class="toc-nav-number">2.2.3.</span> <span class="toc-nav-text">ab×11 &#x3D; a(a+b)b（两位数）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#n×9-n×10-−-n"><span class="toc-nav-number">2.2.4.</span> <span class="toc-nav-text">n×9 &#x3D; n×10 − n</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#n×99-n×100-−-n"><span class="toc-nav-number">2.2.5.</span> <span class="toc-nav-text">n×99 &#x3D; n×100 − n</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-加减公式"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">3. 加减公式</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#a-b-a-k-b−k-（补整法）"><span class="toc-nav-number">2.3.1.</span> <span class="toc-nav-text">a+b &#x3D; (a+k)+(b−k)（补整法）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#999-x-1000-x−1"><span class="toc-nav-number">2.3.2.</span> <span class="toc-nav-text">999+x &#x3D; 1000+(x−1)</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-立方与幂"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">4. 立方与幂</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#a-b-³-a³-3a²b-3ab²-b³"><span class="toc-nav-number">2.4.1.</span> <span class="toc-nav-text">(a+b)³ &#x3D; a³ + 3a²b + 3ab² + b³</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#5-除法公式"><span class="toc-nav-number">2.5.</span> <span class="toc-nav-text">5. 除法公式</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#÷5-×2-÷10"><span class="toc-nav-number">2.5.1.</span> <span class="toc-nav-text">÷5 &#x3D; ×2 ÷10</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#÷25-×4-÷100"><span class="toc-nav-number">2.5.2.</span> <span class="toc-nav-text">÷25 &#x3D; ×4 ÷100</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#6-常用分数与百分比"><span class="toc-nav-number">2.6.</span> <span class="toc-nav-text">6. 常用分数与百分比</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#三、国考资料分析（公式-技巧）"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">三、国考资料分析（公式 + 技巧）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-核心概念与公式"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">1. 核心概念与公式</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#基期与现期"><span class="toc-nav-number">3.1.1.</span> <span class="toc-nav-text">基期与现期</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#增长量与增长率"><span class="toc-nav-number">3.1.2.</span> <span class="toc-nav-text">增长量与增长率</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#隔年增长率"><span class="toc-nav-number">3.1.3.</span> <span class="toc-nav-text">隔年增长率</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#比重"><span class="toc-nav-number">3.1.4.</span> <span class="toc-nav-text">比重</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#平均数与倍数"><span class="toc-nav-number">3.1.5.</span> <span class="toc-nav-text">平均数与倍数</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-特征数字法（分数↔百分数）"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">2. 特征数字法（分数↔百分数）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-速算技巧"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">3. 速算技巧</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#首数法（看前几位）"><span class="toc-nav-number">3.3.1.</span> <span class="toc-nav-text">首数法（看前几位）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#尾数法（加减看尾数）"><span class="toc-nav-number">3.3.2.</span> <span class="toc-nav-text">尾数法（加减看尾数）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#有效数字法（乘除取-2～3-位）"><span class="toc-nav-number">3.3.3.</span> <span class="toc-nav-text">有效数字法（乘除取 2～3 位）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#估算法（四舍五入、截位）"><span class="toc-nav-number">3.3.4.</span> <span class="toc-nav-text">估算法（四舍五入、截位）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#直除法（一步除到底）"><span class="toc-nav-number">3.3.5.</span> <span class="toc-nav-text">直除法（一步除到底）</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-比较与判断口诀"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">4. 比较与判断口诀</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#5-年均增长率（选考）"><span class="toc-nav-number">3.5.</span> <span class="toc-nav-text">5. 年均增长率（选考）</span></a></li></ol></li></ol>
-          
+          <div id="toc" class="toc-article">
+            <strong class="toc-title">Contents</strong>
+            
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#一、心算技巧（实用套路）"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">一、心算技巧（实用套路）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-平方心算"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1. 平方心算</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-1-尾数是-5-的平方"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">1.1 尾数是 5 的平方</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-2-接近-100-的平方"><span class="toc-nav-number">1.1.2.</span> <span class="toc-nav-text">1.2 接近 100 的平方</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-3-接近-50-的平方"><span class="toc-nav-number">1.1.3.</span> <span class="toc-nav-text">1.3 接近 50 的平方</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-4-11-30平方表（必背）"><span class="toc-nav-number">1.1.4.</span> <span class="toc-nav-text">1.4 11~30平方表（必背）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-5-平方差秒算"><span class="toc-nav-number">1.1.5.</span> <span class="toc-nav-text">1.5 平方差秒算</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-乘法心算（核心套路）"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">2. 乘法心算（核心套路）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-1-接近-100-的乘法"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">2.1 接近 100 的乘法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-2-接近-1000-的乘法"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">2.2 接近 1000 的乘法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-3-两位数乘-11"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">2.3 两位数乘 11</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-4-乘-9-99-999"><span class="toc-nav-number">1.2.4.</span> <span class="toc-nav-text">2.4 乘 9 &#x2F; 99 &#x2F; 999</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-5-乘-12（最常用）"><span class="toc-nav-number">1.2.5.</span> <span class="toc-nav-text">2.5 乘 12（最常用）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-6-乘-15（最常用）"><span class="toc-nav-number">1.2.6.</span> <span class="toc-nav-text">2.6 乘 15（最常用）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-7-乘-18（很强）"><span class="toc-nav-number">1.2.7.</span> <span class="toc-nav-text">2.7 乘 18（很强）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-8-乘-25-50-75"><span class="toc-nav-number">1.2.8.</span> <span class="toc-nav-text">2.8 乘 25 &#x2F; 50 &#x2F; 75</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-9-两位数乘两位数通用心算"><span class="toc-nav-number">1.2.9.</span> <span class="toc-nav-text">2.9 两位数乘两位数通用心算</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-加减心算"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">3. 加减心算</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-1-补整加法"><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">3.1 补整加法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-2-快速减法（借整）"><span class="toc-nav-number">1.3.2.</span> <span class="toc-nav-text">3.2 快速减法（借整）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-3-连加凑整"><span class="toc-nav-number">1.3.3.</span> <span class="toc-nav-text">3.3 连加凑整</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-除法心算"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">4. 除法心算</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#4-1-除以-5"><span class="toc-nav-number">1.4.1.</span> <span class="toc-nav-text">4.1 除以 5</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#4-2-除以-25"><span class="toc-nav-number">1.4.2.</span> <span class="toc-nav-text">4.2 除以 25</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#4-3-除以-125"><span class="toc-nav-number">1.4.3.</span> <span class="toc-nav-text">4.3 除以 125</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#4-4-除以-8-16"><span class="toc-nav-number">1.4.4.</span> <span class="toc-nav-text">4.4 除以 8 &#x2F; 16</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#5-折扣与百分数心算"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">5. 折扣与百分数心算</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#5-1-快速百分比"><span class="toc-nav-number">1.5.1.</span> <span class="toc-nav-text">5.1 快速百分比</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#5-2-折扣计算"><span class="toc-nav-number">1.5.2.</span> <span class="toc-nav-text">5.2 折扣计算</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#6-开平方快速估算"><span class="toc-nav-number">1.5.3.</span> <span class="toc-nav-text">6. 开平方快速估算</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#7-整除判断（检验神器）"><span class="toc-nav-number">1.5.4.</span> <span class="toc-nav-text">7. 整除判断（检验神器）</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#二、数学公式（代数恒等式）"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">二、数学公式（代数恒等式）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-平方公式"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">1. 平方公式</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#a-b-²-a²-2ab-b²"><span class="toc-nav-number">2.1.1.</span> <span class="toc-nav-text">(a+b)² &#x3D; a² + 2ab + b²</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#a−b-²-a²-−-2ab-b²"><span class="toc-nav-number">2.1.2.</span> <span class="toc-nav-text">(a−b)² &#x3D; a² − 2ab + b²</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#10a-5-²-a-a-1-·100-25"><span class="toc-nav-number">2.1.3.</span> <span class="toc-nav-text">(10a+5)² &#x3D; a(a+1)·100 + 25</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#a-b-a−b-a²-−-b²"><span class="toc-nav-number">2.1.4.</span> <span class="toc-nav-text">(a+b)(a−b) &#x3D; a² − b²</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-乘法公式"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">2. 乘法公式</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#a-b-c-ab-ac"><span class="toc-nav-number">2.2.1.</span> <span class="toc-nav-text">a(b+c) &#x3D; ab + ac</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#100−x-100−y-100-100−x−y-xy"><span class="toc-nav-number">2.2.2.</span> <span class="toc-nav-text">(100−x)(100−y) &#x3D; 100(100−x−y) + xy</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#ab×11-a-a-b-b（两位数）"><span class="toc-nav-number">2.2.3.</span> <span class="toc-nav-text">ab×11 &#x3D; a(a+b)b（两位数）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#n×9-n×10-−-n"><span class="toc-nav-number">2.2.4.</span> <span class="toc-nav-text">n×9 &#x3D; n×10 − n</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#n×99-n×100-−-n"><span class="toc-nav-number">2.2.5.</span> <span class="toc-nav-text">n×99 &#x3D; n×100 − n</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-加减公式"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">3. 加减公式</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#a-b-a-k-b−k-（补整法）"><span class="toc-nav-number">2.3.1.</span> <span class="toc-nav-text">a+b &#x3D; (a+k)+(b−k)（补整法）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#999-x-1000-x−1"><span class="toc-nav-number">2.3.2.</span> <span class="toc-nav-text">999+x &#x3D; 1000+(x−1)</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-立方与幂"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">4. 立方与幂</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#a-b-³-a³-3a²b-3ab²-b³"><span class="toc-nav-number">2.4.1.</span> <span class="toc-nav-text">(a+b)³ &#x3D; a³ + 3a²b + 3ab² + b³</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#5-除法公式"><span class="toc-nav-number">2.5.</span> <span class="toc-nav-text">5. 除法公式</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#÷5-×2-÷10"><span class="toc-nav-number">2.5.1.</span> <span class="toc-nav-text">÷5 &#x3D; ×2 ÷10</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#÷25-×4-÷100"><span class="toc-nav-number">2.5.2.</span> <span class="toc-nav-text">÷25 &#x3D; ×4 ÷100</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#6-常用分数与百分比"><span class="toc-nav-number">2.6.</span> <span class="toc-nav-text">6. 常用分数与百分比</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#三、国考资料分析（公式-技巧）"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">三、国考资料分析（公式 + 技巧）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-核心概念与公式"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">1. 核心概念与公式</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#基期与现期"><span class="toc-nav-number">3.1.1.</span> <span class="toc-nav-text">基期与现期</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#增长量与增长率"><span class="toc-nav-number">3.1.2.</span> <span class="toc-nav-text">增长量与增长率</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#隔年增长率"><span class="toc-nav-number">3.1.3.</span> <span class="toc-nav-text">隔年增长率</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#比重"><span class="toc-nav-number">3.1.4.</span> <span class="toc-nav-text">比重</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#平均数与倍数"><span class="toc-nav-number">3.1.5.</span> <span class="toc-nav-text">平均数与倍数</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-特征数字法（分数↔百分数）"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">2. 特征数字法（分数↔百分数）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-速算技巧"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">3. 速算技巧</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#首数法（看前几位）"><span class="toc-nav-number">3.3.1.</span> <span class="toc-nav-text">首数法（看前几位）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#尾数法（加减看尾数）"><span class="toc-nav-number">3.3.2.</span> <span class="toc-nav-text">尾数法（加减看尾数）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#有效数字法（乘除取-2～3-位）"><span class="toc-nav-number">3.3.3.</span> <span class="toc-nav-text">有效数字法（乘除取 2～3 位）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#估算法（四舍五入、截位）"><span class="toc-nav-number">3.3.4.</span> <span class="toc-nav-text">估算法（四舍五入、截位）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#直除法（一步除到底）"><span class="toc-nav-number">3.3.5.</span> <span class="toc-nav-text">直除法（一步除到底）</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-比较与判断口诀"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">4. 比较与判断口诀</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#5-年均增长率（选考）"><span class="toc-nav-number">3.5.</span> <span class="toc-nav-text">5. 年均增长率（选考）</span></a></li></ol></li></ol>
+            
+          </div>
         
-        </div>
       </aside>
     
 
@@ -839,6 +938,7 @@
 
 <!-- catalog -->
 <script type="text/javascript" async="true" src="/rmshadows/js/catalog.js?v=1.0.0"></script>
+
 
 <!-- totop(rocket) -->
 <script type="text/javascript" async="true" src="/rmshadows/js/totop.js?v=1.0.0"></script>

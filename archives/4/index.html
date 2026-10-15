@@ -336,7 +336,8 @@
       行政能力测试 - 马克思主义哲学
     </h3>
     <div class="post-content-preview">
-      哲学哲学是理论化、系统化的世界观，世界观与方法论的统一。
+      
+        哲学哲学是理论化、系统化的世界观，世界观与方法论的统一。
 哲学是对自然知识、社会知识和思维知识的概括与总结。
 世界观、方法论
 不管是什么人，都有自己的世界观（对这个世界的总体看法）
@@ -350,6 +351,7 @@
 
 哲学的基本问题
 思维 vs 存在 ：......
+      
     </div>
   </a>
   
@@ -388,7 +390,8 @@
       动态
     </h3>
     <div class="post-content-preview">
-      动态 - Moment2026-02-贰零贰陆
+      
+        动态 - Moment2026-02-贰零贰陆
 二[2]
 
 
@@ -400,6 +403,7 @@
 
 Excel与Word字号对应关系
 1234567891011121314151617在Excel中，字号是以数字形式（磅数）表示的，而在Word中，尤其是在中文排版中，字号可以使用传统的字号名称，如“初号”、“一号”等。以下是常见的Word中文字号与Excel磅数之间的对应......
+      
     </div>
   </a>
   
@@ -437,6 +441,7 @@ Excel与Word字号对应关系
     </h3>
     <div class="post-content-preview">
       
+        
 这里是一些工具，更多链接请查看 主页.
 
 本站工具 - Toolkit
@@ -453,6 +458,7 @@ Fuzhou - 福州
 
 
 注......
+      
     </div>
   </a>
   
@@ -489,10 +495,12 @@ Fuzhou - 福州
       A succinct hexo theme...
     </h3>
     <div class="post-content-preview">
-      This is a copy of Vincent’s post, see details at Vincent’s blog: https://v-vincen.life/
+      
+        This is a copy of Vincent’s post, see details at Vincent’s blog: https://v-vincen.life/
 Thanks for the great work of Vincent, the Hexo-Theme-LiveMyLife’s author!
 
 本文转载自Live-My-Life作者Vincent的博客，感谢作者......
+      
     </div>
   </a>
   
@@ -537,9 +545,9 @@ Thanks for the great work of Vincent, the Hexo-Theme-LiveMyLife’s author!
     sidebar-container
 ">
     
-        <!--   -->
-<h5><a href="/rmshadows/">VISITORS</a></h5>
-
+        <!--  <% if (site.posts.length){ %> -->
+<h5><a href="<%= config.root %>">VISITORS</a></h5>
+<% if (config.busuanzi){ %>
 <div class="widget">
   <span>
     Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
@@ -549,8 +557,8 @@ Thanks for the great work of Vincent, the Hexo-Theme-LiveMyLife’s author!
     <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
   </span>
 </div>
-
-<!--   -->
+<% } %>
+<!--  <% } %> -->
 
         <hr>
     
@@ -602,6 +610,14 @@ Thanks for the great work of Vincent, the Hexo-Theme-LiveMyLife’s author!
     
     
     
+    <a href="/rmshadows/tags/#Hexo" title="Hexo" rel="1">Hexo</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Gitee + Hexo建立博客" title="Gitee + Hexo建立博客" rel="1">Gitee + Hexo建立博客</a>
+    
+    
+    
     <a href="/rmshadows/tags/#C" title="C" rel="1">C</a>
     
     
@@ -619,14 +635,6 @@ Thanks for the great work of Vincent, the Hexo-Theme-LiveMyLife’s author!
     
     
     <a href="/rmshadows/tags/#Debian" title="Debian" rel="4">Debian</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#Hexo" title="Hexo" rel="1">Hexo</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#Gitee + Hexo建立博客" title="Gitee + Hexo建立博客" rel="1">Gitee + Hexo建立博客</a>
     
     
     
@@ -650,11 +658,11 @@ Thanks for the great work of Vincent, the Hexo-Theme-LiveMyLife’s author!
     
     
     
-    <a href="/rmshadows/tags/#Math" title="Math" rel="1">Math</a>
-    
-    
-    
     <a href="/rmshadows/tags/#Linux Command Guiding" title="Linux Command Guiding" rel="1">Linux Command Guiding</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Math" title="Math" rel="1">Math</a>
     
     
     
@@ -674,14 +682,6 @@ Thanks for the great work of Vincent, the Hexo-Theme-LiveMyLife’s author!
     
     
     
-    <a href="/rmshadows/tags/#Python3" title="Python3" rel="1">Python3</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#Python Packages" title="Python Packages" rel="1">Python Packages</a>
-    
-    
-    
     <a href="/rmshadows/tags/#PEncoder" title="PEncoder" rel="1">PEncoder</a>
     
     
@@ -691,6 +691,14 @@ Thanks for the great work of Vincent, the Hexo-Theme-LiveMyLife’s author!
     
     
     <a href="/rmshadows/tags/#AES ENCRYPT" title="AES ENCRYPT" rel="1">AES ENCRYPT</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Python3" title="Python3" rel="1">Python3</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Python Packages" title="Python Packages" rel="1">Python Packages</a>
     
     
     
@@ -940,12 +948,12 @@ Thanks for the great work of Vincent, the Hexo-Theme-LiveMyLife’s author!
       <li>Notes</li>
     </a>
     
-    <a href="/rmshadows/categories/#Daily">
-      <li>Daily</li>
-    </a>
-    
     <a href="/rmshadows/categories/#Hows">
       <li>Hows</li>
+    </a>
+    
+    <a href="/rmshadows/categories/#Daily">
+      <li>Daily</li>
     </a>
     
     <a href="/rmshadows/categories/#Release">
@@ -1074,6 +1082,7 @@ Thanks for the great work of Vincent, the Hexo-Theme-LiveMyLife’s author!
 
 <!-- catalog -->
 <script type="text/javascript" async="true" src="/rmshadows/js/catalog.js?v=1.0.0"></script>
+
 
 <!-- totop(rocket) -->
 <script type="text/javascript" async="true" src="/rmshadows/js/totop.js?v=1.0.0"></script>
