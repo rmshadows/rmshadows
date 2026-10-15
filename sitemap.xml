@@ -9,20 +9,6 @@
   </url>
   
   <url>
-    <loc>https://civiccccc.ltd/2022/Windows-Notes/</loc>
-    
-    <lastmod>2026-10-15</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://civiccccc.ltd/about/index.html</loc>
-    
-    <lastmod>2026-10-15</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://civiccccc.ltd/archive/index.html</loc>
     
     <lastmod>2026-10-15</lastmod>
@@ -31,6 +17,20 @@
   
   <url>
     <loc>https://civiccccc.ltd/categories/index.html</loc>
+    
+    <lastmod>2026-10-15</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://civiccccc.ltd/2022/Windows-Notes/</loc>
+    
+    <lastmod>2026-10-15</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://civiccccc.ltd/about/index.html</loc>
     
     <lastmod>2026-10-15</lastmod>
     
@@ -284,6 +284,13 @@
 
   
   <url>
+    <loc>https://civiccccc.ltd/tags/Marxist-Philosophy/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://civiccccc.ltd/tags/Administrative-Professional-Ability-Test/</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>daily</changefreq>
@@ -292,13 +299,6 @@
   
   <url>
     <loc>https://civiccccc.ltd/tags/APAT/</loc>
-    <lastmod>2026-10-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://civiccccc.ltd/tags/Marxist-Philosophy/</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -459,6 +459,20 @@
   </url>
   
   <url>
+    <loc>https://civiccccc.ltd/tags/Linux-Applications/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://civiccccc.ltd/tags/Linux-Software/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://civiccccc.ltd/tags/PEncoder/</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>daily</changefreq>
@@ -501,13 +515,6 @@
   </url>
   
   <url>
-    <loc>https://civiccccc.ltd/tags/Notes/</loc>
-    <lastmod>2026-10-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://civiccccc.ltd/tags/Linux-Shell/</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>daily</changefreq>
@@ -516,34 +523,6 @@
   
   <url>
     <loc>https://civiccccc.ltd/tags/Bash/</loc>
-    <lastmod>2026-10-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://civiccccc.ltd/tags/Text-Transmission/</loc>
-    <lastmod>2026-10-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://civiccccc.ltd/tags/Java-Swing/</loc>
-    <lastmod>2026-10-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://civiccccc.ltd/tags/Toolkit/</loc>
-    <lastmod>2026-10-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://civiccccc.ltd/tags/Games/</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -585,6 +564,34 @@
   </url>
   
   <url>
+    <loc>https://civiccccc.ltd/tags/Text-Transmission/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://civiccccc.ltd/tags/Java-Swing/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://civiccccc.ltd/tags/Toolkit/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://civiccccc.ltd/tags/Games/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://civiccccc.ltd/tags/Windows/</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>daily</changefreq>
@@ -613,21 +620,7 @@
   </url>
   
   <url>
-    <loc>https://civiccccc.ltd/tags/Linux-Applications/</loc>
-    <lastmod>2026-10-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://civiccccc.ltd/tags/Linux-Software/</loc>
-    <lastmod>2026-10-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://civiccccc.ltd/tags/Server/</loc>
+    <loc>https://civiccccc.ltd/tags/Notes/</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -641,7 +634,7 @@
   </url>
   
   <url>
-    <loc>https://civiccccc.ltd/tags/Veterinary/</loc>
+    <loc>https://civiccccc.ltd/tags/Server/</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -649,6 +642,13 @@
   
   <url>
     <loc>https://civiccccc.ltd/tags/Firewall/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://civiccccc.ltd/tags/Veterinary/</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
