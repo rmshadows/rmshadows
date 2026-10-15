@@ -9,20 +9,6 @@
   </url>
   
   <url>
-    <loc>https://rmshadows.github.io/2022/Windows-Notes/</loc>
-    
-    <lastmod>2026-10-15</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://rmshadows.github.io/about/index.html</loc>
-    
-    <lastmod>2026-10-15</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://rmshadows.github.io/archive/index.html</loc>
     
     <lastmod>2026-10-15</lastmod>
@@ -31,6 +17,20 @@
   
   <url>
     <loc>https://rmshadows.github.io/categories/index.html</loc>
+    
+    <lastmod>2026-10-15</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://rmshadows.github.io/2022/Windows-Notes/</loc>
+    
+    <lastmod>2026-10-15</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://rmshadows.github.io/about/index.html</loc>
     
     <lastmod>2026-10-15</lastmod>
     
@@ -298,6 +298,13 @@
   </url>
   
   <url>
+    <loc>https://rmshadows.github.io/tags/Marxist-Philosophy/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://rmshadows.github.io/tags/Mao-Zedong-Thought/</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>daily</changefreq>
@@ -326,6 +333,13 @@
   </url>
   
   <url>
+    <loc>https://rmshadows.github.io/tags/President-XiJinping-s-The-Thought-on-Socialism-with-Chinese-Characteristics-for-a-New-Era/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://rmshadows.github.io/tags/Android/</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>daily</changefreq>
@@ -334,20 +348,6 @@
   
   <url>
     <loc>https://rmshadows.github.io/tags/Kotlin/</loc>
-    <lastmod>2026-10-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://rmshadows.github.io/tags/President-XiJinping-s-The-Thought-on-Socialism-with-Chinese-Characteristics-for-a-New-Era/</loc>
-    <lastmod>2026-10-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://rmshadows.github.io/tags/Marxist-Philosophy/</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -404,6 +404,27 @@
   
   <url>
     <loc>https://rmshadows.github.io/tags/Hexo-Theme-LiveMyLife/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://rmshadows.github.io/tags/Audiophile-Linux/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://rmshadows.github.io/tags/AP-Linux-Installation/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://rmshadows.github.io/tags/UEFI-GPT-Arch-Linux/</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -606,21 +627,7 @@
   </url>
   
   <url>
-    <loc>https://rmshadows.github.io/tags/Audiophile-Linux/</loc>
-    <lastmod>2026-10-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://rmshadows.github.io/tags/AP-Linux-Installation/</loc>
-    <lastmod>2026-10-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://rmshadows.github.io/tags/UEFI-GPT-Arch-Linux/</loc>
+    <loc>https://rmshadows.github.io/tags/Server/</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -628,13 +635,6 @@
   
   <url>
     <loc>https://rmshadows.github.io/tags/Basic-Legal-Knowledge/</loc>
-    <lastmod>2026-10-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://rmshadows.github.io/tags/Server/</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
