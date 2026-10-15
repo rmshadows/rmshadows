@@ -602,14 +602,6 @@ Thanks for the great work of Vincent, the Hexo-Theme-LiveMyLife’s author!
     
     
     
-    <a href="/rmshadows/tags/#Hexo" title="Hexo" rel="1">Hexo</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#Gitee + Hexo建立博客" title="Gitee + Hexo建立博客" rel="1">Gitee + Hexo建立博客</a>
-    
-    
-    
     <a href="/rmshadows/tags/#C" title="C" rel="1">C</a>
     
     
@@ -627,6 +619,14 @@ Thanks for the great work of Vincent, the Hexo-Theme-LiveMyLife’s author!
     
     
     <a href="/rmshadows/tags/#Debian" title="Debian" rel="4">Debian</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Hexo" title="Hexo" rel="1">Hexo</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Gitee + Hexo建立博客" title="Gitee + Hexo建立博客" rel="1">Gitee + Hexo建立博客</a>
     
     
     
@@ -650,15 +650,19 @@ Thanks for the great work of Vincent, the Hexo-Theme-LiveMyLife’s author!
     
     
     
-    <a href="/rmshadows/tags/#Linux Command Guiding" title="Linux Command Guiding" rel="1">Linux Command Guiding</a>
-    
-    
-    
     <a href="/rmshadows/tags/#Math" title="Math" rel="1">Math</a>
     
     
     
+    <a href="/rmshadows/tags/#Linux Command Guiding" title="Linux Command Guiding" rel="1">Linux Command Guiding</a>
+    
+    
+    
     <a href="/rmshadows/tags/#Moment" title="Moment" rel="1">Moment</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Notes" title="Notes" rel="1">Notes</a>
     
     
     
@@ -667,6 +671,14 @@ Thanks for the great work of Vincent, the Hexo-Theme-LiveMyLife’s author!
     
     
     <a href="/rmshadows/tags/#Linux Software" title="Linux Software" rel="2">Linux Software</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Python3" title="Python3" rel="1">Python3</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Python Packages" title="Python Packages" rel="1">Python Packages</a>
     
     
     
@@ -682,19 +694,7 @@ Thanks for the great work of Vincent, the Hexo-Theme-LiveMyLife’s author!
     
     
     
-    <a href="/rmshadows/tags/#Python3" title="Python3" rel="1">Python3</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#Python Packages" title="Python Packages" rel="1">Python Packages</a>
-    
-    
-    
     <a href="/rmshadows/tags/#Updates" title="Updates" rel="1">Updates</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#Notes" title="Notes" rel="1">Notes</a>
     
     
     
@@ -758,11 +758,11 @@ Thanks for the great work of Vincent, the Hexo-Theme-LiveMyLife’s author!
     
     
     
-    <a href="/rmshadows/tags/#Server" title="Server" rel="1">Server</a>
-    
-    
-    
     <a href="/rmshadows/tags/#Basic Legal Knowledge" title="Basic Legal Knowledge" rel="1">Basic Legal Knowledge</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Server" title="Server" rel="1">Server</a>
     
     
     
@@ -940,12 +940,12 @@ Thanks for the great work of Vincent, the Hexo-Theme-LiveMyLife’s author!
       <li>Notes</li>
     </a>
     
-    <a href="/rmshadows/categories/#Hows">
-      <li>Hows</li>
-    </a>
-    
     <a href="/rmshadows/categories/#Daily">
       <li>Daily</li>
+    </a>
+    
+    <a href="/rmshadows/categories/#Hows">
+      <li>Hows</li>
     </a>
     
     <a href="/rmshadows/categories/#Release">
@@ -1476,6 +1476,21 @@ https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
     <!-- <img src="https://rmshadows.github.io/rmshadows/img/icon_wechat.png" width="0" height="0" /> -->
     <!-- Migrate from head to bottom, no longer block render and still work -->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>
