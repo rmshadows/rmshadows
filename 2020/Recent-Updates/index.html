@@ -162,14 +162,14 @@
 
           
           <li>
-            <a href="/rmshadows/categories/">Categories</a>
+            <a href="/rmshadows/archive/">Archives</a>
           </li>
           
           
 
           
           <li>
-            <a href="/rmshadows/archive/">Archives</a>
+            <a href="/rmshadows/categories/">Categories</a>
           </li>
           
           
@@ -275,11 +275,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">17</span> Minutes
+              Estimated Reading Time <span class="post-count">19</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">4.3k</span> In Total
+              Words <span class="post-count">4.8k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -469,13 +469,76 @@
 <blockquote>
 <p>博客于2020年9月上线。</p>
 </blockquote>
-<h1 id="服务器状态-Server-Status"><a href="#服务器状态-Server-Status" class="headerlink" title="服务器状态 - Server Status"></a>服务器状态 - Server Status</h1> <iframe  
- height=1000
- width=100% 
- src="https://stats.uptimerobot.com/EWmVviWXmp"  
- frameborder=0  
- allowfullscreen>
- </iframe>
+<h1 id="服务器状态-Server-Status"><a href="#服务器状态-Server-Status" class="headerlink" title="服务器状态 - Server Status"></a>服务器状态 - Server Status</h1><p>UptimeRobot 的公开状态页现在带有 <code>X-Frame-Options: DENY</code>，浏览器不允许把它嵌在本站里。下面改用公开接口 <code>getMonitorList</code> 直接画出监控结果，完整页面仍可在新窗口打开。</p>
+<p><div id="ur-status" style="margin:1.2em 0;padding:16px 18px;border:1px solid #e5e5e5;border-radius:8px;">正在读取服务器状态…</div></p>
+<p><p><a href="https://stats.uptimerobot.com/EWmVviWXmp" target="_blank" rel="noopener noreferrer">在新窗口打开完整状态页</a></p></p>
+<script>
+(function () {
+  var root = document.getElementById("ur-status");
+  var palette = { green: "#3bd671", blue: "#2f80ed", yellow: "#f2c037", orange: "#f2994a", red: "#eb5757" };
+  var label = { success: "在线", danger: "离线", paused: "已暂停" };
+
+  function text(value) {
+    return document.createTextNode(value == null ? "" : String(value));
+  }
+
+  function el(tag, css, content) {
+    var node = document.createElement(tag);
+    if (css) node.setAttribute("style", css);
+    if (content != null) node.appendChild(text(content));
+    return node;
+  }
+
+  function minutes(seconds) {
+    var n = Number(seconds) || 0;
+    if (n < 60) return n + " 秒";
+    if (n < 3600) return Math.round(n / 60) + " 分钟";
+    return (n / 3600).toFixed(1) + " 小时";
+  }
+
+  fetch("https://stats.uptimerobot.com/api/getMonitorList/EWmVviWXmp")
+    .then(function (res) { return res.json(); })
+    .then(function (body) {
+      var stats = body.statistics || {};
+      var counts = stats.counts || {};
+      root.textContent = "";
+      var head = el("div", "display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-bottom:12px;");
+      head.appendChild(el("strong", "font-size:1.05em;", stats.count_result || "服务器状态"));
+      head.appendChild(el("span", "color:#666;font-size:0.9em;", "在线 " + (counts.up || 0) + " / " + (counts.total || 0)));
+      root.appendChild(head);
+
+      (body.data || []).forEach(function (monitor) {
+        var card = el("div", "padding:12px 0;border-top:1px solid #eee;");
+        var row = el("div", "display:flex;justify-content:space-between;gap:12px;align-items:baseline;");
+        var name = el("span", "", "");
+        var dot = el("span", "display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px;background:" + (monitor.statusClass === "success" ? "#3bd671" : "#eb5757") + ";");
+        name.appendChild(dot);
+        name.appendChild(text(monitor.name + " · " + (label[monitor.statusClass] || monitor.statusClass)));
+        row.appendChild(name);
+        var ratio = (monitor["30dRatio"] && monitor["30dRatio"].ratio) || "-";
+        row.appendChild(el("span", "color:#666;", "30 天 " + ratio + "%"));
+        card.appendChild(row);
+
+        var bars = el("div", "display:flex;gap:2px;height:18px;margin-top:8px;align-items:flex-end;");
+        (monitor.dailyRatios || []).forEach(function (day) {
+          var height = Math.max(4, Math.round(Number(day.ratio) / 100 * 18));
+          var bar = el("span", "flex:1;min-width:2px;height:" + height + "px;border-radius:1px;background:" + (palette[day.color] || "#bbb") + ";");
+          bar.title = day.date + " " + day.ratio + "%";
+          bars.appendChild(bar);
+        });
+        card.appendChild(bars);
+
+        if (monitor.lastDowntime && monitor.lastDowntime.date) {
+          card.appendChild(el("div", "margin-top:6px;color:#888;font-size:0.85em;", "最近中断 " + monitor.lastDowntime.date + "，约 " + minutes(monitor.lastDowntime.duration)));
+        }
+        root.appendChild(card);
+      });
+    })
+    .catch(function () {
+      root.textContent = "状态接口暂时读不到。请使用下方链接在新窗口打开。";
+    });
+})();
+</script>
 
 
 <blockquote>
@@ -668,7 +731,7 @@ Categories\begin{cases}
   <div id="comments-gate" class="comments-gate">
     
     
-    <p class="comments-gate-hint">请输入‘hello’。</p>
+    <p class="comments-gate-hint">Try &#39;hello&#39;...</p>
     
     <div class="comments-gate-row">
       <input type="password" id="comments-unlock-input" class="comments-unlock-input" autocomplete="off" placeholder="Access key">
