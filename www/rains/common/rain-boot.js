@@ -1,25 +1,51 @@
 (function () {
+  // 用 rain-boot.js 自己的地址当根，避免相对路径被页面 base / 路由改错导致换图黑屏
+  function rainsBase() {
+    var src = "";
+    if (document.currentScript && document.currentScript.src) {
+      src = document.currentScript.src;
+    } else {
+      var list = document.getElementsByTagName("script");
+      for (var i = list.length - 1; i >= 0; i--) {
+        if ((list[i].src || "").indexOf("rain-boot.js") !== -1) {
+          src = list[i].src;
+          break;
+        }
+      }
+    }
+    if (src) return src.replace(/common\/rain-boot\.js(?:\?.*)?$/, "");
+    return location.href.replace(/[^/]+\/[^/]*$/, "");
+  }
+  var BASE = rainsBase();
+  function asset(path) {
+    return BASE + path;
+  }
+
   var SCENES = {
     rain: {
       label: "城",
-      bg: "../rain/assets/img/rain/bg.png",
-      fg: "../rain/assets/img/rain/fg.png"
+      bg: asset("rain/assets/img/rain/bg.png"),
+      fg: asset("rain/assets/img/rain/fg.png"),
+      page: asset("rain/rain.html")
     },
     fuzhou: {
       label: "福州",
-      bg: "../fuzhou/assets/img/rain/bg.png",
-      fg: "../fuzhou/assets/img/rain/fg.png"
+      bg: asset("fuzhou/assets/img/rain/bg.png"),
+      fg: asset("fuzhou/assets/img/rain/fg.png"),
+      page: asset("fuzhou/rain.html")
     },
     cbf125t: {
       label: "125",
-      bg: "../cbf125t/assets/img/rain/bg.png",
-      fg: "../cbf125t/assets/img/rain/fg.png"
+      bg: asset("cbf125t/assets/img/rain/bg.png"),
+      fg: asset("cbf125t/assets/img/rain/fg.png"),
+      page: asset("cbf125t/rain.html")
     }
   };
   var DROPS = {
-    dropColor: "../common/assets/img/rain/drop-color.png",
-    dropAlpha: "../common/assets/img/rain/drop-alpha.png"
+    dropColor: asset("common/assets/img/rain/drop-color.png"),
+    dropAlpha: asset("common/assets/img/rain/drop-alpha.png")
   };
+  var COMMON = asset("common/");
   var DB_NAME = "rain-pictures";
   var STORE = "files";
   var PREF_KEY = "rain-picture-choice";
@@ -100,9 +126,34 @@
         rainFg: fg
       };
     }
+    function preload(url) {
+      return new Promise(function (resolve, reject) {
+        var img = new Image();
+        img.onload = function () { resolve(url); };
+        img.onerror = function () { reject(new Error(url)); };
+        img.src = url;
+      });
+    }
+
+    function afterSet() {
+      return Promise.all([
+        preload(window.RAIN_IMAGES.dropColor),
+        preload(window.RAIN_IMAGES.dropAlpha),
+        preload(window.RAIN_IMAGES.rainBg),
+        preload(window.RAIN_IMAGES.rainFg)
+      ]).catch(function (err) {
+        var note = document.querySelector("h1.rain-note");
+        if (note) {
+          note.innerHTML = "图片加载失败，请刷新或按 i 换图。<br><br><a href=\"https://civiccccc.ltd\">点我返回主站</a><br><small>" +
+            String((err && err.message) || err) + "</small>";
+        }
+        throw err;
+      });
+    }
+
     if (!(pref && pref.mode === "custom")) {
       use(scene.bg, scene.fg);
-      return Promise.resolve();
+      return afterSet();
     }
     return idbGet("picture").then(function (file) {
       return file || idbGet("bg");
@@ -117,7 +168,7 @@
         return;
       }
       use(scene.bg, scene.fg);
-    });
+    }).then(afterSet);
   }
 
   function allowLocalJson() {
@@ -234,7 +285,7 @@
         return;
       }
       var script = document.createElement("script");
-      script.src = "../common/" + files[i];
+      script.src = COMMON + files[i];
       script.onload = function () { next(i + 1); };
       script.onerror = function () { next(i + 1); };
       document.body.appendChild(script);
@@ -296,7 +347,7 @@
       button.textContent = SCENES[id].label;
       button.addEventListener("click", function () {
         writePref({ mode: "preset", scene: id });
-        location.reload();
+        location.href = SCENES[id].page;
       });
       presets.appendChild(button);
     });
@@ -366,5 +417,7 @@
 
   allowLocalJson();
   mountDialog();
-  resolveImages().then(loadApp).catch(loadApp);
+  resolveImages().then(loadApp).catch(function () {
+    /* 图片失败时已在提示里说明，不再强行启动引擎 */
+  });
 })();
