@@ -350,7 +350,7 @@
 		<section class="card">
 			<h2>结账</h2>
 			<div class="totals">
-				<div>账单合计 <strong id="grand-total">0.0 元</strong></div>
+				<div>账单合计 <strong id="grand-total">0.00 元</strong></div>
 				<label>实付总额
 					<input type="text" id="real-pay" inputmode="decimal" placeholder="可选，核对找零" autocomplete="off">
 					<span id="diff" class="hint"></span>
@@ -460,7 +460,8 @@
 
 	function money(n) {
 		if (!isFinite(n)) n = 0;
-		return (Math.round(n * 10) / 10).toFixed(1);
+		// 圆角分：保留到分（2 位小数）
+		return (Math.round(n * 100) / 100).toFixed(2);
 	}
 
 	function yuan(n) {
@@ -468,7 +469,7 @@
 	}
 
 	function settleText(n) {
-		var v = Math.round(n * 10) / 10;
+		var v = Math.round(n * 100) / 100;
 		if (v === 0) return '齐了';
 		if (v > 0) return '还应出 ' + money(v) + ' 元';
 		return '应收回 ' + money(-v) + ' 元';
@@ -777,7 +778,7 @@
 		var real = toNum(state.realPay);
 		var diffEl = document.getElementById('diff');
 		if (isFinite(real)) {
-			var diff = Math.round((real - result.total) * 10) / 10;
+			var diff = Math.round((real - result.total) * 100) / 100;
 			if (diff === 0) diffEl.textContent = '（刚好）';
 			else if (diff > 0) diffEl.textContent = '（多付 ' + money(diff) + ' 元）';
 			else diffEl.textContent = '（少付 ' + money(-diff) + ' 元）';
@@ -897,7 +898,7 @@
 			var paid = toNum(p.paid);
 			if (!isFinite(paid)) paid = 0;
 			p.paid = money(paid - due);
-			if (p.paid === '0.0') p.paid = '';
+			if (p.paid === '0.00' || p.paid === '0.0') p.paid = '';
 		});
 		state.dishes = [{ id: uid(), price: '', tax: true, share: [] }];
 		state.realPay = '';

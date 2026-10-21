@@ -9,14 +9,14 @@
   </url>
   
   <url>
-    <loc>https://civiccccc.ltd/categories/index.html</loc>
+    <loc>https://civiccccc.ltd/archive/index.html</loc>
     
     <lastmod>2026-10-21</lastmod>
     
   </url>
   
   <url>
-    <loc>https://civiccccc.ltd/2022/Windows-Notes/</loc>
+    <loc>https://civiccccc.ltd/categories/index.html</loc>
     
     <lastmod>2026-10-21</lastmod>
     
@@ -30,7 +30,7 @@
   </url>
   
   <url>
-    <loc>https://civiccccc.ltd/archive/index.html</loc>
+    <loc>https://civiccccc.ltd/2022/Windows-Notes/</loc>
     
     <lastmod>2026-10-21</lastmod>
     
@@ -121,6 +121,13 @@
   </url>
   
   <url>
+    <loc>https://civiccccc.ltd/2020/Moment/</loc>
+    
+    <lastmod>2026-10-21</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://civiccccc.ltd/2026/Mental-Math-Formulas/</loc>
     
     <lastmod>2026-10-21</lastmod>
@@ -129,13 +136,6 @@
   
   <url>
     <loc>https://civiccccc.ltd/2020/Markdown/</loc>
-    
-    <lastmod>2026-10-21</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://civiccccc.ltd/2020/Moment/</loc>
     
     <lastmod>2026-10-21</lastmod>
     
@@ -233,6 +233,13 @@
   </url>
   
   <url>
+    <loc>https://civiccccc.ltd/2020/APAT-The-Thought-on-Socialism-with-Chinese-Characteristics-for-a-New-Era/</loc>
+    
+    <lastmod>2026-10-21</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://civiccccc.ltd/2020/APAT-1921-2012/</loc>
     
     <lastmod>2026-10-21</lastmod>
@@ -241,13 +248,6 @@
   
   <url>
     <loc>https://civiccccc.ltd/2020/APAT-Basic-Legal-Knowledge/</loc>
-    
-    <lastmod>2026-10-21</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://civiccccc.ltd/2020/APAT-The-Thought-on-Socialism-with-Chinese-Characteristics-for-a-New-Era/</loc>
     
     <lastmod>2026-10-21</lastmod>
     
@@ -327,6 +327,13 @@
   
   <url>
     <loc>https://civiccccc.ltd/tags/HuJintao-s-Scientific-outlook-on-Development/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://civiccccc.ltd/tags/President-XiJinping-s-The-Thought-on-Socialism-with-Chinese-Characteristics-for-a-New-Era/</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -431,13 +438,6 @@
   </url>
   
   <url>
-    <loc>https://civiccccc.ltd/tags/President-XiJinping-s-The-Thought-on-Socialism-with-Chinese-Characteristics-for-a-New-Era/</loc>
-    <lastmod>2026-10-21</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://civiccccc.ltd/tags/Linux-Command-Guiding/</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>daily</changefreq>
@@ -452,14 +452,14 @@
   </url>
   
   <url>
-    <loc>https://civiccccc.ltd/tags/Moment/</loc>
+    <loc>https://civiccccc.ltd/tags/Notes/</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://civiccccc.ltd/tags/Notes/</loc>
+    <loc>https://civiccccc.ltd/tags/Moment/</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
