@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html class="default-style layout-fixed layout-navbar-fixed" lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=2.0">
+    <title>Rain - 城</title>
+    <link rel="stylesheet" href="../common/styles.css">
+    <style>
+        h1.rain-note{position:relative;z-index:3;margin:16px;padding:12px 16px;display:inline-block;max-width:calc(100% - 32px);background:rgba(255,255,255,.92);color:#111;font-size:20px;line-height:1.5;font-weight:600}
+        h1.rain-note a{color:#111}
+    </style>
+</head>
+<body>
+    <h1 class="rain-note">加载缓慢，请耐心等待加载，如加载不出(灰屏、黑屏)请刷新。
+        <br><br>
+        <a href="https://civiccccc.ltd">点我返回主站</a>
+        <br>
+        <small>按 i 更换图片</small>
+    </h1>
+    <app-root ng-version="11.2.14">
+        <canvas class="ui-bg-cover ui-bg-overlay-container rain-canvas" width="1920" height="958"></canvas>
+    </app-root>
+    <script>window.RAIN_PAGE = "rain";</script>
+    <script src="../common/rain-boot.js"></script>
+</body>
+</html>
