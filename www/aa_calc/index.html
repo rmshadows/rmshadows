@@ -2,9 +2,9 @@
 <html lang="zh-Hans">
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>AA Cost Calculator</title>
-	<meta name="description" content="AA 分账计算器">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	<title>AA 分账</title>
+	<meta name="description" content="AA 分账计算器，金额单位是元">
 	<style>
 		:root {
 			--bg: #f6f4f1;
@@ -20,15 +20,21 @@
 			--shadow: 0 1px 2px rgba(28, 27, 25, 0.06);
 		}
 		* { box-sizing: border-box; }
+		html { -webkit-text-size-adjust: 100%; }
 		body {
 			margin: 0;
-			padding: 20px 16px 48px;
-			font: 15px/1.5 "Source Han Sans SC", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+			padding:
+				max(16px, env(safe-area-inset-top))
+				max(16px, env(safe-area-inset-right))
+				calc(28px + env(safe-area-inset-bottom))
+				max(16px, env(safe-area-inset-left));
+			font: 16px/1.5 "Source Han Sans SC", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
 			color: var(--ink);
 			background:
 				radial-gradient(900px 420px at 10% -10%, #e8f0ef 0%, transparent 55%),
 				radial-gradient(700px 380px at 100% 0%, #f3ebe3 0%, transparent 50%),
 				var(--bg);
+			touch-action: manipulation;
 		}
 		.page { max-width: 720px; margin: 0 auto; }
 		h1 {
@@ -66,9 +72,11 @@
 			background: var(--accent-soft);
 			color: var(--accent);
 			border-radius: 8px;
-			padding: 8px 12px;
+			padding: 10px 14px;
+			min-height: 44px;
 			font: inherit;
 			cursor: pointer;
+			touch-action: manipulation;
 		}
 		button:hover { filter: brightness(0.98); }
 		button.primary {
@@ -102,9 +110,10 @@
 			width: 100%;
 			min-width: 0;
 			border: 1px solid var(--line);
-			border-radius: 6px;
-			padding: 7px 8px;
+			border-radius: 8px;
+			padding: 10px 12px;
 			font: inherit;
+			font-size: 16px;
 			background: #fff;
 		}
 		input[type="text"]:focus {
@@ -120,10 +129,14 @@
 		.share-cells label {
 			display: inline-flex;
 			align-items: center;
-			gap: 4px;
-			font-size: 0.85rem;
-			color: var(--muted);
-			white-space: nowrap;
+			gap: 6px;
+			min-height: 40px;
+			padding: 4px 10px;
+			border: 1px solid var(--line);
+			border-radius: 999px;
+			font-size: 0.95rem;
+			color: var(--ink);
+			background: #fff;
 		}
 		.dish {
 			margin-bottom: 12px;
@@ -131,12 +144,14 @@
 			border-bottom: 1px solid var(--line);
 		}
 		.dish-top {
-			display: flex;
+			display: grid;
+			grid-template-columns: auto 1fr auto;
 			gap: 8px;
 			align-items: center;
-			flex-wrap: wrap;
 		}
-		.dish-top input[data-price] { flex: 1; min-width: 120px; }
+		.dish-top input[data-price],
+		.dish-top [data-each] { grid-column: 1 / -1; }
+		.dish-top button { min-width: 44px; }
 		.meta {
 			display: flex;
 			flex-wrap: wrap;
@@ -147,8 +162,8 @@
 			border: 1px dashed var(--line);
 			border-radius: 8px;
 		}
-		.meta label { display: flex; align-items: center; gap: 8px; color: var(--muted); }
-		.meta input { width: 88px; }
+		.meta label { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; color: var(--muted); }
+		.meta input, #real-pay { width: min(100%, 160px); }
 		.totals {
 			display: grid;
 			gap: 8px;
@@ -158,7 +173,112 @@
 		.totals strong { font-size: 1.15rem; }
 		.diff-pos { color: var(--danger); }
 		.diff-neg { color: var(--accent); }
+		td.bal { white-space: normal; min-width: 7.5em; }
 		.hint { color: var(--muted); font-size: 0.8rem; }
+		.fuel-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 10px 12px;
+		}
+		.fuel-grid label {
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+			color: var(--muted);
+			font-size: 0.85rem;
+		}
+		.fuel-grid label.wide { grid-column: 1 / -1; }
+		.fuel-grid input { width: 100%; }
+		.fuel-extra {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 16px;
+			margin-top: 14px;
+			padding-top: 12px;
+			border-top: 1px dashed var(--line);
+		}
+		.fuel-extra h3 { margin: 0 0 8px; font-size: 0.95rem; }
+		.fuel-extra label {
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+			color: var(--muted);
+			font-size: 0.85rem;
+		}
+		.fuel-extra input { width: 100%; }
+		.fill-row {
+			display: grid;
+			grid-template-columns: 88px 1fr;
+			gap: 8px;
+			align-items: center;
+			margin-bottom: 8px;
+		}
+		.fill-row input { width: 100%; }
+		.fill-out { color: var(--ink); font-size: 0.85rem; }
+		.fuel-compare {
+			margin-top: 14px;
+			padding-top: 12px;
+			border-top: 1px dashed var(--line);
+		}
+		.fuel-compare h3 { margin: 0 0 8px; font-size: 0.95rem; }
+		@media (max-width: 700px) {
+			.fuel-grid, .fuel-extra, .fill-row { grid-template-columns: 1fr; }
+			h1 { font-size: 1.35rem; }
+			.people, .people tbody, .people tr, .people td { display: block; width: 100%; }
+			.people thead { display: none; }
+			.people tr {
+				display: grid;
+				grid-template-columns: 1fr auto;
+				grid-template-areas:
+					"who del"
+					"due due"
+					"paid paid"
+					"bal bal";
+				gap: 4px 8px;
+				border: 1px solid var(--line);
+				border-radius: 10px;
+				padding: 10px 12px;
+				margin-bottom: 10px;
+			}
+			.people td { border: 0; padding: 2px 0; text-align: left; white-space: normal; }
+			.people td.who { grid-area: who; }
+			.people td.del { grid-area: del; align-self: center; }
+			.people td.due { grid-area: due; }
+			.people td.paid { grid-area: paid; }
+			.people td.bal { grid-area: bal; min-width: 0; }
+			.people td.due,
+			.people td.paid,
+			.people td.bal {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 8px;
+			}
+			.people td.due::before { content: "该付"; color: var(--muted); }
+			.people td.paid::before { content: "已垫付"; color: var(--muted); }
+			.people td.bal::before { content: "还差"; color: var(--muted); }
+			.people td.paid input { width: 46%; }
+			.people td.del button {
+				min-width: 44px;
+				padding: 8px 12px;
+				text-decoration: none;
+				border: 1px solid var(--line);
+				border-radius: 8px;
+				background: #fff;
+			}
+			.row-actions { flex-direction: column; }
+			.row-actions button { width: 100%; text-align: center; }
+			.row-actions button.ghost {
+				text-decoration: none;
+				border: 1px solid var(--line);
+				border-radius: 8px;
+				background: #fff;
+			}
+			.totals label { display: flex; flex-direction: column; align-items: stretch; }
+			#real-pay { width: 100%; margin-left: 0; }
+			.meta label { width: 100%; }
+			.meta input { width: 100%; }
+		}
 		.empty { color: var(--muted); font-size: 0.9rem; padding: 8px 0; }
 		.tax-label {
 			display: inline-flex;
@@ -167,33 +287,42 @@
 			font-size: 0.85rem;
 			color: var(--muted);
 		}
+		.history-item {
+			border: 1px solid var(--line);
+			border-radius: 10px;
+			padding: 10px 12px;
+			margin: 0 0 8px;
+		}
+		.history-item p { margin: 4px 0; }
+		.history-actions { display: flex; gap: 8px; }
+		.history-actions button { flex: 1; }
 	</style>
 </head>
 <body>
 	<div class="page">
-		<h1>AA Cost Calculator</h1>
-		<p class="sub">本地分账 · 数据只存在本机浏览器</p>
+		<h1>AA 分账</h1>
+		<p class="sub">算出每人该出多少钱，以及谁垫过、还要补给谁。金额单位是元。当前这一单和历史账单都留在这台浏览器里，关掉或闪退后再打开还在。</p>
 
 		<section class="card">
-			<h2>使用说明</h2>
+			<h2>怎么用</h2>
 			<ol class="help">
-				<li>先在「参与者」里加人并填名字；</li>
-				<li>在「账单」里加每一项金额（支持 <code>20+18.5</code>）；</li>
-				<li>勾选分摊的人（不勾 = 所有人平分该项）；</li>
-				<li>勾「含倍率」的项会乘下面的折扣/税（服务费 15% 填 <code>1.15</code>，八折填 <code>0.8</code>）；</li>
-				<li>「已付」填每人垫付，右侧「结算」为还应给 / 应收回。</li>
+				<li>先填参与的人。</li>
+				<li>每一行是一笔账，单位是元，可以写 <code>20+18.5</code>。</li>
+				<li>勾了谁，这笔就只在这些人里平分。一个都不勾，就是所有人平分。</li>
+				<li>勾了「含倍率」的，会再乘下面的倍率。服务费 15% 填 <code>1.15</code>，八折填 <code>0.8</code>。不勾就按原价。</li>
+				<li>「该付」是这一轮他分到的钱。「已垫付」是他已经掏的钱。「还差」写成还应出，就是他还要再拿出来；写成应收回，就是别人该还给他。</li>
 			</ol>
 		</section>
 
 		<section class="card">
 			<h2>参与者</h2>
-			<table>
+			<table class="people">
 				<thead>
 					<tr>
 						<th>名字</th>
-						<th class="num">应付</th>
-						<th class="num">已付</th>
-						<th class="num">结算</th>
+						<th class="num">该付</th>
+						<th class="num">已垫付</th>
+						<th class="num">还差</th>
 						<th></th>
 					</tr>
 				</thead>
@@ -221,16 +350,90 @@
 		<section class="card">
 			<h2>结账</h2>
 			<div class="totals">
-				<div>账单合计 <strong id="grand-total">$0.0</strong></div>
+				<div>账单合计 <strong id="grand-total">0.0 元</strong></div>
 				<label>实付总额
-					<input type="text" id="real-pay" inputmode="decimal" placeholder="可选，核对找零" autocomplete="off" style="width:140px;display:inline-block;margin-left:8px">
+					<input type="text" id="real-pay" inputmode="decimal" placeholder="可选，核对找零" autocomplete="off">
 					<span id="diff" class="hint"></span>
 				</label>
 			</div>
 			<div class="row-actions">
-				<button type="button" class="ghost warn" id="btn-checkout">Checkout（清账单，保留余额）</button>
-				<button type="button" class="ghost" id="btn-reset-balance">Reset balance</button>
-				<button type="button" class="ghost" id="btn-reset-all">Reset all</button>
+				<button type="button" class="ghost warn" id="btn-checkout">结一单（清掉账单，差额留到下一轮）</button>
+				<button type="button" class="ghost" id="btn-reset-balance">清空已垫付</button>
+				<button type="button" class="ghost" id="btn-reset-all">全部清空</button>
+			</div>
+		</section>
+
+		<section class="card">
+			<h2>历史账单</h2>
+			<p class="hint">结一单，或点「记入历史」，会留下一份。打开某条会换掉当前正在算的内容。全部清空只清当前这一单。</p>
+			<div id="history-list"></div>
+			<div class="row-actions">
+				<button type="button" class="primary" id="btn-save-history">记入历史</button>
+				<button type="button" class="ghost" id="btn-clear-history">清除历史账单</button>
+			</div>
+		</section>
+
+		<section class="card" id="fuel">
+			<h2>油耗换算</h2>
+			<p class="hint">L/100km 和 km/L 互为倒数（乘起来是 100）。元/km 和 km/元也互为倒数。填了油价，升和钱就能对上：每公里花费 = 百公里油耗 × 油价 ÷ 100。油箱容量用来算满箱、半箱能跑多远。右边每一格是一次加满花的钱，按上面的油价算出当时油箱还剩百分之多少。这些数也会记住，关掉再打开还在，要清掉用最下面的按钮。</p>
+			<div class="fuel-grid">
+				<label class="wide">油价
+					<input type="text" id="fuel-price" inputmode="decimal" placeholder="例如 7.9" autocomplete="off">
+					<span>元/升</span>
+				</label>
+				<label>百公里油耗
+					<input type="text" id="fuel-l100" inputmode="decimal" placeholder="L/100km" autocomplete="off">
+					<span>L/100km</span>
+				</label>
+				<label>每升能跑
+					<input type="text" id="fuel-kml" inputmode="decimal" placeholder="km/L" autocomplete="off">
+					<span>km/L</span>
+				</label>
+				<label>每公里花费
+					<input type="text" id="fuel-ypk" inputmode="decimal" placeholder="元/km" autocomplete="off">
+					<span>元/km</span>
+				</label>
+				<label>每元能跑
+					<input type="text" id="fuel-kpy" inputmode="decimal" placeholder="km/元" autocomplete="off">
+					<span>km/元</span>
+				</label>
+			</div>
+			<div class="fuel-extra">
+				<div>
+					<h3>油箱</h3>
+					<label>油箱容量
+						<input type="text" id="fuel-tank" inputmode="decimal" placeholder="例如 12" autocomplete="off">
+						<span>升</span>
+					</label>
+					<p id="fuel-range" class="hint">填了油箱容量和百公里油耗之后，这里显示满箱、半箱能跑多远。</p>
+				</div>
+				<div>
+					<h3>每次加满花了多少</h3>
+					<div id="fuel-fills"></div>
+					<button type="button" id="fuel-add-fill">+ 再记一笔</button>
+				</div>
+			</div>
+			<div class="fuel-compare">
+				<h3>两种油耗差多少钱</h3>
+				<p class="hint">用上面的油价。每百公里花费 = 百公里油耗 × 油价。里程不填时，按 100 公里比。</p>
+				<div class="fuel-grid">
+					<label>油耗甲
+						<input type="text" id="fuel-cmp-a" inputmode="decimal" placeholder="例如 3.8" autocomplete="off">
+						<span>L/100km</span>
+					</label>
+					<label>油耗乙
+						<input type="text" id="fuel-cmp-b" inputmode="decimal" placeholder="例如 3.6" autocomplete="off">
+						<span>L/100km</span>
+					</label>
+					<label class="wide">拿来比的里程
+						<input type="text" id="fuel-cmp-km" inputmode="decimal" placeholder="不填则按 100 公里" autocomplete="off">
+						<span>km</span>
+					</label>
+				</div>
+				<p id="fuel-cmp-out" class="hint">填两个百公里油耗和上面的油价之后，这里显示差多少钱。</p>
+				<div class="row-actions">
+					<button type="button" class="ghost" id="fuel-clear">清除油耗记录</button>
+				</div>
 			</div>
 		</section>
 	</div>
@@ -240,6 +443,8 @@
 	'use strict';
 
 	var STORAGE_KEY = 'aa_calc_v2';
+	var HISTORY_KEY = 'aa_calc_history';
+	var history = [];
 
 	function toNum(raw) {
 		var s = String(raw == null ? '' : raw).trim();
@@ -258,14 +463,15 @@
 		return (Math.round(n * 10) / 10).toFixed(1);
 	}
 
-	function withSymbol(n) {
-		if (n < 0) return '取回$' + money(-n);
-		return '$' + money(n);
+	function yuan(n) {
+		return money(n) + ' 元';
 	}
 
-	function withNega(n) {
-		if (n < 0) return '-$' + money(-n);
-		return '+$' + money(n);
+	function settleText(n) {
+		var v = Math.round(n * 10) / 10;
+		if (v === 0) return '齐了';
+		if (v > 0) return '还应出 ' + money(v) + ' 元';
+		return '应收回 ' + money(-v) + ' 元';
 	}
 
 	function uid() {
@@ -296,8 +502,8 @@
 	function defaultState() {
 		return {
 			people: [
-				{ id: uid(), name: 'User1', paid: '' },
-				{ id: uid(), name: 'User2', paid: '' }
+				{ id: uid(), name: '甲', paid: '' },
+				{ id: uid(), name: '乙', paid: '' }
 			],
 			dishes: [
 				{ id: uid(), price: '', tax: true, share: [] }
@@ -373,6 +579,77 @@
 		} catch (e) { /* quota */ }
 	}
 
+	function saveHistory() {
+		try {
+			localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
+		} catch (e) { /* quota */ }
+	}
+
+	function loadHistory() {
+		try {
+			var data = JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]');
+			history = Array.isArray(data) ? data : [];
+		} catch (e) {
+			history = [];
+		}
+	}
+
+	function formatTime(ts) {
+		var d = new Date(ts);
+		function pad(n) { return n < 10 ? '0' + n : String(n); }
+		return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()) + ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes());
+	}
+
+	function hasAmounts() {
+		return state.dishes.some(function (d) {
+			return String(d.price || '').trim() !== '' && isFinite(toNum(d.price));
+		});
+	}
+
+	function pushHistory() {
+		if (!hasAmounts()) return false;
+		var result = calc();
+		var line = activePeople().map(function (p) {
+			var due = result.due[p.id] || 0;
+			var paid = toNum(p.paid);
+			if (!isFinite(paid)) paid = 0;
+			return (p.name || '未命名') + ' ' + settleText(due - paid);
+		}).join('，');
+		history.unshift({
+			id: uid(),
+			at: Date.now(),
+			total: result.total,
+			line: line,
+			state: JSON.parse(JSON.stringify({
+				people: state.people,
+				dishes: state.dishes,
+				tax: state.tax,
+				realPay: state.realPay
+			}))
+		});
+		if (history.length > 80) history.length = 80;
+		saveHistory();
+		renderHistory();
+		return true;
+	}
+
+	function renderHistory() {
+		var list = document.getElementById('history-list');
+		if (!history.length) {
+			list.innerHTML = '<p class="empty">还没有历史账单</p>';
+			return;
+		}
+		list.innerHTML = history.map(function (item) {
+			return '<div class="history-item" data-hid="' + item.id + '">' +
+				'<p><strong>' + escapeHtml(formatTime(item.at)) + '</strong> · 合计 ' + escapeHtml(yuan(item.total)) + '</p>' +
+				'<p class="hint">' + escapeHtml(item.line || '') + '</p>' +
+				'<div class="history-actions">' +
+					'<button type="button" data-open-history>打开</button>' +
+					'<button type="button" class="ghost" data-del-history>删除</button>' +
+				'</div></div>';
+		}).join('');
+	}
+
 	function activePeople() {
 		return state.people.filter(function (p) {
 			return String(p.name || '').trim() !== '';
@@ -422,11 +699,11 @@
 			var tr = document.createElement('tr');
 			tr.dataset.pid = p.id;
 			tr.innerHTML =
-				'<td><input type="text" data-k="name" value="' + escapeAttr(p.name) + '" placeholder="名字" autocomplete="off"></td>' +
-				'<td class="num" data-due>—</td>' +
-				'<td><input type="text" data-k="paid" value="' + escapeAttr(p.paid) + '" inputmode="decimal" placeholder="0" autocomplete="off"></td>' +
-				'<td class="num" data-bal>—</td>' +
-				'<td><button type="button" class="ghost" data-del-person>删</button></td>';
+				'<td class="who"><input type="text" data-k="name" value="' + escapeAttr(p.name) + '" placeholder="名字" autocomplete="off"></td>' +
+				'<td class="num due" data-due>—</td>' +
+				'<td class="paid"><input type="text" data-k="paid" value="' + escapeAttr(p.paid) + '" inputmode="decimal" placeholder="0" autocomplete="off"></td>' +
+				'<td class="num bal" data-bal>—</td>' +
+				'<td class="del"><button type="button" class="ghost" data-del-person>删</button></td>';
 			pbody.appendChild(tr);
 		});
 	}
@@ -454,9 +731,9 @@
 				'<div class="dish-top">' +
 					'<strong>#' + (idx + 1) + '</strong>' +
 					'<label class="tax-label"><input type="checkbox" data-tax' + (d.tax ? ' checked' : '') + '> 含倍率</label>' +
+					'<button type="button" class="ghost" data-del-dish>删</button>' +
 					'<input type="text" data-price value="' + escapeAttr(d.price) + '" inputmode="decimal" placeholder="金额，如 38.5 或 20+18.5" autocomplete="off">' +
 					'<span class="hint" data-each></span>' +
-					'<button type="button" class="ghost" data-del-dish>删</button>' +
 				'</div>' +
 				'<div class="share-cells">' +
 					(shareHtml || '<span class="hint">先填写参与者名字</span>') +
@@ -481,8 +758,8 @@
 			var due = result.due[p.id] || 0;
 			var paid = toNum(p.paid);
 			if (!isFinite(paid)) paid = 0;
-			tr.querySelector('[data-due]').textContent = named ? withSymbol(due) : '—';
-			tr.querySelector('[data-bal]').textContent = named ? withSymbol(due - paid) : '—';
+			tr.querySelector('[data-due]').textContent = named ? yuan(due) : '—';
+			tr.querySelector('[data-bal]').textContent = named ? settleText(due - paid) : '—';
 		});
 
 		state.dishes.forEach(function (d) {
@@ -490,18 +767,20 @@
 			if (!el) return;
 			var meta = result.dishMeta[d.id];
 			if (meta && meta.n && String(d.price).trim() !== '') {
-				el.textContent = '→ 每人 ' + withSymbol(meta.each) + ' × ' + meta.n;
+				el.textContent = '每人 ' + yuan(meta.each) + ' × ' + meta.n;
 			} else {
 				el.textContent = '';
 			}
 		});
 
-		document.getElementById('grand-total').textContent = withSymbol(result.total);
+		document.getElementById('grand-total').textContent = yuan(result.total);
 		var real = toNum(state.realPay);
 		var diffEl = document.getElementById('diff');
 		if (isFinite(real)) {
-			var diff = real - result.total;
-			diffEl.textContent = '（' + withNega(diff) + '）';
+			var diff = Math.round((real - result.total) * 10) / 10;
+			if (diff === 0) diffEl.textContent = '（刚好）';
+			else if (diff > 0) diffEl.textContent = '（多付 ' + money(diff) + ' 元）';
+			else diffEl.textContent = '（少付 ' + money(-diff) + ' 元）';
 			diffEl.className = (diff >= 0 ? 'diff-pos' : 'diff-neg') + ' hint';
 		} else {
 			diffEl.textContent = '';
@@ -610,7 +889,8 @@
 	});
 
 	document.getElementById('btn-checkout').addEventListener('click', function () {
-		if (!confirm('清除所有账单项，并把当前「结算」结余记入已付？')) return;
+		if (!confirm('把这一单记入历史，清掉账单项，并把「还差」记进已垫付，带到下一轮？')) return;
+		pushHistory();
 		var result = calc();
 		state.people.forEach(function (p) {
 			var due = result.due[p.id] || 0;
@@ -625,14 +905,14 @@
 	});
 
 	document.getElementById('btn-reset-balance').addEventListener('click', function () {
-		if (!confirm('清除所有已付 / 结余？')) return;
+		if (!confirm('清空每个人的已垫付？')) return;
 		state.people.forEach(function (p) { p.paid = ''; });
 		state.realPay = '';
 		fullRender();
 	});
 
 	document.getElementById('btn-reset-all').addEventListener('click', function () {
-		if (!confirm('清除所有记录并恢复默认？')) return;
+		if (!confirm('只清当前这一单，恢复成两个人的空白账单？历史账单还留着。')) return;
 		localStorage.removeItem(STORAGE_KEY);
 		localStorage.removeItem('persons');
 		localStorage.removeItem('details');
@@ -640,8 +920,272 @@
 		fullRender();
 	});
 
+	document.getElementById('btn-save-history').addEventListener('click', function () {
+		if (!pushHistory()) alert('这一单还没有金额。');
+	});
+
+	document.getElementById('btn-clear-history').addEventListener('click', function () {
+		if (!history.length) return;
+		if (!confirm('清除全部历史账单？当前正在算的这一单不动。')) return;
+		history = [];
+		saveHistory();
+		renderHistory();
+	});
+
+	document.getElementById('history-list').addEventListener('click', function (e) {
+		var itemEl = e.target.closest('.history-item');
+		if (!itemEl) return;
+		var id = itemEl.getAttribute('data-hid');
+		var item = history.find(function (row) { return row.id === id; });
+		if (!item) return;
+		if (e.target.hasAttribute('data-del-history')) {
+			if (!confirm('删除这条历史账单？')) return;
+			history = history.filter(function (row) { return row.id !== id; });
+			saveHistory();
+			renderHistory();
+			return;
+		}
+		if (e.target.hasAttribute('data-open-history')) {
+			if (!confirm('打开这条历史，替换当前正在算的账单？')) return;
+			state = JSON.parse(JSON.stringify(item.state));
+			fullRender();
+		}
+	});
+
 	load();
+	loadHistory();
 	fullRender();
+	renderHistory();
+	window.addEventListener('pagehide', save);
+})();
+	</script>
+	<script>
+(function () {
+	'use strict';
+
+	var fields = {
+		price: document.getElementById('fuel-price'),
+		l100: document.getElementById('fuel-l100'),
+		kml: document.getElementById('fuel-kml'),
+		ypk: document.getElementById('fuel-ypk'),
+		kpy: document.getElementById('fuel-kpy')
+	};
+	var tankInput = document.getElementById('fuel-tank');
+	var rangeEl = document.getElementById('fuel-range');
+	var fillsEl = document.getElementById('fuel-fills');
+	var cmpA = document.getElementById('fuel-cmp-a');
+	var cmpB = document.getElementById('fuel-cmp-b');
+	var cmpKm = document.getElementById('fuel-cmp-km');
+	var cmpOut = document.getElementById('fuel-cmp-out');
+	var fills = ['', '', '', ''];
+	var KEY = 'aa_fuel_v1';
+
+	function pos(raw) {
+		var n = parseFloat(String(raw == null ? '' : raw).replace(/,/g, ''));
+		return isFinite(n) && n > 0 ? n : NaN;
+	}
+
+	function fmt(n, digits) {
+		if (!isFinite(n) || n < 0) return '';
+		var s = n.toFixed(digits);
+		if (s.indexOf('.') === -1) return s;
+		return s.replace(/0+$/, '').replace(/\.$/, '');
+	}
+
+	function write(key, value, digits, source) {
+		if (key === source || !(value > 0)) return;
+		fields[key].value = fmt(value, digits);
+	}
+
+	function apply(source) {
+		var price = pos(fields.price.value);
+		var l100 = NaN;
+		var kml = NaN;
+		var ypk = NaN;
+		var kpy = NaN;
+
+		if (source === 'kml') {
+			kml = pos(fields.kml.value);
+			if (kml > 0) l100 = 100 / kml;
+		} else if (source === 'ypk') {
+			ypk = pos(fields.ypk.value);
+			if (ypk > 0) kpy = 1 / ypk;
+			if (price > 0 && ypk > 0) l100 = ypk * 100 / price;
+			if (l100 > 0) kml = 100 / l100;
+		} else if (source === 'kpy') {
+			kpy = pos(fields.kpy.value);
+			if (kpy > 0) ypk = 1 / kpy;
+			if (price > 0 && ypk > 0) l100 = ypk * 100 / price;
+			if (l100 > 0) kml = 100 / l100;
+		} else {
+			l100 = pos(fields.l100.value);
+			if (!(l100 > 0)) {
+				kml = pos(fields.kml.value);
+				if (kml > 0) l100 = 100 / kml;
+			}
+			if (l100 > 0) kml = 100 / l100;
+			if (price > 0 && l100 > 0) {
+				ypk = l100 * price / 100;
+				kpy = 1 / ypk;
+			}
+		}
+
+		write('l100', l100, 2, source);
+		write('kml', kml, 2, source);
+		write('ypk', ypk, 3, source);
+		write('kpy', kpy, 2, source);
+		refreshTank();
+		save();
+	}
+
+	function kmPerLitre() {
+		var kml = pos(fields.kml.value);
+		if (kml > 0) return kml;
+		var l100 = pos(fields.l100.value);
+		return l100 > 0 ? 100 / l100 : NaN;
+	}
+
+	function refreshTank() {
+		var tank = pos(tankInput.value);
+		var kml = kmPerLitre();
+		if (tank > 0 && kml > 0) {
+			var full = tank * kml;
+			rangeEl.textContent = '满箱大约能跑 ' + fmt(full, 0) + ' km，半箱大约能跑 ' + fmt(full / 2, 0) + ' km。';
+		} else {
+			rangeEl.textContent = '填了油箱容量和百公里油耗之后，这里显示满箱、半箱能跑多远。';
+		}
+		Array.prototype.forEach.call(fillsEl.querySelectorAll('.fill-row'), function (row, i) {
+			var out = row.querySelector('.fill-out');
+			var paid = pos(fills[i]);
+			var price = pos(fields.price.value);
+			if (!(paid > 0)) {
+				out.textContent = '';
+				return;
+			}
+			if (!(price > 0)) {
+				out.textContent = '先填上面的油价';
+				return;
+			}
+			if (!(tank > 0)) {
+				out.textContent = '先填油箱容量';
+				return;
+			}
+			var added = paid / price;
+			var left = tank - added;
+			if (left < -0.05) {
+				out.textContent = '加了 ' + fmt(added, 1) + ' 升，超过油箱 ' + fmt(tank, 1) + ' 升';
+				return;
+			}
+			if (left < 0) left = 0;
+			var percent = left / tank * 100;
+			out.textContent = '还剩 ' + fmt(percent, 1) + '% 时加的（加了 ' + fmt(added, 1) + ' 升）';
+		});
+		refreshCompare();
+	}
+
+	function refreshCompare() {
+		var price = pos(fields.price.value);
+		var a = pos(cmpA.value);
+		var b = pos(cmpB.value);
+		var km = pos(cmpKm.value);
+		if (!(km > 0)) km = 100;
+		if (!(price > 0) || !(a > 0) || !(b > 0)) {
+			cmpOut.textContent = '填两个百公里油耗和上面的油价之后，这里显示差多少钱。';
+			return;
+		}
+		var costA = a * price / 100 * km;
+		var costB = b * price / 100 * km;
+		var diff = Math.abs(costA - costB);
+		var cheaper = costA <= costB ? a : b;
+		var dearer = costA <= costB ? b : a;
+		var per100 = Math.abs(a - b) * price;
+		cmpOut.textContent = fmt(a, 2) + ' L/100km 这 ' + fmt(km, 0) + ' km 花费 ' + fmt(costA, 2) + ' 元，' +
+			fmt(b, 2) + ' L/100km 花费 ' + fmt(costB, 2) + ' 元。' +
+			fmt(cheaper, 2) + ' 比 ' + fmt(dearer, 2) + ' 每百公里少花 ' + fmt(per100, 2) + ' 元，这段路少花 ' + fmt(diff, 2) + ' 元。';
+	}
+
+	function renderFills() {
+		fillsEl.innerHTML = '';
+		fills.forEach(function (value, i) {
+			var row = document.createElement('div');
+			row.className = 'fill-row';
+			row.innerHTML = '<input type="text" inputmode="decimal" placeholder="元" autocomplete="off"><span class="fill-out"></span>';
+			row.querySelector('input').value = value;
+			row.querySelector('input').addEventListener('input', function (event) {
+				fills[i] = event.target.value;
+				refreshTank();
+				save();
+			});
+			fillsEl.appendChild(row);
+		});
+		refreshTank();
+	}
+
+	function save() {
+		try {
+			localStorage.setItem(KEY, JSON.stringify({
+				price: fields.price.value,
+				l100: fields.l100.value,
+				kml: fields.kml.value,
+				ypk: fields.ypk.value,
+				kpy: fields.kpy.value,
+				tank: tankInput.value,
+				fills: fills,
+				cmpA: cmpA.value,
+				cmpB: cmpB.value,
+				cmpKm: cmpKm.value
+			}));
+		} catch (e) { /* ignore */ }
+	}
+
+	function load() {
+		try {
+			var data = JSON.parse(localStorage.getItem(KEY) || 'null');
+			if (!data) return;
+			Object.keys(fields).forEach(function (key) {
+				if (data[key]) fields[key].value = data[key];
+			});
+			if (data.tank) tankInput.value = data.tank;
+			if (data.cmpA) cmpA.value = data.cmpA;
+			if (data.cmpB) cmpB.value = data.cmpB;
+			if (data.cmpKm) cmpKm.value = data.cmpKm;
+			if (Array.isArray(data.fills) && data.fills.length) fills = data.fills.map(String);
+		} catch (e) { /* ignore */ }
+	}
+
+	Object.keys(fields).forEach(function (key) {
+		fields[key].addEventListener('input', function () { apply(key); });
+	});
+	tankInput.addEventListener('input', function () {
+		refreshTank();
+		save();
+	});
+	[cmpA, cmpB, cmpKm].forEach(function (input) {
+		input.addEventListener('input', function () {
+			refreshCompare();
+			save();
+		});
+	});
+	document.getElementById('fuel-add-fill').addEventListener('click', function () {
+		fills.push('');
+		renderFills();
+		save();
+	});
+	document.getElementById('fuel-clear').addEventListener('click', function () {
+		if (!confirm('清除记住的油耗记录？')) return;
+		Object.keys(fields).forEach(function (key) { fields[key].value = ''; });
+		tankInput.value = '';
+		cmpA.value = '';
+		cmpB.value = '';
+		cmpKm.value = '';
+		fills = ['', '', '', ''];
+		try { localStorage.removeItem(KEY); } catch (e) { /* ignore */ }
+		renderFills();
+	});
+	window.addEventListener('pagehide', save);
+
+	load();
+	renderFills();
 })();
 	</script>
 </body>
