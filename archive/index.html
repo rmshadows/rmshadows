@@ -919,8 +919,9 @@
     sidebar-container
 ">
     
-        <h5><a href="/rmshadows/">VISITORS</a></h5>
-
+        <!--  <% if (site.posts.length){ %> -->
+<h5><a href="<%= config.root %>">VISITORS</a></h5>
+<% if (config.busuanzi){ %>
 <div class="widget">
   <span>
     Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
@@ -930,7 +931,8 @@
     <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
   </span>
 </div>
-
+<% } %>
+<!--  <% } %> -->
 
         <hr>
     
@@ -942,15 +944,15 @@
   <div class="tags">
     
     
+    <a href="/rmshadows/tags/#Marxist Philosophy" title="Marxist Philosophy" rel="1">Marxist Philosophy</a>
+    
+    
+    
     <a href="/rmshadows/tags/#Administrative Professional Ability Test" title="Administrative Professional Ability Test" rel="5">Administrative Professional Ability Test</a>
     
     
     
     <a href="/rmshadows/tags/#APAT" title="APAT" rel="5">APAT</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#Marxist Philosophy" title="Marxist Philosophy" rel="1">Marxist Philosophy</a>
     
     
     
@@ -966,27 +968,35 @@
     
     
     
+    <a href="/rmshadows/tags/#Mao Zedong Thought" title="Mao Zedong Thought" rel="1">Mao Zedong Thought</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Deng Xiaoping Theory" title="Deng Xiaoping Theory" rel="1">Deng Xiaoping Theory</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#JiangZemin&#39;s Three Represents important Thought" title="JiangZemin&#39;s Three Represents important Thought" rel="1">JiangZemin&#39;s Three Represents important Thought</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#HuJintao&#39;s Scientific outlook on Development" title="HuJintao&#39;s Scientific outlook on Development" rel="1">HuJintao&#39;s Scientific outlook on Development</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Hexo" title="Hexo" rel="1">Hexo</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Gitee + Hexo建立博客" title="Gitee + Hexo建立博客" rel="1">Gitee + Hexo建立博客</a>
+    
+    
+    
     <a href="/rmshadows/tags/#C" title="C" rel="1">C</a>
     
     
     
     <a href="/rmshadows/tags/#C++" title="C++" rel="1">C++</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#Daily" title="Daily" rel="7">Daily</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#GNU/Linux" title="GNU/Linux" rel="3">GNU/Linux</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#Debian" title="Debian" rel="4">Debian</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife" rel="1">Hexo-Theme-LiveMyLife</a>
     
     
     
@@ -1006,7 +1016,23 @@
     
     
     
+    <a href="/rmshadows/tags/#Daily" title="Daily" rel="7">Daily</a>
+    
+    
+    
     <a href="/rmshadows/tags/#Linux Command Guiding" title="Linux Command Guiding" rel="1">Linux Command Guiding</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#GNU/Linux" title="GNU/Linux" rel="3">GNU/Linux</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Debian" title="Debian" rel="4">Debian</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife" rel="1">Hexo-Theme-LiveMyLife</a>
     
     
     
@@ -1027,18 +1053,6 @@
     
     
     <a href="/rmshadows/tags/#Linux Software" title="Linux Software" rel="2">Linux Software</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#PEncoder" title="PEncoder" rel="1">PEncoder</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#Password Manager" title="Password Manager" rel="1">Password Manager</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#AES ENCRYPT" title="AES ENCRYPT" rel="1">AES ENCRYPT</a>
     
     
     
@@ -1090,22 +1104,6 @@
     
     
     
-    <a href="/rmshadows/tags/#Hexo" title="Hexo" rel="1">Hexo</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#Gitee + Hexo建立博客" title="Gitee + Hexo建立博客" rel="1">Gitee + Hexo建立博客</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#Toolkit" title="Toolkit" rel="1">Toolkit</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#Games" title="Games" rel="1">Games</a>
-    
-    
-    
     <a href="/rmshadows/tags/#Windows" title="Windows" rel="1">Windows</a>
     
     
@@ -1122,19 +1120,23 @@
     
     
     
-    <a href="/rmshadows/tags/#Mao Zedong Thought" title="Mao Zedong Thought" rel="1">Mao Zedong Thought</a>
+    <a href="/rmshadows/tags/#PEncoder" title="PEncoder" rel="1">PEncoder</a>
     
     
     
-    <a href="/rmshadows/tags/#Deng Xiaoping Theory" title="Deng Xiaoping Theory" rel="1">Deng Xiaoping Theory</a>
+    <a href="/rmshadows/tags/#Password Manager" title="Password Manager" rel="1">Password Manager</a>
     
     
     
-    <a href="/rmshadows/tags/#JiangZemin&#39;s Three Represents important Thought" title="JiangZemin&#39;s Three Represents important Thought" rel="1">JiangZemin&#39;s Three Represents important Thought</a>
+    <a href="/rmshadows/tags/#AES ENCRYPT" title="AES ENCRYPT" rel="1">AES ENCRYPT</a>
     
     
     
-    <a href="/rmshadows/tags/#HuJintao&#39;s Scientific outlook on Development" title="HuJintao&#39;s Scientific outlook on Development" rel="1">HuJintao&#39;s Scientific outlook on Development</a>
+    <a href="/rmshadows/tags/#Toolkit" title="Toolkit" rel="1">Toolkit</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Games" title="Games" rel="1">Games</a>
     
     
     
@@ -1146,11 +1148,11 @@
     
     
     
-    <a href="/rmshadows/tags/#Veterinary" title="Veterinary" rel="1">Veterinary</a>
-    
-    
-    
     <a href="/rmshadows/tags/#Firewall" title="Firewall" rel="1">Firewall</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Veterinary" title="Veterinary" rel="1">Veterinary</a>
     
     
     
@@ -1302,12 +1304,12 @@
       <li>Notes</li>
     </a>
     
-    <a href="/rmshadows/categories/#Daily">
-      <li>Daily</li>
-    </a>
-    
     <a href="/rmshadows/categories/#Hows">
       <li>Hows</li>
+    </a>
+    
+    <a href="/rmshadows/categories/#Daily">
+      <li>Daily</li>
     </a>
     
     <a href="/rmshadows/categories/#Release">

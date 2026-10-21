@@ -187,13 +187,82 @@
     window.XMLHttpRequest = LocalXHR;
   }
 
+  function hideLoadingNoteWhenReady() {
+    var note = document.querySelector("h1.rain-note");
+    if (!note) return;
+
+    function hide() {
+      if (!note || note.dataset.dismissed === "1") return;
+      note.dataset.dismissed = "1";
+      note.style.transition = "opacity .35s ease";
+      note.style.opacity = "0";
+      note.style.pointerEvents = "none";
+      setTimeout(function () {
+        if (note) note.style.display = "none";
+      }, 400);
+    }
+
+    function canvasReady(canvas) {
+      if (!canvas || canvas.width < 2 || canvas.height < 2) return false;
+      try {
+        if (canvas.getContext("webgl") || canvas.getContext("webgl2") ||
+            canvas.getContext("experimental-webgl")) {
+          return true;
+        }
+      } catch (e) { /* ignore */ }
+      try {
+        var ctx = canvas.getContext("2d");
+        if (!ctx) return false;
+        var sample = ctx.getImageData(
+          Math.max(0, (canvas.width >> 1) - 1),
+          Math.max(0, (canvas.height >> 1) - 1),
+          2,
+          2
+        ).data;
+        for (var i = 0; i < sample.length; i += 4) {
+          // any non-empty pixel means something drew
+          if (sample[i + 3] > 0 && (sample[i] | sample[i + 1] | sample[i + 2])) {
+            return true;
+          }
+        }
+      } catch (e2) { /* tainted / unavailable */ }
+      return false;
+    }
+
+    var frames = 0;
+    var readyFrames = 0;
+    var started = Date.now();
+    function tick() {
+      frames += 1;
+      var canvas = document.querySelector("app-root canvas, canvas.rain-canvas, canvas");
+      if (canvasReady(canvas)) {
+        readyFrames += 1;
+        // wait a few painted frames so tip doesn't flash away on a blank buffer
+        if (readyFrames >= 10) {
+          hide();
+          return;
+        }
+      } else {
+        readyFrames = 0;
+      }
+      // keep tip if rain never comes up (灰屏/黑屏时提示仍在)
+      if (Date.now() - started > 60000) return;
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
   function loadApp() {
     var files = ["runtime-es2015.js", "polyfills-es2015.js", "main-es2015.js"];
     function next(i) {
-      if (i >= files.length) return;
+      if (i >= files.length) {
+        hideLoadingNoteWhenReady();
+        return;
+      }
       var script = document.createElement("script");
       script.src = "../common/" + files[i];
       script.onload = function () { next(i + 1); };
+      script.onerror = function () { next(i + 1); };
       document.body.appendChild(script);
     }
     next(0);
