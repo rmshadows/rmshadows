@@ -37,14 +37,76 @@
 			touch-action: manipulation;
 		}
 		.page { max-width: 720px; margin: 0 auto; }
+		.top {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: flex-start;
+			justify-content: space-between;
+			gap: 10px 16px;
+			margin-bottom: 14px;
+		}
+		.top-text { flex: 1 1 220px; min-width: 0; }
 		h1 {
 			margin: 0 0 4px;
 			font-size: 1.55rem;
 			font-weight: 700;
 			letter-spacing: 0.02em;
 		}
-		.sub { margin: 0 0 18px; color: var(--muted); font-size: 0.9rem; }
-		.card {
+		.sub { margin: 0; color: var(--muted); font-size: 0.9rem; }
+		.overview-toggle {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			flex: 0 0 auto;
+			margin-top: 4px;
+			padding: 8px 12px;
+			border: 1px solid var(--line);
+			border-radius: 999px;
+			background: var(--card);
+			color: var(--ink);
+			font-size: 0.9rem;
+			cursor: pointer;
+			user-select: none;
+			min-height: 44px;
+		}
+		.overview-toggle input {
+			width: 18px;
+			height: 18px;
+			accent-color: var(--accent);
+		}
+		.tabs {
+			display: flex;
+			gap: 8px;
+			overflow-x: auto;
+			-webkit-overflow-scrolling: touch;
+			scrollbar-width: thin;
+			padding: 2px 2px 12px;
+			margin: 0 0 4px;
+		}
+		.tabs button {
+			flex: 0 0 auto;
+			appearance: none;
+			border: 1px solid var(--line);
+			background: var(--card);
+			color: var(--muted);
+			border-radius: 999px;
+			padding: 8px 14px;
+			min-height: 40px;
+			font: inherit;
+			font-size: 0.9rem;
+			cursor: pointer;
+			white-space: nowrap;
+		}
+		.tabs button[aria-selected="true"] {
+			background: var(--accent);
+			border-color: var(--accent);
+			color: #fff;
+		}
+		.tabs button:focus-visible {
+			outline: 2px solid color-mix(in srgb, var(--accent) 45%, white);
+			outline-offset: 2px;
+		}
+		.panel {
 			background: var(--card);
 			border: 1px solid var(--line);
 			border-radius: var(--radius);
@@ -52,12 +114,32 @@
 			padding: 16px;
 			margin-bottom: 14px;
 		}
-		.card h2 {
+		.page:not(.overview) .panel { display: none; }
+		.page:not(.overview) .panel.active { display: block; }
+		.page.overview .panel { display: block; }
+		.panel h2 {
 			margin: 0 0 12px;
 			font-size: 1rem;
 			border-bottom: 1px dashed var(--line);
 			padding-bottom: 8px;
 		}
+		.step-tip {
+			margin: 0 0 14px;
+			padding: 10px 12px;
+			border-radius: 8px;
+			background: var(--accent-soft);
+			color: var(--accent);
+			font-size: 0.92rem;
+		}
+		.step-nav {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 8px;
+			margin-top: 16px;
+			padding-top: 12px;
+			border-top: 1px dashed var(--line);
+		}
+		.step-nav .spacer { flex: 1 1 auto; }
 		.help {
 			margin: 0;
 			padding-left: 1.2em;
@@ -125,33 +207,143 @@
 			height: 18px;
 			accent-color: var(--accent);
 		}
-		.share-cells { display: flex; flex-wrap: wrap; gap: 6px 10px; margin-top: 8px; }
+		.dish {
+			margin: 0 0 14px;
+			padding: 0;
+			border: 1px solid #cfc8bf;
+			border-radius: 12px;
+			background: #fbfaf8;
+			overflow: hidden;
+		}
+		.dish-head {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			padding: 10px 12px;
+			background: #efeae3;
+			border-bottom: 1px solid #cfc8bf;
+		}
+		.dish-head .dish-no {
+			flex: 1 1 auto;
+			min-width: 0;
+			font-weight: 700;
+			font-size: 0.95rem;
+		}
+		.dish-head .tax-label {
+			flex: 0 0 auto;
+			padding: 4px 8px;
+			border: 1px solid #cfc8bf;
+			border-radius: 8px;
+			background: #fff;
+			color: var(--ink);
+		}
+		.dish-head button {
+			flex: 0 0 auto;
+			min-width: 44px;
+			text-decoration: none;
+			border: 1px solid #cfc8bf;
+			border-radius: 8px;
+			background: #fff;
+			color: var(--danger);
+		}
+		.dish-body { padding: 12px; display: grid; gap: 10px; }
+		.field {
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+		}
+		.field > span {
+			font-size: 0.8rem;
+			font-weight: 600;
+			color: var(--muted);
+		}
+		.field .opt {
+			font-weight: 500;
+			color: #9a938a;
+		}
+		.field [data-each] {
+			min-height: 1.2em;
+			margin-top: 2px;
+		}
+		.share-box {
+			padding: 10px;
+			border: 1px dashed #cfc8bf;
+			border-radius: 10px;
+			background: #fff;
+		}
+		.share-box .share-title {
+			margin: 0 0 8px;
+			font-size: 0.8rem;
+			font-weight: 600;
+			color: var(--muted);
+		}
+		.share-actions {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 6px;
+			margin: 0 0 10px;
+		}
+		.share-actions button {
+			min-height: 36px;
+			padding: 4px 12px;
+			font-size: 0.85rem;
+			background: #fff;
+			color: var(--ink);
+			border: 1px solid #cfc8bf;
+		}
+		.share-cells { display: flex; flex-wrap: wrap; gap: 6px 8px; }
 		.share-cells label {
 			display: inline-flex;
 			align-items: center;
 			gap: 6px;
 			min-height: 40px;
-			padding: 4px 10px;
-			border: 1px solid var(--line);
+			padding: 4px 12px;
+			border: 1px solid #cfc8bf;
 			border-radius: 999px;
 			font-size: 0.95rem;
 			color: var(--ink);
-			background: #fff;
+			background: #f6f4f1;
 		}
-		.dish {
-			margin-bottom: 12px;
-			padding-bottom: 10px;
-			border-bottom: 1px solid var(--line);
+		.share-cells label:has(input:checked) {
+			background: var(--accent-soft);
+			border-color: var(--accent);
+			color: var(--accent);
 		}
-		.dish-top {
-			display: grid;
-			grid-template-columns: auto 1fr auto;
-			gap: 8px;
+		.price-out {
+			font-variant-numeric: tabular-nums;
+			color: var(--ink);
+			font-size: 0.88rem;
+		}
+		.tools-bar {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 10px 14px;
 			align-items: center;
+			margin: 10px 0 0;
+			padding: 10px 12px;
+			border: 1px solid #cfc8bf;
+			border-radius: 10px;
+			background: #fbfaf8;
 		}
-		.dish-top input[data-price],
-		.dish-top [data-each] { grid-column: 1 / -1; }
-		.dish-top button { min-width: 44px; }
+		.tools-bar label.chk {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			min-height: 40px;
+			color: var(--ink);
+			font-size: 0.9rem;
+		}
+		.tools-bar label.rate-default {
+			display: inline-flex;
+			flex-wrap: wrap;
+			align-items: center;
+			gap: 8px;
+			color: var(--muted);
+			font-size: 0.85rem;
+		}
+		.tools-bar label.rate-default input {
+			width: min(100%, 100px);
+		}
 		.meta {
 			display: flex;
 			flex-wrap: wrap;
@@ -266,8 +458,10 @@
 				border-radius: 8px;
 				background: #fff;
 			}
-			.row-actions { flex-direction: column; }
-			.row-actions button { width: 100%; text-align: center; }
+			.row-actions, .step-nav { flex-direction: column; }
+			.row-actions button,
+			.step-nav button { width: 100%; text-align: center; }
+			.step-nav .spacer { display: none; }
 			.row-actions button.ghost {
 				text-decoration: none;
 				border: 1px solid var(--line);
@@ -299,23 +493,41 @@
 	</style>
 </head>
 <body>
-	<div class="page">
-		<h1>AA 分账</h1>
-		<p class="sub">算出每人该出多少钱，以及谁垫过、还要补给谁。金额单位是元。当前这一单和历史账单都留在这台浏览器里，关掉或闪退后再打开还在。</p>
+	<div class="page" id="page">
+		<div class="top">
+			<div class="top-text">
+				<h1>AA 分账</h1>
+				<p class="sub">一步步填完就算出谁该出多少。金额单位是元，当前单和历史都留在这台浏览器里。</p>
+			</div>
+			<label class="overview-toggle">
+				<input type="checkbox" id="overview-switch">
+				总览（全部展开）
+			</label>
+		</div>
 
-		<section class="card">
-			<h2>怎么用</h2>
+		<nav class="tabs" id="step-tabs" role="tablist" aria-label="分账步骤"></nav>
+
+		<section class="panel active" id="panel-help" data-step="help" role="tabpanel">
+			<h2>1. 怎么用</h2>
+			<p class="step-tip">先看一遍规则，再点「下一步」开始加人。随时可以点上方标签回到某一步；打开「总览」则一次看全部。</p>
 			<ol class="help">
 				<li>先填参与的人。</li>
-				<li>每一行是一笔账，单位是元，可以写 <code>20+18.5</code>。</li>
-				<li>勾了谁，这笔就只在这些人里平分。一个都不勾，就是所有人平分。</li>
-				<li>勾了「含倍率」的，会再乘下面的倍率。服务费 15% 填 <code>1.15</code>，八折填 <code>0.8</code>。不勾就按原价。</li>
+				<li>每一行是一笔账，可写备注（买了啥，选填）。金额可写算式如 <code>100-20</code>，下面会显示结果。</li>
+				<li>勾选的人 = 这笔钱由他们平摊出钱。默认全员勾选；只留下要出钱的人即可。可用「全选 / 反选」。</li>
+				<li>每笔可单独填倍率：八折 <code>0.8</code>，加收 15% 填 <code>1.15</code>，不打折填 <code>1</code>。</li>
+				<li>勾「加下一项时记住勾选与倍率」，新加的一项会沿用上一笔勾了谁、倍率是多少。</li>
 				<li>「该付」是这一轮他分到的钱。「已垫付」是他已经掏的钱。「还差」写成还应出，就是他还要再拿出来；写成应收回，就是别人该还给他。</li>
+				<li>油耗换算在单独一页，和分账互不影响。</li>
 			</ol>
+			<div class="step-nav">
+				<span class="spacer"></span>
+				<button type="button" class="primary" data-next>下一步：参与者</button>
+			</div>
 		</section>
 
-		<section class="card">
-			<h2>参与者</h2>
+		<section class="panel" id="panel-people" data-step="people" role="tabpanel">
+			<h2>2. 参与者</h2>
+			<p class="step-tip">写下这顿饭 / 这趟出行里要分账的人。名字留空的人不会参与平分。</p>
 			<table class="people">
 				<thead>
 					<tr>
@@ -331,24 +543,39 @@
 			<div class="row-actions">
 				<button type="button" class="primary" id="btn-add-person">+ 加人</button>
 			</div>
+			<div class="step-nav">
+				<button type="button" data-prev>上一步</button>
+				<span class="spacer"></span>
+				<button type="button" class="primary" data-next>下一步：账单</button>
+			</div>
 		</section>
 
-		<section class="card">
-			<h2>账单</h2>
+		<section class="panel" id="panel-dishes" data-step="dishes" role="tabpanel">
+			<h2>3. 账单</h2>
+			<p class="step-tip">每块一笔账。勾选的人出这笔钱（平摊），默认全员都勾着。金额可写满减算式；每笔可设自己的倍率。</p>
 			<div id="dishes-list"></div>
 			<div class="row-actions">
 				<button type="button" class="primary" id="btn-add-dish">+ 加一项</button>
 			</div>
-			<div class="meta">
-				<label>折扣 / 税倍率
-					<input type="text" id="tax" inputmode="decimal" value="1" autocomplete="off">
+			<div class="tools-bar">
+				<label class="chk">
+					<input type="checkbox" id="remember-share">
+					加下一项时记住勾选与倍率
 				</label>
-				<span class="hint">仅作用于勾了「含倍率」的项；默认 1</span>
+				<label class="rate-default">新项默认倍率
+					<input type="text" id="tax" inputmode="decimal" value="1" autocomplete="off" placeholder="1">
+				</label>
+			</div>
+			<div class="step-nav">
+				<button type="button" data-prev>上一步</button>
+				<span class="spacer"></span>
+				<button type="button" class="primary" data-next>下一步：结账</button>
 			</div>
 		</section>
 
-		<section class="card">
-			<h2>结账</h2>
+		<section class="panel" id="panel-settle" data-step="settle" role="tabpanel">
+			<h2>4. 结账</h2>
+			<p class="step-tip">核对合计。有人垫过钱就填在「参与者」页的已垫付里；这里可以记实付、结一单或清空。</p>
 			<div class="totals">
 				<div>账单合计 <strong id="grand-total">0.00 元</strong></div>
 				<label>实付总额
@@ -361,20 +588,31 @@
 				<button type="button" class="ghost" id="btn-reset-balance">清空已垫付</button>
 				<button type="button" class="ghost" id="btn-reset-all">全部清空</button>
 			</div>
+			<div class="step-nav">
+				<button type="button" data-prev>上一步</button>
+				<span class="spacer"></span>
+				<button type="button" class="primary" data-next>下一步：历史</button>
+			</div>
 		</section>
 
-		<section class="card">
-			<h2>历史账单</h2>
-			<p class="hint">结一单，或点「记入历史」，会留下一份。打开某条会换掉当前正在算的内容。全部清空只清当前这一单。</p>
+		<section class="panel" id="panel-history" data-step="history" role="tabpanel">
+			<h2>5. 历史账单</h2>
+			<p class="step-tip">结一单，或点「记入历史」，会留下一份。打开某条会换掉当前正在算的内容。全部清空只清当前这一单。</p>
 			<div id="history-list"></div>
 			<div class="row-actions">
 				<button type="button" class="primary" id="btn-save-history">记入历史</button>
 				<button type="button" class="ghost" id="btn-clear-history">清除历史账单</button>
 			</div>
+			<div class="step-nav">
+				<button type="button" data-prev>上一步</button>
+				<span class="spacer"></span>
+				<button type="button" class="primary" data-next>下一步：油耗</button>
+			</div>
 		</section>
 
-		<section class="card" id="fuel">
-			<h2>油耗换算</h2>
+		<section class="panel" id="panel-fuel" data-step="fuel" role="tabpanel">
+			<h2>6. 油耗换算</h2>
+			<p class="step-tip">独立工具：算油耗、油箱里程、加满记录、两种油耗差价。和前面的 AA 分账互不影响。</p>
 			<p class="hint">L/100km 和 km/L 互为倒数（乘起来是 100）。元/km 和 km/元也互为倒数。填了油价，升和钱就能对上：每公里花费 = 百公里油耗 × 油价 ÷ 100。油箱容量用来算满箱、半箱能跑多远。右边每一格是一次加满花的钱，按上面的油价算出当时油箱还剩百分之多少。这些数也会记住，关掉再打开还在，要清掉用最下面的按钮。</p>
 			<div class="fuel-grid">
 				<label class="wide">油价
@@ -435,9 +673,124 @@
 					<button type="button" class="ghost" id="fuel-clear">清除油耗记录</button>
 				</div>
 			</div>
+			<div class="step-nav">
+				<button type="button" data-prev>上一步</button>
+			</div>
 		</section>
 	</div>
 
+	<script>
+(function () {
+	'use strict';
+
+	var STEPS = [
+		{ id: 'help', label: '1. 怎么用' },
+		{ id: 'people', label: '2. 参与者' },
+		{ id: 'dishes', label: '3. 账单' },
+		{ id: 'settle', label: '4. 结账' },
+		{ id: 'history', label: '5. 历史' },
+		{ id: 'fuel', label: '6. 油耗' }
+	];
+	var UI_KEY = 'aa_calc_ui_v1';
+	var page = document.getElementById('page');
+	var tabsEl = document.getElementById('step-tabs');
+	var overviewSwitch = document.getElementById('overview-switch');
+	var current = 'help';
+
+	function loadUi() {
+		try {
+			var data = JSON.parse(localStorage.getItem(UI_KEY) || 'null');
+			if (!data) return;
+			if (data.overview) overviewSwitch.checked = true;
+			if (data.step && STEPS.some(function (s) { return s.id === data.step; })) current = data.step;
+		} catch (e) { /* ignore */ }
+	}
+
+	function saveUi() {
+		try {
+			localStorage.setItem(UI_KEY, JSON.stringify({
+				overview: overviewSwitch.checked,
+				step: current
+			}));
+		} catch (e) { /* ignore */ }
+	}
+
+	function applyOverview() {
+		page.classList.toggle('overview', overviewSwitch.checked);
+		if (!overviewSwitch.checked) showStep(current, false);
+		else {
+			STEPS.forEach(function (step) {
+				var panel = document.getElementById('panel-' + step.id);
+				if (panel) panel.classList.add('active');
+				var tab = tabsEl.querySelector('[data-step="' + step.id + '"]');
+				if (tab) tab.setAttribute('aria-selected', step.id === current ? 'true' : 'false');
+			});
+		}
+		saveUi();
+	}
+
+	function showStep(id, scroll) {
+		if (!STEPS.some(function (s) { return s.id === id; })) id = 'help';
+		current = id;
+		STEPS.forEach(function (step) {
+			var panel = document.getElementById('panel-' + step.id);
+			if (panel) {
+				panel.classList.toggle('active', overviewSwitch.checked || step.id === id);
+			}
+			var tab = tabsEl.querySelector('[data-step="' + step.id + '"]');
+			if (tab) tab.setAttribute('aria-selected', step.id === id ? 'true' : 'false');
+		});
+		saveUi();
+		if (scroll !== false) {
+			var target = overviewSwitch.checked
+				? document.getElementById('panel-' + id)
+				: page;
+			if (target && target.scrollIntoView) {
+				target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			}
+		}
+	}
+
+	function stepIndex(id) {
+		for (var i = 0; i < STEPS.length; i++) {
+			if (STEPS[i].id === id) return i;
+		}
+		return 0;
+	}
+
+	function buildTabs() {
+		tabsEl.innerHTML = STEPS.map(function (step) {
+			return '<button type="button" role="tab" data-step="' + step.id + '" aria-selected="false">' +
+				step.label + '</button>';
+		}).join('');
+	}
+
+	tabsEl.addEventListener('click', function (e) {
+		var btn = e.target.closest('[data-step]');
+		if (!btn) return;
+		showStep(btn.getAttribute('data-step'));
+	});
+
+	overviewSwitch.addEventListener('change', applyOverview);
+
+	page.addEventListener('click', function (e) {
+		if (e.target.hasAttribute('data-next')) {
+			var i = stepIndex(current);
+			if (i < STEPS.length - 1) showStep(STEPS[i + 1].id);
+			return;
+		}
+		if (e.target.hasAttribute('data-prev')) {
+			var j = stepIndex(current);
+			if (j > 0) showStep(STEPS[j - 1].id);
+		}
+	});
+
+	loadUi();
+	buildTabs();
+	applyOverview();
+	showStep(current, false);
+})();
+	</script>
 	<script>
 (function () {
 	'use strict';
@@ -460,7 +813,6 @@
 
 	function money(n) {
 		if (!isFinite(n)) n = 0;
-		// 圆角分：保留到分（2 位小数）
 		return (Math.round(n * 100) / 100).toFixed(2);
 	}
 
@@ -497,21 +849,113 @@
 		people: [],
 		dishes: [],
 		tax: '1',
-		realPay: ''
+		realPay: '',
+		rememberShare: false
 	};
 
-	function defaultState() {
+	function allPeopleIds() {
+		return activePeople().map(function (p) { return p.id; });
+	}
+
+	function emptyDish(base) {
+		base = base || {};
+		var share = Array.isArray(base.share) ? base.share.slice() : allPeopleIds();
+		if (!share.length) share = allPeopleIds();
 		return {
-			people: [
-				{ id: uid(), name: '甲', paid: '' },
-				{ id: uid(), name: '乙', paid: '' }
-			],
-			dishes: [
-				{ id: uid(), price: '', tax: true, share: [] }
-			],
-			tax: '1',
-			realPay: ''
+			id: uid(),
+			note: '',
+			price: '',
+			rate: base.rate != null ? String(base.rate) : String(state.tax || '1'),
+			share: share
 		};
+	}
+
+	function defaultPeople() {
+		return [
+			{ id: uid(), name: '甲', paid: '' },
+			{ id: uid(), name: '乙', paid: '' }
+		];
+	}
+
+	function ensureDishShare(d) {
+		if (!d) return;
+		if (!Array.isArray(d.share)) d.share = [];
+		var valid = d.share.filter(function (id) {
+			return state.people.some(function (p) { return p.id === id; });
+		});
+		// 旧数据「空 = 全员」：补成显式全选，界面默认都勾着
+		d.share = valid.length ? valid : allPeopleIds();
+	}
+
+	function normalizeDish(d) {
+		if (!d || typeof d !== 'object') return emptyDish();
+		if (d.note == null) d.note = d.name || '';
+		if (!Array.isArray(d.share)) d.share = [];
+		delete d.shareMode;
+		if (d.rate == null || d.rate === '') {
+			if (d.tax === false) d.rate = '1';
+			else d.rate = String(state.tax || '1');
+		} else {
+			d.rate = String(d.rate);
+		}
+		ensureDishShare(d);
+		return d;
+	}
+
+	function defaultState() {
+		var people = defaultPeople();
+		return {
+			people: people,
+			dishes: [emptyDish({
+				rate: '1',
+				share: people.map(function (p) { return p.id; })
+			})],
+			tax: '1',
+			realPay: '',
+			rememberShare: false
+		};
+	}
+
+	function isExpr(raw) {
+		var s = String(raw == null ? '' : raw).trim();
+		if (!s) return false;
+		if (/^\d+(\.\d+)?$/.test(s)) return false;
+		return /[+\-*/()]/.test(s);
+	}
+
+	function dishAmount(d) {
+		var price = toNum(d.price);
+		if (!isFinite(price)) price = 0;
+		var rate = toNum(d.rate);
+		if (!isFinite(rate)) rate = 1;
+		return { price: price, rate: rate, amt: price * rate };
+	}
+
+	function dishShareIds(d, people) {
+		var picked = (d.share || []).filter(function (id) {
+			return people.some(function (p) { return p.id === id; });
+		});
+		if (picked.length) return picked;
+		return people.map(function (p) { return p.id; });
+	}
+
+	/** 加人/改名后：原本全员勾选的项，继续勾上新人；空数据补成全选 */
+	function syncSharesAfterPeopleChange(prevIds) {
+		var ids = allPeopleIds();
+		state.dishes.forEach(function (d) {
+			var oldShare = d.share || [];
+			var hadAllPrev = !oldShare.length || (
+				prevIds.length > 0 &&
+				prevIds.every(function (id) { return oldShare.indexOf(id) !== -1; }) &&
+				oldShare.every(function (id) { return prevIds.indexOf(id) !== -1; })
+			);
+			if (hadAllPrev) {
+				d.share = ids.slice();
+			} else {
+				d.share = oldShare.filter(function (id) { return ids.indexOf(id) !== -1; });
+				if (!d.share.length) d.share = ids.slice();
+			}
+		});
 	}
 
 	function migrateLegacy() {
@@ -534,12 +978,14 @@
 						var idx = Number(paxIdx) - 1;
 						if (s.people[idx]) share.push(s.people[idx].id);
 					});
-					s.dishes.push({
+					s.dishes.push(normalizeDish({
 						id: uid(),
+						note: String(d.note || d.name || ''),
 						price: String(d.price),
 						tax: !!d.with_tax,
+						rate: d.with_tax ? String(s.tax || '1') : '1',
 						share: share
-					});
+					}));
 				});
 				if (!s.dishes.length) s.dishes = defaultState().dishes;
 			}
@@ -568,7 +1014,10 @@
 			}
 			var data = JSON.parse(raw);
 			if (!data.people || !data.people.length) data = defaultState();
+			if (typeof data.rememberShare !== 'boolean') data.rememberShare = false;
 			state = data;
+			state.dishes = (data.dishes || []).map(normalizeDish);
+			if (!state.dishes.length) state.dishes = defaultState().dishes;
 		} catch (e) {
 			state = defaultState();
 		}
@@ -616,16 +1065,28 @@
 			if (!isFinite(paid)) paid = 0;
 			return (p.name || '未命名') + ' ' + settleText(due - paid);
 		}).join('，');
+		var notes = state.dishes.map(function (d) {
+			var note = String(d.note || '').trim();
+			var parts = dishAmount(d);
+			var hasPrice = String(d.price || '').trim() !== '' && isFinite(parts.price);
+			if (!note && !hasPrice) return '';
+			var label = note || ('#' + (state.dishes.indexOf(d) + 1));
+			if (!hasPrice) return label;
+			var priceBit = isExpr(d.price) ? (String(d.price).trim() + '=' + money(parts.price)) : money(parts.price);
+			if (parts.rate !== 1) priceBit += '×' + money(parts.rate) + '=' + money(parts.amt);
+			return label + ' ' + priceBit + ' 元';
+		}).filter(Boolean).join('；');
 		history.unshift({
 			id: uid(),
 			at: Date.now(),
 			total: result.total,
-			line: line,
+			line: notes ? (notes + ' · ' + line) : line,
 			state: JSON.parse(JSON.stringify({
 				people: state.people,
 				dishes: state.dishes,
 				tax: state.tax,
-				realPay: state.realPay
+				realPay: state.realPay,
+				rememberShare: !!state.rememberShare
 			}))
 		});
 		if (history.length > 80) history.length = 80;
@@ -658,9 +1119,6 @@
 	}
 
 	function calc() {
-		var tax = toNum(state.tax);
-		if (!isFinite(tax)) tax = 1;
-
 		var people = activePeople();
 		var due = {};
 		people.forEach(function (p) { due[p.id] = 0; });
@@ -669,18 +1127,19 @@
 		var total = 0;
 
 		state.dishes.forEach(function (d) {
-			var price = toNum(d.price);
-			if (!isFinite(price)) price = 0;
-			var amt = d.tax ? price * tax : price;
-			total += amt;
+			var parts = dishAmount(d);
+			total += parts.amt;
 
-			var shareIds = (d.share || []).filter(function (id) {
-				return people.some(function (p) { return p.id === id; });
-			});
-			if (!shareIds.length) shareIds = people.map(function (p) { return p.id; });
-			var each = shareIds.length ? amt / shareIds.length : 0;
+			var shareIds = dishShareIds(d, people);
+			var each = shareIds.length ? parts.amt / shareIds.length : 0;
 			shareIds.forEach(function (id) { due[id] += each; });
-			dishMeta[d.id] = { each: each, n: shareIds.length };
+			dishMeta[d.id] = {
+				each: each,
+				n: shareIds.length,
+				price: parts.price,
+				rate: parts.rate,
+				amt: parts.amt
+			};
 		});
 
 		return { due: due, total: total, dishMeta: dishMeta };
@@ -728,24 +1187,43 @@
 					escapeHtml(p.name) + '</label>';
 			}).join('');
 
+			var title = String(d.note || '').trim() || ('第 ' + (idx + 1) + ' 笔');
 			wrap.innerHTML =
-				'<div class="dish-top">' +
-					'<strong>#' + (idx + 1) + '</strong>' +
-					'<label class="tax-label"><input type="checkbox" data-tax' + (d.tax ? ' checked' : '') + '> 含倍率</label>' +
-					'<button type="button" class="ghost" data-del-dish>删</button>' +
-					'<input type="text" data-price value="' + escapeAttr(d.price) + '" inputmode="decimal" placeholder="金额，如 38.5 或 20+18.5" autocomplete="off">' +
-					'<span class="hint" data-each></span>' +
+				'<div class="dish-head">' +
+					'<div class="dish-no">' + escapeHtml(title) + '</div>' +
+					'<button type="button" data-del-dish>删除</button>' +
 				'</div>' +
-				'<div class="share-cells">' +
-					(shareHtml || '<span class="hint">先填写参与者名字</span>') +
-					(active.length ? '<span class="hint">（不勾选 = 全员平分）</span>' : '') +
+				'<div class="dish-body">' +
+					'<label class="field"><span>买了啥 <span class="opt">（可选）</span></span>' +
+						'<input type="text" data-note value="' + escapeAttr(d.note) + '" placeholder="例如：啤酒、打车、火锅" autocomplete="off">' +
+					'</label>' +
+					'<label class="field"><span>金额（元）· 可写满减算式</span>' +
+						'<input type="text" data-price value="' + escapeAttr(d.price) + '" inputmode="decimal" placeholder="例如 100-20 或 38.5" autocomplete="off">' +
+						'<span class="price-out" data-price-out></span>' +
+						'<span class="hint" data-each></span>' +
+					'</label>' +
+					'<label class="field"><span>本项倍率</span>' +
+						'<input type="text" data-rate value="' + escapeAttr(d.rate == null ? '1' : d.rate) + '" inputmode="decimal" placeholder="1=原价，0.8=八折，1.15=加收15%" autocomplete="off">' +
+					'</label>' +
+					'<div class="share-box">' +
+						'<p class="share-title">这笔谁出钱（勾选 = 参与平摊，默认全勾）</p>' +
+						'<p class="hint" style="margin:0 0 8px">勾上的人平摊这一笔。默认全员勾选，只取消不需要出钱的人即可。</p>' +
+						(active.length
+							? '<div class="share-actions">' +
+								'<button type="button" data-share-all>全选</button>' +
+								'<button type="button" data-share-invert>反选</button>' +
+							'</div>'
+							: '') +
+						'<div class="share-cells">' +
+							(shareHtml || '<span class="hint">先去「参与者」填名字</span>') +
+						'</div>' +
+					'</div>' +
 				'</div>';
 			list.appendChild(wrap);
 		});
 	}
 
 	function refreshShareLabels() {
-		// rebuild dishes when names change so checkboxes stay labeled
 		buildDishes();
 	}
 
@@ -764,13 +1242,30 @@
 		});
 
 		state.dishes.forEach(function (d) {
-			var el = document.querySelector('.dish[data-did="' + d.id + '"] [data-each]');
-			if (!el) return;
+			var root = document.querySelector('.dish[data-did="' + d.id + '"]');
+			if (!root) return;
+			var out = root.querySelector('[data-price-out]');
+			var eachEl = root.querySelector('[data-each]');
 			var meta = result.dishMeta[d.id];
-			if (meta && meta.n && String(d.price).trim() !== '') {
-				el.textContent = '每人 ' + yuan(meta.each) + ' × ' + meta.n;
-			} else {
-				el.textContent = '';
+			var raw = String(d.price || '').trim();
+			if (out) {
+				if (!raw || !meta || !isFinite(meta.price)) {
+					out.textContent = '';
+				} else if (isExpr(raw)) {
+					out.textContent = '算式结果 = ' + yuan(meta.price) +
+						(meta.rate !== 1 ? (' → ×' + money(meta.rate) + ' = ' + yuan(meta.amt)) : '');
+				} else if (meta.rate !== 1) {
+					out.textContent = money(meta.price) + ' × ' + money(meta.rate) + ' = ' + yuan(meta.amt);
+				} else {
+					out.textContent = '';
+				}
+			}
+			if (eachEl) {
+				if (meta && meta.n && raw !== '') {
+					eachEl.textContent = '上述勾选的人，每人出 ' + yuan(meta.each) + '（共 ' + meta.n + ' 人）';
+				} else {
+					eachEl.textContent = '';
+				}
 			}
 		});
 
@@ -791,8 +1286,10 @@
 	}
 
 	function fullRender() {
+		state.dishes.forEach(ensureDishShare);
 		document.getElementById('tax').value = state.tax;
 		document.getElementById('real-pay').value = state.realPay;
+		document.getElementById('remember-share').checked = !!state.rememberShare;
 		buildPeople();
 		buildDishes();
 		updateTotals();
@@ -804,8 +1301,21 @@
 	});
 
 	document.getElementById('btn-add-dish').addEventListener('click', function () {
-		state.dishes.push({ id: uid(), price: '', tax: true, share: [] });
+		var prev = state.dishes.length ? state.dishes[state.dishes.length - 1] : null;
+		if (state.rememberShare && prev) {
+			state.dishes.push(emptyDish({
+				rate: prev.rate,
+				share: prev.share
+			}));
+		} else {
+			state.dishes.push(emptyDish());
+		}
 		fullRender();
+	});
+
+	document.getElementById('remember-share').addEventListener('change', function (e) {
+		state.rememberShare = e.target.checked;
+		save();
 	});
 
 	document.getElementById('people-body').addEventListener('input', function (e) {
@@ -816,8 +1326,15 @@
 		if (!p) return;
 		var k = t.getAttribute('data-k');
 		if (!k) return;
+		var prevIds = null;
+		if (k === 'name') {
+			prevIds = state.people.filter(function (row) {
+				return String(row.name || '').trim() !== '';
+			}).map(function (row) { return row.id; });
+		}
 		p[k] = t.value;
 		if (k === 'name') {
+			syncSharesAfterPeopleChange(prevIds || []);
 			refreshShareLabels();
 		}
 		updateTotals();
@@ -831,6 +1348,7 @@
 		state.people = state.people.filter(function (p) { return p.id !== id; });
 		state.dishes.forEach(function (d) {
 			d.share = (d.share || []).filter(function (x) { return x !== id; });
+			ensureDishShare(d);
 		});
 		fullRender();
 	});
@@ -841,8 +1359,24 @@
 		if (!dishEl) return;
 		var d = findDish(dishEl.dataset.did);
 		if (!d) return;
+		if (t.hasAttribute('data-note')) {
+			d.note = t.value;
+			var titleEl = dishEl.querySelector('.dish-no');
+			if (titleEl) {
+				var note = String(d.note || '').trim();
+				var idx = state.dishes.indexOf(d);
+				titleEl.textContent = note || ('第 ' + (idx + 1) + ' 笔');
+			}
+			save();
+			return;
+		}
 		if (t.hasAttribute('data-price')) {
 			d.price = t.value;
+			updateTotals();
+			return;
+		}
+		if (t.hasAttribute('data-rate')) {
+			d.rate = t.value;
 			updateTotals();
 		}
 	});
@@ -853,11 +1387,6 @@
 		if (!dishEl) return;
 		var d = findDish(dishEl.dataset.did);
 		if (!d) return;
-		if (t.hasAttribute('data-tax')) {
-			d.tax = t.checked;
-			updateTotals();
-			return;
-		}
 		if (t.hasAttribute('data-share')) {
 			var pid = t.getAttribute('data-pid');
 			d.share = d.share || [];
@@ -871,17 +1400,36 @@
 	});
 
 	document.getElementById('dishes-list').addEventListener('click', function (e) {
-		if (!e.target.hasAttribute('data-del-dish')) return;
 		var dishEl = e.target.closest('.dish');
 		if (!dishEl) return;
+		var d = findDish(dishEl.dataset.did);
+		if (!d) return;
+
+		if (e.target.hasAttribute('data-share-all')) {
+			d.share = allPeopleIds();
+			fullRender();
+			return;
+		}
+		if (e.target.hasAttribute('data-share-invert')) {
+			var people = activePeople();
+			var cur = d.share || [];
+			d.share = people.map(function (p) { return p.id; }).filter(function (id) {
+				return cur.indexOf(id) === -1;
+			});
+			// 反选后若一个都不剩，回到全选，避免「谁都不出」
+			if (!d.share.length) d.share = allPeopleIds();
+			fullRender();
+			return;
+		}
+		if (!e.target.hasAttribute('data-del-dish')) return;
 		var id = dishEl.dataset.did;
-		state.dishes = state.dishes.filter(function (d) { return d.id !== id; });
+		state.dishes = state.dishes.filter(function (row) { return row.id !== id; });
 		fullRender();
 	});
 
 	document.getElementById('tax').addEventListener('input', function (e) {
 		state.tax = e.target.value;
-		updateTotals();
+		save();
 	});
 
 	document.getElementById('real-pay').addEventListener('input', function (e) {
@@ -900,7 +1448,7 @@
 			p.paid = money(paid - due);
 			if (p.paid === '0.00' || p.paid === '0.0') p.paid = '';
 		});
-		state.dishes = [{ id: uid(), price: '', tax: true, share: [] }];
+		state.dishes = [emptyDish()];
 		state.realPay = '';
 		fullRender();
 	});
@@ -949,6 +1497,9 @@
 		if (e.target.hasAttribute('data-open-history')) {
 			if (!confirm('打开这条历史，替换当前正在算的账单？')) return;
 			state = JSON.parse(JSON.stringify(item.state));
+			if (typeof state.rememberShare !== 'boolean') state.rememberShare = false;
+			state.dishes = (state.dishes || []).map(normalizeDish);
+			if (!state.dishes.length) state.dishes = [emptyDish()];
 			fullRender();
 		}
 	});
