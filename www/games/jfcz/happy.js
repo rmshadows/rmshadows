@@ -247,10 +247,10 @@ Play68.onpaysucc(function() {});
 var passedNum;
 var numFlag;
 getLevel();
-if (passedNum == 60) {
-    var buttonPay = document.getElementById('btnGuanzhu');
-    buttonPay.style.display = 'none';
-}
+(function () {
+    var buttonPay = document.getElementById("btnGuanzhu");
+    if (buttonPay) buttonPay.style.display = "none";
+})();
 
 //$("#rehovertr" + "ee").on("ontouchstart", function () { document.getElementById('lvnew').style.display = 'block'; return false; })
 function setLevel(level) {
@@ -300,7 +300,7 @@ $AJB.general.BeginStage = function() {
         j = document.getElementById("txtAr"),
         k = {
             show: function() {
-                a.style.display = ""
+                a.style.display = "flex"
             },
             hide: function() {
                 a.style.display = "none"
@@ -339,7 +339,7 @@ $AJB.general.Switcher = function() {
             color: "#c8c8c8",
             update: function() {
                 var a = h.point,
-                c = 30;
+                c = 55;
                 h.enabled && (0 === e ? (d = h.color, a[0] < b / 2 ? (a[0] = Math.min(a[0] + c, b / 2), h.point = a) : (h.point = a, g = !0)) : 1 === e && (d = "#000", a[0] > b / 2 ? (a[0] = Math.max(a[0] - c, b / 2), h.point = a) : (h.point = a, g = !0)))
             },
             render: function() {
@@ -944,16 +944,29 @@ $AJB.general.Scene = function() {
         return u = {
             enabled: !1,
             run: function(b) {
-                var c = g[b];
-                B = b,
-                c ? (u.enabled = !0, n(c), a.style.backgroundColor = "#000", A = "run") : t()
+                var c = g[b],
+                d, e;
+                B = b;
+                if (!c) return void t();
+                d = c;
+                e = +((window.localStorage && window.localStorage["jfcz-happy-needles"]) || 0);
+                e = 0 | e,
+                e >= 1 && (d = {
+                    childs: c.childs,
+                    queueCount: e,
+                    round: c.round
+                });
+                u.enabled = !0,
+                n(d),
+                a.style.backgroundColor = "#000",
+                A = "run"
             },
             shot: function() {
                 x && x.ballList.length && x.popup()
             },
             update: function() {
                 var a;
-                u.enabled && ("run" === A ? o() : "pass" === A ? (p(), +new Date - v > 1e3 && (A = "", k.fire(i))) : "fail" === A && (a = +new Date - v, q(a), a > 1e3 && (A = "", k.fire(j))))
+                u.enabled && ("run" === A ? o() : "pass" === A ? (p(), +new Date - v > 550 && (A = "", k.fire(i))) : "fail" === A && (a = +new Date - v, q(a), a > 550 && (A = "", k.fire(j))))
             },
             render: function() {
                 u.enabled && (w.render(), x.render())
@@ -982,8 +995,8 @@ $AJB.general.Game = function() {
     "use strict";
 
     function a() {
-        var a = document.body.scrollWidth || document.documentElement.scrollWidth,
-        b = document.body.scrollHeight || document.documentElement.scrollHeight;
+        var a = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth || 320,
+        b = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight || 480;
         r.width = a,
         r.height = b,
         i = l(x, a, b),
@@ -1017,12 +1030,63 @@ $AJB.general.Game = function() {
     }
 
     function e() {
+        function toMenu(keepLevel) {
+            h.enabled = !1,
+            r.style.display = "none",
+            document.body.style.backgroundColor = "",
+            keepLevel || C.level(D),
+            C.show()
+        }
         n(document.body, "mousedown",
         function(a) {
             var b;
+            if ("none" === r.style.display) return;
             if (a && a.changedTouches) for (b = a.changedTouches.length; b--;) h.shot();
             else h.shot();
             "1" != a.target.getAttribute("data-capture") && q(a)
+        }),
+        document.addEventListener("keydown",
+        function(a) {
+            var b = a.key || "",
+            c = a.code || "",
+            d = a.keyCode;
+            if ("none" === r.style.display || !h.enabled) return;
+            if ("Escape" === b || 27 === d) return a.preventDefault(),
+            void toMenu(!0);
+            if (a.repeat) return;
+            if (" " === b || "Spacebar" === b || "Space" === c || 32 === d || "Enter" === b || 13 === d || "ArrowUp" === b || 38 === d || "ArrowDown" === b || 40 === d || "KeyZ" === c || "KeyX" === c || "KeyF" === c) a.preventDefault(),
+            h.shot()
+        }),
+        document.addEventListener("wheel",
+        function(a) {
+            var b, c, d, f;
+            if ("none" === r.style.display || !h.enabled) return;
+            try {
+                if ("1" !== (window.localStorage["jfcz-wheel"] || window.localStorage["jfcz-happy-wheel"])) return
+            } catch(g) {
+                return
+            }
+            a.preventDefault(),
+            b = a.deltaY || 0,
+            a.deltaMode === 1 && (b *= 16),
+            a.deltaMode === 2 && (b *= 120),
+            !b && a.wheelDelta && (b = -a.wheelDelta / 3),
+            c = 8;
+            try {
+                c = +window.localStorage["jfcz-happy-wheel-sens"] || +window.localStorage["jfcz-wheel-sens"] || 8
+            } catch(g) {}
+            c < 1 && (c = 1),
+            c > 10 && (c = 10),
+            // 灵敏 1：一格一针并清空余量；高灵敏：可连发叠针
+            d = 100 - 8 * (c - 1),
+            d < 20 && (d = 20),
+            e._wAcc = (e._wAcc || 0) + b,
+            f = 0;
+            for (; Math.abs(e._wAcc) >= d && f < (1 === c ? 1 : c + 2); f++) (1 === c ? e._wAcc = 0 : e._wAcc -= e._wAcc > 0 ? d: -d),
+            h.shot()
+        },
+        {
+            passive: !1
         }),
         n(w, "mousedown",
         function() {
@@ -1043,6 +1107,7 @@ $AJB.general.Game = function() {
                 h.enabled = !1,
                 d(D + 1),
                 r.style.display = "none",
+                document.body.style.backgroundColor = "",
                 C.show()
             })
         }),
@@ -1050,18 +1115,14 @@ $AJB.general.Game = function() {
         function() {
             i.switchStage(0,
             function() {
-                h.enabled = !1,
-                r.style.display = "none",
-                C.level(D),
-                C.show(),
+                toMenu(!0),
                 updateShare(D),
                 Play68.setRankingScoreDesc(D)
-                // console.log(D)
             })
         }),
         C.on("start",
         function() {
-            r.style.display = "",
+            r.style.display = "block",
             C.hide(),
             i.switchStage(1,
             function() {
@@ -1132,10 +1193,10 @@ function share() {
 $AJB.page.index = function() {
     "use strict";
     var a = $AJB.general.Game();
-    a.start();
+    return a.start(),
+    a
 },
-$AJB.page.index();
-GlobalLevel = $AJB.general.Game().shareLevel;
+GlobalLevel = ($AJB.page.index() || {}).shareLevel;
 
 function IsPCHovertree() {
     var userAgentInfo = navigator.userAgent;

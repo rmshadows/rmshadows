@@ -111,32 +111,33 @@
 			border: 1px solid var(--line);
 			border-radius: var(--radius);
 			box-shadow: var(--shadow);
-			padding: 16px;
-			margin-bottom: 14px;
+			padding: 12px;
+			margin-bottom: 10px;
 		}
 		.page:not(.overview) .panel { display: none; }
 		.page:not(.overview) .panel.active { display: block; }
 		.page.overview .panel { display: block; }
 		.panel h2 {
-			margin: 0 0 12px;
-			font-size: 1rem;
+			margin: 0 0 8px;
+			font-size: 0.95rem;
 			border-bottom: 1px dashed var(--line);
-			padding-bottom: 8px;
+			padding-bottom: 6px;
 		}
 		.step-tip {
-			margin: 0 0 14px;
-			padding: 10px 12px;
+			margin: 0 0 10px;
+			padding: 8px 10px;
 			border-radius: 8px;
 			background: var(--accent-soft);
 			color: var(--accent);
-			font-size: 0.92rem;
+			font-size: 0.85rem;
+			line-height: 1.4;
 		}
 		.step-nav {
 			display: flex;
 			flex-wrap: wrap;
 			gap: 8px;
-			margin-top: 16px;
-			padding-top: 12px;
+			margin-top: 12px;
+			padding-top: 10px;
 			border-top: 1px dashed var(--line);
 		}
 		.step-nav .spacer { flex: 1 1 auto; }
@@ -208,18 +209,18 @@
 			accent-color: var(--accent);
 		}
 		.dish {
-			margin: 0 0 14px;
+			margin: 0 0 8px;
 			padding: 0;
 			border: 1px solid #cfc8bf;
-			border-radius: 12px;
+			border-radius: 10px;
 			background: #fbfaf8;
 			overflow: hidden;
 		}
 		.dish-head {
 			display: flex;
 			align-items: center;
-			gap: 10px;
-			padding: 10px 12px;
+			gap: 8px;
+			padding: 6px 10px;
 			background: #efeae3;
 			border-bottom: 1px solid #cfc8bf;
 		}
@@ -227,80 +228,105 @@
 			flex: 1 1 auto;
 			min-width: 0;
 			font-weight: 700;
-			font-size: 0.95rem;
-		}
-		.dish-head .tax-label {
-			flex: 0 0 auto;
-			padding: 4px 8px;
-			border: 1px solid #cfc8bf;
-			border-radius: 8px;
-			background: #fff;
-			color: var(--ink);
+			font-size: 0.88rem;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
 		}
 		.dish-head button {
 			flex: 0 0 auto;
-			min-width: 44px;
+			min-width: 0;
+			min-height: 32px;
+			padding: 4px 10px;
 			text-decoration: none;
 			border: 1px solid #cfc8bf;
-			border-radius: 8px;
+			border-radius: 6px;
 			background: #fff;
 			color: var(--danger);
+			font-size: 0.8rem;
 		}
-		.dish-body { padding: 12px; display: grid; gap: 10px; }
-		.field {
+		.dish-body { padding: 8px; display: grid; gap: 6px; }
+		.dish-grid {
+			display: grid;
+			grid-template-columns: 1fr 72px;
+			gap: 6px 8px;
+			align-items: start;
+		}
+		.dish-grid .field-note { grid-column: 1 / -1; }
+		.dish-grid .field-price { grid-column: 1; }
+		.dish-grid .field-rate { grid-column: 2; }
+		.dish .field {
 			display: flex;
 			flex-direction: column;
-			gap: 4px;
+			gap: 2px;
+			margin: 0;
 		}
-		.field > span {
-			font-size: 0.8rem;
+		.dish .field > span {
+			font-size: 0.72rem;
 			font-weight: 600;
 			color: var(--muted);
+			line-height: 1.2;
 		}
-		.field .opt {
+		.dish .field .opt {
 			font-weight: 500;
 			color: #9a938a;
 		}
-		.field [data-each] {
-			min-height: 1.2em;
-			margin-top: 2px;
+		.dish input[type="text"] {
+			padding: 7px 9px;
+			border-radius: 6px;
+			min-height: 36px;
+		}
+		.dish .field [data-each],
+		.dish .price-out {
+			min-height: 0;
+			margin-top: 1px;
+			line-height: 1.3;
 		}
 		.share-box {
-			padding: 10px;
+			padding: 6px 8px;
 			border: 1px dashed #cfc8bf;
-			border-radius: 10px;
+			border-radius: 8px;
 			background: #fff;
 		}
+		.share-top {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			gap: 6px;
+			margin: 0 0 6px;
+		}
 		.share-box .share-title {
-			margin: 0 0 8px;
-			font-size: 0.8rem;
+			margin: 0;
+			flex: 1 1 auto;
+			font-size: 0.72rem;
 			font-weight: 600;
 			color: var(--muted);
 		}
 		.share-actions {
 			display: flex;
 			flex-wrap: wrap;
-			gap: 6px;
-			margin: 0 0 10px;
+			gap: 4px;
+			margin: 0;
 		}
 		.share-actions button {
-			min-height: 36px;
-			padding: 4px 12px;
-			font-size: 0.85rem;
+			min-height: 28px;
+			padding: 2px 8px;
+			font-size: 0.75rem;
 			background: #fff;
 			color: var(--ink);
 			border: 1px solid #cfc8bf;
+			border-radius: 6px;
 		}
-		.share-cells { display: flex; flex-wrap: wrap; gap: 6px 8px; }
+		.share-cells { display: flex; flex-wrap: wrap; gap: 4px 6px; }
 		.share-cells label {
 			display: inline-flex;
 			align-items: center;
-			gap: 6px;
-			min-height: 40px;
-			padding: 4px 12px;
+			gap: 4px;
+			min-height: 30px;
+			padding: 2px 8px;
 			border: 1px solid #cfc8bf;
 			border-radius: 999px;
-			font-size: 0.95rem;
+			font-size: 0.82rem;
 			color: var(--ink);
 			background: #f6f4f1;
 		}
@@ -309,11 +335,44 @@
 			border-color: var(--accent);
 			color: var(--accent);
 		}
+		.share-cells input[type="checkbox"] {
+			width: 14px;
+			height: 14px;
+		}
 		.price-out {
 			font-variant-numeric: tabular-nums;
 			color: var(--ink);
-			font-size: 0.88rem;
+			font-size: 0.78rem;
 		}
+		.settle-summary {
+			margin: 10px 0;
+			border: 1px solid #cfc8bf;
+			border-radius: 10px;
+			overflow: hidden;
+			background: #fbfaf8;
+		}
+		.settle-summary .sum-head {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: space-between;
+			gap: 6px;
+			padding: 8px 10px;
+			background: #efeae3;
+			border-bottom: 1px solid #cfc8bf;
+			font-size: 0.85rem;
+			font-weight: 600;
+		}
+		.settle-summary .sum-head button {
+			min-height: 32px;
+			padding: 4px 10px;
+			font-size: 0.8rem;
+		}
+		.settle-summary table { font-size: 0.88rem; }
+		.settle-summary th, .settle-summary td {
+			padding: 6px 10px;
+		}
+		.settle-summary .empty { padding: 8px 10px; margin: 0; }
 		.tools-bar {
 			display: flex;
 			flex-wrap: wrap;
@@ -552,7 +611,7 @@
 
 		<section class="panel" id="panel-dishes" data-step="dishes" role="tabpanel">
 			<h2>3. 账单</h2>
-			<p class="step-tip">每块一笔账。勾选的人出这笔钱（平摊），默认全员都勾着。金额可写满减算式；每笔可设自己的倍率。</p>
+			<p class="step-tip">勾选的人出这笔钱，默认全勾。金额可写 <code>100-20</code>；倍率各填各的。</p>
 			<div id="dishes-list"></div>
 			<div class="row-actions">
 				<button type="button" class="primary" id="btn-add-dish">+ 加一项</button>
@@ -575,7 +634,14 @@
 
 		<section class="panel" id="panel-settle" data-step="settle" role="tabpanel">
 			<h2>4. 结账</h2>
-			<p class="step-tip">核对合计。有人垫过钱就填在「参与者」页的已垫付里；这里可以记实付、结一单或清空。</p>
+			<p class="step-tip">先看每人该付多少。要改已垫付，点「去参与者」。</p>
+			<div class="settle-summary">
+				<div class="sum-head">
+					<span>每人多少钱</span>
+					<button type="button" data-goto-step="people">去参与者改垫付</button>
+				</div>
+				<div id="settle-people"></div>
+			</div>
 			<div class="totals">
 				<div>账单合计 <strong id="grand-total">0.00 元</strong></div>
 				<label>实付总额
@@ -774,6 +840,11 @@
 	overviewSwitch.addEventListener('change', applyOverview);
 
 	page.addEventListener('click', function (e) {
+		var gotoBtn = e.target.closest('[data-goto-step]');
+		if (gotoBtn) {
+			showStep(gotoBtn.getAttribute('data-goto-step'));
+			return;
+		}
 		if (e.target.hasAttribute('data-next')) {
 			var i = stepIndex(current);
 			if (i < STEPS.length - 1) showStep(STEPS[i + 1].id);
@@ -1191,29 +1262,32 @@
 			wrap.innerHTML =
 				'<div class="dish-head">' +
 					'<div class="dish-no">' + escapeHtml(title) + '</div>' +
-					'<button type="button" data-del-dish>删除</button>' +
+					'<button type="button" data-del-dish>删</button>' +
 				'</div>' +
 				'<div class="dish-body">' +
-					'<label class="field"><span>买了啥 <span class="opt">（可选）</span></span>' +
-						'<input type="text" data-note value="' + escapeAttr(d.note) + '" placeholder="例如：啤酒、打车、火锅" autocomplete="off">' +
-					'</label>' +
-					'<label class="field"><span>金额（元）· 可写满减算式</span>' +
-						'<input type="text" data-price value="' + escapeAttr(d.price) + '" inputmode="decimal" placeholder="例如 100-20 或 38.5" autocomplete="off">' +
-						'<span class="price-out" data-price-out></span>' +
-						'<span class="hint" data-each></span>' +
-					'</label>' +
-					'<label class="field"><span>本项倍率</span>' +
-						'<input type="text" data-rate value="' + escapeAttr(d.rate == null ? '1' : d.rate) + '" inputmode="decimal" placeholder="1=原价，0.8=八折，1.15=加收15%" autocomplete="off">' +
-					'</label>' +
+					'<div class="dish-grid">' +
+						'<label class="field field-note"><span>买了啥 <span class="opt">可选</span></span>' +
+							'<input type="text" data-note value="' + escapeAttr(d.note) + '" placeholder="啤酒 / 打车" autocomplete="off">' +
+						'</label>' +
+						'<label class="field field-price"><span>金额 · 可写算式</span>' +
+							'<input type="text" data-price value="' + escapeAttr(d.price) + '" inputmode="decimal" placeholder="100-20" autocomplete="off">' +
+							'<span class="price-out" data-price-out></span>' +
+							'<span class="hint" data-each></span>' +
+						'</label>' +
+						'<label class="field field-rate"><span>倍率</span>' +
+							'<input type="text" data-rate value="' + escapeAttr(d.rate == null ? '1' : d.rate) + '" inputmode="decimal" placeholder="1" autocomplete="off">' +
+						'</label>' +
+					'</div>' +
 					'<div class="share-box">' +
-						'<p class="share-title">这笔谁出钱（勾选 = 参与平摊，默认全勾）</p>' +
-						'<p class="hint" style="margin:0 0 8px">勾上的人平摊这一笔。默认全员勾选，只取消不需要出钱的人即可。</p>' +
-						(active.length
-							? '<div class="share-actions">' +
-								'<button type="button" data-share-all>全选</button>' +
-								'<button type="button" data-share-invert>反选</button>' +
-							'</div>'
-							: '') +
+						'<div class="share-top">' +
+							'<p class="share-title">谁出钱（勾选=平摊，默认全勾）</p>' +
+							(active.length
+								? '<div class="share-actions">' +
+									'<button type="button" data-share-all>全选</button>' +
+									'<button type="button" data-share-invert>反选</button>' +
+								'</div>'
+								: '') +
+						'</div>' +
 						'<div class="share-cells">' +
 							(shareHtml || '<span class="hint">先去「参与者」填名字</span>') +
 						'</div>' +
@@ -1262,7 +1336,7 @@
 			}
 			if (eachEl) {
 				if (meta && meta.n && raw !== '') {
-					eachEl.textContent = '上述勾选的人，每人出 ' + yuan(meta.each) + '（共 ' + meta.n + ' 人）';
+					eachEl.textContent = '每人 ' + yuan(meta.each) + ' ×' + meta.n;
 				} else {
 					eachEl.textContent = '';
 				}
@@ -1281,6 +1355,25 @@
 		} else {
 			diffEl.textContent = '';
 			diffEl.className = 'hint';
+		}
+
+		var settleBox = document.getElementById('settle-people');
+		if (settleBox) {
+			var rows = activePeople().map(function (p) {
+				var due = result.due[p.id] || 0;
+				var paid = toNum(p.paid);
+				if (!isFinite(paid)) paid = 0;
+				return '<tr>' +
+					'<td>' + escapeHtml(p.name || '未命名') + '</td>' +
+					'<td class="num">' + escapeHtml(yuan(due)) + '</td>' +
+					'<td class="num">' + escapeHtml(yuan(paid)) + '</td>' +
+					'<td class="num bal">' + escapeHtml(settleText(due - paid)) + '</td>' +
+					'</tr>';
+			}).join('');
+			settleBox.innerHTML = rows
+				? '<table><thead><tr><th>谁</th><th class="num">该付</th><th class="num">已垫</th><th class="num">还差</th></tr></thead><tbody>' +
+					rows + '</tbody></table>'
+				: '<p class="empty">还没有参与者，先去加人</p>';
 		}
 		save();
 	}
