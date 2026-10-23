@@ -800,8 +800,9 @@ Upgrades from Debian 12 (book......
     sidebar-container
 ">
     
-        <h5><a href="/rmshadows/">VISITORS</a></h5>
-
+        <!--  <% if (site.posts.length){ %> -->
+<h5><a href="<%= config.root %>">VISITORS</a></h5>
+<% if (config.busuanzi){ %>
 <div class="widget">
   <span>
     Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
@@ -811,7 +812,8 @@ Upgrades from Debian 12 (book......
     <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
   </span>
 </div>
-
+<% } %>
+<!--  <% } %> -->
 
         <hr>
     
@@ -823,15 +825,31 @@ Upgrades from Debian 12 (book......
   <div class="tags">
     
     
-    <a href="/rmshadows/tags/#Marxist Philosophy" title="Marxist Philosophy" rel="1">Marxist Philosophy</a>
-    
-    
-    
     <a href="/rmshadows/tags/#Administrative Professional Ability Test" title="Administrative Professional Ability Test" rel="5">Administrative Professional Ability Test</a>
     
     
     
     <a href="/rmshadows/tags/#APAT" title="APAT" rel="5">APAT</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Marxist Philosophy" title="Marxist Philosophy" rel="1">Marxist Philosophy</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Mao Zedong Thought" title="Mao Zedong Thought" rel="1">Mao Zedong Thought</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Deng Xiaoping Theory" title="Deng Xiaoping Theory" rel="1">Deng Xiaoping Theory</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#JiangZemin&#39;s Three Represents important Thought" title="JiangZemin&#39;s Three Represents important Thought" rel="1">JiangZemin&#39;s Three Represents important Thought</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#HuJintao&#39;s Scientific outlook on Development" title="HuJintao&#39;s Scientific outlook on Development" rel="1">HuJintao&#39;s Scientific outlook on Development</a>
     
     
     
@@ -899,31 +917,15 @@ Upgrades from Debian 12 (book......
     
     
     
-    <a href="/rmshadows/tags/#Mao Zedong Thought" title="Mao Zedong Thought" rel="1">Mao Zedong Thought</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#Deng Xiaoping Theory" title="Deng Xiaoping Theory" rel="1">Deng Xiaoping Theory</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#JiangZemin&#39;s Three Represents important Thought" title="JiangZemin&#39;s Three Represents important Thought" rel="1">JiangZemin&#39;s Three Represents important Thought</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#HuJintao&#39;s Scientific outlook on Development" title="HuJintao&#39;s Scientific outlook on Development" rel="1">HuJintao&#39;s Scientific outlook on Development</a>
-    
-    
-    
     <a href="/rmshadows/tags/#Math" title="Math" rel="1">Math</a>
     
     
     
-    <a href="/rmshadows/tags/#Notes" title="Notes" rel="1">Notes</a>
-    
-    
-    
     <a href="/rmshadows/tags/#Moment" title="Moment" rel="1">Moment</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Notes" title="Notes" rel="1">Notes</a>
     
     
     
@@ -947,10 +949,6 @@ Upgrades from Debian 12 (book......
     
     
     
-    <a href="/rmshadows/tags/#Updates" title="Updates" rel="1">Updates</a>
-    
-    
-    
     <a href="/rmshadows/tags/#Python3" title="Python3" rel="1">Python3</a>
     
     
@@ -959,11 +957,23 @@ Upgrades from Debian 12 (book......
     
     
     
+    <a href="/rmshadows/tags/#Updates" title="Updates" rel="1">Updates</a>
+    
+    
+    
     <a href="/rmshadows/tags/#Linux Shell" title="Linux Shell" rel="1">Linux Shell</a>
     
     
     
     <a href="/rmshadows/tags/#Bash" title="Bash" rel="1">Bash</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Text Transmission" title="Text Transmission" rel="1">Text Transmission</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Java Swing" title="Java Swing" rel="1">Java Swing</a>
     
     
     
@@ -987,22 +997,6 @@ Upgrades from Debian 12 (book......
     
     
     
-    <a href="/rmshadows/tags/#Text Transmission" title="Text Transmission" rel="1">Text Transmission</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#Java Swing" title="Java Swing" rel="1">Java Swing</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#Toolkit" title="Toolkit" rel="1">Toolkit</a>
-    
-    
-    
-    <a href="/rmshadows/tags/#Games" title="Games" rel="1">Games</a>
-    
-    
-    
     <a href="/rmshadows/tags/#Windows" title="Windows" rel="1">Windows</a>
     
     
@@ -1019,7 +1013,11 @@ Upgrades from Debian 12 (book......
     
     
     
-    <a href="/rmshadows/tags/#Server" title="Server" rel="1">Server</a>
+    <a href="/rmshadows/tags/#Toolkit" title="Toolkit" rel="1">Toolkit</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Games" title="Games" rel="1">Games</a>
     
     
     
@@ -1027,11 +1025,15 @@ Upgrades from Debian 12 (book......
     
     
     
-    <a href="/rmshadows/tags/#Firewall" title="Firewall" rel="1">Firewall</a>
+    <a href="/rmshadows/tags/#Server" title="Server" rel="1">Server</a>
     
     
     
     <a href="/rmshadows/tags/#Veterinary" title="Veterinary" rel="1">Veterinary</a>
+    
+    
+    
+    <a href="/rmshadows/tags/#Firewall" title="Firewall" rel="1">Firewall</a>
     
     
     

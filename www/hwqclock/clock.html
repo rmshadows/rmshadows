@@ -1,307 +1,453 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="zh-Hans">
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta charset="UTF-8">
-    <title>
-        CLOCK - 时钟
-    </title>
-    <link rel="stylesheet" href="jquery.css" media="screen" type="text/css">
-    </script>
-    <script src="jquery-2.js">
-    </script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	<title>CLOCK - 时钟</title>
+	<link rel="stylesheet" href="jquery.css" media="screen" type="text/css">
+	<style>
+		:root {
+			--bg: #0c0d0f;
+			--fg: #e8e6e3;
+			--muted: #8a8782;
+			--accent: #2a6f6a;
+			--panel: rgba(20, 22, 24, 0.92);
+			--line: #3a3d42;
+		}
+		* { box-sizing: border-box; }
+		html, body {
+			margin: 0;
+			height: 100%;
+			overflow: hidden;
+			font-family: "Source Han Sans SC", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+			background: var(--bg);
+			color: var(--fg);
+			touch-action: manipulation;
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		.stage {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+		}
+
+		/* —— 样式主题背景 —— */
+		body.style-analog-green .stage {
+			background: radial-gradient(ellipse at 50% 40%, #eef5f0 0%, #d5e5da 55%, #b8cfc0 100%);
+		}
+		body.style-analog-night .stage {
+			background: radial-gradient(ellipse at 50% 35%, #1a2332 0%, #0b0e14 70%);
+		}
+		body.style-analog-mono .stage {
+			background: #f2f2f0;
+		}
+		body.style-digital-xl .stage,
+		body.style-digital-date .stage,
+		body.style-digital-thin .stage {
+			background: #070809;
+		}
+		body.style-digital-paper .stage {
+			background: linear-gradient(160deg, #f7f3ea 0%, #ebe4d6 100%);
+		}
+
+		.view { display: none; width: 100%; height: 100%; align-items: center; justify-content: center; }
+		body.style-analog-green .view-analog,
+		body.style-analog-night .view-analog,
+		body.style-analog-mono .view-analog { display: flex; }
+		body.style-digital-xl .view-digital,
+		body.style-digital-date .view-digital,
+		body.style-digital-thin .view-digital,
+		body.style-digital-paper .view-digital { display: flex; }
+
+		#hoverclock {
+			width: min(78vmin, 360px);
+			height: min(78vmin, 360px);
+		}
+
+		.digital {
+			text-align: center;
+			padding: 24px;
+			max-width: 96vw;
+		}
+		.digital .time {
+			font-variant-numeric: tabular-nums;
+			letter-spacing: 0.04em;
+			line-height: 1;
+			margin: 0;
+		}
+		.digital .sec {
+			opacity: 0.55;
+			font-weight: 400;
+		}
+		.digital .meta {
+			margin-top: 14px;
+			color: var(--muted);
+			font-size: clamp(0.95rem, 3.2vw, 1.25rem);
+			letter-spacing: 0.08em;
+		}
+
+		body.style-digital-xl .digital .time {
+			font-size: clamp(3.2rem, 18vw, 8rem);
+			font-weight: 600;
+			color: #f0f0ee;
+		}
+		body.style-digital-date .digital .time {
+			font-size: clamp(2.6rem, 14vw, 6rem);
+			font-weight: 500;
+			color: #d8ece9;
+		}
+		body.style-digital-date .digital .meta { color: #7a9e98; }
+		body.style-digital-thin .digital .time {
+			font-size: clamp(2.8rem, 16vw, 7rem);
+			font-weight: 200;
+			letter-spacing: 0.12em;
+			color: #cfcfc9;
+		}
+		body.style-digital-thin .digital .meta { display: none; }
+		body.style-digital-paper .digital .time {
+			font-size: clamp(2.8rem, 15vw, 6.5rem);
+			font-weight: 600;
+			color: #2a2926;
+		}
+		body.style-digital-paper .digital .meta { color: #6f6a60; }
+
+		/* —— 设置按钮 / 面板：默认隐藏，ui-on 时显示 —— */
+		.chrome {
+			position: fixed;
+			z-index: 20;
+			opacity: 0;
+			pointer-events: none;
+			transition: opacity 0.35s ease;
+		}
+		body.ui-on .chrome {
+			opacity: 1;
+			pointer-events: auto;
+		}
+		body.panel-open .chrome {
+			opacity: 1;
+			pointer-events: auto;
+		}
+
+		#btn-settings {
+			right: max(16px, env(safe-area-inset-right));
+			bottom: max(16px, env(safe-area-inset-bottom));
+			width: 48px;
+			height: 48px;
+			border: 1px solid var(--line);
+			border-radius: 50%;
+			background: var(--panel);
+			color: var(--fg);
+			font-size: 1.25rem;
+			cursor: pointer;
+			backdrop-filter: blur(8px);
+		}
+		#btn-settings:hover { border-color: var(--accent); }
+
+		#settings {
+			display: none;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: min(360px, calc(100vw - 32px));
+			padding: 16px 18px;
+			border: 1px solid var(--line);
+			border-radius: 14px;
+			background: var(--panel);
+			backdrop-filter: blur(12px);
+			box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+		}
+		body.panel-open #settings { display: block; }
+		#settings h2 {
+			margin: 0 0 12px;
+			font-size: 1rem;
+			font-weight: 600;
+		}
+		#settings .styles {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 8px;
+		}
+		#settings button.style-opt {
+			appearance: none;
+			border: 1px solid var(--line);
+			border-radius: 10px;
+			padding: 10px 12px;
+			min-height: 44px;
+			background: rgba(255, 255, 255, 0.04);
+			color: var(--fg);
+			font: inherit;
+			font-size: 0.88rem;
+			cursor: pointer;
+			text-align: left;
+		}
+		#settings button.style-opt.on {
+			border-color: var(--accent);
+			background: rgba(42, 111, 106, 0.25);
+		}
+		#settings .row {
+			display: flex;
+			gap: 8px;
+			margin-top: 14px;
+		}
+		#settings .row button {
+			flex: 1;
+			appearance: none;
+			border: 1px solid var(--line);
+			border-radius: 10px;
+			padding: 10px;
+			min-height: 44px;
+			background: transparent;
+			color: var(--fg);
+			font: inherit;
+			cursor: pointer;
+		}
+		#settings .row button.primary {
+			background: var(--accent);
+			border-color: var(--accent);
+			color: #fff;
+		}
+		.hint {
+			margin: 10px 0 0;
+			font-size: 0.75rem;
+			color: var(--muted);
+			line-height: 1.4;
+		}
+
+		body.style-analog-green #btn-settings,
+		body.style-analog-mono #btn-settings,
+		body.style-digital-paper #btn-settings {
+			background: rgba(255, 255, 255, 0.85);
+			color: #222;
+			border-color: #ccc;
+		}
+		body.style-analog-green #settings,
+		body.style-analog-mono #settings,
+		body.style-digital-paper #settings {
+			background: rgba(255, 255, 255, 0.95);
+			color: #222;
+			border-color: #ccc;
+		}
+		body.style-analog-green #settings button.style-opt,
+		body.style-analog-mono #settings button.style-opt,
+		body.style-digital-paper #settings button.style-opt,
+		body.style-analog-green #settings .row button,
+		body.style-analog-mono #settings .row button,
+		body.style-digital-paper #settings .row button {
+			color: #222;
+			border-color: #ccc;
+			background: #f7f7f5;
+		}
+		body.style-analog-green #settings .hint,
+		body.style-analog-mono #settings .hint,
+		body.style-digital-paper #settings .hint { color: #666; }
+	</style>
 </head>
+<body class="style-analog-green">
+	<div class="stage">
+		<div class="view view-analog">
+			<div id="hoverclock"></div>
+		</div>
+		<div class="view view-digital">
+			<div class="digital">
+				<p class="time"><span id="dig-h">00</span>:<span id="dig-m">00</span><span class="sec">:<span id="dig-s">00</span></span></p>
+				<p class="meta" id="dig-meta"></p>
+			</div>
+		</div>
+	</div>
 
-<body class="vsc-initialized"">
-    <!--div align="center" style="color:red;text-align:center">
-        <h1>
-            GREAT THING TAKES TIME
-        </h1>
-    </div>
-    </br>
-    </br-->
-    <div align="center">
-        <div id="hoverclock"
-            style="width: 300px; height: 300px; position: relative; background-color: transparent; border-radius: 10%; border: 1px solid transparent;display: contents">
-            <div class="hoverclockfill">
-                <div class="hoverclockreference"></div>
-                <div class="hoverclockentity" style="transform: scale(1.013);">
-                    <div class="hoverclocktext"
-                        style="width: 300px; position: absolute; left: -149.917px; top: 14.9917px;"><a
-                            href="http://hovertree.com" target="_blank" id="hoverclocklink"
-                            title="HoverClock" style="color: deeppink; font-size: 16px;">HoverClock</a></div>
-                    <div class="hoverclockcentre">
-                        <div class="hoverclockdynamic">
-                            <div class="hoverclockanchor" style="transform: rotate(6deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(12deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(18deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(24deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockminute-text" style="top: -116.9px; left: 67.5px; color: darkgreen;">05
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(36deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(42deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(48deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(54deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockminute-text" style="top: -67.5px; left: 116.9px; color: darkgreen;">10
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(66deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(72deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(78deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(84deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockminute-text" style="top: 0px; left: 135px; color: darkgreen;">15</div>
-                            <div class="hoverclockanchor" style="transform: rotate(96deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(102deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(108deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(114deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockminute-text" style="top: 67.5px; left: 116.9px; color: darkgreen;">20
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(126deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(132deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(138deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(144deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockminute-text" style="top: 116.9px; left: 67.5px; color: darkgreen;">25
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(156deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(162deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(168deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(174deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockminute-text" style="top: 135px; left: 0px; color: darkgreen;">30</div>
-                            <div class="hoverclockanchor" style="transform: rotate(186deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(192deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(198deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(204deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockminute-text" style="top: 116.9px; left: -67.5px; color: darkgreen;">35
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(216deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(222deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(228deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(234deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockminute-text" style="top: 67.5px; left: -116.9px; color: darkgreen;">40
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(246deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(252deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(258deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(264deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockminute-text" style="top: 0px; left: -135px; color: darkgreen;">45
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(276deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(282deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(288deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(294deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockminute-text" style="top: -67.5px; left: -116.9px; color: darkgreen;">
-                                50</div>
-                            <div class="hoverclockanchor" style="transform: rotate(306deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(312deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(318deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(324deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockminute-text" style="top: -116.9px; left: -67.5px; color: darkgreen;">
-                                55</div>
-                            <div class="hoverclockanchor" style="transform: rotate(336deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(342deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(348deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockanchor" style="transform: rotate(354deg);">
-                                <div class="hoverclockelement hoverclockminute-line"
-                                    style="background-color: darkgreen;"></div>
-                            </div>
-                            <div class="hoverclockminute-text" style="top: -135px; left: 0px; color: darkgreen;">60
-                            </div>
-                            <div class="hoverclockhour-text hour-1"
-                                style="top: -90.9px; left: 52.5px; color: darkgreen;">1</div>
-                            <div class="hoverclockhour-text hour-2"
-                                style="top: -52.5px; left: 90.9px; color: darkgreen;">2</div>
-                            <div class="hoverclockhour-text hour-3" style="top: 0px; left: 105px; color: darkgreen;">3
-                            </div>
-                            <div class="hoverclockhour-text hour-4"
-                                style="top: 52.5px; left: 90.9px; color: darkgreen;">4</div>
-                            <div class="hoverclockhour-text hour-5"
-                                style="top: 90.9px; left: 52.5px; color: darkgreen;">5</div>
-                            <div class="hoverclockhour-text hour-6" style="top: 105px; left: 0px; color: darkgreen;">6
-                            </div>
-                            <div class="hoverclockhour-text hour-7"
-                                style="top: 90.9px; left: -52.5px; color: darkgreen;">7</div>
-                            <div class="hoverclockhour-text hour-8"
-                                style="top: 52.5px; left: -90.9px; color: darkgreen;">8</div>
-                            <div class="hoverclockhour-text hour-9" style="top: 0px; left: -105px; color: darkgreen;">9
-                            </div>
-                            <div class="hoverclockhour-text hour-10"
-                                style="top: -52.5px; left: -90.9px; color: darkgreen;">10</div>
-                            <div class="hoverclockhour-text hour-11"
-                                style="top: -90.9px; left: -52.5px; color: darkgreen;">11</div>
-                            <div class="hoverclockhour-text hour-12" style="top: -105px; left: 0px; color: darkgreen;">
-                                12</div>
-                        </div>
-                        <div class="hoverclockexpand hoverclockexpand hoverclockcircle-1"></div>
-                        <div class="hoverclockanchor hoverclockhour" style="transform: rotate(368.404deg);">
-                            <div class="hoverclockelement hoverclockthin-hand" style="background-color: green;"></div>
-                            <div class="hoverclockelement hoverclockfat-hand" style="background-color: darkgreen;">
-                            </div>
-                        </div>
-                        <div class="hoverclockanchor hoverclockminute" style="transform: rotate(4420.85deg);">
-                            <div class="hoverclockelement hoverclockthin-hand" style="background-color: green;"></div>
-                            <div class="hoverclockelement hoverclockfat-hand hoverclockminute-hand"
-                                style="background-color: darkgreen;"></div>
-                        </div>
-                        <div class="hoverclockanchor hoverclocksecond" style="transform: rotate(265251deg);">
-                            <div class="hoverclockelement hoverclocksecond-hand" style="background-color: orangered;">
-                            </div>
-                        </div>
-                        <div class="hoverclockexpand hoverclockexpand hoverclockcircle-2"></div>
-                        <div class="hoverclockexpand hoverclockexpand hoverclockcircle-3"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<button type="button" class="chrome" id="btn-settings" aria-label="设置" title="设置">⚙</button>
 
-    <script src="jquery.js">
-    </script>
-    <script>
-        $("#hoverclock").hoverclock({});
-    </script>
-    <!---->
+	<div class="chrome" id="settings" role="dialog" aria-label="时钟设置">
+		<h2>时钟样式</h2>
+		<div class="styles" id="style-list"></div>
+		<p class="hint">移动鼠标或轻触屏幕可显示设置；几秒无操作后自动隐藏。样式会记在本机。</p>
+		<div class="row">
+			<button type="button" id="btn-close">关闭</button>
+			<button type="button" class="primary" id="btn-fs">全屏</button>
+		</div>
+	</div>
+
+	<script src="jquery-2.js"></script>
+	<script src="jquery.js"></script>
+	<script>
+(function () {
+	'use strict';
+
+	var KEY = 'hwq_clock_style_v1';
+	var HIDE_MS = 3200;
+	var STYLES = [
+		{ id: 'analog-green', label: '指针 · 青绿', kind: 'analog', opts: {
+			h_width: '100%', h_height: '100%',
+			h_frontColor: 'darkgreen', h_thinHandColor: 'green',
+			h_secondHandColor: 'orangered', h_linkText: '', h_linkUrl: '#', h_linkColor: 'transparent', h_linkSize: '0'
+		}},
+		{ id: 'analog-night', label: '指针 · 夜色', kind: 'analog', opts: {
+			h_width: '100%', h_height: '100%',
+			h_frontColor: '#9ec5c0', h_thinHandColor: '#6fa8a2',
+			h_secondHandColor: '#e07a5f', h_linkText: '', h_linkUrl: '#', h_linkColor: 'transparent', h_linkSize: '0',
+			h_backColor: 'rgba(255,255,255,0.04)', h_borderColor: 'rgba(158,197,192,0.25)'
+		}},
+		{ id: 'analog-mono', label: '指针 · 黑白', kind: 'analog', opts: {
+			h_width: '100%', h_height: '100%',
+			h_frontColor: '#222', h_thinHandColor: '#444',
+			h_secondHandColor: '#c0392b', h_linkText: '', h_linkUrl: '#', h_linkColor: 'transparent', h_linkSize: '0'
+		}},
+		{ id: 'digital-xl', label: '数字 · 大字', kind: 'digital' },
+		{ id: 'digital-date', label: '数字 · 带日期', kind: 'digital' },
+		{ id: 'digital-thin', label: '数字 · 细体', kind: 'digital' },
+		{ id: 'digital-paper', label: '数字 · 纸色', kind: 'digital' }
+	];
+
+	var current = 'analog-green';
+	var hideTimer = null;
+	var analogInited = false;
+
+	function pad(n) { return n < 10 ? '0' + n : String(n); }
+
+	function weekDay(d) {
+		return ['日', '一', '二', '三', '四', '五', '六'][d.getDay()];
+	}
+
+	function findStyle(id) {
+		for (var i = 0; i < STYLES.length; i++) {
+			if (STYLES[i].id === id) return STYLES[i];
+		}
+		return STYLES[0];
+	}
+
+	function load() {
+		try {
+			var id = localStorage.getItem(KEY);
+			if (id && findStyle(id)) current = id;
+		} catch (e) { /* ignore */ }
+	}
+
+	function save() {
+		try { localStorage.setItem(KEY, current); } catch (e) { /* ignore */ }
+	}
+
+	function destroyAnalog() {
+		var box = document.getElementById('hoverclock');
+		box.innerHTML = '';
+		box.removeAttribute('style');
+		analogInited = false;
+	}
+
+	function initAnalog(style) {
+		destroyAnalog();
+		var $box = window.jQuery('#hoverclock');
+		$box.hoverclock(style.opts || {});
+		// 去掉插件自带外链字样
+		$box.find('.hoverclocktext').css({ display: 'none' });
+		analogInited = true;
+	}
+
+	function applyStyle(id, persist) {
+		var style = findStyle(id);
+		current = style.id;
+		document.body.className = document.body.className
+			.replace(/\bstyle-[\w-]+\b/g, '')
+			.replace(/\s+/g, ' ')
+			.trim();
+		document.body.classList.add('style-' + style.id);
+		if (document.body.classList.contains('panel-open')) {
+			/* keep */
+		}
+		if (style.kind === 'analog') {
+			initAnalog(style);
+		} else if (analogInited) {
+			destroyAnalog();
+		}
+		document.querySelectorAll('#style-list .style-opt').forEach(function (btn) {
+			btn.classList.toggle('on', btn.getAttribute('data-id') === style.id);
+		});
+		tickDigital();
+		if (persist !== false) save();
+	}
+
+	function tickDigital() {
+		var now = new Date();
+		document.getElementById('dig-h').textContent = pad(now.getHours());
+		document.getElementById('dig-m').textContent = pad(now.getMinutes());
+		document.getElementById('dig-s').textContent = pad(now.getSeconds());
+		document.getElementById('dig-meta').textContent =
+			now.getFullYear() + '年' + (now.getMonth() + 1) + '月' + now.getDate() + '日 星期' + weekDay(now);
+	}
+
+	function showUi() {
+		document.body.classList.add('ui-on');
+		clearTimeout(hideTimer);
+		if (document.body.classList.contains('panel-open')) return;
+		hideTimer = setTimeout(function () {
+			if (!document.body.classList.contains('panel-open')) {
+				document.body.classList.remove('ui-on');
+			}
+		}, HIDE_MS);
+	}
+
+	function openPanel() {
+		document.body.classList.add('panel-open', 'ui-on');
+		clearTimeout(hideTimer);
+	}
+
+	function closePanel() {
+		document.body.classList.remove('panel-open');
+		showUi();
+	}
+
+	function buildList() {
+		var list = document.getElementById('style-list');
+		list.innerHTML = STYLES.map(function (s) {
+			return '<button type="button" class="style-opt" data-id="' + s.id + '">' + s.label + '</button>';
+		}).join('');
+		list.addEventListener('click', function (e) {
+			var btn = e.target.closest('[data-id]');
+			if (!btn) return;
+			applyStyle(btn.getAttribute('data-id'));
+		});
+	}
+
+	function toggleFs() {
+		if (!document.fullscreenElement) {
+			document.documentElement.requestFullscreen().catch(function () {});
+		} else {
+			document.exitFullscreen().catch(function () {});
+		}
+	}
+
+	buildList();
+	load();
+	applyStyle(current, false);
+
+	setInterval(tickDigital, 250);
+	tickDigital();
+
+	document.addEventListener('mousemove', showUi);
+	document.addEventListener('touchstart', showUi, { passive: true });
+	document.addEventListener('keydown', function (e) {
+		if (e.key === 'Escape') closePanel();
+		else showUi();
+	});
+
+	document.getElementById('btn-settings').addEventListener('click', function () {
+		if (document.body.classList.contains('panel-open')) closePanel();
+		else openPanel();
+	});
+	document.getElementById('btn-close').addEventListener('click', closePanel);
+	document.getElementById('btn-fs').addEventListener('click', toggleFs);
+
+	// 点面板外关闭
+	document.addEventListener('click', function (e) {
+		if (!document.body.classList.contains('panel-open')) return;
+		if (e.target.closest('#settings') || e.target.closest('#btn-settings')) return;
+		closePanel();
+	});
+})();
+	</script>
 </body>
-
 </html>
